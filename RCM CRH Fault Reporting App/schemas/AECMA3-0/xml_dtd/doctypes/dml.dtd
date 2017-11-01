@@ -1,0 +1,17 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 3                              *
+    *                                                                    *
+    *                 XML Document Type Definition                       *
+    *                    Data Module List (DML)                          *
+    *                                                                    *
+    *                     Release Version 3.0                            *
+    *                       Date: 2007-07-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE dml PUBLIC "-//S1000D//DTD Data Module List 20070731//EN//XML"
+  "../dtd/dml.dtd" [
+  ]>

@@ -1,0 +1,144 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                   XML Document Type Definition                     *
+    *                                                                    *
+    *                     Release Version 2.3                            *
+    *                       Date: 2007-02-28                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *                                                                    *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % NOTATION PUBLIC                                         *
+    *  "-//S1000D//ENTITIES NOTATION Definitions 20070228//EN"           *
+    *  "notation.ent">                                                   *
+    * %NOTATION;                                                         *
+    ********************************************************************** -->
+
+
+<!-- Graphic notation declarations -->
+<!NOTATION adi PUBLIC "-//S1000D//NOTATION AutoCAD Device Independent Encoding//EN">
+<!NOTATION bmp PUBLIC "-//S1000D//NOTATION Microsoft Bitmap Graphics Format Encoding//EN">
+<!NOTATION cgm PUBLIC "-//USA-DOD//NOTATION Computer Graphics Metafile//EN">
+<!NOTATION dxf PUBLIC "-//USA-DOD//NOTATION DXF Encoding//EN">
+<!NOTATION fax PUBLIC "-//USA-DOD//NOTATION CCITT Group 4 Facsimile//EN">
+<!NOTATION fpx PUBLIC "-//S1000D//NOTATION Flash PiX Encoding//EN">
+<!NOTATION gif PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION CompuServe Graphic Interchange Format//EN">
+<!NOTATION gks PUBLIC "-//S1000D//NOTATION Graphics Kernel System Encoding//EN">
+<!NOTATION jpeg PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Joint Photographic Experts Group Raster//EN">
+<!NOTATION mng PUBLIC "-//S1000D//NOTATION Multiple Network Graphics Encoding//EN">
+<!NOTATION pbm PUBLIC "-//S1000D//NOTATION Jeff Poskanzer, Portable Bit Map Encoding//EN">
+<!NOTATION pcx PUBLIC "+//ISBN 0-7923-94.2-1::Graphic Notation//NOTATION ZSoft PCX bitmap//EN">
+<!NOTATION pict PUBLIC "-//S1000D//NOTATION Macintosh Drawing Format Encoding//EN">
+<!NOTATION png PUBLIC "-//W3C//NOTATION Portable Network Graphics//EN">
+<!NOTATION ras PUBLIC "-//S1000D//NOTATION SUN Raster Format Encoding//EN">
+<!NOTATION svg PUBLIC "-//TEI//NOTATION W3C Scalable Vector Graphics Format//EN">
+<!NOTATION tga PUBLIC "-//S1000D//NOTATION Truevision File Format Encoding//EN">
+<!NOTATION tiff PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Aldus/Microsoft Tagged Interchange File Format//EN">
+<!NOTATION wmf PUBLIC "+//ISBN 0-7923-9432-1::Graphic Notation//NOTATION Microsoft Windows Metafile//EN">
+
+<!-- Audio notation declarations -->
+<!NOTATION aif PUBLIC "-//S1000D//NOTATION Audio AIFF Format sound Encoding//EN">
+<!NOTATION aifc PUBLIC "-//S1000D//NOTATION Audio AIFF Format sound Encoding//EN">
+<!NOTATION au PUBLIC "-//W3O//NOTATION Sun Audio//EN">
+<!NOTATION cda PUBLIC "-//S1000D//NOTATION CD Audio Encoding//EN">
+<!NOTATION cdda PUBLIC "-//S1000D//NOTATION Audio AIFF Format sound Encoding//EN">
+<!NOTATION kar PUBLIC "-//S1000D//NOTATION MIDI Encoding//EN">
+<!NOTATION m3u PUBLIC "-//S1000D//NOTATION MP3  format sound Encoding//EN">
+<!NOTATION m3url PUBLIC "-//S1000D//NOTATION MP3  format sound Encoding//EN">
+<!NOTATION mid PUBLIC "-//S1000D//NOTATION Audio MIDI Encoding//EN">
+<!NOTATION midi PUBLIC "-//S1000D//NOTATION Audio MIDI Encoding//EN">
+<!NOTATION mp3 PUBLIC "-//S1000D//NOTATION MP3  format sound Encoding//EN">
+<!NOTATION pls PUBLIC "-//S1000D//NOTATION Audio Playlist Encoding//EN">
+<!NOTATION rmi PUBLIC "-//S1000D//NOTATION Audio MIDI Encoding//EN">
+<!NOTATION smf PUBLIC "-//S1000D//NOTATION MIDI Encoding//EN">
+<!NOTATION snd PUBLIC "-//S1000D//NOTATION Sun Audio Encoding//EN">
+<!NOTATION swa PUBLIC "-//S1000D//NOTATION MP3  format sound Encoding//EN">
+<!NOTATION ulw PUBLIC "-//S1000D//NOTATION ULaW Encoding//EN">
+<!NOTATION wav PUBLIC "-//Microsoft//NOTATION Microsoft RIFF chunk for Waveform Data//EN">
+<!NOTATION wma PUBLIC "-//S1000D//NOTATION Windows Media Audio Encoding//EN">
+
+<!-- 3D notation declarations -->
+<!NOTATION ds-3dxml PUBLIC "-//S1000D//NOTATION DASSAULT SYSTEMS 3DXML Encoding//EN">
+<!NOTATION asm PUBLIC "-//S1000D//NOTATION Pro Engineer 3D Models Encoding//EN">
+<!NOTATION catdrawing PUBLIC "-//S1000D//NOTATION Catia 3D Models Encoding//EN">
+<!NOTATION catpart PUBLIC "-//S1000D//NOTATION Catia 3D Models Encoding//EN">
+<!NOTATION catproduct PUBLIC "-//S1000D//NOTATION Catia 3D Models Encoding//EN">
+<!NOTATION cgr PUBLIC "-//S1000D//NOTATION Catia 3D Models Encoding//EN">
+<!NOTATION ct PUBLIC "-//S1000D//NOTATION Catia 3D Models Encoding//EN">
+<!NOTATION dcr PUBLIC "-//S1000D//NOTATION X-DIRECTOR 3D Models Encoding//EN">
+<!NOTATION drw PUBLIC "-//S1000D//NOTATION Pro Engineer 3D Models Encoding//EN">
+<!NOTATION dwf PUBLIC "-//S1000D//NOTATION VND 3D Models Encoding//EN">
+<!NOTATION ed PUBLIC "-//S1000D//NOTATION Pro Engineer 3D Models Encoding//EN">
+<!NOTATION edz PUBLIC "-//S1000D//NOTATION Pro Engineer 3D Models Encoding//EN">
+<!NOTATION frm PUBLIC "-//S1000D//NOTATION Pro Engineer 3D Models Encoding//EN">
+<!NOTATION iges PUBLIC "-//USA-DOD//NOTATION (ASME/ANSI Y14.26M-1987) Initial Graphics Exchange Specification//EN">
+<!NOTATION model PUBLIC "-//S1000D//NOTATION Catia 3D Models Encoding//EN">
+<!NOTATION prt PUBLIC "-//S1000D//NOTATION Pro Engineer 3D Models Encoding//EN">
+<!NOTATION rh PUBLIC "-//S1000D//NOTATION RightHemisphere 3D Models Encoding//EN">
+<!NOTATION sldasm PUBLIC "-//S1000D//NOTATION SolidWorks 3D Models Encoding//EN">
+<!NOTATION slddrw PUBLIC "-//S1000D//NOTATION SolidWorks 3D Models Encoding//EN">
+<!NOTATION sldprt PUBLIC "-//S1000D//NOTATION SolidWorks 3D Models Encoding//EN">
+<!NOTATION step PUBLIC "-//S1000D//NOTATION STEP AP203 3D Models Encoding//EN">
+<!NOTATION swf PUBLIC "-//S1000D//NOTATION X-SHOCKWAVE-FLASH 3D Models Encoding//EN">
+<!NOTATION u3d PUBLIC "-//ECMA//NOTATION Universal 3D Models Encoding//EN">
+<!NOTATION ugs PUBLIC "-//S1000D//NOTATION JT 3D Models Encoding//EN">
+<!NOTATION w3d PUBLIC "-//S1000D//NOTATION Web3D 3D Models Encoding//EN">
+<!NOTATION wrl PUBLIC "-//S1000D//NOTATION VRML  3D Models Encoding//EN">
+<!NOTATION x3d PUBLIC "-//S1000D//NOTATION X3D 3D Models Encoding//EN">
+<!NOTATION xv0 PUBLIC "-//S1000D//NOTATION Lattice 3D Models Encoding//EN">
+<!NOTATION xv2 PUBLIC "-//S1000D//NOTATION Lattice 3D Models Encoding//EN">
+<!NOTATION xv3 PUBLIC "-//S1000D//NOTATION Lattice 3D Models Encoding//EN">
+<!NOTATION xvl PUBLIC "-//S1000D//NOTATION Lattice 3D Models Encoding//EN">
+
+<!-- Video notation declarations -->
+<!NOTATION asf PUBLIC "-//S1000D//NOTATION Video X-MS-ASF Encoding//EN">
+<!NOTATION asr PUBLIC "-//S1000D//NOTATION Windows media Encoding//EN">
+<!NOTATION asx PUBLIC "-//S1000D//NOTATION Windows media Encoding//EN">
+<!NOTATION avi PUBLIC "-//Microsoft//NOTATION Microsoft RIFF chunk for Audio/Visual Interleaved Data//EN">
+<!NOTATION dif PUBLIC "-//S1000D//NOTATION Digital Video Encoding//EN">
+<!NOTATION dv PUBLIC "-//S1000D//NOTATION Digital Video Encoding//EN">
+<!NOTATION fla PUBLIC "-//S1000D//NOTATION Macromedia Flash encoding//EN">
+<!NOTATION fli PUBLIC "-//Autodesk//NOTATION Autodesk Animator FLIC Format FLI//EN">
+<!NOTATION flv PUBLIC "-//S1000D//NOTATION Video X-FLV Encoding//EN">
+<!NOTATION mheg PUBLIC "-//S1000D//NOTATION Multimedia and Hypermedia Experts Group encoding//EN">
+<!NOTATION mlv PUBLIC "-//S1000D//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION mov PUBLIC "-//S1000D//NOTATION Video/quicktime Encoding//EN">
+<!NOTATION mp2 PUBLIC "-//S1000D//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION mp2v PUBLIC "-//S1000D//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION mp4 PUBLIC "-//S1000D//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION mpe PUBLIC "-//S1000D//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION mpeg PUBLIC "-//S1000D//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION mpeg-1 PUBLIC "ISO/IEC 11172//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION mpeg-2 PUBLIC "-//S1000D//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION mpg PUBLIC "-//S1000D//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION mpg4 PUBLIC "-//S1000D//NOTATION Motion Picture Experts Group video encoding//EN">
+<!NOTATION qt PUBLIC "-//S1000D//NOTATION Video/quicktime Encoding//EN">
+<!NOTATION qtr PUBLIC "-//S1000D//NOTATION Video/quicktime Encoding//EN">
+<!NOTATION qtx PUBLIC "-//S1000D//NOTATION Video/quicktime Encoding//EN">
+<!NOTATION ra PUBLIC "-//S1000D//NOTATION Real Audio-Video Encoding//EN">
+<!NOTATION ram PUBLIC "-//S1000D//NOTATION Real Audio-Video Encoding//EN">
+<!NOTATION rgb PUBLIC "-//S1000D//NOTATION Video RGB Encoding//EN">
+<!NOTATION rm PUBLIC "-//S1000D//NOTATION Real Audio-Video Encoding//EN">
+<!NOTATION rmj PUBLIC "-//S1000D//NOTATION Real Audio-Video Encoding//EN">
+<!NOTATION rts PUBLIC "-//S1000D//NOTATION Streaming Movie Encoding//EN">
+<!NOTATION rtsp PUBLIC "-//S1000D//NOTATION Streaming Movie Encoding//EN">
+<!NOTATION sdp PUBLIC "-//S1000D//NOTATION Streaming Movie Encoding//EN">
+<!NOTATION smi PUBLIC "-//S1000D//NOTATION SMI Video Encoding//EN">
+<!NOTATION sml PUBLIC "-//S1000D//NOTATION SML Video Encoding//EN">
+<!NOTATION vfw PUBLIC "-//S1000D//NOTATION VFW Video Encoding//EN">
+<!NOTATION wm PUBLIC "-//S1000D//NOTATION Windows Media audio/video Encoding//EN">
+<!NOTATION wmp PUBLIC "-//S1000D//NOTATION Windows Media audio/video Encoding//EN">
+<!NOTATION wmv PUBLIC "-//S1000D//NOTATION Windows Media audio/video Encoding//EN">
+<!NOTATION wmx PUBLIC "-//S1000D//NOTATION Windows Media audio/video Encoding//EN">
+
+<!-- Miscellaneous notation declarations -->
+<!NOTATION doc PUBLIC "-//S1000D//NOTATION Microsoft Word encoding//EN">
+<!NOTATION mdb PUBLIC "-//S1000D//NOTATION Microsoft Access encoding//EN">
+<!NOTATION mpp PUBLIC "-//S1000D//NOTATION Microsoft Project encoding//EN">
+<!NOTATION pdf PUBLIC "-//Adobe Inc.//NOTATION Portable Document Format//EN">
+<!NOTATION pps PUBLIC "-//S1000D//NOTATION Microsoft Powerpoint encoding//EN">
+<!NOTATION ppt PUBLIC "-//S1000D//NOTATION Microsoft Powerpoint encoding//EN">
+<!NOTATION smil PUBLIC "-//S1000D//NOTATION Synchronized Multimedia Integration Language encoding//EN">
+<!NOTATION xls PUBLIC "-//S1000D//NOTATION Microsoft Excel encoding//EN">

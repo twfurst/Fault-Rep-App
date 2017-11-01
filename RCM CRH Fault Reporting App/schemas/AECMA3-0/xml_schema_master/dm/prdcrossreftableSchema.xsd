@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>
+			*****************************************************************************
+			*                                                                           *
+			*                        S1000D Issue 3                                     *
+			*                          XML Schema                                       *
+			*                                                                           *
+			*                     Release Version 3.0                                   *
+			*                       Date: 2007-07-31                                    *
+			*                                                                           *
+			*                                                                           *
+			* The following attribute definition on the root element may be used to     *
+			* call this set of declarations:-                                           *
+			*                                                                           *
+			* xsi:noNamespaceSchemaLocation=                                            *
+			* "http://www.s1000d.org/S1000D_3-0/xml_schema_master/dm/prdcrossreftableSchema.xsd"*
+			*****************************************************************************
+		</xs:documentation>
+	</xs:annotation>
+	<xs:redefine schemaLocation="elementGroups.xsd">
+		<xs:group name="APPLIC">
+			 <xs:choice>
+				<xs:sequence>
+					<xs:element ref="displaytext"/> 
+					<xs:choice minOccurs="0">
+						<xs:element ref="assert"/>
+						<xs:element ref="evaluate"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:choice>
+					<xs:element ref="assert"/>
+					<xs:element ref="evaluate"/>
+				</xs:choice>
+			</xs:choice>
+		</xs:group>
+		<xs:group name="NP">
+			<xs:choice>
+				<xs:element ref="note"/>
+				<xs:element ref="para"/>
+			</xs:choice>
+		</xs:group>
+		<xs:group name="paracon">
+			<xs:choice>
+				<xs:group ref="text"/>
+				<xs:group ref="list"/>
+			</xs:choice>
+		</xs:group>
+		<xs:group name="text">
+			<xs:choice>
+				<xs:element ref="ein"/>
+				<xs:element ref="cb"/>
+				<xs:element ref="parasigdata"/>
+				<xs:element ref="quantity"/>
+				<xs:element ref="xref"/>
+				<xs:element ref="indxflag"/>
+				<xs:element ref="change"/>
+				<xs:element ref="emphasis"/>
+				<xs:element ref="symbol"/>
+				<xs:element ref="subscrpt"/>
+				<xs:element ref="supscrpt"/>
+				<xs:element ref="refdm"/>
+				<xs:element ref="reftp"/>
+				<xs:element ref="ftnote"/>
+				<xs:element ref="ftnref"/>
+				<xs:element ref="acronym"/>
+				<xs:element ref="acroterm"/>
+			</xs:choice>
+		</xs:group>
+	</xs:redefine>
+	<xs:redefine schemaLocation="complexTypes.xsd">
+		<xs:complexType name="contentType">
+			<xs:complexContent>
+				<xs:restriction base="contentType">
+					<xs:sequence>
+						<xs:element ref="refs" minOccurs="0"/>
+						<xs:element ref="pct"/>
+						<!--<xs:element ref="prdcrossreftable"/>-->
+					</xs:sequence>
+					<xs:attribute ref="id"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:redefine>
+	<xs:element name="dmodule" type="dmoduleType"/>
+</xs:schema>

@@ -1,0 +1,55 @@
+SGMLDECL "../../dcl/s1000dx.dcl"
+
+-- ISO 8879-1986 XML Character Entities defined in ISOENTS.ENT --
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Arrow Relations//EN//XML"      		"../../ent/xml/iso-amsa.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Binary Operators//EN//XML"     		"../../ent/xml/iso-amsb.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Delimiters//EN//XML"           		"../../ent/xml/iso-amsc.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Negated Relations//EN//XML"    		"../../ent/xml/iso-amsn.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Ordinary//EN//XML"             		"../../ent/xml/iso-amso.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Relations//EN//XML"            		"../../ent/xml/iso-amsr.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Box and Line Drawing//EN//XML"                     		"../../ent/xml/iso-box.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Russian Cyrillic//EN//XML"                         		"../../ent/xml/iso-cyr1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Non-Russian Cyrillic//EN//XML"                     		"../../ent/xml/iso-cyr2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Diacritical Marks//EN//XML"                        		"../../ent/xml/iso-dia.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Letters//EN//XML"                            		"../../ent/xml/iso-grk1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Monotoniko Greek//EN//XML"                         		"../../ent/xml/iso-grk2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN//XML"                            		"../../ent/xml/iso-grk3.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Alternative Greek Symbols//EN//XML"                		"../../ent/xml/iso-grk4.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN//XML"                            		"../../ent/xml/iso-lat1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 2//EN//XML"                            		"../../ent/xml/iso-lat2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN//XML"              		"../../ent/xml/iso-num.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN//XML"                               		"../../ent/xml/iso-pub.ent"
+PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN//XML"                        		"../../ent/xml/iso-tech.ent"
+
+
+-- S1000D 3.0 DM DTD and Entities --
+PUBLIC "-//S1000D//DTD S1000D Applic Cross-Reference Table 20070731//EN//XML"			"../../xml_dtd/dtd/appliccrossreftable.dtd"
+PUBLIC "-//S1000D//DTD S1000D Business Rules Exchange 20070731//EN//XML"			"../../xml_dtd/dtd/brex.dtd"
+PUBLIC "-//S1000D//DTD S1000D Conditions Cross-Reference Table 20070731//EN//XML"		"../../xml_dtd/dtd/condcrossreftable.dtd"
+PUBLIC "-//S1000D//DTD S1000D Container 20070731//EN//XML"					"../../xml_dtd/dtd/container.dtd"
+PUBLIC "-//S1000D//DTD S1000D Crew 20070731//EN//XML"						"../../xml_dtd/dtd/crew.dtd"
+PUBLIC "-//S1000D//DTD S1000D Description 20070731//EN//XML"					"../../xml_dtd/dtd/descript.dtd"
+PUBLIC "-//S1000D//DTD S1000D Fault 20070731//EN//XML"						"../../xml_dtd/dtd/fault.dtd"
+PUBLIC "-//S1000D//DTD S1000D IPD 20070731//EN//XML"						"../../xml_dtd/dtd/ipd.dtd"
+PUBLIC "-//S1000D//DTD S1000D Products Cross-Reference Table 20070731//EN//XML"			"../../xml_dtd/dtd/prdcrossreftable.dtd"
+PUBLIC "-//S1000D//DTD S1000D Procedural 20070731//EN//XML"					"../../xml_dtd/dtd/proced.dtd"
+PUBLIC "-//S1000D//DTD S1000D Process 20070731//EN//XML"					"../../xml_dtd/dtd/process.dtd"
+PUBLIC "-//S1000D//DTD S1000D Schedule 20070731//EN//XML"					"../../xml_dtd/dtd/schedul.dtd"
+PUBLIC "-//S1000D//DTD S1000D Technical Repository 20070731//EN//XML"				"../../xml_dtd/dtd/techrep.dtd"
+PUBLIC "-//S1000D//DTD S1000D WRNGDATA 20070731//EN//XML"					"../../xml_dtd/dtd/wrngdata.dtd"
+PUBLIC "-//S1000D//DTD S1000D WRNGFLDS 20070731//EN//XML"					"../../xml_dtd/dtd/wrngflds.dtd"
+
+PUBLIC "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN//XML"				"../../xml_dtd/dtd/isoents.ent"
+PUBLIC "-//S1000D//ENTITIES NOTATION Definitions 20070228//EN"					"../../xml_dtd/dtd/notations.ent"
+PUBLIC "-//S1000D//ENTITIES RDF and DC Definitions 20070228//EN//XML"				"../../xml_dtd/dtd/rdfdc.ent"
+PUBLIC "-//S1000D//ELEMENTS XLINK Definitions 20030531//EN//XML"				"../../xml_dtd/dtd/xlink.ent"
+
+
+-- S1000D 3.0 DTDs and Entities other than DM --
+PUBLIC "-//S1000D//DTD S1000D Commenting 20070731//EN//XML"					"../../xml_dtd/dtd/comment.dtd"
+PUBLIC "-//S1000D//DTD Data Dispatch Note 20070731//EN//XML"					"../../xml_dtd/dtd/ddn.dtd"
+PUBLIC "-//S1000D//DTD Data Module List 20070731//EN//XML"					"../../xml_dtd/dtd/dml.dtd"
+PUBLIC "-//S1000D//DTD Publication Module 20070731//EN//XML"					"../../xml_dtd/dtd/pm.dtd"
+PUBLIC "-//S1000D//DTD XML Companion File 20070731//EN//XML"					"../../xml_dtd/dtd/xcf.dtd"
+
+-- End of S1000D 3.0 XML DTD catalog --

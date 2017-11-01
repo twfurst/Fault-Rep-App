@@ -1,0 +1,51 @@
+SGMLDECL "../../dcl/s1000d.dcl"
+
+-- ISO 8879-1986 Character Entities defined in ISOENTS.ENT --
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Arrow Relations//EN"		"../../ent/sgml/isoamsa.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Binary Operators//EN"		"../../ent/sgml/isoamsb.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Delimiters//EN"			"../../ent/sgml/isoamsc.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Negated Relations//EN"		"../../ent/sgml/isoamsn.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Ordinary//EN"			"../../ent/sgml/isoamso.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Math Symbols: Relations//EN"			"../../ent/sgml/isoamsr.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Box and Line Drawing//EN"				"../../ent/sgml/isobox.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Russian Cyrillic//EN"					"../../ent/sgml/isocyr1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Non-Russian Cyrillic//EN"				"../../ent/sgml/isocyr2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Diacritical Marks//EN"					"../../ent/sgml/isodia.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Letters//EN"					"../../ent/sgml/isogrk1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Monotoniko Greek//EN"					"../../ent/sgml/isogrk2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN"					"../../ent/sgml/isogrk3.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Alternative Greek Symbols//EN"				"../../ent/sgml/isogrk4.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN"					"../../ent/sgml/isolat1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 2//EN"					"../../ent/sgml/isolat2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN"			"../../ent/sgml/isonum.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN"						"../../ent/sgml/isopub.ent"
+PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN"					"../../ent/sgml/isotech.ent"
+
+
+-- S1000D 3.0 DM DTD and Entities --
+PUBLIC "-//S1000D//DTD S1000D Applic Cross-Reference Table 20070731//EN"		"../../sgml_dtd/dtd/appliccrossreftable.dtd"
+PUBLIC "-//S1000D//DTD S1000D Business Rules Exchange 20070731//EN"			"../../sgml_dtd/dtd/brex.dtd"
+PUBLIC "-//S1000D//DTD S1000D Conditions Cross-Reference Table 20070731//EN"		"../../sgml_dtd/dtd/condcrossreftable.dtd"
+PUBLIC "-//S1000D//DTD S1000D Container 20070731//EN"					"../../sgml_dtd/dtd/container.dtd"
+PUBLIC "-//S1000D//DTD S1000D Crew 20070731//EN"					"../../sgml_dtd/dtd/crew.dtd"
+PUBLIC "-//S1000D//DTD S1000D Description 20070731//EN"					"../../sgml_dtd/dtd/descript.dtd"
+PUBLIC "-//S1000D//DTD S1000D Fault 20070731//EN"					"../../sgml_dtd/dtd/fault.dtd"
+PUBLIC "-//S1000D//DTD S1000D IPD 20070731//EN"						"../../sgml_dtd/dtd/ipd.dtd"
+PUBLIC "-//S1000D//DTD S1000D Products Cross-Reference Table 20070731//EN"		"../../sgml_dtd/dtd/prdcrossreftable.dtd"
+PUBLIC "-//S1000D//DTD S1000D Procedural 20070731//EN"					"../../sgml_dtd/dtd/proced.dtd"
+PUBLIC "-//S1000D//DTD S1000D Process 20070731//EN"					"../../sgml_dtd/dtd/process.dtd"
+PUBLIC "-//S1000D//DTD S1000D Schedule 20070731//EN"					"../../sgml_dtd/dtd/schedul.dtd"
+PUBLIC "-//S1000D//DTD S1000D Technical Repository 20070731//EN"			"../../sgml_dtd/dtd/techrep.dtd"
+PUBLIC "-//S1000D//DTD S1000D WRNGDATA 20070731//EN"					"../../sgml_dtd/dtd/wrngdata.dtd"
+PUBLIC "-//S1000D//DTD S1000D WRNGFLDS 20070731//EN"					"../../sgml_dtd/dtd/wrngflds.dtd"
+
+PUBLIC "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN"			"../../sgml_dtd/dtd/isoents.ent"
+PUBLIC "-//S1000D//ENTITIES NOTATION Definitions 20070228//EN"				"../../sgml_dtd/dtd/notations.ent"
+
+
+-- S1000D 3.0 DTDs and Entities other than DM --
+PUBLIC "-//S1000D//DTD S1000D Commenting 20070731//EN"					"../../sgml_dtd/dtd/comment.dtd"
+PUBLIC "-//S1000D//DTD Data Dispatch Note 20070731//EN"					"../../sgml_dtd/dtd/ddn.dtd"
+PUBLIC "-//S1000D//DTD Data Module List 20070731//EN"					"../../sgml_dtd/dtd/dml.dtd"
+PUBLIC "-//S1000D//DTD Publication Module 20070731//EN"					"../../sgml_dtd/dtd/pm.dtd"
+-- End of S1000D 3.0 SGML DTD catalog --

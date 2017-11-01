@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:simpleType name="interactivityAttType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="off"/>
+			<xs:enumeration value="inherit"/>
+			<xs:enumeration value="on"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="pictureVisibilityAttType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="off"/>
+			<xs:enumeration value="on"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="visibilityAttType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="off"/>
+			<xs:enumeration value="inherit"/>
+			<xs:enumeration value="on"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

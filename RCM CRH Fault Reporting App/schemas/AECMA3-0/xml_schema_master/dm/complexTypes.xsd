@@ -1,0 +1,5239 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/>
+	<xs:include schemaLocation="attributeGroups.xsd"/>
+	<xs:include schemaLocation="simpleElements.xsd"/>
+	<xs:include schemaLocation="complexElements.xsd"/>
+	<xs:include schemaLocation="elementGroups.xsd"/>
+	<xs:complexType name="abbrevType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="accessfromType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="zone"/>
+			<xs:element ref="accpnl"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="accessoriesType">
+		<xs:sequence>
+			<xs:element ref="accessory" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="accessoryType">
+		<xs:sequence>
+			<xs:element ref="pnr"/>
+			<xs:element ref="altids" minOccurs="0"/>
+			<xs:element ref="mass" minOccurs="0"/>
+			<xs:element ref="orientation" minOccurs="0"/>
+			<xs:element ref="assyinstr" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="accesstoType">
+		<xs:sequence>
+			<xs:element ref="ein" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="others" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="acclistType">
+		<xs:sequence>
+			<xs:element ref="pnr" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="accpnlaltType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="acctype"/>
+			<xs:element ref="zone"/>
+			<xs:element ref="accessto" minOccurs="0"/>
+			<xs:element ref="accpnlref" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="fastener" minOccurs="0"/>
+			<xs:element ref="quantity" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="openhour" minOccurs="0"/>
+			<xs:element ref="xref" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="altnbr"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="accpnlidType">
+		<xs:attribute ref="accpnlnbr" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="accpnlinfoType">
+		<xs:sequence>
+			<xs:element ref="accpnlid"/>
+			<xs:element ref="accpnlref" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="accpnlalt" maxOccurs="unbounded"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="accpnllistType">
+		<xs:sequence>
+			<xs:element ref="figure" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="accpnlinfo" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="accpnlrefType">
+		<xs:sequence>
+			<xs:element ref="accpnl" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="type" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="accpnlType">
+		<xs:sequence>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="accpnlnbr"/>
+		<xs:attribute ref="accpnltype"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="acctypeType">
+		<xs:attribute ref="accpnltype" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="acrodefType" mixed="true">
+		<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="acronymType">
+		<xs:sequence>
+			<xs:element ref="acroterm"/>
+			<xs:element ref="acrodef"/>
+		</xs:sequence>
+		<xs:attribute ref="acrotype"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="acrotermType" mixed="true">
+		<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attribute ref="xrefid"/>
+	</xs:complexType>
+	<xs:complexType name="acrwType">
+		<xs:choice>
+			<xs:element ref="frc"/>
+			<xs:element ref="descacrw"/>
+		</xs:choice>
+		<xs:attribute ref="id"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="actType">
+		<xs:sequence>
+			<xs:element ref="productattributes"/>
+			<xs:element ref="cctref" minOccurs="0"/>
+			<xs:element ref="pctref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="actionType" mixed="true">
+		<xs:group ref="text" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="actrefType">
+		<xs:sequence>
+			<xs:element ref="refdm"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="addressType">
+		<xs:sequence>
+			<xs:element ref="dept" minOccurs="0"/>
+			<xs:element ref="street" minOccurs="0"/>
+			<xs:element ref="pobox" minOccurs="0"/>
+			<xs:element ref="zip" minOccurs="0"/>
+			<xs:element ref="city"/>
+			<xs:element ref="postcode" minOccurs="0"/>
+			<xs:element ref="country"/>
+			<xs:element ref="state" minOccurs="0"/>
+			<xs:element ref="province" minOccurs="0"/>
+			<xs:element ref="building" minOccurs="0"/>
+			<xs:element ref="room" minOccurs="0"/>
+			<xs:element ref="phone" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="fax" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="email" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="internet" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="afi-procType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:element ref="fault"/>
+				<xs:element ref="describe"/>
+			</xs:sequence>
+			<xs:element ref="isoproc"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="afirefType">
+		<xs:sequence>
+			<xs:element ref="refs"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="afiType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element ref="afi-proc"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="afrType">
+		<xs:choice>
+			<xs:element ref="ifault" maxOccurs="unbounded"/>
+			<xs:element ref="dfault" maxOccurs="unbounded"/>
+			<xs:element ref="ofault" maxOccurs="unbounded"/>
+			<xs:element ref="cfault" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ageType">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="supeqvc"/>
+			<xs:element ref="ecscs"/>
+			<xs:element ref="eidc"/>
+			<xs:element ref="cidc"/>
+			<xs:element ref="discode"/>
+			<xs:element ref="discodev"/>
+			<xs:element ref="incode"/>
+			<xs:element ref="incodev"/>
+			<xs:element ref="itemloc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="airpwrType">
+		<xs:attributeGroup ref="PMDATA_STAT_POW"/>
+	</xs:complexType>
+	<xs:complexType name="altidsType">
+		<xs:sequence>
+			<xs:element ref="altid" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="altidType">
+		<xs:sequence>
+			<xs:element ref="pnr" minOccurs="0"/>
+			<xs:element ref="mfc" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="amperageType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="answerType">
+		<xs:choice>
+			<xs:element ref="yesno"/>
+			<xs:element ref="sel-list"/>
+			<xs:element ref="entfield"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="apntextType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="apnType">
+		<xs:sequence>
+			<xs:element ref="part" maxOccurs="unbounded"/>
+			<xs:element ref="apntext" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="applicsType">
+		<xs:sequence>
+			<xs:element ref="applic" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="applicType">
+		<xs:group ref="APPLIC"/>
+		<xs:attribute ref="applicconf"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="aspType">
+		<xs:attribute name="asp" type="aspvalueType" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="asrequirType"/>
+	<xs:complexType name="assertType" mixed="true">
+		<xs:attribute ref="actidref"/>
+		<xs:attribute ref="actreftype"/>
+		<xs:attribute ref="actvalues"/>
+		<xs:attribute ref="displayclass"/>
+	</xs:complexType>
+	<xs:complexType name="assertionType">
+		<xs:sequence>
+			<xs:element ref="variable-ref"/>
+			<xs:element ref="expression"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="assignType">
+		<xs:attribute ref="actidref" use="required"/>
+		<xs:attribute ref="actreftype" use="required"/>
+		<xs:attribute ref="actvalue" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="assyinstrType">
+		<xs:sequence>
+			<xs:element ref="assy" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="assyType">
+		<xs:sequence>
+			<xs:group ref="CM.PREFIN"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="attenuationType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="autandtpType">
+		<xs:sequence>
+			<xs:element ref="authblk"/>
+			<xs:element ref="tpbase"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="authexType">
+		<xs:sequence>
+			<xs:element ref="inline" minOccurs="0"/>
+			<xs:element ref="retrofit" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="aveeType">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="sdc"/>
+			<xs:element ref="chapnum"/>
+			<xs:element ref="section"/>
+			<xs:element ref="subsect"/>
+			<xs:element ref="subject"/>
+			<xs:element ref="discode"/>
+			<xs:element ref="discodev"/>
+			<xs:element ref="incode"/>
+			<xs:element ref="incodev"/>
+			<xs:element ref="itemloc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="avehcfgType">
+		<xs:sequence>
+			<xs:element ref="jacked"/>
+			<xs:element ref="safedev"/>
+			<xs:element ref="elecpwr"/>
+			<xs:element ref="hydpwr"/>
+			<xs:element ref="airpwr"/>
+			<xs:element ref="fuel"/>
+			<xs:element ref="water"/>
+			<xs:element ref="fcposn"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="bfeType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="bndfromType">
+		<xs:sequence>
+			<xs:element ref="boundary" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="bndtoType">
+		<xs:sequence>
+			<xs:element ref="boundary" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="booleanType">
+		<xs:choice>
+			<xs:element ref="true"/>
+			<xs:element ref="false"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="boundaryType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="quantity" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="brexrefType">
+		<xs:sequence>
+			<xs:element ref="refdm"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="brexType">
+		<xs:sequence>
+			<xs:element ref="contextrules" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="buttonType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="enable" minOccurs="0"/>
+			<xs:element ref="prompt"/>
+			<xs:choice>
+				<xs:element ref="extapp"/>
+				<xs:element ref="dialog"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="canType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="capbodyType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="caprow" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="valign" default="top"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="capentryType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="caption"/>
+				<xs:element ref="captext"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="colname"/>
+		<xs:attribute ref="namest"/>
+		<xs:attribute ref="nameend"/>
+		<xs:attribute ref="spanname"/>
+		<xs:attribute ref="morerows" default="0"/>
+		<xs:attribute ref="colsep"/>
+		<xs:attribute ref="rowsep"/>
+		<xs:attribute ref="valign" default="top"/>
+		<xs:attribute name="align" type="alignvalueType2"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="capgrpType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="colspec" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="spanspec" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="capbody"/>
+		</xs:sequence>
+		<xs:attribute ref="cols" use="required"/>
+		<xs:attribute name="align" type="alignvalueType1" default="left"/>
+		<xs:attribute ref="toctype" default="none"/>
+		<xs:attribute ref="colsep"/>
+		<xs:attribute ref="rowsep"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="caplineType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="acroterm" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="caprowType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="capentry"/>
+		</xs:sequence>
+		<xs:attribute ref="rowsep"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="captextType" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="xref"/>
+			<xs:element ref="indxflag"/>
+			<xs:element ref="change"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="refdm"/>
+			<xs:element ref="reftp"/>
+			<xs:element ref="acronym"/>
+			<xs:element ref="acroterm"/>
+		</xs:choice>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="captionType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="capline" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="colour"/>
+		<xs:attribute ref="width"/>
+		<xs:attribute ref="height"/>
+		<xs:attribute ref="sysid"/>
+		<xs:attribute name="align" type="alignvalueType2" default="center"/>
+		<xs:attribute ref="toctype" default="none"/>
+		<xs:attribute name="type" type="captiontypeType" default="primary"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="caseType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="condit"/>
+			<xs:group ref="STEPS" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="categoryType">
+		<xs:attribute ref="catletter" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="catType">
+		<xs:attribute ref="cat" default="1"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="cautionType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="symbol"/>
+				<xs:element ref="para"/>
+				<xs:group ref="list"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string"/>
+		<xs:attribute ref="xrefid"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="cbaltType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:element ref="cbclass"/>
+			<xs:element ref="monitored" minOccurs="0"/>
+			<xs:element ref="collared" minOccurs="0"/>
+			<xs:element ref="provisioned" minOccurs="0"/>
+			<xs:element ref="location" minOccurs="0"/>
+			<xs:element ref="sns" minOccurs="0"/>
+			<xs:element ref="einref" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="altnbr"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="cbclassType">
+		<xs:attribute ref="cbtype" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="cbdataType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="cb"/>
+			<xs:element ref="nomen"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="xref"/>
+				<xs:element ref="accpnl"/>
+			</xs:choice>
+			<xs:element ref="cbloc" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="cbidType">
+		<xs:attribute ref="cbnbr" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="cbinfoType">
+		<xs:sequence>
+			<xs:element ref="cbid"/>
+			<xs:element ref="nomen"/>
+			<xs:element ref="sns" minOccurs="0"/>
+			<xs:element ref="cbalt" maxOccurs="unbounded"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="cblistType">
+		<xs:sequence>
+			<xs:element ref="cbinfo" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="cblocType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="cblstType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="cbsublst" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attribute ref="cbaction"/>
+		<xs:attribute ref="checksum"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="cbsType">
+		<xs:sequence>
+			<xs:element ref="asp" minOccurs="0"/>
+			<xs:element ref="nil" minOccurs="0"/>
+			<xs:element ref="rtx" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="smf" minOccurs="0"/>
+			<xs:element ref="dfl" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cbsublstType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="ein" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:sequence>
+				<xs:element ref="cbdata" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="cbaction"/>
+		<xs:attribute ref="checksum"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="cbType">
+		<xs:sequence>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="cbnbr" use="required"/>
+		<xs:attribute ref="cbtype"/>
+		<xs:attribute ref="cbaction"/>
+		<xs:attribute ref="checksum"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="ccsType">
+		<xs:sequence>
+			<xs:element ref="uce" minOccurs="0"/>
+			<xs:element ref="uca" minOccurs="0"/>
+			<xs:element ref="icy" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cctType">
+		<xs:sequence>
+			<xs:element ref="conditiontypelist"/>
+			<xs:element ref="conditionlist"/>
+			<xs:element ref="incorporation" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cctrefType">
+		<xs:sequence>
+			<xs:element ref="refdm"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cdescsType">
+		<xs:sequence>
+			<xs:element ref="cdesc" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cdescType">
+		<xs:sequence>
+			<xs:element ref="contact"/>
+			<xs:element ref="cdia" minOccurs="0"/>
+			<xs:element ref="fin" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="tplus" minOccurs="0"/>
+			<xs:element ref="tminus" minOccurs="0"/>
+			<xs:element ref="sterm" minOccurs="0"/>
+			<xs:element ref="coax" minOccurs="0"/>
+			<xs:element ref="triax" minOccurs="0"/>
+			<xs:element ref="module" minOccurs="0"/>
+			<xs:element ref="block" minOccurs="0"/>
+			<xs:element ref="shunt" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cdiaType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="cesType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element ref="srv"/>
+			<xs:element ref="smr"/>
+			<xs:element ref="mov" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cfaultType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="msg-wmlf-desc"/>
+			<xs:element ref="disolate"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="challengType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="para"/>
+				<xs:group ref="FFT"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="challrspType">
+		<xs:sequence>
+			<xs:element ref="challeng"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="crew" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="response"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="changeEltType" mixed="true">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:group ref="text" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="choiceType" mixed="true">
+		<xs:attribute ref="refid" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="closereqsType">
+		<xs:sequence>
+			<xs:element ref="reqconds"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="closetxtType" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:group ref="text"/>
+			<xs:element ref="para"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="cmkType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="collaredType">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="colspecType">
+		<xs:attribute ref="colnum"/>
+		<xs:attribute ref="colname"/>
+		<xs:attribute name="align" type="alignvalueType3"/>
+		<xs:attribute ref="charoff"/>
+		<xs:attribute ref="char"/>
+		<xs:attribute ref="colwidth"/>
+		<xs:attribute ref="colsep"/>
+		<xs:attribute ref="rowsep"/>
+	</xs:complexType>
+	<xs:complexType name="conditType" mixed="true">
+		<xs:group ref="text" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="conditionType">
+		<xs:sequence>
+			<xs:element ref="name"/>
+			<xs:element ref="displayname" minOccurs="0"/>
+			<xs:element ref="description"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="id" use="required"/>
+		<xs:attribute ref="condtyperef" use="required"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="conditionlistType">
+		<xs:sequence>
+			<xs:element ref="condition" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="conditiontypeType">
+		<xs:sequence>
+			<xs:element ref="name"/>
+			<xs:element ref="description"/>
+			<xs:element ref="enum" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="id" use="required"/>
+		<xs:attribute ref="pattern"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="conditiontypelistType">
+		<xs:sequence>
+			<xs:element ref="conditiontype" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="conduitsType">
+		<xs:sequence>
+			<xs:element ref="conduit" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="conduitType">
+		<xs:sequence>
+			<xs:element ref="pnr"/>
+			<xs:element ref="altids" minOccurs="0"/>
+			<xs:element ref="size" minOccurs="0"/>
+			<xs:element ref="mass" minOccurs="0"/>
+			<xs:element ref="colour" minOccurs="0"/>
+			<xs:element ref="wallthk" minOccurs="0"/>
+			<xs:element ref="temp" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="conitemaltidType">
+		<xs:attribute ref="nature" use="required"/>
+		<xs:attribute ref="itemnbr" use="required"/>
+		<xs:attribute ref="vendor"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="conitemaltType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="conitemaltid"/>
+			<xs:element ref="consupplygrp"/>
+			<xs:element ref="nomen"/>
+			<xs:element ref="category" minOccurs="0"/>
+			<xs:element ref="usage" minOccurs="0"/>
+			<xs:element ref="recommendation" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="type"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="conitemidType">
+		<xs:attribute ref="nature" use="required"/>
+		<xs:attribute ref="itemnbr" use="required"/>
+		<xs:attribute ref="vendor"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="conitemType">
+		<xs:sequence>
+			<xs:element ref="conitemid"/>
+			<xs:element ref="conitemalt" maxOccurs="unbounded"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="conlistType">
+		<xs:sequence>
+			<xs:element ref="conitem" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="connectorsType">
+		<xs:sequence>
+			<xs:element ref="connector" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="connectorType">
+		<xs:sequence>
+			<xs:element ref="pnr"/>
+			<xs:element ref="altids" minOccurs="0"/>
+			<xs:element ref="mass" minOccurs="0"/>
+			<xs:element ref="orientation" minOccurs="0"/>
+			<xs:element ref="assyinstr" minOccurs="0"/>
+			<xs:element ref="rack" minOccurs="0"/>
+			<xs:element ref="ccount" minOccurs="0"/>
+			<xs:element ref="cdescs" minOccurs="0"/>
+			<xs:element ref="elogic" minOccurs="0"/>
+			<xs:element ref="acclist" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="consupplygrpType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="consupplyset"/>
+			<xs:element ref="consupply"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="consupplyidType">
+		<xs:attribute ref="consupplyref" use="required"/>
+		<xs:attribute ref="consupplyreftype" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="consupplyinfoType">
+		<xs:sequence>
+			<xs:element ref="consupplyid"/>
+			<xs:element ref="speclist" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="suplist"/>
+			<xs:element ref="hazd" minOccurs="0"/>
+			<xs:element ref="obsolete" minOccurs="0"/>
+			<xs:element ref="speciallbl" minOccurs="0"/>
+			<xs:element ref="nsn" minOccurs="0"/>
+			<xs:element ref="quantity" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="refs" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="consupplylistType">
+		<xs:sequence>
+			<xs:element ref="consupplyinfo" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="consupplysetType">
+		<xs:sequence>
+			<xs:element ref="consupply" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="consupplyType">
+		<xs:sequence>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="consupplyref" use="required"/>
+		<xs:attribute ref="consupplyreftype" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="contactaddrType">
+		<xs:sequence>
+			<xs:element ref="enterprise"/>
+			<xs:element ref="address" minOccurs="0"/>
+			<xs:element ref="contacttext" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="contactinfoType">
+		<xs:sequence>
+			<xs:element ref="contact" minOccurs="0"/>
+			<xs:element ref="wireconcode" minOccurs="0"/>
+			<xs:element ref="netanacode" minOccurs="0"/>
+			<xs:element ref="groupcode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="contacttextType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="contactType">
+		<xs:attribute ref="ident" use="required"/>
+		<xs:attribute ref="function"/>
+		<xs:attribute ref="ctype"/>
+		<xs:attribute ref="cconnect"/>
+		<xs:attribute ref="termpnr"/>
+		<xs:attribute ref="wexdir"/>
+	</xs:complexType>
+	<xs:complexType name="containerType">
+		<xs:sequence>
+			<xs:element ref="refs"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="contentType" id="contentType">
+		<xs:sequence>
+			<xs:element ref="refs" minOccurs="0"/>
+			<xs:choice>
+				<xs:element ref="descript"/>
+				<xs:element ref="process"/>
+				<xs:element ref="proced"/>
+				<xs:element ref="afr"/>
+				<xs:element ref="afi"/>
+				<xs:element ref="ipc"/>
+				<xs:element ref="schedule"/>
+				<xs:element ref="acrw"/>
+				<xs:element ref="wrngflds"/>
+				<xs:element ref="wrngdata"/>
+				<xs:element ref="brex"/>
+				<xs:element ref="techrep"/>
+				<xs:element ref="container"/>
+				<xs:element ref="pct"/>
+				<xs:element ref="cct"/>
+				<xs:element ref="act"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="contextrulesType">
+		<xs:sequence>
+			<xs:element ref="structrules" minOccurs="0"/>
+			<xs:element ref="notationrules" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="context"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="conType">
+		<xs:sequence>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="connbr" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="copyrightType">
+		<xs:sequence>
+			<xs:element ref="para" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="crewmemType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="crewmem" use="required"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="crewType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="crewmem" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="response" type="crewresponseType" default="all"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="csnrefType">
+		<xs:attribute ref="refcsn" use="required"/>
+		<xs:attribute ref="refisn"/>
+		<xs:attribute ref="refipp"/>
+		<xs:attribute ref="refrpc"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="xlink:XLINKATT2"/>
+	</xs:complexType>
+	<xs:complexType name="csnType">
+		<xs:sequence>
+			<xs:choice minOccurs="0">
+				<xs:element ref="ein" maxOccurs="unbounded"/>
+				<xs:element ref="accpnl" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:element ref="isn" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="csn"/>
+		<xs:attribute ref="ind" use="required"/>
+		<xs:attribute ref="item"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="ctlType">
+		<xs:attribute ref="refcsn" use="required"/>
+		<xs:attribute ref="refisn"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="xlink:XLINKATT2"/>
+	</xs:complexType>
+	<xs:complexType name="datacondType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="datarestType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="instruct"/>
+			<xs:element ref="inform" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="dataType">
+		<xs:attribute ref="from"/>
+		<xs:attribute ref="to"/>
+		<xs:attribute ref="uom"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="defaultType">
+		<xs:sequence>
+			<xs:element ref="expression"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="definspecType">
+		<xs:sequence>
+			<xs:element ref="inspection"/>
+			<xs:element ref="tasklist" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="deflistType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="term"/>
+				<xs:element ref="def"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="deftaskType">
+		<xs:sequence>
+			<xs:element ref="task"/>
+			<xs:element ref="reqsource" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="prelreqs" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="equip"/>
+				<xs:element ref="nomen"/>
+			</xs:choice>
+			<xs:element ref="supervis" minOccurs="0"/>
+			<xs:element ref="limit" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="remarks" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="taskid" use="required"/>
+		<xs:attribute ref="taskcode"/>
+		<xs:attribute ref="airworthlim"/>
+		<xs:attribute ref="reducem"/>
+		<xs:attribute ref="skill"/>
+		<xs:attribute ref="skilltype"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="defType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="para"/>
+				<xs:group ref="paracon" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="delruitemType">
+		<xs:sequence>
+			<xs:element ref="lru"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+			<xs:element ref="desruitem" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="probfac"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="descacrwType">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:sequence>
+				<xs:group ref="spcpara"/>
+				<xs:element ref="para0" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:group ref="FFT"/>
+		</xs:choice>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="describeType">
+		<xs:sequence>
+			<xs:element ref="fdesc" minOccurs="0"/>
+			<xs:element ref="detail-fdesc" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="descriptType">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:sequence>
+				<xs:element ref="para" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:group ref="spcpara"/>
+				<xs:element ref="para0" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:group ref="FFTC"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="descType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="desruitemType">
+		<xs:sequence>
+			<xs:element ref="sru"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="probfac"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="destructType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="detail-fdescType">
+		<xs:sequence>
+			<xs:element ref="page-loc" minOccurs="0"/>
+			<xs:element ref="sys-loc" minOccurs="0"/>
+			<xs:element ref="sys-name"/>
+			<xs:element ref="subsys-name" minOccurs="0"/>
+			<xs:element ref="sys-ident" minOccurs="0"/>
+			<xs:element ref="sys-pos" minOccurs="0"/>
+			<xs:element ref="fequipment" minOccurs="0"/>
+			<xs:element ref="findication" minOccurs="0"/>
+			<xs:element ref="fbasicdesc"/>
+			<xs:element ref="fcondition" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="detectType">
+		<xs:sequence>
+			<xs:element ref="delruitem"/>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="dfaultType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="describe"/>
+			<xs:element ref="detect" minOccurs="0"/>
+			<xs:element ref="disolate" minOccurs="0"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="id" use="required"/>
+		<xs:attribute ref="fcode" use="required"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="dflType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="dfpType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="diagnostType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element ref="reason"/>
+				<xs:element ref="repair"/>
+			</xs:sequence>
+			<xs:element ref="lrlruitem"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="dialog-altType">
+		<xs:sequence>
+			<xs:element ref="dialog" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="name"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="dialog-groupType">
+		<xs:sequence>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="fillin"/>
+				<xs:element ref="menu"/>
+				<xs:element ref="button"/>
+				<xs:element ref="message"/>
+				<xs:element ref="dialog-group"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attributeGroup ref="secur"/>
+		<xs:attribute ref="separator" default="0"/>
+	</xs:complexType>
+	<xs:complexType name="dialogType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="fillin"/>
+				<xs:element ref="menu"/>
+				<xs:element ref="button"/>
+				<xs:element ref="message"/>
+				<xs:element ref="dialog-group"/>
+			</xs:choice>
+			<xs:element ref="help.info" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="submit-caption"/>
+		<xs:attribute ref="cancel-caption"/>
+		<xs:attribute ref="reset-caption"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="discloseType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="disolateType">
+		<xs:choice>
+			<xs:element ref="afiref"/>
+			<xs:element ref="lruitem" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="displaytextType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="distribType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="dm-else-seqType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="dm-node"/>
+			<xs:element ref="dm-node-alt"/>
+			<xs:element ref="dm-if"/>
+			<xs:element ref="dm-loop"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="dm-ifType">
+		<xs:sequence>
+			<xs:element ref="expression"/>
+			<xs:element ref="dm-then-seq"/>
+			<xs:element ref="dm-else-seq" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="dm-loopType">
+		<xs:sequence>
+			<xs:element ref="preset" minOccurs="0"/>
+			<xs:element ref="expression"/>
+			<xs:element ref="dm-seq"/>
+			<xs:element ref="assertion" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="dm-node-altType">
+		<xs:sequence>
+			<xs:element ref="dm-node" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attribute ref="name"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="dm-nodeType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="preset" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice>
+				<xs:element ref="refdm"/>
+				<xs:group ref="STEP1" maxOccurs="unbounded"/>
+				<xs:group ref="DIALOG"/>
+				<xs:element ref="extapp"/>
+				<xs:element ref="dm-seq"/>
+			</xs:choice>
+			<xs:element ref="postset" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="dm-seqType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="dm-node"/>
+			<xs:element ref="dm-node-alt"/>
+			<xs:element ref="dm-if"/>
+			<xs:element ref="dm-loop"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="dm-then-seqType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="dm-node"/>
+			<xs:element ref="dm-node-alt"/>
+			<xs:element ref="dm-if"/>
+			<xs:element ref="dm-loop"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="dmaddresType">
+		<xs:sequence>
+			<xs:element ref="dmcextension" minOccurs="0"/>
+			<xs:element ref="dmc"/>
+			<xs:element ref="dmtitle"/>
+			<xs:element ref="issno"/>
+			<xs:element ref="issdate"/>
+			<xs:element ref="language" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dmcextensionType">
+		<xs:sequence>
+			<xs:element ref="dmeproducer"/>
+			<xs:element ref="dmecode"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dmcType">
+		<xs:group ref="ALLDMC"/>
+	</xs:complexType>
+	<xs:complexType name="dmoduleType">
+		<xs:sequence>
+			<xs:element ref="rdf:Description" minOccurs="0"/>
+			<xs:element ref="idstatus"/>
+			<xs:element ref="content"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="dmtitleType">
+		<xs:sequence>
+			<xs:element ref="techname"/>
+			<xs:element ref="infoname" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="docincorpType">
+		<xs:sequence>
+			<xs:element ref="refs" minOccurs="0"/>
+			<xs:element ref="ics" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="drillType">
+		<xs:sequence>
+			<xs:group ref="DRLINTRO"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="STEPS"/>
+				<xs:element ref="subdrill"/>
+			</xs:choice>
+			<xs:element ref="endmattr" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="drilltyp"/>
+		<xs:attribute ref="ordered" default="on"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="secur"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+	</xs:complexType>
+	<xs:complexType name="dsc.accdoplType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.accessoryType">
+		<xs:sequence>
+			<xs:element ref="dsc.pnr"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.mass" minOccurs="0"/>
+			<xs:element ref="dsc.orientation" minOccurs="0"/>
+			<xs:element ref="dsc.assy" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.accpnrType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.altpnrType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.amperageType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.assyType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.attenuationType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.blockType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.ccountType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.cdiaType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.circodeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.clcType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.coaxType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.colourType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.conduitType">
+		<xs:sequence>
+			<xs:element ref="dsc.pnr"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.size" minOccurs="0"/>
+			<xs:element ref="dsc.mass" minOccurs="0"/>
+			<xs:element ref="dsc.colour" minOccurs="0"/>
+			<xs:element ref="dsc.wallthk" minOccurs="0"/>
+			<xs:element ref="dsc.mint" minOccurs="0"/>
+			<xs:element ref="dsc.maxt" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.connectorType">
+		<xs:sequence>
+			<xs:element ref="dsc.pnr"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.mass" minOccurs="0"/>
+			<xs:element ref="dsc.orientation" minOccurs="0"/>
+			<xs:element ref="dsc.assy" minOccurs="0"/>
+			<xs:element ref="dsc.rack" minOccurs="0"/>
+			<xs:element ref="dsc.ccount" minOccurs="0"/>
+			<xs:element ref="dsc.contact" minOccurs="0"/>
+			<xs:element ref="dsc.cdia" minOccurs="0"/>
+			<xs:element ref="dsc.fin" minOccurs="0"/>
+			<xs:element ref="dsc.tplus" minOccurs="0"/>
+			<xs:element ref="dsc.tminus" minOccurs="0"/>
+			<xs:element ref="dsc.sterm" minOccurs="0"/>
+			<xs:element ref="dsc.coax" minOccurs="0"/>
+			<xs:element ref="dsc.triax" minOccurs="0"/>
+			<xs:element ref="dsc.module" minOccurs="0"/>
+			<xs:element ref="dsc.block" minOccurs="0"/>
+			<xs:element ref="dsc.shunt" minOccurs="0"/>
+			<xs:element ref="dsc.econtact" minOccurs="0"/>
+			<xs:element ref="dsc.statedes" minOccurs="0"/>
+			<xs:element ref="dsc.accpnr" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.contactType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.coreType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.csizeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.econtactType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.elecequipType">
+		<xs:sequence>
+			<xs:element ref="dsc.rfd"/>
+			<xs:element ref="dsc.pnr" minOccurs="0"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.instloc" minOccurs="0"/>
+			<xs:element ref="dsc.accdopl" minOccurs="0"/>
+			<xs:element ref="dsc.assy" minOccurs="0"/>
+			<xs:element ref="dsc.nhassy" minOccurs="0"/>
+			<xs:element ref="dsc.posnhassy" minOccurs="0"/>
+			<xs:element ref="dsc.maxposition" minOccurs="0"/>
+			<xs:element ref="dsc.sbc" minOccurs="0"/>
+			<xs:element ref="dsc.sibplugid" minOccurs="0"/>
+			<xs:element ref="dsc.trl" minOccurs="0"/>
+			<xs:element ref="dsc.clc" minOccurs="0"/>
+			<xs:element ref="dsc.econtact" minOccurs="0"/>
+			<xs:element ref="dsc.statedes" minOccurs="0"/>
+			<xs:element ref="dsc.rpc" minOccurs="0"/>
+			<xs:element ref="dsc.nomenc" minOccurs="0"/>
+			<xs:element ref="dsc.qty" minOccurs="0"/>
+			<xs:element ref="dsc.equdescref" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.emc-codeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.equdescrefType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.fdescrefType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.feedthruType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.finType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.freqType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.groupcodeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.harnenvType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.harnessType">
+		<xs:sequence>
+			<xs:element ref="dsc.harnid"/>
+			<xs:element ref="dsc.pnr" minOccurs="0"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.harnvar" minOccurs="0"/>
+			<xs:element ref="dsc.harnissue" minOccurs="0"/>
+			<xs:element ref="dsc.nomenc" minOccurs="0"/>
+			<xs:element ref="dsc.emc-code" minOccurs="0"/>
+			<xs:element ref="dsc.mint" minOccurs="0"/>
+			<xs:element ref="dsc.maxt" minOccurs="0"/>
+			<xs:element ref="dsc.harnenv" minOccurs="0"/>
+			<xs:element ref="dsc.sleeve" minOccurs="0"/>
+			<xs:element ref="dsc.routing" minOccurs="0"/>
+			<xs:element ref="dsc.feedthru" minOccurs="0"/>
+			<xs:element ref="dsc.rpc" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.harnidType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.harnissueType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.harnvarType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.ident-sleeveType">
+		<xs:sequence>
+			<xs:element ref="dsc.pnr"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.length" minOccurs="0"/>
+			<xs:element ref="dsc.mat" minOccurs="0"/>
+			<xs:element ref="dsc.mass" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.illrefType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.impedanceType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.instinfoType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.instlocType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.lengthType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.massType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.matType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.maxdType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.maxhType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.maxpositionType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.maxtType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.mfcType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.mindType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.minhType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.mintType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.moduleType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.netanacodeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.nhassyType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.nomencType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.orientationType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.outdiaType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.outjackcolType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.pnrType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.posnhassyType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.preType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.protectType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.qtyType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.rackType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.restrictionType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.resType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.rfdType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.routingType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.rpcType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.sbcType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.screencountType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.screenType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.secidType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.shrink-sleeveType">
+		<xs:sequence>
+			<xs:element ref="dsc.pnr"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.size" minOccurs="0"/>
+			<xs:element ref="dsc.mass" minOccurs="0"/>
+			<xs:element ref="dsc.colour" minOccurs="0"/>
+			<xs:element ref="dsc.mind" minOccurs="0"/>
+			<xs:element ref="dsc.maxd" minOccurs="0"/>
+			<xs:element ref="dsc.mint" minOccurs="0"/>
+			<xs:element ref="dsc.maxt" minOccurs="0"/>
+			<xs:element ref="dsc.minh" minOccurs="0"/>
+			<xs:element ref="dsc.maxh" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.shuntType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.sibplugidType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.signalType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.sizeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.sleeveType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.solder-sleeveType">
+		<xs:sequence>
+			<xs:element ref="dsc.pnr"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.length" minOccurs="0"/>
+			<xs:element ref="dsc.mat" minOccurs="0"/>
+			<xs:element ref="dsc.mass" minOccurs="0"/>
+			<xs:element ref="dsc.mind" minOccurs="0"/>
+			<xs:element ref="dsc.maxd" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.statedesType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.stdpartsType">
+		<xs:sequence>
+			<xs:element ref="dsc.connector" minOccurs="0"/>
+			<xs:element ref="dsc.vpart" minOccurs="0"/>
+			<xs:element ref="dsc.accessory" minOccurs="0"/>
+			<xs:element ref="dsc.solder-sleeve" minOccurs="0"/>
+			<xs:element ref="dsc.shrink-sleeve" minOccurs="0"/>
+			<xs:element ref="dsc.ident-sleeve" minOccurs="0"/>
+			<xs:element ref="dsc.conduit" minOccurs="0"/>
+			<xs:element ref="dsc.wire-mat" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.stermType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.tminusType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.tplusType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.triaxType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.trlType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.twistType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.voltageType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.vpartType">
+		<xs:sequence>
+			<xs:element ref="dsc.pnr"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.csize" minOccurs="0"/>
+			<xs:element ref="dsc.mat" minOccurs="0"/>
+			<xs:element ref="dsc.mass" minOccurs="0"/>
+			<xs:element ref="dsc.colour" minOccurs="0"/>
+			<xs:element ref="dsc.protect" minOccurs="0"/>
+			<xs:element ref="dsc.cdia" minOccurs="0"/>
+			<xs:element ref="dsc.mint" minOccurs="0"/>
+			<xs:element ref="dsc.maxt" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wallthkType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wicircodeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wire-matType">
+		<xs:sequence>
+			<xs:element ref="dsc.pnr"/>
+			<xs:element ref="dsc.altpnr" minOccurs="0"/>
+			<xs:element ref="dsc.mfc" minOccurs="0"/>
+			<xs:element ref="dsc.wiretype" minOccurs="0"/>
+			<xs:element ref="dsc.wiregauge" minOccurs="0"/>
+			<xs:element ref="dsc.core" minOccurs="0"/>
+			<xs:element ref="dsc.size" minOccurs="0"/>
+			<xs:element ref="dsc.mass" minOccurs="0"/>
+			<xs:element ref="dsc.colour" minOccurs="0"/>
+			<xs:element ref="dsc.outjackcol" minOccurs="0"/>
+			<xs:element ref="dsc.outdia" minOccurs="0"/>
+			<xs:element ref="dsc.res" minOccurs="0"/>
+			<xs:element ref="dsc.voltage" minOccurs="0"/>
+			<xs:element ref="dsc.amperage" minOccurs="0"/>
+			<xs:element ref="dsc.mint" minOccurs="0"/>
+			<xs:element ref="dsc.maxt" minOccurs="0"/>
+			<xs:element ref="dsc.screencount" minOccurs="0"/>
+			<xs:element ref="dsc.coax" minOccurs="0"/>
+			<xs:element ref="dsc.triax" minOccurs="0"/>
+			<xs:element ref="dsc.impedance" minOccurs="0"/>
+			<xs:element ref="dsc.freq" minOccurs="0"/>
+			<xs:element ref="dsc.attenuation" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wireconcodeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wiregaugeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wirenoType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wirerouteType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wireseqnoType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wiresType">
+		<xs:sequence>
+			<xs:element ref="dsc.circode" minOccurs="0"/>
+			<xs:element ref="dsc.wireno"/>
+			<xs:element ref="dsc.secid" minOccurs="0"/>
+			<xs:element ref="dsc.wiretype" minOccurs="0"/>
+			<xs:element ref="dsc.wiregauge" minOccurs="0"/>
+			<xs:element ref="dsc.pnr" minOccurs="0"/>
+			<xs:element ref="dsc.harnid" minOccurs="0"/>
+			<xs:element ref="dsc.wireseqno" minOccurs="0"/>
+			<xs:element ref="dsc.wicircode" minOccurs="0"/>
+			<xs:element ref="dsc.wisecid" minOccurs="0"/>
+			<xs:element ref="dsc.emc-code" minOccurs="0"/>
+			<xs:element ref="dsc.length" minOccurs="0"/>
+			<xs:element ref="dsc.colour" minOccurs="0"/>
+			<xs:element ref="dsc.twist" minOccurs="0"/>
+			<xs:element ref="dsc.coax" minOccurs="0"/>
+			<xs:element ref="dsc.triax" minOccurs="0"/>
+			<xs:element ref="dsc.signal" minOccurs="0"/>
+			<xs:element ref="dsc.rfd" minOccurs="0"/>
+			<xs:element ref="dsc.contact" minOccurs="0"/>
+			<xs:element ref="dsc.wireconcode" minOccurs="0"/>
+			<xs:element ref="dsc.netanacode" minOccurs="0"/>
+			<xs:element ref="dsc.groupcode" minOccurs="0"/>
+			<xs:element ref="dsc.screen" minOccurs="0"/>
+			<xs:element ref="dsc.pre" minOccurs="0"/>
+			<xs:element ref="dsc.fin" minOccurs="0"/>
+			<xs:element ref="dsc.rpc" minOccurs="0"/>
+			<xs:element ref="dsc.routing" minOccurs="0"/>
+			<xs:element ref="dsc.feedthru" minOccurs="0"/>
+			<xs:element ref="dsc.wireroute" minOccurs="0"/>
+			<xs:element ref="dsc.restriction" minOccurs="0"/>
+			<xs:element ref="dsc.nhassy" minOccurs="0"/>
+			<xs:element ref="dsc.fdescref" minOccurs="0"/>
+			<xs:element ref="dsc.illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wiretypeType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dsc.wisecidType">
+		<xs:sequence>
+			<xs:group ref="DSCDECL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ecstateType">
+		<xs:sequence>
+			<xs:element ref="eeconnection" maxOccurs="unbounded"/>
+			<xs:element ref="statedes" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="initstate"/>
+	</xs:complexType>
+	<xs:complexType name="eeconnectionType">
+		<xs:sequence>
+			<xs:element ref="contact" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="conntype"/>
+	</xs:complexType>
+	<xs:complexType name="efyType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="einaltType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:element ref="nature"/>
+			<xs:element ref="location" minOccurs="0"/>
+			<xs:element ref="accessfrom" minOccurs="0"/>
+			<xs:element ref="sns" minOccurs="0"/>
+			<xs:element ref="qty" minOccurs="0"/>
+			<xs:element ref="einref" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="altnbr"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="einidType">
+		<xs:attribute ref="einnbr" use="required"/>
+		<xs:attribute ref="eintype" use="required"/>
+		<xs:attribute ref="mfc"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="eininfoType">
+		<xs:sequence>
+			<xs:element ref="einid"/>
+			<xs:element ref="nomen"/>
+			<xs:element ref="sns" minOccurs="0"/>
+			<xs:element ref="einref" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="einalt" maxOccurs="unbounded"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="einlistType">
+		<xs:sequence>
+			<xs:element ref="eininfo" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="einrefType">
+		<xs:sequence>
+			<xs:element ref="ein" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="type" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="einType">
+		<xs:sequence>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="einnbr" use="required"/>
+		<xs:attribute ref="eintype"/>
+		<xs:attribute ref="mfc"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="elecequipsType">
+		<xs:sequence>
+			<xs:element ref="elecequip" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="elecequipType">
+			<xs:sequence>
+				<xs:element ref="rfd"/>
+				<xs:element ref="pnr" minOccurs="0"/>
+				<xs:element ref="altids" minOccurs="0"/>
+				<xs:element ref="assyinstr" minOccurs="0"/>
+				<xs:element ref="maxposition" minOccurs="0"/>
+				<xs:element ref="sbc" minOccurs="0"/>
+				<xs:element ref="trl" minOccurs="0"/>
+				<xs:element ref="clc" minOccurs="0"/>
+				<xs:element ref="elogic" minOccurs="0"/>
+				<xs:element ref="rpc" minOccurs="0"/>
+				<xs:element ref="nomenc" minOccurs="0"/>
+				<xs:element ref="qty" minOccurs="0"/>
+				<xs:element ref="instinfo" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="equdescref" minOccurs="0"/>
+				<xs:element ref="fdescref" minOccurs="0"/>
+				<xs:element ref="illref" minOccurs="0"/>
+				<xs:element ref="applic" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute ref="chginfo"/>
+			<xs:attribute ref="equipstate"/>
+			<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="elecpotentialType">
+		<xs:sequence>
+			<xs:element ref="module" minOccurs="0"/>
+			<xs:element ref="block" minOccurs="0"/>
+			<xs:element ref="shunt" minOccurs="0"/>
+			<xs:element ref="contactorder" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="elecpwrType">
+		<xs:attributeGroup ref="PMDATA_STAT_POW"/>
+	</xs:complexType>
+	<xs:complexType name="elogicType">
+		<xs:sequence>
+			<xs:element ref="ecstate" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="elseifType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="condit"/>
+			<xs:group ref="STEPS" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="emphasisType" mixed="true">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:group ref="text" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="emph"/>
+	</xs:complexType>
+	<xs:complexType name="enableType">
+		<xs:sequence>
+			<xs:element ref="expression"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="endmattrType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="para"/>
+				<xs:group ref="FFT"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="enterpriseType">
+		<xs:sequence>
+			<xs:element ref="ent-name"/>
+			<xs:element ref="division" minOccurs="0"/>
+			<xs:element ref="ent-unit" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="entfieldType">
+		<xs:attribute ref="refid" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="entryType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="para"/>
+				<xs:element ref="warning"/>
+				<xs:element ref="caution"/>
+				<xs:element ref="note"/>
+				<xs:element ref="legend"/>
+				<xs:group ref="paracon"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attribute ref="colname"/>
+		<xs:attribute ref="namest"/>
+		<xs:attribute ref="nameend"/>
+		<xs:attribute ref="spanname"/>
+		<xs:attribute ref="morerows" default="0"/>
+		<xs:attribute ref="colsep"/>
+		<xs:attribute ref="rowsep"/>
+		<xs:attribute ref="rotate" default="0"/>
+		<xs:attribute ref="valign" default="top"/>
+		<xs:attribute name="align" type="alignvalueType3"/>
+		<xs:attribute ref="charoff"/>
+		<xs:attribute ref="char"/>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="enumType">
+		<xs:attribute ref="actvalues" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="equdescrefType">
+		<xs:sequence>
+			<xs:element ref="refs"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="equipType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element ref="nomen"/>
+			<xs:element ref="nsn" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="identno"/>
+				<xs:element ref="csnref"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="esttimeType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="etopsType">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="evaluateType">
+		<xs:choice minOccurs="2" maxOccurs="unbounded">
+			<xs:element ref="evaluate"/>
+			<xs:element ref="assert"/>
+		</xs:choice>
+		<xs:attribute ref="operator" use="required"/>
+		<xs:attribute ref="displayclass"/>
+	</xs:complexType>
+	<xs:complexType name="expcontType">
+		<xs:sequence>
+			<xs:element ref="expstatement" maxOccurs="unbounded"/>
+			<xs:element ref="expregcode" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attribute ref="expregtype"/>
+		<xs:attribute ref="expgovauth"/>
+	</xs:complexType>
+	<xs:complexType name="expregcodeType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="expregcodetype"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="expressionType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element ref="expression"/>
+				<xs:choice>
+					<xs:element ref="eq"/>
+					<xs:element ref="ne"/>
+					<xs:element ref="lt"/>
+					<xs:element ref="gt"/>
+					<xs:element ref="le"/>
+					<xs:element ref="ge"/>
+					<xs:element ref="and"/>
+					<xs:element ref="or"/>
+					<xs:element ref="xor"/>
+					<xs:element ref="concat"/>
+					<xs:element ref="substring"/>
+					<xs:element ref="plus"/>
+					<xs:element ref="minus"/>
+					<xs:element ref="times"/>
+					<xs:element ref="divide"/>
+					<xs:element ref="idivide"/>
+					<xs:element ref="exponent"/>
+					<xs:element ref="modulus"/>
+					<xs:element ref="add"/>
+					<xs:element ref="remove"/>
+					<xs:element ref="union"/>
+					<xs:element ref="intersect"/>
+					<xs:element ref="set-diff"/>
+					<xs:element ref="member"/>
+					<xs:element ref="subset"/>
+					<xs:element ref="disjoint"/>
+				</xs:choice>
+				<xs:element ref="expression"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="not"/>
+					<xs:element ref="empty"/>
+					<xs:element ref="neg"/>
+					<xs:element ref="trunc"/>
+					<xs:element ref="float"/>
+					<xs:element ref="index"/>
+					<xs:element ref="defined"/>
+					<xs:element ref="sizeof"/>
+				</xs:choice>
+				<xs:element ref="expression"/>
+			</xs:sequence>
+			<xs:element ref="variable-ref"/>
+			<xs:choice>
+				<xs:element ref="boolean"/>
+				<xs:element ref="string"/>
+				<xs:element ref="real"/>
+				<xs:element ref="integer"/>
+				<xs:element ref="set"/>
+				<xs:element ref="novalue"/>
+			</xs:choice>
+		</xs:choice>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="print-form"/>
+	</xs:complexType>
+	<xs:complexType name="expstatementType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="p"/>
+			<xs:element ref="refdm"/>
+		</xs:choice>
+		<xs:attribute ref="exprole"/>
+	</xs:complexType>
+	<xs:complexType name="extappType">
+		<xs:sequence>
+			<xs:element ref="text"/>
+			<xs:element ref="send" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice>
+				<xs:element ref="receive" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="recbyname" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="recbypos" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="application" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="fastenerType">
+		<xs:sequence>
+			<xs:element ref="fsttype"/>
+			<xs:element ref="fstqty"/>
+		</xs:sequence>
+		<xs:attribute ref="hing"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="faultType">
+		<xs:attribute ref="fcode" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="fbasicdescType" mixed="true">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element ref="ein" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="fconditionType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="fcposnType">
+		<xs:attributeGroup ref="PMDATA_STAT_POW"/>
+	</xs:complexType>
+	<xs:complexType name="fdescrefType">
+		<xs:sequence>
+			<xs:element ref="refs"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fecType">
+		<xs:attribute ref="feccode" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="feedthruType">
+		<xs:sequence>
+			<xs:element ref="rfd"/>
+		</xs:sequence>
+		<xs:attribute ref="holeid"/>
+	</xs:complexType>
+	<xs:complexType name="fequipmentType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="figureType">
+		<xs:sequence>
+			<xs:group ref="titles"/>
+			<xs:element ref="graphic" maxOccurs="unbounded"/>
+			<xs:element ref="legend" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="fillinType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="enable" minOccurs="0"/>
+			<xs:element ref="prompt"/>
+			<xs:element ref="variable-ref"/>
+			<xs:element ref="default" minOccurs="0"/>
+			<xs:element ref="validate" minOccurs="0"/>
+			<xs:element ref="button" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="mandatory" default="1"/>
+		<xs:attribute ref="fieldsize" default="20"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="findicationType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="finType">
+		<xs:sequence>
+			<xs:group ref="CM.PREFIN"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="firstverType">
+		<xs:attribute name="type" type="firstvertypeType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="foldoutType">
+		<xs:choice>
+			<xs:element ref="figure"/>
+			<xs:element ref="table"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="frcType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:sequence>
+				<xs:element ref="title" minOccurs="0"/>
+				<xs:group ref="spcpara" minOccurs="0"/>
+				<xs:element ref="para" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="drill" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:group ref="FFT" minOccurs="0"/>
+		</xs:choice>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="freqattType">
+		<xs:sequence>
+			<xs:element ref="freq"/>
+			<xs:element ref="attenuation"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="freqcharType">
+		<xs:sequence>
+			<xs:element ref="impedance"/>
+			<xs:element ref="freqatt" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="freqType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="fromequipType">
+		<xs:sequence>
+			<xs:group ref="CM.EQUIPMENT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fromType">
+		<xs:sequence>
+			<xs:element ref="threshold"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fstqtyType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="fsttypeType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="ftcType">
+		<xs:attribute name="value" type="ftcvalueType" use="required"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="ftnoteType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="para" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="ftnmark" default="num"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="ftnrefType">
+		<xs:attribute ref="xrefid"/>
+	</xs:complexType>
+	<xs:complexType name="fuelType">
+		<xs:attributeGroup ref="PMDATA_STAT_POW"/>
+	</xs:complexType>
+	<xs:complexType name="gemType">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="graphicType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="hotspot" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="rfa" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attribute ref="boardno" use="required"/>
+		<xs:attribute ref="reprowid"/>
+		<xs:attribute ref="reprohgt"/>
+		<xs:attribute ref="reproscl"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+		<xs:attributeGroup ref="xlink:XLINKATT0"/>
+	</xs:complexType>
+	<xs:complexType name="handlingType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="harnenvType">
+		<xs:attribute ref="highvibration"/>
+		<xs:attribute ref="hydraulic"/>
+	</xs:complexType>
+	<xs:complexType name="harnessesType">
+		<xs:sequence>
+			<xs:element ref="harness" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="harnessType">
+		<xs:sequence>
+			<xs:element ref="harnid"/>
+			<xs:element ref="harninfo" minOccurs="0"/>
+			<xs:element ref="routing" minOccurs="0"/>
+			<xs:element ref="rpc" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="chginfo"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="harnidType" mixed="true">
+		<xs:attributeGroup ref="VENDORINFO"/>
+	</xs:complexType>
+	<xs:complexType name="harninfoType">
+		<xs:sequence>
+			<xs:element ref="pnr" minOccurs="0"/>
+			<xs:element ref="altids" minOccurs="0"/>
+			<xs:element ref="harnvar" minOccurs="0"/>
+			<xs:element ref="harnissue" minOccurs="0"/>
+			<xs:element ref="nomenc" minOccurs="0"/>
+			<xs:element ref="emc-code" minOccurs="0"/>
+			<xs:element ref="temp" minOccurs="0"/>
+			<xs:element ref="harnenv" minOccurs="0"/>
+			<xs:element ref="sleeves" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="harnsizeType">
+		<xs:sequence>
+			<xs:element ref="minh" minOccurs="0"/>
+			<xs:element ref="maxh" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="hazdType">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="hotspotType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="hotspot"/>
+				<xs:element ref="xref"/>
+				<xs:element ref="refdm"/>
+				<xs:element ref="csnref"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="apsid"/>
+		<xs:attribute ref="apsname"/>
+		<xs:attribute ref="type"/>
+		<xs:attribute ref="title"/>
+		<xs:attribute ref="descript"/>
+		<xs:attribute ref="coords"/>
+		<xs:attribute ref="visibility" default="visible"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="hydpwrType">
+		<xs:attributeGroup ref="PMDATA_STAT_POW"/>
+	</xs:complexType>
+	<xs:complexType name="icsType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="incorpstatus" use="required"/>
+		<xs:attribute ref="year"/>
+		<xs:attribute ref="month"/>
+		<xs:attribute ref="day"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="ictType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="icyType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="ident-sleevesType">
+		<xs:sequence>
+			<xs:element ref="ident-sleeve" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ident-sleeveType">
+		<xs:sequence>
+			<xs:element ref="pnr"/>
+			<xs:element ref="altids" minOccurs="0"/>
+			<xs:element ref="length" minOccurs="0"/>
+			<xs:element ref="mat" minOccurs="0"/>
+			<xs:element ref="mass" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="identnoType">
+		<xs:sequence>
+			<xs:element ref="mfc"/>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="pnr"/>
+				<xs:element ref="serialno" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="idstatusType">
+		<xs:sequence>
+			<xs:element ref="dmaddres"/>
+			<xs:element ref="status"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ifaultType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="describe"/>
+			<xs:element ref="detect" minOccurs="0"/>
+			<xs:element ref="locandrep"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="id" use="required"/>
+		<xs:attribute ref="fcode" use="required"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="ifType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="condit"/>
+			<xs:group ref="STEPS" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="illrefType">
+		<xs:sequence>
+			<xs:element ref="refs"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ilsType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="impedanceType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="incorplistType">
+		<xs:sequence>
+			<xs:element ref="docincorp" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="incorporationType">
+		<xs:sequence>
+			<xs:element ref="techcondition" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="indexType">
+		<xs:sequence maxOccurs="2">
+			<xs:element ref="index-value"/>
+			<xs:element ref="index-len" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="indxflagType">
+		<xs:attribute ref="ref1"/>
+		<xs:attribute ref="ref2"/>
+		<xs:attribute ref="ref3"/>
+		<xs:attribute ref="ref4"/>
+	</xs:complexType>
+	<xs:complexType name="informType">
+		<xs:sequence>
+			<xs:element ref="copyright"/>
+			<xs:element ref="polref" minOccurs="0"/>
+			<xs:element ref="datacond" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="initializeType">
+		<xs:sequence>
+			<xs:element ref="expression"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="inlineType">
+		<xs:sequence>
+			<xs:element ref="exmod" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="addmod" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="inspectionType">
+		<xs:sequence>
+			<xs:element ref="limit" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="remarks" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="instinfoType">
+		<xs:sequence>
+			<xs:element ref="instloc" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="sibplugid" minOccurs="0"/>
+			<xs:element ref="accdopl" minOccurs="0"/>
+			<xs:element ref="nhassy" minOccurs="0"/>
+			<xs:element ref="posnhassy" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="instid"/>
+	</xs:complexType>
+	<xs:complexType name="instlocType" mixed="true">
+		<xs:attribute ref="uom"/>
+		<xs:attribute ref="instloctyp"/>
+	</xs:complexType>
+	<xs:complexType name="instructType">
+		<xs:sequence>
+			<xs:element ref="distrib"/>
+			<xs:element ref="expcont" minOccurs="0"/>
+			<xs:element ref="handling" minOccurs="0"/>
+			<xs:element ref="destruct" minOccurs="0"/>
+			<xs:element ref="disclose" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="ipcType">
+		<xs:sequence>
+			<xs:element ref="figure" minOccurs="0"/>
+			<xs:element ref="multimedia" minOccurs="0"/>
+			<xs:element ref="ipp" minOccurs="0"/>
+			<xs:element ref="zones" minOccurs="0"/>
+			<xs:element ref="csn" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ipprefType">
+		<xs:attribute ref="refipp" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="ippType">
+		<xs:sequence>
+			<xs:element ref="vas" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="ippn" use="required"/>
+		<xs:attribute ref="ips" use="required"/>
+		<xs:attribute ref="fid"/>
+		<xs:attribute ref="lge"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="isnType">
+		<xs:sequence>
+			<xs:element ref="rfs" minOccurs="0"/>
+			<xs:element ref="qna"/>
+			<xs:element ref="mfc"/>
+			<xs:element ref="pnr"/>
+			<xs:element ref="pas" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="nsn" minOccurs="0"/>
+			<xs:element ref="cbs" minOccurs="0"/>
+			<xs:element ref="ccs" minOccurs="0"/>
+			<xs:element ref="ctl" minOccurs="0"/>
+			<xs:choice>
+				<xs:element ref="applics"/>
+				<xs:element ref="ces" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:element ref="rfd" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ils" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="can" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="n2d" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="isn" use="required"/>
+		<xs:attribute ref="refapplics"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="isoendType">
+		<xs:sequence>
+			<xs:group ref="ISOSTPH"/>
+			<xs:group ref="ISOSTPA" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attribute ref="id" use="required"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="isolatepType">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="isostep"/>
+				<xs:element ref="isoend"/>
+				<xs:group ref="FFT"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="isolateType">
+		<xs:choice>
+			<xs:element ref="afiref"/>
+			<xs:element ref="diagnost"/>
+			<xs:element ref="lruitem" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="isoprocType">
+		<xs:sequence>
+			<xs:element ref="prelreqs"/>
+			<xs:element ref="isolatep"/>
+			<xs:element ref="closetxt" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="isostepType">
+		<xs:sequence>
+			<xs:group ref="ISOSTPH"/>
+			<xs:sequence minOccurs="0">
+				<xs:group ref="ISOSTPA" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="question"/>
+				<xs:element ref="answer"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attribute ref="id" use="required"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="issdateType">
+		<xs:attributeGroup ref="DATE"/>
+	</xs:complexType>
+	<xs:complexType name="issnoType">
+		<xs:attribute name="issno" type="issnovalueType" use="required"/>
+		<xs:attribute ref="inwork"/>
+		<xs:attribute name="type" type="issnotypeType" default="new"/>
+	</xs:complexType>
+	<xs:complexType name="itemType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="note"/>
+				<xs:element ref="para"/>
+				<xs:group ref="paracon" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="jackedType">
+		<xs:attributeGroup ref="PMDATA_STAT_POW"/>
+	</xs:complexType>
+	<xs:complexType name="kwdType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="languageType">
+		<xs:attribute name="language" type="languagetypeType" use="required"/>
+		<xs:attribute ref="country"/>
+	</xs:complexType>
+	<xs:complexType name="legendType">
+		<xs:sequence>
+			<xs:element ref="deflist"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="lengthType" mixed="true">
+		<xs:attribute ref="uom"/>
+		<xs:attribute ref="wirelngtyp"/>
+	</xs:complexType>
+	<xs:complexType name="lfmType">
+		<xs:sequence>
+			<xs:element ref="part" maxOccurs="unbounded"/>
+			<xs:element ref="quantity" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="limitType">
+		<xs:sequence>
+			<xs:element ref="sampling" minOccurs="0"/>
+			<xs:element ref="threshold" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="refinspec" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="trigger" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="limrange" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="remarks" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="typex" default="pe"/>
+		<xs:attribute ref="condition"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="limittypeType">
+		<xs:sequence>
+			<xs:element ref="threshold" maxOccurs="unbounded"/>
+			<xs:element ref="remarks" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="type" type="TYPES"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="limrangeType">
+		<xs:sequence>
+			<xs:element ref="from"/>
+			<xs:element ref="to" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="locandrepType">
+		<xs:sequence>
+			<xs:element ref="lrlruitem"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="locationType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="zone"/>
+			<xs:sequence>
+				<xs:element ref="accpnl"/>
+				<xs:element ref="quantity" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="lrlruitemType">
+		<xs:sequence>
+			<xs:element ref="lru"/>
+			<xs:element ref="repair" minOccurs="0"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+			<xs:element ref="lrsruitem" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="probfac" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="lrsruitemType">
+		<xs:sequence>
+			<xs:element ref="sru"/>
+			<xs:element ref="repair" minOccurs="0"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="probfac" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="lruitemType">
+		<xs:sequence>
+			<xs:element ref="lru"/>
+			<xs:element ref="test" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="repair" minOccurs="0"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+			<xs:element ref="sruitem" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="probfac"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="lruType">
+		<xs:sequence>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:element ref="nsn" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="identno"/>
+				<xs:element ref="csnref"/>
+				<xs:element ref="ein"/>
+			</xs:choice>
+			<xs:element ref="abbrev" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="mainfuncType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="step1"/>
+			<xs:group ref="FFT"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+	</xs:complexType>
+	<xs:complexType name="massType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="maxdType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="maxhType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="maxtType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="menuchoiceType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="enable" minOccurs="0"/>
+			<xs:element ref="prompt"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="extapp"/>
+				<xs:element ref="dialog"/>
+				<xs:element ref="button" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:choice>
+				<xs:element ref="assertion" maxOccurs="unbounded"/>
+				<xs:element ref="noassertions"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="default" default="0"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="menuType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="enable" minOccurs="0"/>
+			<xs:element ref="prompt" minOccurs="0"/>
+			<xs:element ref="menuchoice" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="select" default="single"/>
+		<xs:attribute ref="choicetype" use="required"/>
+		<xs:attribute ref="flow" default="list"/>
+		<xs:attribute ref="mandatory" default="1"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="message-altType">
+		<xs:sequence>
+			<xs:element ref="message" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="name"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="messageType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:element ref="prompt" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="submit-caption"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="mfcType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="mfmType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="mindType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="minhType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="mintType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="modType">
+		<xs:sequence>
+			<xs:element ref="modtitle" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="authno" use="required"/>
+		<xs:attribute ref="modtype" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="monitoredType">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="movType">
+		<xs:sequence>
+			<xs:element ref="efy" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="mov" use="required"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="msg-wmlf-descType">
+		<xs:sequence>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="wmlfdesc" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="wmlf2desc" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:element ref="msgdesc" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="multimediaobjectType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="param" minOccurs="0"/>
+			<xs:element ref="rfa" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="autoplay"/>
+		<xs:attribute ref="fullscrn"/>
+		<xs:attribute ref="boardno" use="required"/>
+		<xs:attribute ref="multimediaclass" use="required"/>
+		<xs:attribute ref="controls"/>
+		<xs:attribute ref="duration"/>
+		<xs:attribute ref="width"/>
+		<xs:attribute ref="height"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+		<xs:attributeGroup ref="xlink:XLINKATT0"/>
+	</xs:complexType>
+	<xs:complexType name="multimediaType">
+		<xs:sequence>
+			<xs:group ref="titles" minOccurs="0"/>
+			<xs:element ref="multimediaobject" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="n2ddataType">
+		<xs:sequence>
+			<xs:element ref="n2dvalue"/>
+		</xs:sequence>
+		<xs:attribute ref="n2did" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="n2dType">
+		<xs:sequence>
+			<xs:element ref="n2ddata" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="natureType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="nhassyType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="rfd"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="nilType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="noassertionsType"/>
+	<xs:complexType name="nocondsType"/>
+	<xs:complexType name="nomdataType">
+		<xs:sequence>
+			<xs:element ref="nomen"/>
+			<xs:element ref="kwd" minOccurs="0"/>
+			<xs:element ref="opn" minOccurs="0"/>
+			<xs:element ref="stocknbr" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="nsn" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="nomenType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="nosafetyType"/>
+	<xs:complexType name="nosparesType"/>
+	<xs:complexType name="nosupeqType"/>
+	<xs:complexType name="nosupplyType"/>
+	<xs:complexType name="notationrulesType">
+		<xs:sequence>
+			<xs:element ref="notrule" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="noteType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="symbol"/>
+				<xs:element ref="para"/>
+				<xs:group ref="list"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attribute ref="xrefid"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="notnameType" mixed="true">
+		<xs:attribute ref="notappl"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="notruleType">
+		<xs:sequence>
+			<xs:element ref="notname"/>
+			<xs:element ref="objuse" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="noType">
+		<xs:attribute ref="refid" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="nsnType">
+		<xs:attribute ref="nsn"/>
+		<xs:attribute ref="nsc"/>
+		<xs:attribute ref="ncb"/>
+		<xs:attribute ref="nin3to9"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="objpathType" mixed="true">
+		<xs:attribute ref="objappl"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="objruleType">
+		<xs:sequence>
+			<xs:element ref="objpath"/>
+			<xs:element ref="objuse" minOccurs="0"/>
+			<xs:element ref="objval" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="objuseType" mixed="true">
+		<xs:sequence>
+			<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="objvalType" mixed="true">
+		<xs:sequence>
+			<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="valtype"/>
+		<xs:attribute ref="val1"/>
+		<xs:attribute ref="val2"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="obsoleteType">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="ofaultType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="describe"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="fcontext" minOccurs="0"/>
+				<xs:element ref="isolate"/>
+			</xs:sequence>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="id" use="required"/>
+		<xs:attribute ref="fcode"/>
+		<xs:attribute ref="ftype"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="openhourType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="operation"/>
+	<xs:complexType name="operationType"/>
+	<xs:complexType name="opndurnType">
+		<xs:attribute ref="prelreqs" use="required"/>
+		<xs:attribute ref="proced" use="required"/>
+		<xs:attribute ref="closeup" use="required"/>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="opnType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="optType">
+		<xs:sequence>
+			<xs:element ref="part" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="organizationidType">
+		<xs:attribute ref="mfc" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="organizationinfoType">
+		<xs:sequence>
+			<xs:element ref="organizationid"/>
+			<xs:element ref="contactaddr" maxOccurs="unbounded"/>
+			<xs:element ref="organizationref" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="organizationlistType">
+		<xs:sequence>
+			<xs:element ref="organizationinfo" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="organizationrefType">
+		<xs:sequence>
+			<xs:element ref="refdm" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="type" use="required"/>
+		<xs:attribute ref="mfc" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="origType" mixed="true">
+		<xs:attribute ref="origname"/>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="oscType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="othersType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="outdiaType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="packagingType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="page-locType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="para0Type">
+		<xs:sequence>
+			<xs:group ref="nparcon" minOccurs="0"/>
+			<xs:element ref="subpara1" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="paramType">
+		<xs:attribute ref="id" use="required"/>
+		<xs:attribute ref="paramid"/>
+		<xs:attribute ref="paramvalue"/>
+		<xs:attribute ref="paramname"/>
+	</xs:complexType>
+	<xs:complexType name="parasigdataType" mixed="true">
+		<xs:attribute ref="psdtype" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="paraType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:group ref="paracon" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="partidType">
+		<xs:attribute ref="pnr" use="required"/>
+		<xs:attribute ref="mfc" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="partinfoType">
+		<xs:sequence>
+			<xs:element ref="partid"/>
+			<xs:element ref="nomdata"/>
+			<xs:element ref="procdata" minOccurs="0"/>
+			<xs:element ref="techdata" minOccurs="0"/>
+			<xs:element ref="partref" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="partlistType">
+		<xs:sequence>
+			<xs:element ref="partinfo" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="partrefType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="rplby" minOccurs="0"/>
+			<xs:element ref="opt" minOccurs="0"/>
+			<xs:element ref="psp" minOccurs="0"/>
+			<xs:element ref="apn" minOccurs="0"/>
+			<xs:element ref="lfm" minOccurs="0"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="partType">
+		<xs:sequence>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="pnr" use="required"/>
+		<xs:attribute ref="mfc" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="pasType">
+		<xs:sequence>
+			<xs:element ref="dfp"/>
+			<xs:element ref="uoi" minOccurs="0"/>
+			<xs:element ref="pcs" minOccurs="0"/>
+			<xs:element ref="str" minOccurs="0"/>
+			<xs:element ref="ftc" minOccurs="0"/>
+			<xs:element ref="psc" minOccurs="0"/>
+			<xs:element ref="cmk" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="pcsType">
+		<xs:sequence>
+			<xs:element ref="qui" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="uom" use="required"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="pctType">
+		<xs:sequence>
+			<xs:element ref="product" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="pctrefType">
+		<xs:sequence>
+			<xs:element ref="refdm"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="perscatType">
+		<xs:attribute ref="category" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="perskillType">
+		<xs:attribute ref="skill" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="personType">
+		<xs:attribute ref="man" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="pmcType">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="pmissuer"/>
+			<xs:element ref="pmnumber"/>
+			<xs:element ref="pmvolume"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="pmdType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="thi" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="zone" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="accpnl" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="avehcfg" minOccurs="0"/>
+			<xs:element ref="opndurn" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="pnrType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="polrefType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="posnhassyType" mixed="true">
+		<xs:attribute ref="pos"/>
+		<xs:attribute ref="row"/>
+		<xs:attribute ref="col"/>
+	</xs:complexType>
+	<xs:complexType name="postsetType">
+		<xs:sequence>
+			<xs:element ref="assertion"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="prelreqsType">
+		<xs:sequence>
+			<xs:element ref="pmd" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="reqconds"/>
+			<xs:element ref="reqpers" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="supequip"/>
+			<xs:element ref="supplies"/>
+			<xs:element ref="spares"/>
+			<xs:element ref="safety"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presetType">
+		<xs:sequence>
+			<xs:element ref="assertion"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="preType">
+		<xs:sequence>
+			<xs:group ref="CM.PREFIN"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="procdataType">
+		<xs:sequence>
+			<xs:element ref="spl" minOccurs="0"/>
+			<xs:element ref="osc" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="bfe" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="procdType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="para"/>
+				<xs:group ref="FFT"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="procedType">
+		<xs:sequence>
+			<xs:element ref="prelreqs"/>
+			<xs:element ref="mainfunc"/>
+			<xs:element ref="closereqs"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processType">
+		<xs:sequence>
+			<xs:element ref="variable-declarations" minOccurs="0"/>
+			<xs:element ref="prelreqs" minOccurs="0"/>
+			<xs:element ref="dm-seq"/>
+			<xs:element ref="closereqs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="prodattrType">
+		<xs:sequence>
+			<xs:element ref="name"/>
+			<xs:element ref="displayname" minOccurs="0"/>
+			<xs:element ref="description"/>
+			<xs:element ref="enum" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="id" use="required"/>
+		<xs:attribute ref="pattern"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="productType">
+		<xs:sequence>
+			<xs:element ref="assign" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="id" use="optional"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="productattributesType">
+		<xs:sequence>
+			<xs:element ref="prodattr" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="promptType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="text"/>
+			<xs:element ref="emphasis"/>
+			<xs:element ref="symbol"/>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+			<xs:element ref="variable-ref"/>
+		</xs:choice>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="position"/>
+	</xs:complexType>
+	<xs:complexType name="provisionedType">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="pscType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="pspType">
+		<xs:sequence>
+			<xs:element ref="part" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="pType" mixed="true">
+		<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="pubcodeType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="pmc" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="pubcodsy"/>
+	</xs:complexType>
+	<xs:complexType name="pubdateType">
+		<xs:attributeGroup ref="DATE"/>
+	</xs:complexType>
+	<xs:complexType name="qaType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice>
+				<xs:element ref="unverif"/>
+				<xs:sequence>
+					<xs:element ref="firstver"/>
+					<xs:element ref="secver" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="qnaType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="qtygrpType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element ref="qtyvalue" maxOccurs="unbounded"/>
+				<xs:element ref="qtytolerance" minOccurs="0" maxOccurs="2"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element ref="qtytolerance" maxOccurs="2"/>
+			</xs:sequence>
+		</xs:choice>
+		<xs:attribute ref="qtygrptype"/>
+		<xs:attribute ref="qtyuom"/>
+	</xs:complexType>
+	<xs:complexType name="qtytoleranceType">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute ref="qtytoltype"/>
+				<xs:attribute ref="qtyuom"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="qtyType" mixed="true">
+		<xs:attribute ref="uom"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="qtyvalueType">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute ref="qtyuom"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="quantityType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="qtygrp" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="qtytype"/>
+	</xs:complexType>
+	<xs:complexType name="randlistType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:element ref="item" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="prefix"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="rangeType">
+		<xs:attribute ref="from" use="required"/>
+		<xs:attribute ref="to" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="rcmdqtyType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="recbynameType">
+		<xs:sequence>
+			<xs:element ref="recname"/>
+			<xs:element ref="variable-ref"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="recbyposType">
+		<xs:sequence>
+			<xs:element ref="recposition"/>
+			<xs:element ref="variable-ref"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="receiveType">
+		<xs:sequence>
+			<xs:element ref="variable-ref"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="recommendationType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="refdmType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element ref="applic" minOccurs="0"/>
+				<xs:element ref="dmcextension" minOccurs="0"/>
+				<xs:group ref="ALLDMC"/>
+				<xs:element ref="issno" minOccurs="0"/>
+				<xs:element ref="dmtitle" minOccurs="0"/>
+				<xs:element ref="language" minOccurs="0"/>
+			</xs:sequence>
+			<xs:group ref="xlink:XLINKEXT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+		<xs:attribute ref="target"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="xlink:XLINKATT"/>
+	</xs:complexType>
+	<xs:complexType name="refinspecType">
+		<xs:attribute ref="insptype" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="refsType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element ref="refdm" maxOccurs="unbounded"/>
+				<xs:element ref="reftp" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:element ref="reftp" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="reftpType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice>
+				<xs:group ref="TEXT-NOREFS" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:group ref="PUBREF"/>
+			</xs:choice>
+			<xs:group ref="xlink:XLINKEXT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="xlink:XLINKATT4"/>
+	</xs:complexType>
+	<xs:complexType name="remarksType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="remarkType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="repairType">
+		<xs:sequence>
+			<xs:element ref="refs"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="reqcblstType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:sequence>
+				<xs:element ref="reqcond"/>
+				<xs:element ref="cblst"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="reqcondmType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="reqcond"/>
+				<xs:element ref="refdm"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="reqcondsType">
+		<xs:choice>
+			<xs:element ref="noconds"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="reqcond"/>
+				<xs:element ref="reqcondm"/>
+				<xs:element ref="reqcblst"/>
+				<xs:element ref="reqcontp"/>
+			</xs:choice>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="reqcondType" mixed="true">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:group ref="TEXT-NOREFS" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="reqcontpType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="reqcond"/>
+				<xs:element ref="reftp"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="reqpersType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:choice>
+					<xs:element ref="asrequir"/>
+					<xs:element ref="person"/>
+				</xs:choice>
+				<xs:sequence minOccurs="0">
+					<xs:element ref="perscat"/>
+					<xs:element ref="perskill" minOccurs="0"/>
+					<xs:element ref="trade" minOccurs="0"/>
+					<xs:element ref="esttime" minOccurs="0"/>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="reqsourceType">
+		<xs:sequence>
+			<xs:element ref="issno" minOccurs="0"/>
+			<xs:element ref="issdate" minOccurs="0"/>
+			<xs:element ref="fec" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="reqsource" type="xs:string" use="required"/>
+		<xs:attribute name="sourcenbr" type="xs:string"/>
+		<xs:attribute name="approval" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="responseType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="para"/>
+				<xs:group ref="FFT"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="resType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="retrofitType">
+		<xs:sequence>
+			<xs:element ref="mod" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rfaType" mixed="true">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:group ref="text" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="rfdType" mixed="true">
+		<xs:attribute ref="instid"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="VENDORINFO"/>
+	</xs:complexType>
+	<xs:complexType name="rfsType">
+		<xs:attribute name="value" type="rfsvalueType" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="rfuType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="routingType">
+		<xs:sequence>
+			<xs:element ref="clipid" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="feedthru" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rowType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="entry"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attribute ref="rowsep"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="rpcType" mixed="true">
+		<xs:attribute ref="rpcname"/>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="rplbyType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="part"/>
+			<xs:element ref="ein" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ict" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="inc" use="required"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="rtxType">
+		<xs:choice>
+			<xs:element ref="ippref" maxOccurs="unbounded"/>
+			<xs:element ref="csnref" maxOccurs="unbounded"/>
+		</xs:choice>
+		<xs:attribute ref="reftype"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="safecondType">
+		<xs:group ref="spcpara"/>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="safedevType">
+		<xs:attributeGroup ref="PMDATA_STAT_POW"/>
+	</xs:complexType>
+	<xs:complexType name="safetyType">
+		<xs:choice>
+			<xs:element ref="nosafety"/>
+			<xs:element ref="safecond"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="sbcType" mixed="true">
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="scheduleType">
+		<xs:choice>
+			<xs:element ref="definspec" maxOccurs="unbounded"/>
+			<xs:element ref="deftask" maxOccurs="unbounded"/>
+			<xs:element ref="timelim" maxOccurs="unbounded"/>
+		</xs:choice>
+		<xs:attribute name="type" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="screensType">
+		<xs:sequence>
+			<xs:element ref="screen" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="screenType" mixed="true">
+		<xs:attribute ref="scrlevel"/>
+		<xs:attribute ref="scrtype"/>
+		<xs:attribute ref="scrstyle"/>
+	</xs:complexType>
+	<xs:complexType name="sdiaType">
+		<xs:sequence>
+			<xs:element ref="mind" minOccurs="0"/>
+			<xs:element ref="maxd" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="securityType">
+		<xs:attributeGroup ref="SECURIT"/>
+	</xs:complexType>
+	<xs:complexType name="secverType">
+		<xs:attribute name="type" type="secvertypeType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="sel-listType">
+		<xs:sequence>
+			<xs:element ref="choice" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sendType">
+		<xs:sequence>
+			<xs:element ref="sendname" minOccurs="0"/>
+			<xs:choice>
+				<xs:element ref="variable-ref"/>
+				<xs:element ref="string"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="seqlistType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:element ref="item" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="serialnoType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="single"/>
+			<xs:element ref="range"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="setType">
+		<xs:choice>
+			<xs:element ref="string" maxOccurs="unbounded"/>
+			<xs:element ref="real" maxOccurs="unbounded"/>
+			<xs:element ref="integer" maxOccurs="unbounded"/>
+			<xs:element ref="novalue"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="shelflifeType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="shippinginfoType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="packaging"/>
+			<xs:element ref="transport"/>
+			<xs:element ref="shelflife"/>
+			<xs:element ref="remark"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>		
+	</xs:complexType>
+	<xs:complexType name="shrink-sleevesType">
+		<xs:sequence>
+			<xs:element ref="shrink-sleeve" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="shrink-sleeveType">
+		<xs:sequence>
+			<xs:element ref="pnr"/>
+			<xs:element ref="altids" minOccurs="0"/>
+			<xs:element ref="size" minOccurs="0"/>
+			<xs:element ref="mass" minOccurs="0"/>
+			<xs:element ref="colour" minOccurs="0"/>
+			<xs:element ref="sdia" minOccurs="0"/>
+			<xs:element ref="temp" minOccurs="0"/>
+			<xs:element ref="harnsize" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="sibplugidType">
+		<xs:sequence>
+			<xs:element ref="rfd"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sideType">
+		<xs:attribute ref="hand" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="sidType">
+		<xs:sequence>
+			<xs:element ref="mfc"/>
+			<xs:element ref="pnr"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sizeType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="sleeveType">
+		<xs:sequence>
+			<xs:element ref="pnr" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="sleevemat"/>
+	</xs:complexType>
+	<xs:complexType name="sleevesType">
+		<xs:sequence>
+			<xs:element ref="sleeve" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="skillType">
+		<xs:attribute ref="skill" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="smfType">
+		<xs:sequence>
+			<xs:element ref="mfm" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="value" type="smfvalueType" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="smrType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="snsType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="solder-sleevesType">
+		<xs:sequence>
+			<xs:element ref="solder-sleeve" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="solder-sleeveType">
+		<xs:sequence>
+			<xs:element ref="pnr"/>
+			<xs:element ref="altids" minOccurs="0"/>
+			<xs:element ref="length" minOccurs="0"/>
+			<xs:element ref="mat" minOccurs="0"/>
+			<xs:element ref="mass" minOccurs="0"/>
+			<xs:element ref="sdia" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="spanspecType">
+		<xs:attribute ref="namest" use="required"/>
+		<xs:attribute ref="nameend" use="required"/>
+		<xs:attribute ref="spanname" use="required"/>
+		<xs:attribute name="align" type="alignvalueType3" default="center"/>
+		<xs:attribute ref="charoff"/>
+		<xs:attribute ref="char"/>
+		<xs:attribute ref="colsep"/>
+		<xs:attribute ref="rowsep"/>
+	</xs:complexType>
+	<xs:complexType name="sparesliType">
+		<xs:sequence>
+			<xs:element ref="spare" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sparesType">
+		<xs:choice>
+			<xs:element ref="nospares"/>
+			<xs:element ref="sparesli"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="spareType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:choice>
+					<xs:element ref="csnref"/>
+					<xs:element ref="nsn"/>
+					<xs:element ref="identno"/>
+					<xs:element ref="ein"/>
+				</xs:choice>
+				<xs:element ref="refs" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element ref="qty"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="spcType">
+		<xs:attribute ref="spcnbr" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="speciallblType">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="speclistType">
+		<xs:sequence>
+			<xs:element ref="spec" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="vendor"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="specType" mixed="true">
+		<xs:attribute ref="country"/>
+		<xs:attribute ref="mfc"/>
+		<xs:attribute name="type" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="splType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="srcdmaddresType">
+		<xs:sequence>
+			<xs:element ref="dmcextension" minOccurs="0"/>
+			<xs:element ref="dmc"/>
+			<xs:element ref="dmtitle"/>
+			<xs:element ref="issno"/>
+			<xs:element ref="issdate"/>
+			<xs:element ref="language" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sruitemType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element ref="sru"/>
+			<xs:element ref="test" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="repair" minOccurs="0"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="probfac"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="sruType">
+		<xs:sequence>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:element ref="nsn" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="identno"/>
+				<xs:element ref="csnref"/>
+				<xs:element ref="ein"/>
+			</xs:choice>
+			<xs:element ref="abbrev" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="srvType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="statusType">
+		<xs:group ref="STATUS"/>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="stdpartsType">
+		<xs:sequence>
+			<xs:element ref="connectors" minOccurs="0"/>
+			<xs:element ref="vparts" minOccurs="0"/>
+			<xs:element ref="accessories" minOccurs="0"/>
+			<xs:element ref="solder-sleeves" minOccurs="0"/>
+			<xs:element ref="shrink-sleeves" minOccurs="0"/>
+			<xs:element ref="ident-sleeves" minOccurs="0"/>
+			<xs:element ref="conduits" minOccurs="0"/>
+			<xs:element ref="wire-mats" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="step1-altType">
+		<xs:sequence>
+			<xs:element ref="step1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="step1Type">
+		<xs:sequence>
+			<xs:group ref="stepcon"/>
+			<xs:group ref="STEP2" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="step2-altType">
+		<xs:sequence>
+			<xs:element ref="step2" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="step2Type">
+		<xs:sequence>
+			<xs:group ref="stepcon"/>
+			<xs:group ref="STEP3" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="step3-altType">
+		<xs:sequence>
+			<xs:element ref="step3" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="step3Type">
+		<xs:sequence>
+			<xs:group ref="stepcon"/>
+			<xs:group ref="STEP4" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="step4-altType">
+		<xs:sequence>
+			<xs:element ref="step4" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="step4Type">
+		<xs:sequence>
+			<xs:group ref="stepcon"/>
+			<xs:group ref="STEP5" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="step5-altType">
+		<xs:sequence>
+			<xs:element ref="step5" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="step5Type">
+		<xs:sequence>
+			<xs:group ref="stepcon"/>
+			<xs:group ref="STEP6" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="step6-altType">
+		<xs:sequence>
+			<xs:element ref="step6" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="step6Type">
+		<xs:sequence>
+			<xs:group ref="stepcon"/>
+			<xs:group ref="STEP7" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="step7-altType">
+		<xs:sequence>
+			<xs:element ref="step7" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="step7Type">
+		<xs:sequence>
+			<xs:group ref="stepcon"/>
+			<xs:group ref="STEP8" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="step8-altType">
+		<xs:sequence>
+			<xs:element ref="step8" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="step8Type">
+		<xs:group ref="stepcon"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="stepType">
+		<xs:sequence>
+			<xs:group ref="ACSTCON"/>
+			<xs:group ref="STEPS" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="label" type="xs:string"/>
+		<xs:attribute ref="memorize" default="no"/>
+		<xs:attribute ref="dotline" default="dot"/>
+		<xs:attribute ref="ordered" default="on"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="stocknbrType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="pnr" use="required"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="strType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="structrulesType">
+		<xs:sequence>
+			<xs:element ref="objrule" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="subdrillType">
+		<xs:sequence>
+			<xs:group ref="DRLINTRO"/>
+			<xs:group ref="STEPS" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="ordered" default="on"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="CHECKSTP"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="subpara1Type">
+		<xs:sequence>
+			<xs:group ref="nparcon" minOccurs="0"/>
+			<xs:element ref="subpara2" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="subpara2Type">
+		<xs:sequence>
+			<xs:group ref="nparcon" minOccurs="0"/>
+			<xs:element ref="subpara3" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="subpara3Type">
+		<xs:sequence>
+			<xs:group ref="nparcon" minOccurs="0"/>
+			<xs:element ref="subpara4" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="subpara4Type">
+		<xs:sequence>
+			<xs:group ref="nparcon" minOccurs="0"/>
+			<xs:element ref="subpara5" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="subpara5Type">
+		<xs:sequence>
+			<xs:group ref="nparcon" minOccurs="0"/>
+			<xs:element ref="subpara6" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="subpara6Type">
+		<xs:sequence>
+			<xs:group ref="nparcon" minOccurs="0"/>
+			<xs:element ref="subpara7" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="subpara7Type">
+		<xs:group ref="nparcon" minOccurs="0"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="subsys-nameType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="supeqliType">
+		<xs:sequence>
+			<xs:element ref="supequi" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="supequipType">
+		<xs:choice>
+			<xs:element ref="nosupeq"/>
+			<xs:element ref="supeqli"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="supequiType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:choice>
+					<xs:element ref="csnref"/>
+					<xs:element ref="nsn"/>
+					<xs:element ref="identno"/>
+					<xs:element ref="tool"/>
+				</xs:choice>
+				<xs:element ref="refs" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element ref="qty"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="supervisType">
+		<xs:attribute ref="sup.lev"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="suplistType">
+		<xs:sequence>
+			<xs:element ref="sup" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="suppliesType">
+		<xs:choice>
+			<xs:element ref="nosupply"/>
+			<xs:element ref="supplyli"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="supplyliType">
+		<xs:sequence>
+			<xs:element ref="supply" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="supplyType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:choice>
+					<xs:element ref="csnref"/>
+					<xs:element ref="nsn"/>
+					<xs:element ref="identno"/>
+					<xs:element ref="con"/>
+				</xs:choice>
+				<xs:element ref="refs" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element ref="qty"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="supType">
+		<xs:sequence>
+			<xs:element ref="shippinginfo" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="mfc"/>
+		<xs:attribute ref="local" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="symbolType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="boardno" use="required"/>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="reprowid"/>
+		<xs:attribute ref="reprohgt"/>
+		<xs:attribute ref="reproscl"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="xlink:XLINKATT1"/>
+	</xs:complexType>
+	<xs:complexType name="sys-identType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="sys-locType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="sys-nameType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="sys-posType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="tableType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+			<xs:choice>
+				<xs:element ref="tgroup" maxOccurs="unbounded"/>
+				<xs:element ref="graphic" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="tabstyle"/>
+		<xs:attribute ref="tocentry" default="1"/>
+		<xs:attribute ref="frame"/>
+		<xs:attribute ref="colsep"/>
+		<xs:attribute ref="rowsep"/>
+		<xs:attribute ref="orient"/>
+		<xs:attribute ref="pgwide"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="tabtitleType" mixed="true">
+		<xs:group ref="TEXT-NOREFS" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="taskcodeType">
+		<xs:attribute ref="code" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="taskitemType">
+		<xs:sequence>
+			<xs:element ref="refs" minOccurs="0"/>
+			<xs:element ref="task" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="seqnum" use="required"/>
+		<xs:attribute ref="taskname" use="required"/>
+		<xs:attribute ref="skill"/>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="tasklistType">
+		<xs:sequence>
+			<xs:element ref="taskitem" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tbodyType">
+		<xs:sequence>
+			<xs:element ref="row" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="valign" default="top"/>
+	</xs:complexType>
+	<xs:complexType name="techConditionType">
+		<xs:sequence>
+			<xs:element ref="docincorp" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="conditionidref" type="xs:IDREF"/>
+	</xs:complexType>
+	<xs:complexType name="techdataType">
+		<xs:sequence>
+			<xs:element ref="spc" minOccurs="0"/>
+			<xs:element ref="usgcat" minOccurs="0"/>
+			<xs:element ref="etops" minOccurs="0"/>
+			<xs:element ref="hazd" minOccurs="0"/>
+			<xs:element ref="spec" minOccurs="0"/>
+			<xs:element ref="quantity" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="psc" minOccurs="0"/>
+			<xs:element ref="ftc" minOccurs="0"/>
+			<xs:element ref="uoi" minOccurs="0"/>
+			<xs:element ref="str" minOccurs="0"/>
+			<xs:element ref="cmk" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="techrepType">
+		<xs:choice>
+			<xs:element ref="einlist"/>
+			<xs:element ref="cblist"/>
+			<xs:element ref="partlist"/>
+			<xs:element ref="zonelist"/>
+			<xs:element ref="accpnllist"/>
+			<xs:element ref="toollist"/>
+			<xs:element ref="organizationlist"/>
+			<xs:element ref="consupplylist"/>
+			<xs:element ref="conlist"/>
+		</xs:choice>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="techstdType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="autandtp"/>
+				<xs:element ref="authblk"/>
+				<xs:element ref="tpbase"/>
+			</xs:choice>
+			<xs:element ref="authex"/>
+			<xs:element ref="notes"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tempType">
+		<xs:sequence>
+			<xs:element ref="mint" minOccurs="0"/>
+			<xs:element ref="maxt" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="termType" mixed="true">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:group ref="text" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="testdescType">
+		<xs:sequence>
+			<xs:element ref="testnomen"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="testprocType">
+		<xs:sequence>
+			<xs:element ref="refs"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="testType">
+		<xs:sequence>
+			<xs:element ref="testdesc" minOccurs="0"/>
+			<xs:element ref="data" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="testproc" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="type" use="required"/>
+		<xs:attribute ref="code" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="tfootType">
+		<xs:sequence>
+			<xs:element ref="colspec" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="row" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="valign" default="top"/>
+	</xs:complexType>
+	<xs:complexType name="tgroupType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="colspec" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="spanspec" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="thead" minOccurs="0"/>
+			<xs:element ref="tfoot" minOccurs="0"/>
+			<xs:element ref="tbody"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+		<xs:attribute ref="cols" use="required"/>
+		<xs:attribute ref="tgstyle"/>
+		<xs:attribute ref="colsep"/>
+		<xs:attribute ref="rowsep"/>
+		<xs:attribute name="align" type="alignvalueType3" default="left"/>
+		<xs:attribute ref="charoff"/>
+		<xs:attribute ref="char"/>
+	</xs:complexType>
+	<xs:complexType name="theadType">
+		<xs:sequence>
+			<xs:element ref="colspec" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="row" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="valign" default="bottom"/>
+	</xs:complexType>
+	<xs:complexType name="thiType" mixed="true">
+		<xs:attribute name="uom" type="THIUOMS" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="thresholdType">
+		<xs:sequence>
+			<xs:element ref="value"/>
+			<xs:element ref="tolerance" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="uom" type="THIUOMS" use="required"/>
+		<xs:attribute name="tholdtype" type="THITYPES"/>
+	</xs:complexType>
+	<xs:complexType name="timelimitType">
+		<xs:choice>
+			<xs:element ref="limittype" maxOccurs="unbounded"/>
+			<xs:element ref="remarks" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="timelimType">
+		<xs:sequence>
+			<xs:element ref="equip"/>
+			<xs:element ref="qty" minOccurs="0"/>
+			<xs:element ref="cat" minOccurs="0"/>
+			<xs:element ref="timelimit" maxOccurs="unbounded"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="identifier" use="required"/>
+		<xs:attribute ref="skill"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="titleType" mixed="true">
+		<xs:group ref="text" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="secur"/>
+	</xs:complexType>
+	<xs:complexType name="toequipType">
+		<xs:sequence>
+			<xs:group ref="CM.EQUIPMENT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="toleranceType">
+		<xs:attribute ref="minus"/>
+		<xs:attribute ref="plus"/>
+	</xs:complexType>
+	<xs:complexType name="toolaltType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="desc"/>
+			<xs:element ref="sns" minOccurs="0"/>
+			<xs:element ref="rcmdqty" minOccurs="0"/>
+			<xs:element ref="packaging" minOccurs="0"/>
+			<xs:element ref="taskcode" minOccurs="0"/>
+			<xs:element ref="gem" minOccurs="0"/>
+			<xs:element ref="remark" minOccurs="0"/>
+			<xs:element ref="xref" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="altnbr"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="toolidType">
+		<xs:attribute ref="toolnbr" use="required"/>
+		<xs:attribute ref="mfc" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="toolinfoType">
+		<xs:sequence>
+			<xs:element ref="toolid"/>
+			<xs:element ref="nomdata"/>
+			<xs:element ref="procdata"/>
+			<xs:element ref="techdata"/>
+			<xs:element ref="toolref" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="toolalt" maxOccurs="unbounded"/>
+			<xs:element ref="refs" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="toollistType">
+		<xs:sequence>
+			<xs:element ref="figure" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="toolinfo" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="toolrefType">
+		<xs:sequence>
+			<xs:element ref="tool"/>
+		</xs:sequence>
+		<xs:attribute ref="type" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="toolType">
+		<xs:sequence>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="toolnbr" use="required"/>
+		<xs:attribute ref="mfc"/>
+		<xs:attribute ref="specific" default="1"/>
+		<xs:attribute ref="alternate" default="0"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="toType">
+		<xs:sequence>
+			<xs:element ref="threshold"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tradeType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="transportType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="triggerType">
+		<xs:sequence>
+			<xs:element ref="refs" minOccurs="0"/>
+			<xs:element ref="threshold" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="release"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="trlType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="eeconnection" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="twistsType">
+		<xs:sequence>
+			<xs:element ref="twist" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="twistType" mixed="true">
+		<xs:attribute ref="twsttype"/>
+	</xs:complexType>
+	<xs:complexType name="ucaType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="uceType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="unverifType"/>
+	<xs:complexType name="uoiType" mixed="true">
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:complexType>
+	<xs:complexType name="usageType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="usgcatType">
+		<xs:attribute ref="usgnbr" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="validateType">
+		<xs:sequence>
+			<xs:element ref="expression"/>
+		</xs:sequence>
+		<xs:attribute ref="errormsg"/>
+	</xs:complexType>
+	<xs:complexType name="variable-declarationsType">
+		<xs:sequence>
+			<xs:element ref="variable" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="variable-refType">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="variableType">
+		<xs:sequence>
+			<xs:choice minOccurs="0">
+				<xs:element ref="dialog"/>
+				<xs:element ref="dialog-alt"/>
+			</xs:choice>
+			<xs:element ref="initialize" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="name" use="required"/>
+		<xs:attribute ref="description"/>
+		<xs:attribute ref="config" default="0"/>
+		<xs:attribute name="valuetype" type="valuetypeType" default="integer"/>
+		<xs:attribute ref="precision"/>
+		<xs:attribute ref="scope" default="global"/>
+	</xs:complexType>
+	<xs:complexType name="vasType">
+		<xs:sequence>
+			<xs:element ref="sid"/>
+			<xs:element ref="nsn" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="verbatimType" mixed="true">
+		<xs:attribute ref="vstyle"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="voltageType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="vpartsType">
+		<xs:sequence>
+			<xs:element ref="vpart" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="vpartType">
+		<xs:sequence>
+			<xs:element ref="pnr"/>
+			<xs:element ref="altids" minOccurs="0"/>
+			<xs:element ref="csize" minOccurs="0"/>
+			<xs:element ref="mat" minOccurs="0"/>
+			<xs:element ref="mass" minOccurs="0"/>
+			<xs:element ref="colour" minOccurs="0"/>
+			<xs:element ref="protect" minOccurs="0"/>
+			<xs:element ref="cdia" minOccurs="0"/>
+			<xs:element ref="temp" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="wallthkType" mixed="true">
+		<xs:attribute ref="uom"/>
+	</xs:complexType>
+	<xs:complexType name="warningType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="symbol"/>
+				<xs:element ref="para"/>
+				<xs:group ref="list"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute ref="type"/>
+		<xs:attribute ref="xrefid"/>
+		<xs:attribute ref="vital"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="waterType">
+		<xs:attributeGroup ref="PMDATA_STAT_POW"/>
+	</xs:complexType>
+	<xs:complexType name="wire-matsType">
+		<xs:sequence>
+			<xs:element ref="wire-mat" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="wire-matType">
+		<xs:sequence>
+			<xs:element ref="pnr"/>
+			<xs:element ref="altids" minOccurs="0"/>
+			<xs:element ref="wirecode" minOccurs="0"/>
+			<xs:element ref="core" minOccurs="0"/>
+			<xs:element ref="size" minOccurs="0"/>
+			<xs:element ref="mass" minOccurs="0"/>
+			<xs:element ref="colour" minOccurs="0"/>
+			<xs:element ref="outjackcol" minOccurs="0"/>
+			<xs:element ref="outdia" minOccurs="0"/>
+			<xs:element ref="res" minOccurs="0"/>
+			<xs:element ref="voltage" minOccurs="0"/>
+			<xs:element ref="amperage" minOccurs="0"/>
+			<xs:element ref="temp" minOccurs="0"/>
+			<xs:element ref="screencount" minOccurs="0"/>
+			<xs:element ref="coax" minOccurs="0"/>
+			<xs:element ref="triax" minOccurs="0"/>
+			<xs:element ref="freqchar" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="wirecodeType">
+		<xs:sequence>
+			<xs:element ref="wiretype"/>
+			<xs:element ref="wiregauge" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="wireconcodeType">
+		<xs:sequence>
+			<xs:element ref="screenorder" minOccurs="0"/>
+			<xs:element ref="specconn" minOccurs="0"/>
+			<xs:element ref="elecpotential"/>
+			<xs:element ref="pconnorder" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="wireconnectionType">
+		<xs:sequence>
+			<xs:element ref="fromequip"/>
+			<xs:element ref="toequip" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="wiregaugeType" mixed="true">
+		<xs:attribute ref="gaugetype" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="wireidType">
+		<xs:sequence>
+			<xs:element ref="circode" minOccurs="0"/>
+			<xs:element ref="wireno"/>
+			<xs:element ref="secid" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="VENDORINFO"/>
+	</xs:complexType>
+	<xs:complexType name="wireinformationType">
+		<xs:sequence>
+			<xs:element ref="wirecode" minOccurs="0"/>
+			<xs:element ref="pnr" minOccurs="0"/>
+			<xs:element ref="harnid" minOccurs="0"/>
+			<xs:element ref="wireseqno" minOccurs="0"/>
+			<xs:element ref="circode" minOccurs="0"/>
+			<xs:element ref="secid" minOccurs="0"/>
+			<xs:element ref="screens" minOccurs="0"/>
+			<xs:element ref="twists" minOccurs="0"/>
+			<xs:element ref="coax" minOccurs="0"/>
+			<xs:element ref="triax" minOccurs="0"/>
+			<xs:element ref="emc-code" minOccurs="0"/>
+			<xs:element ref="length" minOccurs="0"/>
+			<xs:element ref="colour" minOccurs="0"/>
+			<xs:element ref="signal" minOccurs="0"/>
+			<xs:element ref="rpc" minOccurs="0"/>
+			<xs:element ref="routing" minOccurs="0"/>
+			<xs:element ref="wireroute" minOccurs="0"/>
+			<xs:element ref="restriction" minOccurs="0"/>
+			<xs:element ref="nhassy" minOccurs="0"/>
+			<xs:element ref="fdescref" minOccurs="0"/>
+			<xs:element ref="illref" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="wireinsType">
+		<xs:sequence>
+			<xs:element ref="pre" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="fin" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="wiresType">
+		<xs:sequence>
+			<xs:element ref="wire" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="wireType">
+		<xs:sequence>
+			<xs:element ref="wireid"/>
+			<xs:element ref="wireconnection"/>
+			<xs:element ref="wireinformation" minOccurs="0"/>
+			<xs:element ref="applic" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="wirestate"/>
+		<xs:attribute ref="chginfo"/>
+		<xs:attribute ref="refapplic"/>
+	</xs:complexType>
+	<xs:complexType name="wmlfMsgDescType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="fault"/>
+			<xs:sequence minOccurs="0">
+				<xs:element ref="refdm" minOccurs="0"/>
+				<xs:element ref="describe" minOccurs="0"/>
+				<xs:element ref="detect" minOccurs="0"/>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute ref="categ"/>
+		<xs:attribute ref="subcateg"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="wrngdataType">
+		<xs:sequence>
+			<xs:element ref="wires" minOccurs="0"/>
+			<xs:element ref="harnesses" minOccurs="0"/>
+			<xs:element ref="elecequips" minOccurs="0"/>
+			<xs:element ref="stdparts" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="wrngfldsType">
+		<xs:sequence>
+			<xs:element ref="dsc.wires" minOccurs="0"/>
+			<xs:element ref="dsc.harness" minOccurs="0"/>
+			<xs:element ref="dsc.elecequip" minOccurs="0"/>
+			<xs:element ref="dsc.stdparts" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="xrefType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="xrefid"/>
+		<xs:attribute ref="xidtype"/>
+		<xs:attribute ref="target"/>
+		<xs:attribute ref="destitle"/>
+		<xs:attribute ref="pretext"/>
+		<xs:attribute ref="posttext"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+		<xs:attributeGroup ref="xlink:XLINKATT3"/>
+	</xs:complexType>
+	<xs:complexType name="yesnoType">
+		<xs:sequence>
+			<xs:element ref="yes"/>
+			<xs:element ref="no"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="yesType">
+		<xs:attribute ref="refid" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="zonealtType">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="desc"/>
+			<xs:element ref="side" minOccurs="0"/>
+			<xs:element ref="bndfrom" minOccurs="0"/>
+			<xs:element ref="bndto" minOccurs="0"/>
+			<xs:element ref="zoneref" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="xref" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="altnbr"/>
+		<xs:attribute ref="refapplic"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="zoneidType">
+		<xs:attribute ref="zonenbr" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="zoneinfoType">
+		<xs:sequence>
+			<xs:element ref="zoneid"/>
+			<xs:element ref="zoneref" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="zonealt" maxOccurs="unbounded"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="zonetype"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+	<xs:complexType name="zonelistType">
+		<xs:sequence>
+			<xs:element ref="figure" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="zoneinfo" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="zonerefType">
+		<xs:sequence>
+			<xs:element ref="zone" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="type" use="required"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="zonesType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="zone" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="zoneType">
+		<xs:sequence>
+			<xs:element ref="nomen" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="zonenbr"/>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attributeGroup ref="cntlcontent"/>
+	</xs:complexType>
+</xs:schema>

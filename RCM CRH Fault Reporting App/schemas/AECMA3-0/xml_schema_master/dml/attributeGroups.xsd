@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Admin (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="attributes.xsd"/>
+	<xs:attributeGroup name="bodyatt">
+		<xs:attribute ref="id"/>
+		<xs:attributeGroup ref="INSDEL"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="COMMSEC">
+		<xs:attribute ref="commcls"/>
+		<xs:attribute name="caveat" type="CAVEATS"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="DATE">
+		<xs:attribute ref="year" use="required"/>
+		<xs:attribute ref="month" use="required"/>
+		<xs:attribute ref="day" use="required"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="INSDEL">
+		<xs:attribute ref="level"/>
+		<xs:attribute ref="mark"/>
+		<xs:attribute ref="change"/>
+		<xs:attribute ref="rfc"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="SECURIT">
+		<xs:attribute ref="class" use="required"/>
+		<xs:attributeGroup ref="COMMSEC"/>
+	</xs:attributeGroup>
+</xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="attributes.xsd"/>	
+	<xs:attributeGroup name="stylePropertiesAttGroup">
+		<xs:attribute ref="text-size"/>
+		<xs:attribute ref="fill-color"/>
+		<xs:attribute ref="intensity"/>
+		<xs:attribute ref="stroke-color"/>
+		<xs:attribute ref="stroke-weight"/>
+		<xs:attribute ref="text-color"/>
+		<xs:attribute ref="text-font"/>
+		<xs:attribute ref="raster-intensity"/>
+	</xs:attributeGroup>
+</xs:schema>

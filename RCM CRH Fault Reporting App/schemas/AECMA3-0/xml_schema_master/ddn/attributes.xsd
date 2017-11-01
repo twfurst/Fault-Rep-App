@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="simpleTypes.xsd"/>
+	<xs:attribute name="caveat" type="CAVEATS"/>
+	<xs:attribute name="change" type="changeType"/>
+	<xs:attribute name="class" type="CLASSES"/>
+	<xs:attribute name="commcls" type="COMMCLSS"/>
+	<xs:attribute name="expgovauth" type="xs:string"/>
+	<xs:attribute name="expregcodetype" type="xs:string"/>
+	<xs:attribute name="expregtype" type="xs:string"/>
+	<xs:attribute name="exprole" type="exproleType"/>
+	<xs:attribute name="id" type="xs:ID"/>
+	<xs:attribute name="inwork" type="NONNEGI2"/>
+	<xs:attribute name="issno" type="issnoAttType"/>
+	<xs:attribute name="level" type="xs:nonNegativeInteger"/>
+	<xs:attribute name="mark" type="xs:nonNegativeInteger"/>
+	<xs:attribute name="rfc" type="xs:string"/>
+	<xs:attribute name="rpcname" type="xs:string"/>
+	<xs:attribute name="year" type="yearType"/>
+</xs:schema>

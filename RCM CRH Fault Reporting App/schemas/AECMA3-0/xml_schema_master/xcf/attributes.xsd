@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="simpleTypes.xsd"/>
+	<xs:attribute name="apsid" type="xs:ID"/>
+	<xs:attribute name="apstargetname" type="xs:string"/>
+	<xs:attribute name="background-color" type="xs:string"/>
+	<xs:attribute name="behavior" type="xs:string"/>
+	<xs:attribute name="desc" type="xs:string"/>
+	<xs:attribute name="descript" type="xs:string"/>
+	<xs:attribute name="filename" type="xs:string"/>
+	<xs:attribute name="fill-color" type="xs:string"/>
+	<xs:attribute name="id" type="xs:ID"/>
+	<xs:attribute name="intensity" type="xs:string"/>
+	<xs:attribute name="interactivity" type="interactivityAttType"/>
+	<xs:attribute name="layerdesc" type="xs:string"/>
+	<xs:attribute name="pictureVisibility" type="pictureVisibilityAttType"/>
+	<xs:attribute name="raster-intensity" type="xs:string"/>
+	<xs:attribute name="region" type="xs:string"/>
+	<xs:attribute name="screentip" type="xs:string"/>
+	<xs:attribute name="stroke-color" type="xs:string"/>
+	<xs:attribute name="stroke-weight" type="xs:string"/>
+	<xs:attribute name="text-color" type="xs:string"/>
+	<xs:attribute name="text-font" type="xs:string"/>
+	<xs:attribute name="text-size" type="xs:string"/>
+	<xs:attribute name="uri" type="xs:string"/>
+	<xs:attribute name="version" type="xs:string" fixed="2.0"/>
+	<xs:attribute name="viewcontext" type="xs:string"/>
+	<xs:attribute name="visibility" type="visibilityAttType"/>
+</xs:schema>

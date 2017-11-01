@@ -1,0 +1,3898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Arbortext, Inc., 1988-2009, v.4002-->
+<?Pub Doctype name="outspec" public="-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN" system="outspec.dtd"?>
+<?APT StylesheetID Title="LBS Schematron Stylesheet (FOSI)" Description="" CompositionTypes="htmlfile,print,pdf"?>
+<outspec fosicite="Fri Jun 25 09:48:08 2010" stylerversion="5.14"
+forcecc="1" xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:sch="http://www.ascc.net/xml/schematron"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:ns1="http://www.purl.org/dc/elements/1.1/"
+xmlns:saxon="http://saxon.sf.net/"
+xmlns:rtf="http://www.cambridgedocs.com/namespace/fo/rtf"
+xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements"
+xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements"
+xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements"
+xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<rsrcdesc softkeepsline="1" softkeepspage="1" eicorderispriority="1">
+<charfill literal=" " cfid="space.fill"/>
+<counter initial="0" style="arabic" enumid="folioct"/>
+<counter initial="0" style="arabic" enumid="finalfolioct"/>
+<counter initial="0" style="arabic" seq="1" enumid="ATIixpagekeyct"/>
+<counter initial="0" style="arabic"
+enumid="cnt__footnote_default_footnotes.cnt"/>
+<counter initial="0" enumid="bmrk__div_lvl"/>
+<stringdecl textid="secondary.txt"/>
+<stringdecl textid="tertiary.txt"/>
+<stringdecl textid="ATIixpagekeyct.txt" literal="0" status="0"/>
+<stringdecl textid="finalfoliostr.tiv" status="1"/>
+<stringdecl textid="usedistiller__value" literal="off"/>
+<stringdecl textid="quartiary.txt"/>
+<stringdecl textid="seealso.txt"/>
+<stringdecl textid="repeat_title.txt"/>
+<stringdecl textid="Number.xref"/>
+<stringdecl textid="idxpageref.txt"/>
+<stringdecl textid="foliostr"/>
+<stringdecl textid="repeat_title_bottom.txt"/>
+<stringdecl textid="pageSetDivisionNumber"/>
+<stringdecl textid="Main_Index__index.tiv" status="1"/>
+<stringdecl textid="see.txt"/>
+<stringdecl textid="finalfoliostr"/>
+<stringdecl textid="primary.txt"/>
+<floatloc floatid="repeat_titles" floattyp="atcolbrk" minspace="12pt"
+nomspace="18pt" maxspace="20pt"/>
+<floatloc floatid="repeat_titles_bottom" floattyp="atcolbrk"
+minspace="12pt" nomspace="18pt" maxspace="20pt"/>
+<floatloc floatid="styler__fn_default_footnotes" floattyp="once"
+minspace="15pt" nomspace="15pt" maxspace="15pt"/></rsrcdesc>
+<pagedesc>
+<pageset id="Default_A4_Page_Set">
+<rectopg width="210mm" nomdepth="297mm" chgmkplc="pleft"
+botfloat="#ftnfill #ftnsep styler__fn_default_footnotes #endftnsep #endftnfill "
+xvjstretch="none">
+<pageres>
+<enumerat increm="1" enumid="folioct"/>
+<enumerat increm="1" enumid="ATIixpagekeyct"/>
+<enumerat increm="1" enumid="finalfolioct"/>
+<savetext textid="foliostr" conrule="folioct[AR]"/>
+<savetext textid="ATIixpagekeyct.txt" conrule="ATIixpagekeyct"/>
+<savetext textid="finalfoliostr" conrule="finalfolioct[AR]"/></pageres>
+<pagespec>
+<topmarg nomdepth="25mm"/>
+<botmarg nomdepth="25mm"/>
+<leftmarg width="25mm"/>
+<rtmarg width="25mm"/>
+<header nomdepth="15.006mm" spaflow="0"></header>
+<footer nomdepth="15.006mm" spaflow="0">
+<usetext
+source='!&#x3c;_sfe:Gentext xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >&#x3c;_sfe:HeaderOrFooter>!,foliostr,!&#x3c;/_sfe:HeaderOrFooter>&#x3c;/_sfe:Gentext >!'>
+</usetext>
+</footer>
+<flowtext numcols="1" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="2" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="3" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="4" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="5" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="6" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="7" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="8" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+</pagespec>
+</rectopg>
+</pageset>
+<pageset id="Default_A4_Page_Set__land" orient="landscape">
+<rectopg width="210mm" nomdepth="297mm" chgmkplc="pleft"
+botfloat="#ftnfill #ftnsep styler__fn_default_footnotes #endftnsep #endftnfill "
+xvjstretch="none">
+<pageres>
+<enumerat increm="1" enumid="folioct"/>
+<enumerat increm="1" enumid="ATIixpagekeyct"/>
+<enumerat increm="1" enumid="finalfolioct"/>
+<savetext textid="foliostr" conrule="folioct[AR]"/>
+<savetext textid="ATIixpagekeyct.txt" conrule="ATIixpagekeyct"/>
+<savetext textid="finalfoliostr" conrule="finalfolioct[AR]"/></pageres>
+<pagespec>
+<topmarg nomdepth="25mm"/>
+<botmarg nomdepth="25mm"/>
+<leftmarg width="25mm"/>
+<rtmarg width="25mm"/>
+<header nomdepth="15.006mm" spaflow="0"></header>
+<footer nomdepth="15.006mm" spaflow="0">
+<usetext
+source='!&#x3c;_sfe:Gentext xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >&#x3c;_sfe:HeaderOrFooter>!,foliostr,!&#x3c;/_sfe:HeaderOrFooter>&#x3c;/_sfe:Gentext >!'>
+</usetext>
+</footer>
+<flowtext numcols="1" balance="0">
+<column width="217.18mm" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="2" balance="0">
+<column width="106.09mm" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="3" balance="0">
+<column width="69.06mm" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="4" balance="0">
+<column width="50.54mm" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="5" balance="0">
+<column width="39.43mm" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="6" balance="0">
+<column width="32.03mm" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="7" balance="0">
+<column width="26.74mm" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="8" balance="0">
+<column width="22.77mm" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width="5mm"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+</pagespec>
+</rectopg>
+</pageset>
+<pageset id="Default_US_Letter_Page_Set">
+<rectopg width="8.5in" nomdepth="11in" chgmkplc="pleft"
+botfloat="#ftnfill #ftnsep styler__fn_default_footnotes #endftnsep #endftnfill "
+xvjstretch="none">
+<pageres>
+<enumerat increm="1" enumid="folioct"/>
+<enumerat increm="1" enumid="ATIixpagekeyct"/>
+<enumerat increm="1" enumid="finalfolioct"/>
+<savetext textid="foliostr" conrule="folioct[AR]"/>
+<savetext textid="ATIixpagekeyct.txt" conrule="ATIixpagekeyct"/>
+<savetext textid="finalfoliostr" conrule="finalfolioct[AR]"/></pageres>
+<pagespec>
+<topmarg nomdepth="1in"/>
+<botmarg nomdepth="1in"/>
+<leftmarg width="1in"/>
+<rtmarg width="1in"/>
+<header nomdepth="0.5in" spaflow="0"></header>
+<footer nomdepth="0.5in" spaflow="0">
+<usetext
+source='!&#x3c;_sfe:Gentext xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >&#x3c;_sfe:HeaderOrFooter>!,foliostr,!&#x3c;/_sfe:HeaderOrFooter>&#x3c;/_sfe:Gentext >!'>
+</usetext>
+</footer>
+<flowtext numcols="1" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="2" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="3" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="4" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="5" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="6" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="7" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="8" balance="0">
+<column vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+</pagespec>
+</rectopg>
+</pageset>
+<pageset id="Default_US_Letter_Page_Set__land" orient="landscape">
+<rectopg width="8.5in" nomdepth="11in" chgmkplc="pleft"
+botfloat="#ftnfill #ftnsep styler__fn_default_footnotes #endftnsep #endftnfill "
+xvjstretch="none">
+<pageres>
+<enumerat increm="1" enumid="folioct"/>
+<enumerat increm="1" enumid="ATIixpagekeyct"/>
+<enumerat increm="1" enumid="finalfolioct"/>
+<savetext textid="foliostr" conrule="folioct[AR]"/>
+<savetext textid="ATIixpagekeyct.txt" conrule="ATIixpagekeyct"/>
+<savetext textid="finalfoliostr" conrule="finalfolioct[AR]"/></pageres>
+<pagespec>
+<topmarg nomdepth="1in"/>
+<botmarg nomdepth="1in"/>
+<leftmarg width="1in"/>
+<rtmarg width="1in"/>
+<header nomdepth="0.5in" spaflow="0"></header>
+<footer nomdepth="0.5in" spaflow="0">
+<usetext
+source='!&#x3c;_sfe:Gentext xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >&#x3c;_sfe:HeaderOrFooter>!,foliostr,!&#x3c;/_sfe:HeaderOrFooter>&#x3c;/_sfe:Gentext >!'>
+</usetext>
+</footer>
+<flowtext numcols="1" balance="0">
+<column width="8in" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="2" balance="0">
+<column width="3.88in" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="3" balance="0">
+<column width="2.5in" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="4" balance="0">
+<column width="1.81in" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="5" balance="0">
+<column width="1.4in" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="6" balance="0">
+<column width="1.13in" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="7" balance="0">
+<column width="0.93in" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+<flowtext numcols="8" balance="0">
+<column width="0.78in" vjprior="comp" topfloat="repeat_titles"
+botfloat="repeat_titles_bottom "/>
+<gutter width=".25in"/>
+<footnote ftnsepth=".5pt" ftnsepln="9pc">
+<subchars>
+<indent leftind="0pt" rightind="0pt"/>
+<quadding quad="left"/>
+<postsp minimum="2pt" nominal="2pt" maximum="2pt"/></subchars>
+</footnote>
+</flowtext>
+</pagespec>
+</rectopg>
+</pageset>
+</pagedesc>
+<styldesc>
+<charsubset charsubsetid="box">
+<boxing toffset="2pt" boffset="2pt" loffset="2pt" roffset="2pt"
+thick="1pt" inclr="#E0FFE0"/></charsubset>
+<charsubset charsubsetid="double-underline">
+<highlt scoring="1" scorewt="0.08em" scoreoff="0.08em" xscoring="1"
+xscorewt="0.08em" xscoreoff="0.24em"/></charsubset>
+<charsubset charsubsetid="Footnote_font">
+<font style="serif" famname="" size="12pt" posture="upright"
+weight="medium" smallcap="0"/>
+<highlt scoring="0" bckclr="#FFFFFF" fontclr="#000000" allcap="0"
+xscoring="0"/></charsubset>
+<charsubset charsubsetid="Index_grouphead_space">
+<postsp minimum=".3pc" nominal=".5pc" priority="med"/></charsubset>
+<charsubset charsubsetid="Index_group_space">
+<presp minimum="1.2pc" nominal="1.5pc" maximum="1.6pc" priority="med"/>
+</charsubset>
+<charsubset charsubsetid="Link">
+<highlt scoring="1" scorewt="0.05em" fontclr="#0000FF"/></charsubset>
+<charsubset charsubsetid="List_item_space">
+<presp minimum="4pt" nominal="6pt" maximum="8pt" condit="discard"
+priority="med"/>
+<postsp minimum="4pt" nominal="6pt" maximum="8pt" priority="med"/>
+<textbrk startln="1" endln="1"/></charsubset>
+<charsubset charsubsetid="overline">
+<highlt scoring="1" scorewt="0.08em" scoreoff="-0.8em"/></charsubset>
+<charsubset charsubsetid="overstrike-with-slash">
+<highlt scorechron="1" scorechr="/"/></charsubset>
+<charsubset charsubsetid="Standard_space">
+<presp minimum="6pt" nominal="8pt" maximum="10pt" condit="discard"
+priority="none"/></charsubset>
+<charsubset charsubsetid="Table_space">
+<presp minimum="1.2em" nominal="1.2em" maximum="1.2em" priority="low"/>
+</charsubset>
+<charsubset charsubsetid="Title_1">
+<font size="20pt" weight="bold"/></charsubset>
+<charsubset charsubsetid="Title_2">
+<font size="18pt" weight="bold"/></charsubset>
+<charsubset charsubsetid="Title_3">
+<font size="16pt" weight="bold"/></charsubset>
+<charsubset charsubsetid="Title_4">
+<font size="14pt" weight="bold"/></charsubset>
+<charsubset charsubsetid="Title_5">
+<font size="12pt" weight="bold"/></charsubset>
+<charsubset charsubsetid="Title_6">
+<font size="12pt"/></charsubset>
+<charsubset charsubsetid="Title_7">
+<font size="12pt" weight="bold"/></charsubset>
+<charsubset charsubsetid="Title_8">
+<font size="12pt" weight="bold"/></charsubset>
+<charsubset charsubsetid="Title_9">
+<font size="12pt" weight="bold"/></charsubset>
+<charsubset charsubsetid="Title_alignment">
+<quadding quad="left" lastquad="relative"/></charsubset>
+<charsubset charsubsetid="Title_color">
+<highlt fontclr="#0000FF"/></charsubset>
+<charsubset charsubsetid="Title_color_for_print">
+<highlt fontclr="#0000FF"/></charsubset>
+<charsubset charsubsetid="Title_font">
+<font style="sanserif" famname=""/></charsubset>
+<charsubset charsubsetid="Title_keeps">
+<hyphen hyph="0"/>
+<keeps scope="col" keep="7" next="7"/></charsubset>
+<charsubset charsubsetid="Title_space">
+<leading lead="1.1em"/>
+<presp minimum="1em" nominal="1.5em" maximum="2em" priority="med"/>
+<postsp minimum=".8em" nominal="1em" maximum="1.5em" priority="high"/>
+</charsubset>
+<docdesc>
+<charlist>
+<font style="serif" size="12pt" posture="upright" weight="medium"
+width="regular" offset="0pt"/>
+<leading lead="1.1em"/>
+<hyphen hyph="0"/>
+<indent leftind="@" rightind="@" firstln="*"/>
+<quadding quad="left" lastquad="relative"/>
+<highlt scorewt="0.05em" scoreoff="0.25em" scorespc="1" xscorewt="0.05em"
+xscoreoff="-0.2em"/>
+<!-- use very high minimum and very low maximum for presp and postp
+     so that when not specified, the result will be that the preferred
+     value will be used, and variable spacing will not occur -->
+<presp minimum="100in" nominal="0pt" maximum="-100in" condit="discard"
+priority="none"/>
+<postsp minimum="100in" nominal="0pt" maximum="-100in" condit="discard"
+priority="none"/>
+<keeps scope="col" keep="0" widowct="2" orphanct="2" next="0" prev="0"/>
+<textbrk startcol="0" startpg="off" startln="0" endln="0"/></charlist>
+</docdesc>
+<e-i-c gi="_sfe:BeforeOrAfterText" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:CollectionItem" occur="first"
+selector="_sfe:CollectionItem[1]">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:CollectionItem" occur="middle"
+selector="_sfe:CollectionItem[position()>1 and not(position()=last())]">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="!, !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="_sfe:CollectionItem" occur="last"
+selector="_sfe:CollectionItem[last()]">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="!, and !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="_sfe:CollectionItem" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:CrossReference" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:CrossReferenceTitle" context="* _sfe:HeaderOrFooter"
+occur="all" selector="_sfe:HeaderOrFooter//_sfe:CrossReferenceTitle">
+<charlist inherit="1">
+<indent inherit="0"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:CrossReferenceTitle" occur="all">
+<charlist inherit="1">
+<font posture="italic"/>
+<indent inherit="0"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:Gentext" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:HeaderOrFooter" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp minimum="0pt" nominal="0pt" maximum="0pt" priority="force"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:Index" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexAlphaGroup" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp minimum="1.2pc" nominal="1.5pc" maximum="1.6pc" priority="med"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexEndPage" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!&#x2013;!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="_sfe:IndexEntry"
+context="_sfe:IndexEntry _sfe:IndexEntry _sfe:IndexEntry" occur="all"
+selector="_sfe:IndexEntry/_sfe:IndexEntry/_sfe:IndexEntry/_sfe:IndexEntry">
+<charlist inherit="1">
+<indent inherit="0" leftind="@1em" firstln="*-.5em"/>
+<quadding quad="left"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexEntry" context="_sfe:IndexEntry _sfe:IndexEntry"
+occur="all" selector="_sfe:IndexEntry/_sfe:IndexEntry/_sfe:IndexEntry">
+<charlist inherit="1">
+<indent inherit="0" leftind="@1em" firstln="*-.5em"/>
+<quadding quad="left"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexEntry" context="_sfe:IndexEntry" occur="all"
+selector="_sfe:IndexEntry/_sfe:IndexEntry">
+<charlist inherit="1">
+<indent inherit="0" leftind="@1em" firstln="*-.5em"/>
+<quadding quad="left"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexEntry" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@.5em" rightind="@2pc" firstln="*-.5em"/>
+<quadding quad="left"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexGroupHead" occur="all">
+<charlist inherit="1">
+<font famname="sanserif" size="14pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="left"/>
+<highlt allcap="1"/>
+<postsp minimum=".3pc" nominal=".5pc" priority="med"/>
+<keeps next="7"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexHeading" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<keeps scope="line" keep="3"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexLocators" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >&#x3c;_leaders leaderType="dots" leaderSpacing="1em" lenType="fit" minLen="3.00em" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" />&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+<usetext source="-2pc" placemnt="after"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="_sfe:IndexPage" occur="notfirst"
+selector="_sfe:IndexPage[position()>1]">
+<charlist inherit="1">
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!, !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="_sfe:IndexPage" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexPostGroup" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp minimum="1.2pc" nominal="1.5pc" maximum="1.6pc" priority="med"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexPreGroup" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp minimum="1.2pc" nominal="1.5pc" maximum="1.6pc" priority="med"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexRangeGroup" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp minimum="1.2pc" nominal="1.5pc" maximum="1.6pc" priority="med"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:IndexSee" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >, &#x3c;_font Posture="italic" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >See &#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="_sfe:IndexSeeAlso" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@3em" firstln="*-1.5em"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >&#x3c;_font Posture="italic" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >See also &#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="_sfe:IndexSubGroupHead" occur="all">
+<charlist inherit="1">
+<font size="14pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="left"/>
+<highlt allcap="1"/>
+<presp minimum="2pc" nominal="2pc" maximum="2pc" priority="high"/>
+<keeps next="7"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:RepeatingTitle" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="_sfe:TableOfContents" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="accessfrom" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Access From!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="accessto" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Access To!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="accpnl" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Access Panel: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="accpnlalt" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Access Panel Alternate!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="accpnlid" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@0pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Access Panel ID&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Access Panel Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(accpnlnbr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="accpnlinfo" occur="all">
+<charlist inherit="1">
+<font size="12pt" weight="bold"/>
+<indent inherit="0" leftind="20pt"/>
+<quadding quad="left"/>
+<presp nominal="10pt"/>
+<postsp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Access Panel Info!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="accpnllist" occur="all">
+<charlist inherit="1">
+<font size="24pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<highlt fontclr="#0000FF"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Access Panel List!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="accpnlref" occur="all">
+<charlist inherit="1">
+<font weight="bold"/>
+<indent inherit="0" leftind="@0pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Access Panel Ref:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(type),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="acctype" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Access Panel Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(accpnltype),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<specval attname="accpnltype" attval="accpnl01"/>
+<charsubset>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Access Panel Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >Access is a door (!,#CONTENT(accpnltype),!)&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<specval attname="accpnltype" attval="accpnl02"/>
+<charsubset>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Access Panel Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >Access is a panel (!,#CONTENT(accpnltype),!)&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<specval attname="accpnltype" attval="accpnl03"/>
+<charsubset>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Access Panel Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >Access is an electrical panel (!,#CONTENT(accpnltype),!)&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText >!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="acrodef" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@0pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Acronym Definition!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="acronym" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@0pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Acronym!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="acroterm" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@0pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Acronym Term!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="address" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@20pt"/>
+<presp nominal="20pt"/>
+<postsp nominal="20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Address!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="apn" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Alternate Part!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="apntext" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Alternate Part Text: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="applic" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!Applicability!" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="assert" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Assert: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="authblk" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font size="10pt"/>
+<indent inherit="0" leftind="@100pt"/>
+<savetext textid="beforetext" conrule="!Authority block!"
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="authex" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font size="10pt"/>
+<indent inherit="0" leftind="@100pt"/>
+<savetext textid="beforetext" conrule="!Authority exceptions!"
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="avee" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0" leftind="@2.00pt"/>
+<textbrk startln="0" endln="0"/></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="bfe" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Buyer Furnished Equipment: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="bndfrom" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Boundary From!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="bndto" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Boundary To!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="boundary" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="brexref" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="building" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Building: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="category" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Category: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(catletter),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="cbalt" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Circuit Breaker Alternate!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="cbclass" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Circuit Breaker Class: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(cbtype),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="cbid" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Circuit Breaker ID: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(cbnbr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="cbinfo" occur="all">
+<charlist inherit="1">
+<font size="12pt" weight="bold"/>
+<indent inherit="0" leftind="@20pt"/>
+<quadding quad="left"/>
+<postsp nominal="30pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Circuit Breaker Info!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="cblist" occur="all">
+<charlist inherit="1">
+<font size="24pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<presp nominal="20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Circuit Breaker List!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="chapnum" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!&#x2014; !" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="city" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!City: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="cmk" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Calibration Marker: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="collared" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Collared: ID: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(id),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="conitem" occur="all">
+<charlist inherit="1">
+<font size="12pt"/>
+<indent inherit="0" leftind="@20pt" firstln="*"/>
+<quadding quad="left"/>
+<presp nominal="10pt"/>
+<postsp nominal="30pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Supply Requirement!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="conitemalt" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Supply Item Alternate!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="conitemaltid" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Alternate ID:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Item Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(itemnbr),!&#x3c;/_font> / Nature &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(nature),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="conitemid" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Supply Item Identifier:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Item Number:&#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(itemnbr),!&#x3c;/_font> / Nature: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(nature),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="conlist" occur="all">
+<charlist inherit="1">
+<font size="24pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Supplies Requirements List!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="consupply" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Supply Product:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Supply Reference: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(consupplyref),!&#x3c;/_font> / Supply Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(consupplyreftype),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText >!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="consupplygrp" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Supply Group!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="consupplyid" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Supply ID:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Supply Ref: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(consupplyref),!&#x3c;/_font> / Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(consupplyreftype),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText >!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="consupplyinfo" occur="all">
+<charlist inherit="1">
+<font size="12pt" weight="bold"/>
+<indent inherit="0" leftind="@20pt" firstln="*-3.00pt"/>
+<quadding quad="left"/>
+<presp nominal="10pt"/>
+<postsp nominal="30pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Supply Info!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="consupplylist" occur="all">
+<charlist inherit="1">
+<font size="24pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Supplies Properties List!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="consupplyset" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Supply Set!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="contactaddr" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@20pt"/>
+<presp nominal="20pt"/>
+<postsp nominal="18.00pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Contract Address!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="content" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="country" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Country: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dept" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Department: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="desc" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Description: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="discode" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!&#x2014; !" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="discodev" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c gi="displaytext" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Display Text: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="division" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Division: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dmaddres" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<quadding quad="left"/></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dmc" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font weight="bold"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >DMC:&#x3c;_leaders leaderType="space" lenType="specified" specLen="24.00pt" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" />&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dmodule" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@"/>
+<presp nominal="10pt"/>
+<postsp nominal="30pt"/>
+<textbrk startpg="next" pageid="Default_US_Letter_Page_Set"
+newpgmdl="local" startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+<savetext textid="finalfoliostr.tiv" conrule="finalfoliostr[BO]"
+placemnt="after"/></charlist>
+<att>
+<specval attname="print-only" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<usetext
+source="!&#x3c;atidmd:DocumentMetaData bookmarks='none' xmlns:atidmd='http://www.arbortext.com/namespace/DocumentMetaData'>&#x3c;/atidmd:DocumentMetaData>!"
+placemnt="before"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="gentext-only" attloc="system-var" attval="#ANY"/>
+<specval attname="_styleexportfosi::_initialize_Specialization_Arrays"
+attloc="SYSTEM-FUNC" attval="1"/>
+<charsubset>
+<savetext textid="noop.txt" conrule="\\" placemnt="before"/>
+</charsubset>
+</att>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font famname="Arial" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<savetext textid="beforetext" conrule="!Technical Repository Datamodule!"
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dmsize" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Data Module size:&#x3c;_leaders leaderType="space" lenType="specified" specLen="12.00pt" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" />&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="dmtitle" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font weight="bold"/>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!Title-!" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ein" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Functional Item Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(einnbr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="einalt" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Functional Item Alternate!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="einid" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@0pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Functional Item ID:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Functional Item Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(einnbr),!&#x3c;/_font> / Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(eintype),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="eininfo" occur="all">
+<charlist inherit="1">
+<font size="12pt" weight="bold"/>
+<indent inherit="0" leftind="@20pt"/>
+<quadding quad="left"/>
+<presp nominal="10pt"/>
+<postsp nominal="30pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Functional Item Info!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="einlist" occur="all">
+<charlist inherit="1">
+<font size="24pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Functional Item Numbers List!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="einref" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Functional Item Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(type),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="email" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Email: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ent-name" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@0pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Enterprise Name: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ent-unit" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Enterprise Unit: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="enterprise" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Enterprise!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="etops" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Extended Twin Operations Parts!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="fastener" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Fastener!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="fax" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Fax: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="fstqty" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Fastener Quantity: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="fsttype" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Fastener Type: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ftc" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Fitment Code:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Value: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(value),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="gem" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Gem!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="hazd" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Hazardous!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="ict" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!ICT: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="idstatus" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="incode" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!&#x2014; !" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="incodev" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c gi="infoname" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font weight="bold"/>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="! &#x2014; !" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="internet" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Internet: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="issdate" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0" leftind="100pt"/>
+<quadding quad="left"/>
+<savetext textid="aftertext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Issue Date:&#x3c;_leaders leaderType="space" lenType="specified" specLen="12.00pt" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" />!,#CONTENT(day),!-!,#CONTENT(month),!-!,#CONTENT(year),!&#x3c;/_sfe:BeforeOrAfterText >!'
+placemnt="after"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="aftertext" placemnt="after"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="issno" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0" leftind="100pt" rightind="@-1.00pt" firstln="*0pt"/>
+<quadding quad="left"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Issue No.:&#x3c;_leaders leaderType="space" lenType="specified" specLen="12.00pt" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" />!,#CONTENT(issno),! !,#CONTENT(type),! data Module&#x3c;/_sfe:BeforeOrAfterText >!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="itemloc" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!&#x2014; !" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="kwd" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Keyword: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="language" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0" leftind="100pt"/>
+<quadding quad="left"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Language: &#x3c;_leaders leaderType="space" lenType="specified" specLen="12.00pt" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" />!,#CONTENT(language),! &#x2014; !,#CONTENT(country),!&#x3c;/_sfe:BeforeOrAfterText >!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="location" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Location!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="modelic" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="monitored" occur="all">
+<charlist inherit="1">
+<font weight="bold"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Monitored: ID: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(id),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="nature" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Nature: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="nomdata" occur="all">
+<charlist inherit="1">
+<font weight="bold"/>
+<indent inherit="0" leftind="@42.00pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Nomenclature Data!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="nomen" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Nomenclature: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="notes" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!Notes: !" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="nsn" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!NATO Stock Number:!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="openhour" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Open Hour: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="opn" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Over Length Equipment Number: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="opt" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Optional Part!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="organizationid" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Organization ID: MFC: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(mfc),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="organizationinfo" occur="all">
+<charlist inherit="1">
+<font size="12pt"/>
+<indent inherit="0" leftind="40pt"/>
+<quadding quad="left"/>
+<presp nominal="10pt"/>
+<postsp nominal="30pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Organization Info!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="organizationlist" occur="all">
+<charlist inherit="1">
+<font size="24pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<presp nominal="20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Organization List!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="organizationref" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Organization Ref: MFC &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(mfc),!&#x3c;/_font> / Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(type),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="orig" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Originator:&#x3c;_leaders leaderType="space" lenType="specified" specLen="12.00pt" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" />!,#CONTENT(origname),!&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="osc" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Optional Supplier Code: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="others" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Others: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="p" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="packaging" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Packaging: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="part" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Part:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />MFC: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(mfc),!&#x3c;/_font> / Part Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(pnr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="partid" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Part ID&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />MFC: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(mfc),!&#x3c;/_font> / Part Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(pnr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="partinfo" occur="all">
+<charlist inherit="1">
+<font size="12pt" weight="bold"/>
+<indent inherit="0" leftind="@20pt"/>
+<quadding quad="left"/>
+<presp nominal="10pt"/>
+<postsp nominal="30pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Part Info!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="partlist" occur="all">
+<charlist inherit="1">
+<font size="24pt"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Part List!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="partref" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Part Ref!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="phone" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Phone: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="pobox" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!PO Box: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="postcode" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Post Code: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="procdata" occur="all">
+<charlist inherit="1">
+<font weight="bold"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Procurement Data: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="province" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Province: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="provisioned" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Provisioned: ID: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(id),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="psc" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule="!Physical Security/Pilferage Code: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="psp" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Preferred Part!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="qa" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!Quality assurance status!"
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="qty" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Quantity: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="qtygrp" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Quantity Group!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="qtytolerance" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Quantity Tolerance: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="qtyvalue" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Quantity Value: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="quantity" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@0pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Quantity: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rcmdqty" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Recommended Quantity: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="recommendation" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Recommendation: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="refdm" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Reference Datamodule: !"
+placemnt="before"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font weight="medium"/>
+<indent inherit="0"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="refs" occur="all">
+<charlist inherit="1">
+<font weight="bold"/>
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Refs!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="reftp" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule="!Reference Technical Publication: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="remark" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@0pt" firstln="*40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Remark: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rfu" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!Reason for updating: !"
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="room" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Room: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rpc" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext"
+conrule="!Responsible partner company: !,#CONTENT(rpcname),!!"
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="rplby" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Replacement Relationship&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Inc: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(inc),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="sch:assert" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font size="10pt"/>
+<indent inherit="0" leftind="@30pt"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >&#x3c;_font Weight="medium" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(test),!&#x3c;/_font> : &#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="sch:pattern" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startpg="next" startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+<savetext textid="num__sch:pattern.txt"/>
+<savetext textid="label__sch:pattern.txt"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0" leftind="@30pt"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Pattern: &#x3c;_leaders leaderType="space" lenType="specified" specLen="40.00pt" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" />!,#CONTENT(name),!&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="sch:report" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font size="10pt"/>
+<indent inherit="0" leftind="@30pt"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >&#x3c;_font Weight="medium" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(test),!&#x3c;/_font> : &#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="sch:rule" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startpg="next" startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+<savetext textid="num__sch:rule.txt"/>
+<savetext textid="label__sch:rule.txt"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0" leftind="@30pt"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Context: &#x3c;_leaders leaderType="space" lenType="specified" specLen="40.00pt" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" />!,#CONTENT(context),!&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="sch:schema" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0" leftind="@7.00pt"/>
+<quadding quad="left"/></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="sdc" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="!&#x2014;!" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="section" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c gi="security" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0" leftind="@100pt"/>
+<presp nominal="0pt"/>
+<savetext textid="beforetext" conrule="!Security Classification:!"
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="shelflife" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Shelf Life: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="shippinginfo" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Shipping Info!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="side" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Side: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >(!,#CONTENT(hand),!)&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<specval attname="hand" attval="rh"/>
+<charsubset>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Side: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >Right Hand (!,#CONTENT(hand),!)&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText >!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<specval attname="hand" attval="lh"/>
+<charsubset>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Side: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >Left Hand (!,#CONTENT(hand),!)&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText >!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<specval attname="hand" attval="lr"/>
+<charsubset>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Side: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >Both (!,#CONTENT(hand),!)&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="sns" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!System/Sub System Reference: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="spc" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@0pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Spare Parts Class&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(spcnbr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="spec" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Standard Specification Number: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="speclist" occur="all">
+<charlist inherit="1">
+<font weight="bold"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Specification List&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Vendor: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(vendor),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="spl" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Supplier Code: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="state" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!State: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="status" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<quadding quad="left"/></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="stocknbr" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Stock Number:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Part Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(pnr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="str" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Storage Marker: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="street" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Street: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="subject" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!&#x2014; !" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="subscrpt" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@0pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Sub Script: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="subsect" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c gi="sup" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Supplier:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Local: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(local),!&#x3c;/_font> / MFC: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(mfc),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="suplist" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Supplier List!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="supscrpt" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@0pt"/>
+<highlt fontclr="#000000"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Super Script: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="taskcode" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Task Code: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(code),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="techdata" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Technical Data: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="techname" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/></charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<font weight="bold"/>
+<indent inherit="0"/></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="techrep" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<quadding quad="left"/>
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="techstd" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<savetext textid="beforetext" conrule="!Technical Standard!"
+placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="tool" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@0pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Tool:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Tool Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(toolnbr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="toolalt" occur="all">
+<charlist inherit="1">
+<font weight="bold"/>
+<indent inherit="0" leftind="@40pt"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Support Equipment Alternate!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="toolid" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Tool ID:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />MFC: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(mfc),!&#x3c;/_font> / Tool Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(toolnbr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="toolinfo" occur="all">
+<charlist inherit="1">
+<font size="12pt" weight="bold"/>
+<indent inherit="0" leftind="@20pt"/>
+<quadding quad="left"/>
+<presp nominal="10pt"/>
+<postsp nominal="30pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Tool Info!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="toollist" occur="all">
+<charlist inherit="1">
+<font size="24pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<presp nominal="20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Support Equipment List!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="toolref" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Tool Reference:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Type: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(type),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="transport" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Transport: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="unverif" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="\\" placemnt="before"/>
+</charlist>
+<att>
+<specval attname="EDITOR-ONLY" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<indent inherit="0"/>
+<textbrk startln="0" endln="0"/>
+<savetext textid="beforetext" conrule="!Unverified!" placemnt="before"/>
+<savetext textid="aftertext" conrule="\\" placemnt="after"/>
+<savetext textid="repeat_title.txt" conrule="\\"/>
+<savetext textid="repeat_title_bottom.txt" conrule="\\"/></charsubset>
+</att>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="uoi" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Unit Of Issue: !"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="usage" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Usage: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="usgcat" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Usage Category&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(usgnbr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="xref" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Cross Reference!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="zip" occur="all">
+<charlist inherit="1">
+<font weight="medium"/>
+<indent inherit="0" leftind="@20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!ZIP: !" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="zone" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<presp nominal="10pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Zone!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="zonealt" occur="all">
+<charlist inherit="1">
+<indent inherit="0" leftind="@40pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Zone Alternate!"
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="zoneid" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Zone ID:&#x3c;_newline xmlns:_dtd="http://www.arbortext.com/namespace/Styler/UserElements" />Zone Number: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(zonenbr),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="zoneinfo" occur="all">
+<charlist inherit="1">
+<font size="12pt" weight="bold"/>
+<indent inherit="0" leftind="@20pt"/>
+<quadding quad="left"/>
+<presp nominal="10pt"/>
+<postsp nominal="30pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Zone Info!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="zonelist" occur="all">
+<charlist inherit="1">
+<font size="24pt" weight="bold"/>
+<indent inherit="0"/>
+<quadding quad="center"/>
+<presp nominal="20pt"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext" conrule="!Zone List!" placemnt="before"/>
+</charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="zoneref" occur="all">
+<charlist inherit="1">
+<indent inherit="0"/>
+<textbrk startln="1" endln="1"/>
+<savetext textid="beforetext"
+conrule='!&#x3c;_sfe:BeforeOrAfterText xmlns:_sfe="http://www.arbortext.com/namespace/Styler/StylerFormattingElements" xmlns:_ufe="http://www.arbortext.com/namespace/Styler/UserFormattingElements" >Zone Ref: &#x3c;_font Weight="medium" TypeSize="12pt" FontColor="black" xmlns:_gte="http://www.arbortext.com/namespace/Styler/GeneratedTextElements" >!,#CONTENT(type),!&#x3c;/_font>&#x3c;/_sfe:BeforeOrAfterText>!'
+placemnt="before"/></charlist>
+<att>
+<charsubset>
+<usetext source="beforetext" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="number_space.psu">
+<charlist inherit="1"></charlist>
+<att>
+<specval attname="_styleexportfosi::oid_toc_delim" attloc="SYSTEM-FUNC"
+attval="1"/>
+<charsubset>
+<usetext source="\ \"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="number_space_em.psu">
+<charlist inherit="1"></charlist>
+<att>
+<specval attname="_styleexportfosi::oid_toc_delim" attloc="SYSTEM-FUNC"
+attval="1"/>
+<charsubset>
+<usetext source="1em"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<!--The following e-i-c's are used to control the screen display
+    of the "preliminary index". In most cases
+    the "preliminary index" is never seen.-->
+<e-i-c gi="ixprelim">
+<charlist inherit="1">
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="ixpt">
+<charlist inherit="1">
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="ixstart">
+<charlist inherit="1">
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="ixend">
+<charlist inherit="1">
+<textbrk startln="1" endln="1"/></charlist>
+</e-i-c>
+<e-i-c gi="ixsub1">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"/>
+<usetext source="\ / \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ixsub2">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"/>
+<usetext source="\ / \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ixsub3">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"/>
+<usetext source="\ / \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ixkey ixkey1 ixkey2 ixkey3">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c gi="ixpgstr">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"/>
+<usetext source="\   \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ixsee">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"/>
+<usetext source="\ / \,see.txt,\ \" placemnt="before">
+<subchars>
+<font inherit="1" posture="italic"/></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ixalso">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"/>
+<usetext source="\ / \,seealso.txt,\ \" placemnt="before">
+<subchars>
+<font inherit="1" posture="italic"/></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ixpgkey">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c
+gi="_gte:ElementNumber _gte:LabelAndNumberMarker _gte:ElementLabelAndNumber _gte:BulletMarker _gte:ElementContent _gte:AttributeContent _gte:XPathString _gte:XPathElements _gte:Leaders _gte:CrossReference _gte:PageNumber _gte:FormattedPageNumber _gte:PageNumberReference _gte:FinalPageNumber _gte:DivisionReference _gte:ElementContentPage _gte:AttributeContentPage _gte:GeneratedTextGraphic _gte:Font _gte:PageSetDivisionNumber _gte:SetAttribute">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c gi="insert_index.psu">
+<charlist inherit="1"></charlist>
+<att>
+<fillval attname="useparam" fillcat="usetext" fillchar="useparam"/>
+<charsubset>
+<usetext source="Main_Index__index.tiv" userule="2"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="get_nth_elem_in_scope.psu">
+<charlist inherit="1"></charlist>
+<att>
+<fillval attname="_styleexportfosi::get_nth_elem_in_scope"
+attloc="system-func" fillcat="usetext" fillchar="source"/>
+<charsubset>
+<usetext></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="get_first_elem_in_scope.psu">
+<charlist inherit="1"></charlist>
+<att>
+<fillval attname="_styleexportfosi::get_first_elem_in_scope"
+attloc="system-func" fillcat="usetext" fillchar="source"/>
+<charsubset>
+<usetext></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="_gte:ChangeBarBegin">
+<charlist inherit="1">
+<chgmark barthick="2pt" baroffset="6pt" type="start"></chgmark>
+<textbrk startln="0" endln="0"/></charlist>
+<att>
+<specval attname="class" attval="#NE#\\"/>
+<fillval attname="class" fillcat="chgmark" fillchar="cmclass"/></att>
+<att>
+<specval attname="offset" attval="#NE#\\"/>
+<fillval attname="offset" fillcat="chgmark" fillchar="baroffset"/></att>
+<att>
+<specval attname="ruleThick" attval="#NE#\\"/>
+<fillval attname="ruleThick" fillcat="chgmark" fillchar="barthick"/>
+</att>
+<att>
+<specval attname="color" attval="#NE#\\"/>
+<fillval attname="color" fillcat="chgmark" fillchar="ruleclr"/></att>
+</e-i-c>
+<e-i-c gi="_gte:ChangeBarEnd">
+<charlist inherit="1">
+<chgmark type="end"></chgmark>
+<textbrk startln="0" endln="0"/></charlist>
+<att>
+<specval attname="class" attval="#NE#\\"/>
+<fillval attname="class" fillcat="chgmark" fillchar="cmclass"/></att>
+</e-i-c>
+<e-i-c
+gi="atidmd:DocumentMetaData atidmd:Outline atidmd:Bookmark atidmd:Title">
+<charlist>
+<textbrk startln="0" endln="0"/></charlist>
+</e-i-c>
+<e-i-c gi="bmrk__top_of_div">
+<charlist></charlist>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#1"/>
+<charsubset>
+<savetext textid="bmrk__div2.txt" conrule="\\"/>
+<savetext textid="bmrk__div1_title.txt" conrule="\[No title]\"/>
+</charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#2"/>
+<charsubset>
+<savetext textid="bmrk__div3.txt" conrule="\\"/>
+<savetext textid="bmrk__div2_title.txt" conrule="\[No title]\"/>
+</charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#3"/>
+<charsubset>
+<savetext textid="bmrk__div4.txt" conrule="\\"/>
+<savetext textid="bmrk__div3_title.txt" conrule="\[No title]\"/>
+</charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#4"/>
+<charsubset>
+<savetext textid="bmrk__div5.txt" conrule="\\"/>
+<savetext textid="bmrk__div4_title.txt" conrule="\[No title]\"/>
+</charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#5"/>
+<charsubset>
+<savetext textid="bmrk__div5_title.txt" conrule="\[No title]\"/>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="bmrk__bot_of_div">
+<charlist></charlist>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#1"/>
+<charsubset>
+<savetext textid="bmrk__div1.txt"
+conrule="!&#x3c;atidmd:Bookmark xmlns:atidmd='http://www.arbortext.com/namespace/DocumentMetaData'>!,bmrk__div1_title.txt,bmrk__div2.txt,!&#x3c;/atidmd:Bookmark>!"
+append="1"/>
+<enumerat increm="0" enumid="bmrk__div_lvl" setvalue="1"/></charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#2"/>
+<charsubset>
+<savetext textid="bmrk__div2.txt"
+conrule="!&#x3c;atidmd:Bookmark xmlns:atidmd='http://www.arbortext.com/namespace/DocumentMetaData'>!,bmrk__div2_title.txt,bmrk__div3.txt,!&#x3c;/atidmd:Bookmark>!"
+append="1"/>
+<enumerat increm="1" enumid="bmrk__div_lvl" setvalue="1"/></charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#3"/>
+<charsubset>
+<savetext textid="bmrk__div3.txt"
+conrule="!&#x3c;atidmd:Bookmark xmlns:atidmd='http://www.arbortext.com/namespace/DocumentMetaData'>!,bmrk__div3_title.txt,bmrk__div4.txt,!&#x3c;/atidmd:Bookmark>!"
+append="1"/>
+<enumerat increm="2" enumid="bmrk__div_lvl" setvalue="1"/></charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#4"/>
+<charsubset>
+<savetext textid="bmrk__div4.txt"
+conrule="!&#x3c;atidmd:Bookmark xmlns:atidmd='http://www.arbortext.com/namespace/DocumentMetaData'>!,bmrk__div4_title.txt,bmrk__div5.txt,!&#x3c;/atidmd:Bookmark>!"
+append="1"/>
+<enumerat increm="3" enumid="bmrk__div_lvl" setvalue="1"/></charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#5"/>
+<charsubset>
+<savetext textid="bmrk__div5.txt"
+conrule="!&#x3c;atidmd:Bookmark xmlns:atidmd='http://www.arbortext.com/namespace/DocumentMetaData'>!,bmrk__div5_title.txt,!&#x3c;/atidmd:Bookmark>!"
+append="1"/>
+<enumerat increm="4" enumid="bmrk__div_lvl" setvalue="1"/></charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#GE#6"/>
+<charsubset>
+<enumerat increm="-1" enumid="bmrk__div_lvl"/></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="bmrk__within_div_title">
+<charlist>
+<suppress sup="1"/></charlist>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#1"/>
+<charsubset>
+<savetext textid="bmrk__div1_title.txt" conrule="#CONTENT"/>
+</charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#2"/>
+<charsubset>
+<savetext textid="bmrk__div2_title.txt" conrule="#CONTENT"/>
+</charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#3"/>
+<charsubset>
+<savetext textid="bmrk__div3_title.txt" conrule="#CONTENT"/>
+</charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#4"/>
+<charsubset>
+<savetext textid="bmrk__div4_title.txt" conrule="#CONTENT"/>
+</charsubset>
+</att>
+<att>
+<specval attname="bmrk__div_lvl" attloc="#FOSI" attval="#EQ#5"/>
+<charsubset>
+<savetext textid="bmrk__div5_title.txt" conrule="#CONTENT"/>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="#MISSING#">
+<charlist inherit="1"></charlist>
+<att>
+<specval attname="editor-only" attloc="system-var" attval="#ANY"/>
+<charsubset>
+<textbrk startln="1" endln="1"/></charsubset>
+</att>
+</e-i-c>
+</styldesc>
+</outspec>

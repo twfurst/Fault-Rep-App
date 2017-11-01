@@ -1,0 +1,16 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 3                              *
+    *                                                                    *
+    *                SGML Document Type Definition                       *
+    *                    Data Dispatch Note (DDN)                        *
+    *                                                                    *
+    *                     Release Version 3.0                            *
+    *                       Date: 2007-07-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *                                                                    *
+    ********************************************************************** -->
+
+<!DOCTYPE ddn PUBLIC "-//S1000D//DTD Data Dispatch Note 20070731//EN" [
+  ]>

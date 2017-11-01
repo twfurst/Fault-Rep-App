@@ -5,6 +5,9 @@
  */
 package com.furst.faultrep;
 
+import java.awt.Dimension;
+import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
+import org.pushingpixels.flamingo.api.common.icon.ResizableIcon;
 import org.pushingpixels.flamingo.api.ribbon.JRibbonFrame;
 
 /**
@@ -18,8 +21,15 @@ public class CRHFaultRepFrame extends JRibbonFrame {
      */
     public CRHFaultRepFrame() {
         initComponents();
+        this.setApplicationIcon(getIcon("rcmLogoNoBg32x32.png"));
     }
 
+    private ResizableIcon getIcon(String res)
+    {
+        String resource = "com/furst/faultrep/icons/" + res;
+        return ImageWrapperResizableIcon.getIcon(CRHFaultRepFrame.class.getClassLoader().getResource(resource), new Dimension(32,32));
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

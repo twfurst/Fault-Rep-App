@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="simpleTypes.xsd"/>
+	<xs:element name="chapnum" type="chapnumType"/>
+	<xs:element name="cidc" type="cidcType"/>
+	<xs:element name="discode" type="discodeType"/>
+	<xs:element name="discodev" type="discodevType"/>
+	<xs:element name="dmecode" type="xs:string"/>
+	<xs:element name="dmeproducer" type="xs:string"/>
+	<xs:element name="ecscs" type="ecscsType"/>
+	<xs:element name="eidc" type="eidcType"/>
+	<xs:element name="fic" type="FIC"/>
+	<xs:element name="incode" type="incodeType"/>
+	<xs:element name="incodev" type="incodevType"/>
+	<xs:element name="infoname" type="xs:string"/>
+	<xs:element name="itemloc" type="itemlocType"/>
+	<xs:element name="modelic" type="modelicType"/>
+	<xs:element name="pmissuer" type="pmissuerType"/>
+	<xs:element name="pmnumber" type="pmnumberType"/>
+	<xs:element name="pmtitle" type="xs:string"/>
+	<xs:element name="pmvolume" type="NONNEGI2"/>
+	<xs:element name="pubtitle" type="xs:string"/>
+	<xs:element name="sdc" type="sdcType"/>
+	<xs:element name="section" type="sectionType"/>
+	<xs:element name="subject" type="subjectType"/>
+	<xs:element name="subscrpt" type="xs:string"/>
+	<xs:element name="subsect" type="subsectType"/>
+	<xs:element name="supeqvc" type="supeqvcType"/>
+	<xs:element name="supscrpt" type="xs:string"/>
+	<xs:element name="techname" type="xs:string"/>
+	<xs:element name="title" type="xs:string"/>
+</xs:schema>

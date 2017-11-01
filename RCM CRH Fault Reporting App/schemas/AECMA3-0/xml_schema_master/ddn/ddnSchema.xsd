@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>
+			*****************************************************************************
+			*                                                                           *
+			*                        S1000D Issue 3                                     *
+			*                          XML Schema                                       *
+			*                                                                           *
+			*                     Release Version 3.0                                   *
+			*                       Date: 2007-07-31                                    *
+			*                                                                           *
+			*                                                                           *
+			* The following attribute definition on the root element may be used to     *
+			* call this set of declarations:-                                           *
+			*                                                                           *
+			* xsi:noNamespaceSchemaLocation=                                            *
+			* "http://www.s1000d.org/S1000D_3-0/xml_schema_master/ddn/ddnSchema.xsd"    *
+			*****************************************************************************
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="complexElements.xsd"/>
+	<xs:element name="ddn" type="ddnType"/>
+</xs:schema>

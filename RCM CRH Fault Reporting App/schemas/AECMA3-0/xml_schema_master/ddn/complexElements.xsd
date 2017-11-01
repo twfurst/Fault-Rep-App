@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="complexTypes.xsd"/>
+	<xs:element name="address" type="addressType"/>
+	<xs:element name="copyright" type="copyrightType"/>
+	<xs:element name="datacond" type="datacondType"/>
+	<xs:element name="datarest" type="datarestType"/>
+	<xs:element name="ddnc" type="ddncType"/>
+	<xs:element name="delivlst" type="delivlstType"/>
+	<xs:element name="destruct" type="destructType"/>
+	<xs:element name="disclose" type="discloseType"/>
+	<xs:element name="dispaddr" type="dispaddrType"/>
+	<xs:element name="dispfrom" type="dispfromType"/>
+	<xs:element name="dispto" type="disptoType"/>
+	<xs:element name="distrib" type="distribType"/>
+	<xs:element name="enterprise" type="enterpriseType"/>
+	<xs:element name="expcont" type="expcontType"/>
+	<xs:element name="expregcode" type="expregcodeType"/>
+	<xs:element name="expstatement" type="expstatementType"/>
+	<xs:element name="handling" type="handlingType"/>
+	<xs:element name="inform" type="informType"/>
+	<xs:element name="instruct" type="instructType"/>
+	<xs:element name="issdate" type="issdateType"/>
+	<xs:element name="issno" type="issnoType"/>
+	<xs:element name="mediaid" type="mediaidType"/>
+	<xs:element name="p" type="pType"/>
+	<xs:element name="person" type="personType"/>
+	<xs:element name="polref" type="polrefType"/>
+	<xs:element name="remarks" type="remarksType"/>
+	<xs:element name="security" type="securityType"/>
+</xs:schema>

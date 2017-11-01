@@ -1,0 +1,3322 @@
+<!--Arbortext, Inc., 1988-2010, v.4002-->
+<!DOCTYPE OUTSPEC PUBLIC "-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN">
+<outspec>
+<!--This comment contains conversion information. Please do not remove or modify. Version="8.0/Standard" Revision="3" SourcePI="-//ArborText//DTD OUTPUT SPEC 040300//EN" ConvPI="-//ArborText//DTD OUTPUT SPEC MIL-PRF-28001 REV B AMEND 1 19961231//EN" AdeptFosi="5.0" Status="Installed" NumConversions="1" NumInstalls="1"-->
+<rsrcdesc>
+<counter initial="1" style="arabic" enumid="table.ct">
+<counter initial="0" style="arabic" enumid="list4.ct">
+<counter initial="0" style="arabic" enumid="list3.ct">
+<counter initial="0" style="arabic" enumid="list2.ct">
+<counter initial="0" style="arabic" enumid="list1.ct">
+<counter initial="0" style="arabic" enumid="outline.lev1.ct">
+<counter initial="0" style="arabic" enumid="fig.ct">
+<counter initial="0" style="arabic" enumid="outline.lev2.ct">
+<counter initial="0" style="arabic" enumid="outline.lev3.ct">
+<counter initial="0" style="arabic" enumid="outline.lev4.ct">
+<counter initial="0" style="arabic" enumid="outline.lev5.ct">
+<counter initial="0" style="arabic" enumid="step1ct">
+<counter initial="0" style="alphalc" enumid="step2ct">
+<counter initial="0" style="romanlc" enumid="step3ct">
+<counter initial="0" style="alphauc" enumid="step4ct">
+<counter initial="0" style="romanuc" enumid="step5ct">
+<counter initial="0" style="arabic" enumid="folioct">
+<counter initial="0" style="arabic" enumid="ATIixpagekeyct">
+<counter initial="0" style="arabic" enumid="ATIixpagesetct">
+<counter initial="0" style="arabic" enumid="para0ct">
+<counter initial="0" style="arabic" enumid="subPara1ct">
+<counter initial="0" style="arabic" enumid="sheetct">
+<stringdecl textid="warn.txt" literal="" hotlink="1">
+<stringdecl textid="isostep.txt" literal="" status="1" hotlink="1">
+<stringdecl textid="step.txt" literal="" hotlink="1">
+<stringdecl textid="ATIixpagekeyct.txt" literal="0" status="0">
+<stringdecl textid="foliostr">
+<stringdecl textid="outline.lev1.spacebefore">
+<stringdecl textid="outline.lev2.spacebefore">
+<stringdecl textid="outline.lev3.spacebefore">
+<stringdecl textid="outline.lev4.spacebefore">
+<stringdecl textid="outline.lev5.spacebefore">
+<stringdecl textid="outline.lev1.charbefore">
+<stringdecl textid="outline.lev2.charbefore">
+<stringdecl textid="outline.lev3.charbefore">
+<stringdecl textid="outline.lev4.charbefore">
+<stringdecl textid="outline.lev5.charbefore">
+<stringdecl textid="outline.lev1.charafter">
+<stringdecl textid="outline.lev2.charafter">
+<stringdecl textid="outline.lev3.charafter">
+<stringdecl textid="outline.lev4.charafter">
+<stringdecl textid="outline.lev5.charafter">
+<stringdecl textid="outline.lev1.spaceafter">
+<stringdecl textid="outline.lev2.spaceafter">
+<stringdecl textid="outline.lev3.spaceafter">
+<stringdecl textid="outline.lev4.spaceafter">
+<stringdecl textid="outline.lev5.spaceafter">
+<stringdecl textid="outline.lev1.kernto">
+<stringdecl textid="outline.lev2.kernto">
+<stringdecl textid="outline.lev3.kernto">
+<stringdecl textid="outline.lev4.kernto">
+<stringdecl textid="outline.lev5.kernto">
+<stringdecl textid="step1cttxt">
+<stringdecl textid="step2cttxt">
+<stringdecl textid="step3cttxt">
+<stringdecl textid="step4cttxt">
+<stringdecl textid="step5cttxt">
+<stringdecl textid="rand.lev1.txt">
+<stringdecl textid="rand.lev2.txt">
+<stringdecl textid="rand.lev3.txt">
+<stringdecl textid="rand.lev1.spacebefore">
+<stringdecl textid="rand.lev2.spacebefore">
+<stringdecl textid="rand.lev3.spacebefore">
+<stringdecl textid="rand.lev1.spaceafter">
+<stringdecl textid="rand.lev2.spaceafter">
+<stringdecl textid="rand.lev3.spaceafter">
+<stringdecl textid="rand.lev1.kernto">
+<stringdecl textid="rand.lev2.kernto">
+<stringdecl textid="rand.lev3.kernto">
+<stringdecl textid="title">
+<stringdecl textid="pr">
+<stringdecl textid="pre">
+<stringdecl textid="post">
+<stringdecl textid="proc">
+<stringdecl textid="close">
+<stringdecl textid="xrefstr">
+<stringdecl textid="prexrefstr">
+<stringdecl textid="postxrefstr">
+<stringdecl textid="fignum">
+<stringdecl textid="textid" literal=""></rsrcdesc>
+<pagedesc>
+<pageset id="titlepageset" blankpg="1">
+<rectopg width="8.5in" nomdepth="12.5in">
+<pageres>
+<enumerat increm="1" enumid="ATIixpagekeyct" setvalue="0">
+<enumerat increm="1" enumid="ATIixpagesetct" setvalue="1">
+<savetext textid="ATIixpagekeyct.txt"
+conrule="ATIixpagesetct,\ \,ATIixpagekeyct"></pageres>
+<pagespec>
+<topmarg nomdepth="1.25in">
+<botmarg nomdepth="1.25in">
+<leftmarg width="1.25in">
+<rtmarg width="1.25in">
+<header></header>
+<footer></footer>
+<flowtext numcols="1">
+<column width="6in"></flowtext>
+</pagespec>
+</rectopg>
+<blankpg width="6in" nomdepth="12in">
+<pagespec>
+<topmarg nomdepth="0in">
+<botmarg nomdepth="0in">
+<leftmarg width="0in">
+<rtmarg width="0in">
+<header></header>
+<footer></footer>
+<flowtext numcols="1" chgmkplc="plftrt">
+<column width="6in"></flowtext>
+</pagespec>
+</blankpg>
+</pageset>
+<pageset id="dummy">
+<rectopg width="8.3in" nomdepth="12in">
+<pageres>
+<enumerat increm="1" enumid="folioct">
+<enumerat increm="1" enumid="ATIixpagekeyct" setvalue="0">
+<enumerat increm="2" enumid="ATIixpagesetct" setvalue="1">
+<savetext textid="foliostr" conrule="folioct">
+<savetext textid="ATIixpagekeyct.txt"
+conrule="ATIixpagesetct,\ \,ATIixpagekeyct"></pageres>
+<pagespec>
+<topmarg nomdepth="1.00in">
+<botmarg nomdepth="1.00in">
+<leftmarg width="1.25in">
+<rtmarg width="1.00in">
+<header></header>
+<footer>
+<usetext source="foliostr" placemnt="before">
+<subchars>
+<font style="serif" size="10pt" posture="upright">
+<quadding quad="right" lastquad="lright">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</footer>
+<flowtext numcols="1">
+<column width="6in"></flowtext>
+</pagespec>
+</rectopg>
+<versopg width="8.3in" nomdepth="12in">
+<pageres>
+<enumerat increm="1" enumid="folioct">
+<enumerat increm="1" enumid="ATIixpagekeyct" setvalue="0">
+<enumerat increm="2" enumid="ATIixpagesetct" setvalue="1">
+<savetext textid="foliostr" conrule="folioct">
+<savetext textid="ATIixpagekeyct.txt"
+conrule="ATIixpagesetct,\ \,ATIixpagekeyct"></pageres>
+<pagespec>
+<topmarg nomdepth="1.00in">
+<botmarg nomdepth="1.00in">
+<leftmarg width="1.25in">
+<rtmarg width="1.00in">
+<header></header>
+<footer>
+<usetext source="foliostr" placemnt="before">
+<subchars>
+<font style="serif" size="10pt" posture="upright">
+<quadding quad="left" lastquad="lleft">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</footer>
+<flowtext numcols="1">
+<column width="6in"></flowtext>
+</pagespec>
+</versopg>
+</pageset>
+</pagedesc>
+<styldesc>
+<charsubset charsubsetid="noinherit">
+<presp>
+<postsp>
+<keeps></charsubset>
+<charsubset charsubsetid="inline">
+<textbrk startln="0" endln="0"></charsubset>
+<charsubset charsubsetid="standalone">
+<font size="10pt">
+<presp minimum="0" nominal="0" maximum="0">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="no-newline">
+<textbrk startln="0" endln="1"></charsubset>
+<charsubset charsubsetid="startline">
+<textbrk startln="1" endln="0"></charsubset>
+<charsubset charsubsetid="bold">
+<font inherit="1" posture="upright" weight="bold"></charsubset>
+<charsubset charsubsetid="italic">
+<font inherit="1" posture="italic" weight="medium"></charsubset>
+<charsubset charsubsetid="underscore">
+<highlt scoring="1" scorewt=".5pt" scorespc="1"></charsubset>
+<charsubset charsubsetid="allcaps">
+<wordsp minimum="0.45em" nominal="0.45em" maximum="0.45em">
+<highlt allcap="1"></charsubset>
+<charsubset charsubsetid="font">
+<font famname="Arial" size="11" posture="upright" weight="medium">
+<leading inherit="0" lead="1.2em">
+<highlt fontclr="black"></charsubset>
+<charsubset charsubsetid="smallfont">
+<font size="10" posture="upright" weight="medium">
+<leading inherit="0" lead="1.2em">
+<highlt fontclr="black"></charsubset>
+<charsubset charsubsetid="titlefont">
+<font style="sanserif" posture="upright" weight="bold">
+<leading inherit="0" lead="1.2em"></charsubset>
+<charsubset charsubsetid="text" charsubsetref="font">
+<hyphen hyph="1"></charsubset>
+<charsubset charsubsetid="smalltext" charsubsetref="smallfont">
+<hyphen hyph="1"></charsubset>
+<charsubset charsubsetid="titletext">
+<hyphen hyph="0">
+<keeps scope="col" keep="1" next="1"></charsubset>
+<charsubset charsubsetid="space">
+<presp minimum="1.2em" nominal="1.2em" maximum="1.2em"></charsubset>
+<charsubset charsubsetid="titlespace">
+<presp minimum="3em" nominal="3em" maximum="3em" condit="keep"
+priority="med">
+<postsp minimum="2em" nominal="2em" maximum="2em" condit="keep"
+priority="high"></charsubset>
+<charsubset charsubsetid="listspace">
+<presp minimum="1.2em" nominal="1.2em" maximum="1.5em" condit="discard"
+priority="med">
+<postsp minimum="1.2em" nominal="1.2em" maximum="1.5em" condit="discard"
+priority="med"></charsubset>
+<charsubset charsubsetid="paragraph" charsubsetref="text space">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="applicability" charsubsetref="text">
+<indent leftind="@3cm" firstln="^3cm">
+<textbrk startln="1" endln="0"></charsubset>
+<charsubset charsubsetid="titlepage" charsubsetref="standalone">
+<textbrk startpg="recto" pageid="titlepageset" newpgmdl="global">
+</charsubset>
+<charsubset charsubsetid="numberedpage" charsubsetref="standalone">
+<indent>
+<textbrk startpg="recto" pageid="dummy" newpgmdl="global"></charsubset>
+<charsubset charsubsetid="division" charsubsetref="standalone">
+</charsubset>
+<charsubset charsubsetid="title1" charsubsetref="titletext">
+<font size="14pt" weight="bold">
+<indent leftind="5mm" firstln="5mm">
+<quadding quad="center" lastquad="relative">
+<reset resetlist="outline.lev2.ct">
+<enumerat increm="1" enumid="outline.lev1.ct"></charsubset>
+<charsubset charsubsetid="title2"
+charsubsetref="titletext titlespace standalone">
+<font size="12pt" weight="bold">
+<reset resetlist="outline.lev3.ct">
+<enumerat increm="1" enumid="outline.lev2.ct"></charsubset>
+<charsubset charsubsetid="title3" charsubsetref="titletext standalone">
+<font size="10pt" weight="bold">
+<indent inherit="0">
+<quadding quad="left">
+<presp minimum="24pt" nominal="24pt" maximum="24pt" condit="discard"
+priority="med">
+<postsp minimum="12pt" nominal="12pt" maximum="12pt" condit="discard"
+priority="high"></charsubset>
+<charsubset charsubsetid="title4" charsubsetref="titletext standalone">
+<font style="sanserif" size="10pt" posture="upright" weight="medium">
+<quadding quad="left"></charsubset>
+<charsubset charsubsetid="title5" charsubsetref="titletext standalone">
+<font size="10pt" posture="italic" weight="medium">
+<quadding quad="left"></charsubset>
+<charsubset charsubsetid="title6" charsubsetref="titletext standalone">
+<font size="12pt">
+<indent inherit="0">
+<quadding quad="left">
+<presp minimum="18pt" nominal="18pt" maximum="18pt" condit="discard"
+priority="high">
+<postsp minimum="12pt" nominal="12pt" maximum="12pt" condit="discard"
+priority="high"></charsubset>
+<charsubset charsubsetid="title7" charsubsetref="titletext standalone">
+<font famname="arial" size="14pt" weight="bold">
+<leading lead="14pt">
+<indent inherit="0">
+<quadding quad="left">
+<highlt fontclr="black" forpct="100">
+<presp minimum="18pt" nominal="18pt" maximum="18pt" condit="discard"
+priority="high">
+<postsp minimum="12pt" nominal="12pt" maximum="12pt" condit="discard"
+priority="high">
+<keeps next="1"></charsubset>
+<charsubset charsubsetid="outline.lev1.indent">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev2.indent">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev3.indent">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev4.indent">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev5.indent">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev1"
+charsubsetref="outline.lev1.indent listspace">
+<reset resetlist="outline.lev1.ct"></charsubset>
+<charsubset charsubsetid="outline.lev2"
+charsubsetref="outline.lev2.indent listspace">
+<reset resetlist="outline.lev2.ct"></charsubset>
+<charsubset charsubsetid="outline.lev3"
+charsubsetref="outline.lev3.indent listspace">
+<reset resetlist="outline.lev3.ct"></charsubset>
+<charsubset charsubsetid="outline.lev4"
+charsubsetref="outline.lev4.indent listspace">
+<reset resetlist="outline.lev4.ct"></charsubset>
+<charsubset charsubsetid="outline.lev5"
+charsubsetref="outline.lev5.indent listspace">
+<reset resetlist="outline.lev5.ct"></charsubset>
+<charsubset charsubsetid="outline.text" charsubsetref="text">
+<savetext textid="outline.lev1.spacebefore" conrule="\\">
+<savetext textid="outline.lev2.spacebefore" conrule="\\">
+<savetext textid="outline.lev3.spacebefore" conrule="\\">
+<savetext textid="outline.lev4.spacebefore" conrule="\\">
+<savetext textid="outline.lev5.spacebefore" conrule="\\">
+<savetext textid="outline.lev1.charbefore" conrule="\\">
+<savetext textid="outline.lev2.charbefore" conrule="\\">
+<savetext textid="outline.lev3.charbefore" conrule="\\">
+<savetext textid="outline.lev4.charbefore" conrule="\\">
+<savetext textid="outline.lev5.charbefore" conrule="\(\">
+<savetext textid="outline.lev1.charafter" conrule="\.\">
+<savetext textid="outline.lev2.charafter" conrule="\.\">
+<savetext textid="outline.lev3.charafter" conrule="\.\">
+<savetext textid="outline.lev4.charafter" conrule="\.\">
+<savetext textid="outline.lev5.charafter" conrule="\)\">
+<savetext textid="outline.lev1.spaceafter" conrule="0.5em">
+<savetext textid="outline.lev2.spaceafter" conrule="0.5em">
+<savetext textid="outline.lev3.spaceafter" conrule="0.5em">
+<savetext textid="outline.lev4.spaceafter" conrule="0.5em">
+<savetext textid="outline.lev5.spaceafter" conrule="0.5em">
+<savetext textid="outline.lev1.kernto" conrule="@2.5em">
+<savetext textid="outline.lev2.kernto" conrule="@2.5em">
+<savetext textid="outline.lev3.kernto" conrule="@2.5em">
+<savetext textid="outline.lev4.kernto" conrule="@2.5em">
+<savetext textid="outline.lev5.kernto" conrule="@2.5em"></charsubset>
+<charsubset charsubsetid="outline.lev1.item.indent">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev2.item.indent">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev3.item.indent">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev4.item.indent">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev5.item.indent">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="outline.lev1.item"
+charsubsetref="outline.text outline.lev1.item.indent">
+<enumerat increm="1" enumid="outline.lev1.ct">
+<usetext
+source="outline.lev1.spacebefore,outline.lev1.charbefore,outline.lev1.ct,outline.lev1.charafter,outline.lev1.spaceafter,outline.lev1.kernto"
+placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="outline.lev2.item"
+charsubsetref="outline.text outline.lev2.item.indent">
+<enumerat increm="1" enumid="outline.lev2.ct">
+<usetext
+source="outline.lev2.spacebefore,outline.lev2.charbefore,outline.lev2.ct,outline.lev2.charafter,outline.lev2.spaceafter,outline.lev2.kernto"
+placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="outline.lev3.item"
+charsubsetref="outline.text outline.lev3.item.indent">
+<enumerat increm="1" enumid="outline.lev3.ct">
+<usetext
+source="outline.lev3.spacebefore,outline.lev3.charbefore,outline.lev3.ct,outline.lev3.charafter,outline.lev3.spaceafter,outline.lev3.kernto"
+placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="outline.lev4.item"
+charsubsetref="outline.text outline.lev4.item.indent">
+<enumerat increm="1" enumid="outline.lev4.ct">
+<usetext
+source="outline.lev4.spacebefore,outline.lev4.charbefore,outline.lev4.ct,outline.lev4.charafter,outline.lev4.spaceafter,outline.lev4.kernto"
+placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="outline.lev5.item"
+charsubsetref="outline.text outline.lev5.item.indent">
+<enumerat increm="1" enumid="outline.lev5.ct">
+<usetext
+source="outline.lev5.spacebefore,outline.lev5.charbefore,outline.lev5.ct,outline.lev5.charafter,outline.lev5.spaceafter,outline.lev5.kernto"
+placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="calist1" charsubsetref="listspace">
+<font inherit="1">
+<indent inherit="0" leftind="@3pi" firstln="*-2pi">
+<quadding inherit="1">
+<textbrk startln="1" endln="1">
+<reset resetlist="step2ct">
+<enumerat increm="1" enumid="step1ct">
+<savetext textid="step1cttxt" conrule="step1ct,\.\,@2pi">
+<usetext source="step1cttxt" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="calist2" charsubsetref="listspace">
+<font inherit="1">
+<indent inherit="0" leftind="@2pi" firstln="*-2pi">
+<quadding inherit="1">
+<textbrk startln="1" endln="1">
+<reset resetlist="step3ct">
+<enumerat increm="1" enumid="step2ct">
+<savetext textid="step2cttxt" conrule="step2ct,\.\,@2pi">
+<usetext source="step2cttxt" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="calist3" charsubsetref="listspace">
+<font inherit="1">
+<indent inherit="0" leftind="@2pi" firstln="*-2pi">
+<quadding inherit="1">
+<textbrk startln="1" endln="1">
+<reset resetlist="step4ct">
+<enumerat increm="1" enumid="step3ct">
+<savetext textid="step3cttxt" conrule="step3ct,\.\,@2pi">
+<usetext source="step3cttxt" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="calist4" charsubsetref="listspace">
+<font inherit="1">
+<indent inherit="0" leftind="@2pi" firstln="*-2pi">
+<quadding inherit="1">
+<textbrk startln="1" endln="1">
+<reset resetlist="step5ct">
+<enumerat increm="1" enumid="step4ct">
+<savetext textid="step4cttxt" conrule="step4ct,\.\,@2pi">
+<usetext source="step4cttxt" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="calist5" charsubsetref="listspace">
+<font inherit="1">
+<indent inherit="0" leftind="@2pi" firstln="*-2pi">
+<quadding inherit="1">
+<textbrk startln="1" endln="1">
+<enumerat increm="1" enumid="step5ct">
+<savetext textid="step5cttxt" conrule="step5ct,\.\,@2pi">
+<usetext source="step5cttxt" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="calisttop">
+<reset resetlist="step1ct"></charsubset>
+<charsubset charsubsetid="term" charsubsetref="font bold space">
+<indent leftind="@" rightind="*+20mm" firstln="*">
+<keeps keep="1" next="1">
+<textbrk startln="1" endln="0">
+<algroup refpoint="first"></charsubset>
+<charsubset charsubsetid="def" charsubsetref="text">
+<font size="10pt">
+<indent leftind="@+11em" firstln="*">
+<textbrk startln="0" endln="1"></charsubset>
+<charsubset charsubsetid="deflisttitle" charsubsetref="titletext space">
+<font size="14pt">
+<indent inherit="0">
+<quadding inherit="0" quad="center">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="rand.lev1.indent">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="rand.lev2.indent">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="rand.lev3.indent">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="randlist.text" charsubsetref="text">
+<savetext textid="rand.lev1.txt" conrule="">
+<savetext textid="rand.lev2.txt" conrule="">
+<savetext textid="rand.lev3.txt" conrule="">
+<savetext textid="rand.lev1.spacebefore" conrule="\\">
+<savetext textid="rand.lev2.spacebefore" conrule="\\">
+<savetext textid="rand.lev3.spacebefore" conrule="\\">
+<savetext textid="rand.lev1.spaceafter" conrule="0.5em">
+<savetext textid="rand.lev2.spaceafter" conrule="0.5em">
+<savetext textid="rand.lev3.spaceafter" conrule="0.5em">
+<savetext textid="rand.lev1.kernto" conrule="@2.5em">
+<savetext textid="rand.lev2.kernto" conrule="@2.5em">
+<savetext textid="rand.lev3.kernto" conrule="@2.5em"></charsubset>
+<charsubset charsubsetid="rand.lev1.item.indent">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="rand.lev2.item.indent">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="rand.lev3.item.indent">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<textbrk startln="1" endln="1"></charsubset>
+<charsubset charsubsetid="rand.lev1.item"
+charsubsetref="rand.lev1.item.indent">
+<usetext
+source="rand.lev1.spacebefore,rand.lev1.txt,rand.lev1.spaceafter,rand.lev1.kernto"
+placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="rand.lev2.item"
+charsubsetref="rand.lev2.item.indent">
+<usetext
+source="rand.lev2.spacebefore,rand.lev2.txt,rand.lev2.spaceafter,rand.lev2.kernto"
+placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="rand.lev3.item"
+charsubsetref="rand.lev3.item.indent">
+<usetext
+source="rand.lev3.spacebefore,rand.lev3.txt,rand.lev3.spaceafter,rand.lev3.kernto"
+placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="step1" charsubsetref="listspace">
+<textbrk startln="1" endln="1">
+<reset resetlist="step1ct"></charsubset>
+<charsubset charsubsetid="stepitem1" charsubsetref="text no-newline">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<enumerat increm="1" enumid="step1ct">
+<usetext source="step1ct,\.\,0.5em,@2.5em" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="step2" charsubsetref="listspace">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1">
+<reset resetlist="step2ct"></charsubset>
+<charsubset charsubsetid="stepitem2" charsubsetref="text no-newline">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<enumerat increm="1" enumid="step2ct">
+<usetext source="step2ct,\.\,0.5em,@2.5em" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="step3" charsubsetref="listspace">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1">
+<reset resetlist="step3ct"></charsubset>
+<charsubset charsubsetid="stepitem3" charsubsetref="text no-newline">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<enumerat increm="1" enumid="step3ct">
+<usetext source="step3ct,\.\,0.5em,@2.5em" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="step4" charsubsetref="listspace">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1">
+<reset resetlist="step4ct"></charsubset>
+<charsubset charsubsetid="stepitem4" charsubsetref="text no-newline">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<enumerat increm="1" enumid="step4ct">
+<usetext source="step4ct,\.\,0.5em,@2.5em" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="step5" charsubsetref="listspace">
+<indent inherit="1" leftind="@" rightind="@" firstln="^">
+<textbrk startln="1" endln="1">
+<reset resetlist="step5ct"></charsubset>
+<charsubset charsubsetid="stepitem5" charsubsetref="text no-newline">
+<indent inherit="1" leftind="@+2.5em" rightind="@" firstln="*-2.5em">
+<enumerat increm="1" enumid="step5ct">
+<usetext source="step5ct,\.\,0.5em,@2.5em" placemnt="before"></usetext>
+</charsubset>
+<charsubset charsubsetid="caption" charsubsetref="smalltext standalone">
+<quadding inherit="0" quad="center">
+<highlt fontclr="black">
+<keeps next="1"></charsubset>
+<docdesc>
+<charlist inherit="1" charsubsetref="noinherit">
+<font inherit="0" style="serif" famname="Helvetica" size="10pt"
+posture="upright" weight="medium" width="regular" offset="0pt">
+<leading inherit="0" lead="12pt">
+<indent inherit="0" leftind="20mm" rightind="0" firstln="20mm">
+<quadding inherit="0" quad="justify" lastquad="relative">
+<highlt>
+<presp minimum="0pt" nominal="0pt" maximum="0pt" condit="discard"
+priority="none">
+<postsp minimum="6pt" nominal="6pt" maximum="6pt" condit="discard"
+priority="none">
+<keeps scope="col" keep="0" widowct="2" orphanct="2" next="0" prev="0">
+<textbrk startcol="0" startpg="off" newpgmdl="global" startln="0"
+endln="0"></charlist>
+</docdesc>
+<e-i-c gi="addmod" occur="first">
+<charlist inherit="1" charsubsetref="applicability">
+<font inherit="0">
+<hyphen inherit="0">
+<indent inherit="0" leftind="4cm" firstln="*">
+<highlt inherit="0">
+<textbrk startln="1" endln="1">
+<usetext source="@1cm,\Additional\,@3cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="addmod" occur="notfirst">
+<charlist inherit="1" charsubsetref="applicability">
+<font inherit="0">
+<hyphen inherit="0">
+<indent inherit="0" leftind="7cm" firstln="^51mm">
+<highlt inherit="0">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="afi">
+<charlist>
+<textbrk startln="1" endln="1">
+<usetext source="\Fault Isolation\" placemnt="before">
+<subchars>
+<font size="12pt" posture="italic" weight="bold">
+<quadding quad="center">
+<postsp minimum="3mm" nominal="3mm" maximum="3mm" priority="force">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="action">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="age">
+<charlist charsubsetref="paragraph">
+<textbrk startln="0"></charlist>
+</e-i-c>
+<e-i-c gi="age" context="* refdm">
+<charlist>
+<textbrk startln="0" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="applic" context="status">
+<charlist charsubsetref="paragraph">
+<indent inherit="1">
+<usetext source="\Applicability\" placemnt="before">
+<subchars>
+<font inherit="0" size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="applic" context="para">
+<charlist inherit="1">
+<indent inherit="0" leftind="5mm" firstln="5mm">
+<textbrk startln="0" endln="1">
+<usetext source="\Applicability\" placemnt="before">
+<subchars>
+<font inherit="0" size="10pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="autandtp">
+<charlist charsubsetref="standalone space"></charlist>
+</e-i-c>
+<e-i-c gi="authblk">
+<charlist inherit="1" charsubsetref="applicability">
+<font inherit="0">
+<hyphen inherit="0">
+<indent inherit="0" leftind="@3cm" firstln="^3cm">
+<highlt inherit="0">
+<presp minimum="0" nominal="0" maximum="0">
+<usetext source="\Authority block\,@5.4cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="authex">
+<charlist charsubsetref="applicability">
+<indent leftind="@3cm" firstln="^3cm">
+<textbrk startln="1" endln="1">
+<usetext source="\Authority exceptions\" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold">
+<ruling thick="2pt" lentype="rel" rellen="col" placemnt="after">
+<indent inherit="0" leftind="2cm" firstln="2cm">
+<textbrk startln="1" endln="1"></ruling>
+</subchars>
+</usetext>
+<ruling thick="2pt" lentype="rel" rellen="text" placemnt="after">
+<indent inherit="0" leftind="2cm" firstln="2cm">
+<textbrk startln="1" endln="1"></ruling>
+</charlist>
+</e-i-c>
+<e-i-c gi="avee">
+<charlist charsubsetref="paragraph">
+<textbrk startln="0"></charlist>
+</e-i-c>
+<e-i-c gi="avee" context="dmc">
+<charlist>
+<font size="12pt" weight="bold">
+<textbrk startln="0"></charlist>
+</e-i-c>
+<e-i-c gi="avee" context="* refdm">
+<charlist charsubsetref="inline">
+<font inherit="1">
+<quadding quad="left">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="batchno">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="capbody">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="capentry">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="capgrp">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="capline">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="caprow">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="captext">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="caption">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="caution" context="specpara" occur="notfirst">
+<charlist>
+<textbrk startln="0" endln="1">
+<usetext></usetext>
+</charlist>
+<att>
+<specval attname="type" attloc="caution" attval="cautions">
+<charsubset>
+<font weight="bold">
+<quadding inherit="1" quad="left">
+<highlt fontclr="black" allcap="1">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="caution" context="specpara" occur="first">
+<charlist></charlist>
+<att logic="and">
+<specval attname="type" attloc="caution" attval="cautions">
+<fillval attname="type" attloc="caution" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<font weight="bold">
+<quadding inherit="0" quad="center">
+<highlt fontclr="black" allcap="1">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="caution" attval="caution">
+<fillval attname="type" attloc="caution" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<font weight="bold">
+<quadding inherit="0" quad="center">
+<highlt fontclr="black" allcap="1">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="caution" attval="#NONE">
+<charsubset>
+<font weight="bold">
+<quadding quad="center">
+<highlt fontclr="black" allcap="1">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1">
+<usetext source="\CAUTION\"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="caution" occur="all">
+<charlist>
+<font size="11pt" weight="bold">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1">
+<usetext source="\CAUTION\">
+<subchars>
+<quadding quad="center"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="change">
+<charlist charsubsetref="standalone space"></charlist>
+<att>
+<specval attname="mark" attloc="change" attval="#ANY">
+<charsubset>
+<chgmark barthick="3pt" baroffset="2mm" type="end"></chgmark>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="chapnum">
+<charlist inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before" userule="0">
+<subchars></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="cidc">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="config">
+<charlist charsubsetref="applicability">
+<indent leftind="@" firstln="^"></charlist>
+<att>
+<specval attname="premod" attloc="config" attval="#ANY">
+<charsubset>
+<usetext source="\Pre engineering mod\,@7.5cm" placemnt="before">
+<subchars>
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="premod" attloc="config" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<textbrk endln="1"></charsubset>
+</att>
+<att>
+<specval attname="postmod" attloc="config" attval="#ANY">
+<charsubset>
+<textbrk startln="1">
+<usetext source="\Post engineering mod\,@7.5cm" placemnt="before">
+<subchars>
+<font weight="bold">
+<textbrk startln="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="postmod" attloc="config" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<textbrk endln="1"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="content">
+<charlist>
+<indent inherit="1"></charlist>
+</e-i-c>
+<e-i-c gi="customer">
+<charlist inherit="1" charsubsetref="applicability">
+<font inherit="0">
+<hyphen inherit="0">
+<indent inherit="0" leftind="@" firstln="^">
+<highlt inherit="0">
+<textbrk endln="1">
+<usetext source="\Customer\,@7.5cm" placemnt="before">
+<subchars>
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="def">
+<charlist inherit="1" charsubsetref="inline">
+<font inherit="1">
+<hyphen inherit="1">
+<highlt inherit="1">
+<textbrk startln="0" endln="1">
+<usetext source="@40mm" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="describe">
+<charlist>
+<presp minimum="3mm" nominal="3mm" maximum="3mm" priority="force">
+<postsp minimum="3mm" nominal="3mm" maximum="3mm" priority="force">
+<textbrk startln="1" endln="1">
+<usetext source="\Fault Description\">
+<subchars>
+<font size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="deflist" context="warning">
+<charlist charsubsetref="stepitem1"></charlist>
+</e-i-c>
+<e-i-c gi="deflist" context="caution">
+<charlist charsubsetref="stepitem1"></charlist>
+</e-i-c>
+<e-i-c gi="deflist" context="note">
+<charlist charsubsetref="stepitem1"></charlist>
+</e-i-c>
+<e-i-c gi="deflist">
+<charlist charsubsetref="standalone space">
+<font inherit="1">
+<indent inherit="1">
+<highlt inherit="1"></charlist>
+</e-i-c>
+<e-i-c gi="descript">
+<charlist charsubsetref="standalone space">
+<font famname="arial" size="14pt" posture="italic" weight="bold">
+<leading lead="16pt">
+<indent leftind="@0.000mm" rightind="0.000mm" firstln="*">
+<quadding quad="left" lastquad="relative">
+<presp minimum="10mm" nominal="10mm" maximum="10mm">
+<postsp minimum="14.2pt" nominal="14.2pt" maximum="14.2pt">
+<keeps scope="col">
+<usetext source="\Description\" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="discode">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before" userule="0">
+<subchars></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="discodev">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="dmaddres" context="idstatus dmodule">
+<charlist charsubsetref="standalone space">
+<indent inherit="1" leftind="@" firstln="^">
+<quadding quad="left"></charlist>
+</e-i-c>
+<e-i-c gi="dmc" context="dmaddres">
+<charlist charsubsetref="standalone space">
+<font size="12pt" weight="bold">
+<indent inherit="1">
+<highlt>
+<usetext source="\DMC:\,@34mm" placemnt="before">
+<subchars></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="dmodule">
+<charlist>
+<font famname="Arial" size="11pt">
+<indent leftind="0in" rightind="0in" firstln="0in">
+<usetext source="\Applicability Cross Reference Table Datamodule\"
+placemnt="before">
+<subchars>
+<font inherit="1" famname="Arial" size="12pt" weight="bold">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext source="\End of data module\" placemnt="after">
+<subchars>
+<font weight="bold">
+<quadding quad="center">
+<presp minimum="10mm" nominal="10mm" maximum="10mm" priority="force">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="dmsize">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0">
+<hyphen inherit="0">
+<highlt inherit="0">
+<usetext source="\Data module size: \, @84mm" placemnt="before"
+userule="0">
+<subchars>
+<font size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="dmtitle" context="refdm">
+<charlist charsubsetref="inline">
+<textbrk startln="0" endln="1">
+<usetext source="4.5cm" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="dmtitle" context="dmaddres">
+<charlist charsubsetref="standalone space">
+<leading lead="6pt">
+<indent inherit="1">
+<quadding quad="left">
+<presp minimum="5pt" nominal="5pt" maximum="5pt">
+<usetext source="\Title:\,@0mm" placemnt="before">
+<subchars>
+<font inherit="0" size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ecscs">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="eidc">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="emphasis">
+<charlist inherit="1" charsubsetref="inline"></charlist>
+<att>
+<specval attname="emph" attloc="emphasis" attval="#NONE">
+<charsubset>
+<font inherit="1" weight="bold"></charsubset>
+</att>
+<att>
+<specval attname="emph" attloc="emphasis" attval="bold">
+<charsubset>
+<font inherit="1" weight="bold"></charsubset>
+</att>
+<att>
+<specval attname="emph" attloc="emphasis" attval="italic">
+<charsubset>
+<font inherit="1" posture="italic"></charsubset>
+</att>
+<att>
+<specval attname="emph" attloc="emphasis" attval="em01">
+<charsubset>
+<font inherit="1" weight="bold"></charsubset>
+</att>
+<att>
+<specval attname="emph" attloc="emphasis" attval="em02">
+<charsubset>
+<font inherit="1" posture="italic"></charsubset>
+</att>
+<att>
+<specval attname="emph" attloc="emphasis" attval="em03">
+<charsubset>
+<font inherit="1">
+<highlt inherit="1" scoring="1" scorespc="0">
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="entry">
+<charlist>
+<wordsp>
+<sentxsp>
+<indent>
+<quadding quad="left">
+<span>
+<algroup></charlist>
+</e-i-c>
+<e-i-c gi="exmod" occur="first">
+<charlist charsubsetref="applicability">
+<indent leftind="4cm" firstln="*">
+<usetext source="@1cm,\Excluded\,@3cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="exmod" occur="notfirst">
+<charlist charsubsetref="applicability">
+<indent inherit="0" leftind="7cm" firstln="^51mm">
+<textbrk startln="1" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="fic">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0">
+<hyphen inherit="0">
+<highlt inherit="0">
+<usetext source="\Functional Item code:\,@8cm" placemnt="before">
+<subchars>
+<font inherit="0" size="12pt" weight="bold">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="fdesc">
+<charlist>
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="fault">
+<charlist>
+<usetext source="\Fault Code: \" placemnt="before"></usetext>
+</charlist>
+<att>
+<fillval attname="fcode" attloc="fault" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="figure">
+<charlist charsubsetref="division">
+<quadding quad="center" lastquad="lcenter">
+<reset resetlist="sheetct">
+<enumerat increm="1" enumid="fig.ct">
+<savetext textid="fignum" conrule="\Fig. \,fig.ct">
+<usetext source="title" placemnt="after">
+<subchars>
+<font inherit="0" posture="italic">
+<quadding inherit="0" quad="center" lastquad="lcenter"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="fignum"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="firstver">
+<charlist>
+<presp minimum="5mm" nominal="5mm" maximum="5mm">
+<textbrk startln="1" endln="0">
+<usetext source="\cleared 1st verification\,2cm" placemnt="before">
+<subchars>
+<font size="11pt">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="type" attloc="firstver" attval="onobject">
+<charsubset>
+<usetext source="\on object\,1cm" placemnt="before">
+<subchars>
+<font size="10pt">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="firstver" attval="tabtop">
+<charsubset>
+<usetext source="\table top\,1cm" placemnt="before">
+<subchars>
+<font size="10pt">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="firstver" attval="ttandoo">
+<charsubset>
+<usetext source="\table top and on object\" placemnt="before">
+<subchars>
+<font size="10pt">
+<highlt fontclr="black">
+<textbrk endln="0"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="foldout">
+<charlist charsubsetref="standalone space"></charlist>
+</e-i-c>
+<e-i-c gi="graphic">
+<charlist charsubsetref="standalone space">
+<enumerat increm="1" enumid="sheetct">
+<savetext textid="sheet.txt" conrule="fignum,\-\,sheetct"
+placemnt="after"></charlist>
+</e-i-c>
+<e-i-c gi="idstatus">
+<charlist>
+<indent inherit="1">
+<savetext textid="head"
+conrule="\DM Identification and Status Information\" append="1">
+<savetext textid="dt"></charlist>
+<att>
+<fillval attname="date" attloc="system-var" fillcat="savetext"
+fillchar="conrule">
+<charsubset>
+<font size="8pt" weight="bold">
+<quadding quad="right">
+<textbrk startln="1" endln="1">
+<savetext textid="dt" append="1">
+<usetext source="dt" placemnt="before">
+<subchars></subchars>
+</usetext>
+<usetext source="head" placemnt="before">
+<subchars>
+<font size="14pt" weight="bold">
+<quadding quad="center">
+<presp minimum="6pt" nominal="6pt" maximum="6pt">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<ruling thick="2pt" lentype="rel" rellen="text" placemnt="before"
+type="bold"></ruling>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="incode">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before" userule="0">
+<subchars></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="incodev">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="indxflag">
+<charlist charsubsetref="standalone space"></charlist>
+</e-i-c>
+<e-i-c gi="infoname" context="* dmaddres">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0" size="12pt" weight="bold">
+<hyphen inherit="0">
+<indent leftind="39mm">
+<highlt inherit="0">
+<textbrk startln="0"></charlist>
+</e-i-c>
+<e-i-c gi="inline">
+<charlist charsubsetref="applicability">
+<indent inherit="0" leftind="3cm" firstln="^">
+<usetext source="@1cm,\In-line\,@6cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="issdate">
+<charlist charsubsetref="standalone">
+<usetext source="\Issue Date: \,@34mm" placemnt="before" userule="0">
+<subchars>
+<font inherit="0" size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="day" attloc="issdate" fillcat="usetext"
+fillchar="source">
+<charsubset></charsubset>
+</att>
+<att>
+<specval attname="month" attloc="issdate" attval="#ANY">
+<charsubset>
+<usetext source="\-\" placemnt="before">
+<subchars></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="month" attloc="issdate" fillcat="usetext"
+fillchar="source">
+<charsubset></charsubset>
+</att>
+<att>
+<specval attname="year" attloc="issdate" attval="#ANY">
+<charsubset>
+<usetext source="\-\" placemnt="before">
+<subchars></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="year" attloc="issdate" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<usetext source="\-\" placemnt="before">
+<subchars></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="issno">
+<charlist charsubsetref="standalone">
+<font size="12pt">
+<usetext source="\Issue No.: \,@34mm" placemnt="before" userule="0">
+<subchars>
+<font inherit="0" size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="issno" attloc="issno" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<font size="12pt"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="issno" attval="changed">
+<charsubset>
+<usetext
+source="\ Data Module Changed - Changes are marked with revision markers.\"
+placemnt="after" userule="0">
+<subchars>
+<font size="12pt"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="issno" attval="new">
+<charsubset>
+<usetext source="\ New data Module\" placemnt="after" userule="0">
+<subchars>
+<font size="12pt"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="issno" attval="deleted">
+<charsubset>
+<usetext source=" \ Deleted Data Module\" placemnt="after" userule="0">
+<subchars>
+<font size="12pt"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="issno" attval="revised">
+<charsubset>
+<usetext
+source="\ Data Module Completely Revised - Changes are not marked with revison markers.\"
+placemnt="after" userule="0">
+<subchars>
+<font size="12pt"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="issno" attval="rinstate-changed">
+<charsubset>
+<usetext source="\ Reinstated Data Module\" placemnt="after" userule="0">
+<subchars>
+<font size="12pt"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="issno" attval="status">
+<charsubset>
+<usetext
+source="\ Status Information Changed - No change to Content information\"
+placemnt="after" userule="0">
+<subchars>
+<font size="12pt"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="isostep">
+<charlist>
+<postsp minimum="3mm" nominal="3mm" maximum="3mm" priority="force">
+<textbrk startln="1" endln="1">
+<enumerat enumid="step1ct" setvalue="0">
+<usetext source="step1ct,\.  \" placemnt="before"></usetext>
+<savetext textid="isostep.txt" conrule="\Step \,step1ct" placemnt="after"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="isoend">
+<charlist>
+<enumerat enumid="step1ct" setvalue="0">
+<usetext source="step1ct,\.  \" placemnt="before"></usetext>
+<savetext textid="isostep.txt" conrule="\Step \,step1ct" placemnt="after"
+append="1"></charlist>
+</e-i-c>
+<e-i-c gi="item" context="  * warning">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0" size="10pt" weight="bold">
+<hyphen inherit="0">
+<indent inherit="0" leftind="@20mm" firstln="^20mm">
+<highlt inherit="0">
+<usetext source="\&bull;\,@7mm" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="isolatep">
+<charlist>
+<presp minimum="3mm" nominal="3mm" maximum="3mm" priority="force">
+<textbrk startln="1" endln="1">
+<usetext source="\Procedure\" placemnt="before">
+<subchars>
+<font size="12pt" weight="bold">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="randlist * randlist * randlist">
+<charlist inherit="1">
+<indent inherit="1">
+<textbrk startln="1" endln="0">
+<usetext source="\-\,@7mm" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="randlist * randlist">
+<charlist inherit="1">
+<indent inherit="1" leftind="@7mm" firstln="^">
+<textbrk startln="1" endln="0">
+<usetext source="\&bull;\,@7mm" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="randlist">
+<charlist>
+<font inherit="1">
+<indent inherit="1" leftind="27mm" firstln="20mm">
+<textbrk startln="1" endln="0">
+<usetext source="\-\,@7mm" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="randlist * seqlist">
+<charlist>
+<font inherit="1">
+<indent inherit="1" leftind="34mm" firstln="27mm">
+<textbrk startln="1" endln="0">
+<usetext source="\-\,@7mm" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="seqlist * seqlist * seqlist * seqlist">
+<charlist>
+<font inherit="1">
+<indent inherit="1" leftind="47mm" firstln="47mm">
+<textbrk startln="1" endln="0">
+<enumerat increm="1" enumid="list4.ct">
+<usetext source="list1.ct,\.\,list2.ct,\.\,list3.ct,\.\,list4.ct,@7mm"
+placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="seqlist * seqlist * seqlist">
+<charlist>
+<font inherit="1">
+<indent inherit="1" leftind="35mm" rightind="0pt" firstln="35mm">
+<textbrk startln="1" endln="0">
+<enumerat increm="1" enumid="list3.ct">
+<usetext source="list1.ct,\.\,list2.ct,\.\,list3.ct,@7mm"
+placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="seqlist * seqlist">
+<charlist>
+<font inherit="1">
+<indent leftind="27mm" firstln="27mm">
+<textbrk startln="1" endln="0">
+<enumerat increm="1" enumid="list2.ct">
+<usetext source="list1.ct,\.\,list2.ct,@7mm" placemnt="before">
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="item" context="seqlist">
+<charlist inherit="1">
+<indent leftind="20mm" firstln="20mm">
+<textbrk startln="1" endln="0">
+<reset resetlist="list2.ct">
+<enumerat increm="1" enumid="list1.ct">
+<usetext source="list1.ct,@7mm" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="itemloc">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before" userule="0">
+<subchars></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="language">
+<charlist inherit="1" charsubsetref="standalone">
+<usetext source="\Language:\,@34mm" placemnt="before">
+<subchars>
+<font size="12pt" weight="bold">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="language" attloc="language" fillcat="usetext"
+fillchar="source"></att>
+<att>
+<fillval attname="country" attloc="language" fillcat="usetext"
+fillchar="userule">
+<charsubset>
+<usetext source="\ - \" placemnt="before" userule="1">
+<subchars></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="country" attloc="language" fillcat="usetext"
+fillchar="source"></att>
+</e-i-c>
+<e-i-c gi="legend">
+<charlist charsubsetref="standalone space"></charlist>
+</e-i-c>
+<e-i-c gi="mfc">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="mod" occur="first">
+<charlist charsubsetref="applicability">
+<font weight="bold">
+<indent leftind="@" firstln="^">
+<usetext source="\Authority\,@5cm,\Modification Standard\"
+placemnt="before">
+<subchars>
+<font inherit="0" weight="bold">
+<indent inherit="1" firstln="^20mm">
+<highlt scoring="1">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="authno" attloc="mod" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<textbrk startln="0" endln="0"></charsubset>
+</att>
+<att>
+<specval attname="modtype" attloc="mod" attval="pre">
+<charsubset>
+<usetext source="@4.5cm,\Pre Modification\" placemnt="before">
+<subchars>
+<font inherit="0" weight="medium">
+<textbrk endln="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modtype" attloc="mod" attval="post">
+<charsubset>
+<usetext source="@4.5cm,\Post Modification\" placemnt="before">
+<subchars>
+<font inherit="0" weight="medium">
+<textbrk endln="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modtype" attloc="mod" attval="prandpo">
+<charsubset charsubsetref="inline">
+<font inherit="0" weight="bold">
+<textbrk startln="0" endln="0">
+<usetext source="@4.5cm,\Pre and Post Modification\" placemnt="before">
+<subchars>
+<font inherit="0" weight="medium">
+<textbrk startln="0" endln="0"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="mod" occur="notfirst">
+<charlist charsubsetref="applicability">
+<font weight="bold">
+<indent leftind="@" firstln="^"></charlist>
+<att>
+<specval attname="authno" attloc="mod" attval="#ANY">
+<charsubset>
+<usetext source="@2.5cm" placemnt="before">
+<subchars>
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="authno" attloc="mod" fillcat="usetext"
+fillchar="source"></att>
+<att>
+<specval attname="modtype" attloc="mod" attval="pre">
+<charsubset>
+<font weight="bold">
+<usetext source="1cm,\Pre\" placemnt="before">
+<subchars>
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modtype" attloc="mod" attval="post">
+<charsubset>
+<font weight="bold">
+<usetext source="1cm,\Post\" placemnt="before">
+<subchars>
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="modtype" attloc="mod" attval="prandpo">
+<charsubset>
+<font weight="bold">
+<usetext source="1cm,\Pre\,1cm,\Post\" placemnt="before">
+<subchars>
+<font weight="bold"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="model">
+<charlist inherit="1" charsubsetref="applicability">
+<usetext source="\Model\,@5.4cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="model" attloc="model" fillcat="usetext"
+fillchar="source"></att>
+</e-i-c>
+<e-i-c gi="modelic">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="moduleno">
+<charlist inherit="1" charsubsetref="applicability">
+<font inherit="0">
+<hyphen inherit="0">
+<indent inherit="0" leftind="@" firstln="^">
+<highlt inherit="0">
+<usetext source="\Engine module No.\,@7.5cm" placemnt="before">
+<subchars>
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="norefs">
+<charlist charsubsetref="standalone space"></charlist>
+</e-i-c>
+<e-i-c gi="nosafety">
+<charlist charsubsetref="standalone space">
+<indent inherit="1" firstln="@20mm">
+<usetext source="\None\" placemnt="before">
+<subchars>
+<font inherit="1" famname="Arial" size="10pt" weight="medium">
+</subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="noconds">
+<charlist>
+<textbrk startln="0" endln="1">
+<usetext source="\None \" placemnt="before">
+<subchars>
+<font inherit="0" size="10pt" weight="medium">
+<textbrk endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="nosupeq">
+<charlist>
+<textbrk startln="1" endln="1">
+<usetext
+source="\______________________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<font weight="medium">
+<quadding quad="left">
+<presp minimum="0mm" nominal="0mm" maximum="0mm">
+<postsp minimum="0mm" nominal="0mm" maximum="0mm">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext source="14mm,\Nomenclature\,6cm,\Identification No\,4cm,\Qty\"
+placemnt="before">
+<subchars>
+<font famname="Arial" size="10pt" weight="medium">
+<quadding quad="left">
+<postsp minimum="0" nominal="0" maximum="0">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\______________________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<font weight="medium">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="14mm,\None\" placemnt="before">
+<subchars>
+<font famname="Arial" size="10pt" weight="medium">
+<quadding quad="left">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\______________________________________________________________________________________________\"
+placemnt="after">
+<subchars>
+<font weight="medium">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="nosupply">
+<charlist>
+<font inherit="0" famname="Arial" size="10pt" weight="medium">
+<textbrk startln="1" endln="1">
+<usetext
+source="\______________________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<font weight="medium">
+<presp minimum="0mm" nominal="0mm" maximum="0mm">
+<postsp minimum="0mm" nominal="0mm" maximum="0mm">
+<textbrk endln="1"></subchars>
+</usetext>
+<usetext source="14mm,\Nomenclature\,6cm,\Identification No\,4cm,\Qty\"
+placemnt="before">
+<subchars>
+<font famname="Arial" size="10pt" weight="medium">
+<quadding quad="left">
+<postsp minimum="0" nominal="0" maximum="0">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\______________________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<font weight="medium">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="14mm,\None\" placemnt="before">
+<subchars>
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\______________________________________________________________________________________________\"
+placemnt="after">
+<subchars>
+<font weight="medium">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="nospares">
+<charlist>
+<quadding quad="left">
+<textbrk startln="1" endln="1">
+<usetext
+source="\_________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<font weight="medium">
+<quadding quad="left">
+<presp minimum="0mm" nominal="0mm" maximum="0mm">
+<postsp minimum="0mm" nominal="0mm" maximum="0mm">
+<textbrk endln="1"></subchars>
+</usetext>
+<usetext source="14mm,\Nomenclature\,6cm,\Identification No\,4cm,\Qty\"
+placemnt="before">
+<subchars>
+<font famname="Arial" size="10pt" weight="medium">
+<quadding quad="left">
+<postsp minimum="0" nominal="0" maximum="0">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\_________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<font weight="medium">
+<quadding quad="left">
+<textbrk startln="1"></subchars>
+</usetext>
+<usetext source="14mm,\None\" placemnt="before">
+<subchars>
+<font famname="Arial" size="10pt" weight="medium">
+<quadding quad="left">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\_________________________________________________________________________\"
+placemnt="after">
+<subchars>
+<font weight="medium">
+<quadding quad="left">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="note" context="specpara" occur="first">
+<charlist>
+<presp minimum="10mm" nominal="10mm" maximum="10mm">
+<postsp minimum="0" nominal="0" maximum="0">
+<textbrk startln="1" endln="1"></charlist>
+<att logic="or">
+<specval attname="type" attloc="note" attval="#NONE">
+<specval attname="type" attloc="note" attval="note">
+<charsubset>
+<font posture="italic" weight="medium">
+<indent leftind="@0mm" firstln="0mm">
+<quadding quad="left">
+<textbrk startln="1" endln="1">
+<reset resetlist="step1ct">
+<usetext source="@20mm,\Note \" placemnt="before"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="note" occur="notfirst">
+<charlist>
+<font posture="italic" weight="light">
+<indent firstln="+15mm">
+<quadding quad="left">
+<presp minimum="5mm" nominal="5mm" maximum="5mm">
+<postsp minimum="0" nominal="0" maximum="0">
+<textbrk startln="1" endln="1">
+<usetext source="\Note\" placemnt="before">
+<subchars>
+<font inherit="0" posture="italic" weight="medium">
+<textbrk endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="note" occur="all">
+<charlist>
+<font posture="italic" weight="light">
+<indent firstln="+15mm">
+<quadding quad="left">
+<presp minimum="5mm" nominal="5mm" maximum="5mm">
+<postsp minimum="0" nominal="0" maximum="0">
+<textbrk startln="1" endln="1">
+<usetext source="\Note\" placemnt="before">
+<subchars>
+<font inherit="0" posture="italic" weight="medium">
+<textbrk endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="notes">
+<charlist charsubsetref="paragraph">
+<font inherit="0" size="12pt">
+<hyphen inherit="0">
+<indent inherit="1" leftind="@21mm" firstln="^">
+<presp minimum="10mm" nominal="10mm" maximum="10mm" priority="force">
+<textbrk endln="1">
+<usetext source="0mm,\Notes:  \" placemnt="before">
+<subchars>
+<font size="12pt" weight="bold">
+<presp minimum="10mm" nominal="10mm" maximum="10mm" priority="force">
+</subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="nsn">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="orig">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0">
+<hyphen inherit="0">
+<highlt inherit="0">
+<usetext source="\Originator: \,@84mm" placemnt="before">
+<subchars>
+<font size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="origname" attloc="orig" fillcat="usetext"
+fillchar="source">
+<charsubset></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="subpara4" occur="all">
+<charlist charsubsetref="standalone">
+<indent leftind="20mm" firstln="20mm">
+<postsp minimum="8mm" nominal="8mm" maximum="8mm" priority="force">
+<textbrk startln="1" endln="1">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" attloc="para" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA in PARA0\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="subpara3" occur="all">
+<charlist charsubsetref="standalone">
+<indent leftind="20mm" firstln="20mm">
+<postsp minimum="8mm" nominal="8mm" maximum="8mm" priority="force">
+<textbrk startln="1" endln="1">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" attloc="para" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA in PARA0\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="subpara2" occur="all">
+<charlist charsubsetref="standalone">
+<indent leftind="20mm" firstln="20mm">
+<textbrk startln="1" endln="1">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" attloc="para" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA in PARA0\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="subpara1" occur="all">
+<charlist charsubsetref="standalone">
+<indent leftind="20mm" firstln="20mm">
+<postsp minimum="8mm" nominal="8mm" maximum="8mm" priority="force">
+<textbrk startln="1" endln="1">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" attloc="para" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA in PARA0\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="para0" occur="all">
+<charlist charsubsetref="standalone">
+<indent leftind="20mm" firstln="20mm">
+<postsp minimum="8mm" nominal="8mm" maximum="8mm" priority="force">
+<textbrk startln="1" endln="1">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" attloc="para" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA in PARA0\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="descript" occur="all">
+<charlist charsubsetref="standalone">
+<indent leftind="20mm" firstln="20mm">
+<postsp minimum="8mm" nominal="8mm" maximum="8mm" priority="force">
+<textbrk startln="1" endln="1">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" attloc="para" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA in PARA0\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="specpara">
+<charlist>
+<quadding quad="left">
+<highlt fontclr="black" allcap="0">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+</e-i-c>
+<e-i-c gi="para" context="warning * specpara" occur="first">
+<charlist>
+<indent leftind="20.00mm" firstln="*">
+<textbrk endln="1">
+<savetext textid="para.txt" conrule="\See WARNING \" xrefidtag="warning">
+</charlist>
+<att>
+<specval attname="type" attloc="warning" attval="warnings">
+<charsubset>
+<font weight="bold">
+<indent leftind="32mm" firstln="25mm">
+<quadding quad="left">
+<highlt fontclr="black">
+<textbrk startln="1">
+<usetext source="\&bull;\,@7mm"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="warning" attval="warning">
+<charsubset>
+<font weight="bold">
+<indent leftind="25mm" firstln="25mm">
+<quadding quad="left">
+<highlt fontclr="black">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="warning" attval="#NONE">
+<charsubset>
+<font weight="bold">
+<quadding quad="left">
+<highlt fontclr="black">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="warning" occur="all">
+<charlist>
+<font size="11pt" weight="bold">
+<indent firstln="*">
+<textbrk startln="1" endln="1">
+<savetext textid="para.txt" conrule="\See WARNING \" xrefidtag="warning">
+</charlist>
+</e-i-c>
+<e-i-c gi="para" context="warning * specpara" occur="notfirst">
+<charlist>
+<font size="11pt" weight="bold">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA in Warning\"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="warning" attval="warning">
+<charsubset>
+<font weight="bold">
+<indent leftind="@5mm" firstln="^5mm">
+<quadding quad="left">
+<highlt fontclr="black" allcap="1">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="warning" attval="warnings">
+<charsubset>
+<font weight="bold">
+<indent leftind="@12mm" firstln="^12mm">
+<quadding quad="left">
+<highlt fontclr="black" allcap="1">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context=" caution * specpara" occur="first">
+<charlist>
+<indent leftind="20.00mm" firstln="*">
+<textbrk endln="1">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<specval attname="type" attloc="caution" attval="cautions">
+<charsubset>
+<font weight="bold">
+<indent leftind="32mm" firstln="25mm">
+<quadding quad="left">
+<highlt fontclr="black">
+<textbrk startln="1">
+<usetext source="\&bull;\,@7mm"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="caution" attval="caution">
+<charsubset>
+<font weight="bold">
+<indent leftind="25mm" firstln="25mm">
+<quadding quad="left">
+<highlt fontclr="black">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="caution" attval="#NONE">
+<charsubset>
+<font weight="bold">
+<quadding quad="left">
+<highlt fontclr="black">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="caution * specpara" occur="notfirst">
+<charlist>
+<indent leftind="@20mm" firstln="^20mm">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA in Caution\"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="caution" attval="caution">
+<charsubset>
+<font weight="bold">
+<indent leftind="@5mm" firstln="^5mm">
+<quadding quad="left">
+<highlt fontclr="black" allcap="1">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="caution" attval="cautions">
+<charsubset>
+<font weight="bold">
+<indent leftind="@12mm" firstln="^12mm">
+<quadding quad="left">
+<highlt fontclr="black" allcap="1">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="caution" occur="all">
+<charlist>
+<font size="11pt" weight="bold">
+<textbrk startln="1" endln="1">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+</e-i-c>
+<e-i-c gi="para" context="note" occur="all">
+<charlist charsubsetref="standalone">
+<font posture="italic"></charlist>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA in Note\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="entry" occur="first">
+<charlist charsubsetref="standalone">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para" context="entry" occur="notfirst">
+<charlist charsubsetref="standalone">
+<presp minimum="6pt" nominal="6pt" maximum="6pt">
+<savetext textid="para.txt" conrule="\Para. \"></charlist>
+<att>
+<fillval attname="id" fillcat="savetext" fillchar="textid">
+<charsubset>
+<savetext conrule="\PARA\"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="para0">
+<charlist charsubsetref="division">
+<indent leftind="0pt" firstln="*">
+<quadding quad="justify" lastquad="relative">
+<presp minimum="10mm" nominal="10mm" maximum="10mm">
+<postsp minimum="10mm" nominal="10mm" maximum="10mm" priority="force">
+<reset resetlist="subpara1ct">
+<enumerat increm="1" enumid="para0ct"></charlist>
+</e-i-c>
+<e-i-c gi="pnr">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="postsb">
+<charlist charsubsetref="applicability">
+<indent leftind="@" firstln="^">
+<usetext source="\Pre service bulletin\,@7.5cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="presb">
+<charlist charsubsetref="applicability">
+<indent leftind="@" firstln="^">
+<textbrk startln="1">
+<usetext source="\Pre service bulletin\,@7.5cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="prelreqs" context="isoproc">
+<charlist>
+<textbrk startln="1" endln="1">
+<usetext source="\Preliminary Requirments\">
+<subchars>
+<font size="12pt" posture="italic" weight="bold">
+<quadding quad="center">
+<postsp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="qa">
+<charlist>
+<font size="12pt" weight="bold">
+<indent inherit="1">
+<presp minimum="10mm" nominal="10mm" maximum="10mm">
+<textbrk startln="1" endln="1">
+<usetext source="\Quality assurance status\" placemnt="before">
+<subchars>
+<font size="12pt"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="randlist" context="item * randlist">
+<charlist>
+<indent inherit="1" leftind="@7mm" firstln="@0mm">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<postsp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="randlist">
+<charlist>
+<indent inherit="1" leftind="@" firstln="^">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<postsp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="randlist" context="warning">
+<charlist>
+<font inherit="1">
+<textbrk startln="1"></charlist>
+</e-i-c>
+<e-i-c gi="randlist" context="caution">
+<charlist>
+<font inherit="1">
+<textbrk startln="1"></charlist>
+</e-i-c>
+<e-i-c gi="range">
+<charlist></charlist>
+<att>
+<fillval attname="from" attloc="range" fillcat="usetext"
+fillchar="source"></att>
+<att>
+<specval attname="to" attloc="range" attval="#ANY">
+<charsubset>
+<usetext source="\ - \" placemnt="after"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="to" attloc="range" fillcat="usetext" fillchar="source">
+</att>
+</e-i-c>
+<e-i-c gi="rdandrt" context="refs">
+<charlist>
+<presp minimum="4mm" nominal="4mm" maximum="4mm">
+<textbrk startln="1">
+<usetext source="\Table \,table.ct,\ References\" placemnt="before">
+<subchars>
+<font inherit="1" famname="Arial" posture="italic" weight="medium">
+<quadding quad="center">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\______________________________________________________________________________________\"
+placemnt="before"></usetext>
+<usetext
+source="\______________________________________________________________________________________\"
+placemnt="after">
+<subchars>
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="refdm" context="refdms * refs * content" occur="notfirst">
+<charlist>
+<font inherit="1">
+<quadding quad="left">
+<textbrk startln="1" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="refdm" context="refdms * refs * content" occur="first">
+<charlist>
+<textbrk startln="1" endln="0">
+<usetext source="\Data module / technical publication\,5cm,\Title\"
+placemnt="before">
+<subchars>
+<presp minimum="0pt" nominal="0pt" maximum="0pt" priority="force">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\______________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="refdm" context="para">
+<charlist charsubsetref="inline">
+<highlt fontclr="blue">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="refdms" context="rdandrt * refs * content">
+<charlist>
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="refdms" context="refs * content">
+<charlist>
+<textbrk startln="1" endln="1">
+<usetext source="\Table \,table.ct,\ References\" placemnt="before">
+<subchars>
+<font inherit="1" famname="Arial" posture="italic" weight="medium">
+<quadding quad="center">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\______________________________________________________________________________________\"
+placemnt="before"></usetext>
+<usetext
+source="\______________________________________________________________________________________\"
+placemnt="after"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="refs">
+<charlist charsubsetref="standalone space">
+<quadding quad="left">
+<postsp minimum="4mm" nominal="4mm" maximum="4mm">
+<usetext source="\References\" placemnt="before">
+<subchars>
+<font inherit="0" size="14pt" posture="italic" weight="bold">
+<quadding inherit="0" quad="center">
+<postsp minimum="10mm" nominal="10mm" maximum="10mm"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="reftp" context="para">
+<charlist charsubsetref="inline">
+<keeps keep="7">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="reftp" context="rdandrt">
+<charlist>
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="reftp" context="refs">
+<charlist charsubsetref="outline.lev1">
+<textbrk startln="1">
+<usetext source="\Table \,table.ct,\ References\" placemnt="before">
+<subchars>
+<font inherit="1" famname="Arial" posture="italic" weight="medium">
+<quadding quad="center">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\______________________________________________________________________________________\"
+placemnt="before"></usetext>
+<usetext source="\Technical Publications\,@6.4cm" placemnt="before">
+<subchars>
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\______________________________________________________________________________________\"
+placemnt="before"></usetext>
+<usetext
+source="\______________________________________________________________________________________\"
+placemnt="after">
+<subchars>
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="reqcond" context=" reqcontp">
+<charlist charsubsetref="term"></charlist>
+</e-i-c>
+<e-i-c gi="reqcond" context="reqcondm">
+<charlist inherit="0">
+<indent inherit="0">
+<quadding quad="left" lastquad="lleft">
+<textbrk startln="1" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="reqcondm" occur="first">
+<charlist>
+<indent>
+<quadding quad="left" lastquad="lleft">
+<textbrk startln="1" endln="1">
+<enumerat increm="1" enumid="table.ct">
+<usetext source="\Table \,table.ct,\  Required conditions\"
+placemnt="before">
+<subchars>
+<font famname="Arial" size="10pt" posture="italic" weight="medium">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\_________________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<textbrk endln="1"></subchars>
+</usetext>
+<usetext source="\Title\,9cm,\DataModule\" placemnt="before">
+<subchars>
+<postsp minimum="0" nominal="0" maximum="0"></subchars>
+</usetext>
+<usetext
+source="\_________________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<textbrk startln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="reqconds">
+<charlist charsubsetref="title2">
+<usetext source="\Required conditions\" placemnt="before">
+<subchars>
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="reqcontp">
+<charlist charsubsetref="standalone space"></charlist>
+</e-i-c>
+<e-i-c gi="reqtp" context="* reqcontp">
+<charlist charsubsetref="def"></charlist>
+</e-i-c>
+<e-i-c gi="reqtp">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0">
+<hyphen inherit="0">
+<highlt inherit="0"></charlist>
+</e-i-c>
+<e-i-c gi="reqpers">
+<charlist>
+<quadding quad="left" lastquad="relative">
+<presp minimum="3em" nominal="3em" maximum="3em" condit="keep"
+priority="med">
+<postsp minimum="2em" nominal="2em" maximum="2em" condit="keep"
+priority="high">
+<textbrk startln="1" endln="1">
+<usetext source="\Required persons\" placemnt="before">
+<subchars>
+<font size="12pt" weight="bold">
+<indent leftind="5mm" firstln="5mm">
+<presp minimum="3em" nominal="3em" maximum="3em" condit="keep"
+priority="force">
+<postsp minimum="2em" nominal="2em" maximum="2em" condit="keep"
+priority="force">
+<textbrk startln="1"></subchars>
+</usetext>
+<enumerat increm="1" enumid="table.ct">
+<usetext source="\Table \,table.ct,\ Required persons\" placemnt="before">
+<subchars>
+<font famname="Arial" size="10pt" posture="italic" weight="medium">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext
+source="\__________________________________________________________________________________________\"
+placemnt="before"></usetext>
+<usetext
+source="\Person\,2cm,\Category/Trade\,2cm,\Skill Level\,2cm,\Trade Code\,2cm,\Est. Time Spent\"
+placemnt="before">
+<subchars>
+<quadding quad="left">
+<textbrk startln="1" endln="0"></subchars>
+</usetext>
+<usetext
+source="\__________________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<textbrk endln="1"></subchars>
+</usetext>
+<usetext
+source="\__________________________________________________________________________________________\"
+placemnt="after">
+<subchars>
+<textbrk></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="remarks">
+<charlist inherit="1" charsubsetref="paragraph">
+<indent inherit="1" leftind="@80mm" firstln="^">
+<textbrk startln="1" endln="1">
+<usetext source="\Remarks \,@8cm" placemnt="before">
+<subchars>
+<font inherit="0" size="12pt" weight="bold">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="retrofit">
+<charlist charsubsetref="applicability">
+<indent inherit="0" leftind="@3cm" firstln="^5mm">
+<textbrk startln="1" endln="1">
+<usetext source="\Retrofit\" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="rfa">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0">
+<hyphen inherit="0">
+<highlt inherit="0"></charlist>
+</e-i-c>
+<e-i-c gi="rfu">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="1">
+<indent inherit="1" leftind="@80mm" firstln="^">
+<textbrk startln="1">
+<usetext source="\Reason for updating:\,@8cm" placemnt="before">
+<subchars>
+<font inherit="0" size="12pt" weight="bold">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="rpc">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0">
+<hyphen inherit="0">
+<highlt inherit="0">
+<usetext source="\Responsible partner company: \,@84mm" placemnt="before">
+<subchars>
+<font size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="rpcname" attloc="rpc" fillcat="usetext"
+fillchar="source"></att>
+</e-i-c>
+<e-i-c gi="sbc">
+<charlist inherit="1">
+<highlt>
+<presp minimum="1.2em" nominal="1.2em" maximum="1.2em">
+<textbrk startln="1" endln="1">
+<usetext source="\System breakdown code:\,@8cm" placemnt="before">
+<subchars>
+<font inherit="0" size="12pt" weight="bold">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="sdc">
+<charlist inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before" userule="0">
+<subchars></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="section">
+<charlist inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before" userule="0">
+<subchars></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="security">
+<charlist charsubsetref="standalone">
+<usetext source="\Security Classification: \, @84mm" placemnt="before"
+userule="0">
+<subchars>
+<font inherit="0" size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="class" attloc="security" attval="1">
+<charsubset>
+<usetext source="\UNCLASSIFIED\" placemnt="after">
+<subchars></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="class" attloc="security" attval="2">
+<charsubset>
+<usetext source="\RESTRICTED\" placemnt="after"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="class" attloc="security" attval="3">
+<charsubset>
+<usetext source="\CONFIDENTIAL\" placemnt="after"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="class" attloc="security" attval="4">
+<charsubset>
+<usetext source="\SECRET\" placemnt="after"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="secver">
+<charlist>
+<presp minimum="5mm" nominal="5mm" maximum="5mm">
+<textbrk startln="1" endln="0">
+<usetext source="\cleared 2nd verification\,1.8cm" placemnt="before">
+<subchars>
+<font size="11pt">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charlist>
+<att>
+<specval attname="type" attloc="secver" attval="onobject">
+<charsubset>
+<usetext source="\on object\" placemnt="before">
+<subchars>
+<font size="10pt">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="secver" attval="tabtop">
+<charsubset>
+<usetext source="\table top\,1cm" placemnt="before">
+<subchars>
+<font size="10pt">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="type" attloc="secver" attval="ttandoo">
+<charsubset>
+<highlt fontclr="black">
+<usetext source="\table top and on object\" placemnt="before">
+<subchars>
+<font size="10pt">
+<highlt fontclr="black">
+<textbrk endln="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="seqlist">
+<charlist charsubsetref="division">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<postsp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1">
+<reset resetlist="list1.ct"></charlist>
+</e-i-c>
+<e-i-c gi="seqlist" context="* seqlist warning">
+<charlist charsubsetref="division">
+<font inherit="1">
+<indent leftind="@7mm" firstln="^7mm"></charlist>
+</e-i-c>
+<e-i-c gi="seqlist" context="* seqlist caution">
+<charlist charsubsetref="division">
+<font inherit="1">
+<indent leftind="@7mm" firstln="^7mm"></charlist>
+</e-i-c>
+<e-i-c gi="seqlist" context="* seqlist">
+<charlist charsubsetref="division">
+<indent leftind="@7mm" firstln="^7mm">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<postsp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="seqlist" context="warning">
+<charlist charsubsetref="division">
+<font inherit="1">
+<reset resetlist="list1.ct"></charlist>
+</e-i-c>
+<e-i-c gi="seqlist" context="caution">
+<charlist charsubsetref="division">
+<font inherit="1">
+<reset resetlist="list1.ct"></charlist>
+</e-i-c>
+<e-i-c gi="serialno">
+<charlist charsubsetref="applicability">
+<indent leftind="@" firstln="^">
+<usetext source="\Mfg serial No.\,@7.5cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="sheet">
+<charlist charsubsetref="standalone space"></charlist>
+</e-i-c>
+<e-i-c gi="single">
+<charlist inherit="1"></charlist>
+</e-i-c>
+<e-i-c gi="skill">
+<charlist inherit="1">
+<presp minimum="1.2em" nominal="1.2em" maximum="1.2em">
+<textbrk startln="1" endln="1">
+<usetext source="\Skill levels:\,@8cm" placemnt="before">
+<subchars>
+<font inherit="0" size="12pt" weight="bold">
+<highlt fontclr="black"></subchars>
+</usetext>
+</charlist>
+<att logic="and">
+<specval attname="skill" attloc="skill" attval="i">
+<charsubset>
+<usetext source="\Intermediate Skill Level\" placemnt="after">
+<subchars>
+<font inherit="1"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="skill" attloc="skill" attval="a">
+<charsubset>
+<usetext source="\Advanced Skill Level\" placemnt="after"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="skill" attloc="skill" attval="b">
+<charsubset>
+<usetext source="\Basic Skill Level\" placemnt="after"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="softprog">
+<charlist inherit="1" charsubsetref="applicability">
+<font inherit="0">
+<hyphen inherit="0">
+<indent inherit="0" leftind="@" firstln="^">
+<highlt inherit="0">
+<textbrk endln="1">
+<usetext source="\Software program edition\,@7.5cm" placemnt="before">
+<subchars>
+<font weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="specpara">
+<charlist>
+<quadding quad="center">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="status">
+<charlist charsubsetref="standalone">
+<font size="11pt">
+<indent inherit="1">
+<quadding quad="left"></charlist>
+</e-i-c>
+<e-i-c gi="subject">
+<charlist inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before" userule="0">
+<subchars></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="subpara1">
+<charlist charsubsetref="division">
+<indent inherit="1" leftind="0.00mm" firstln="*">
+<quadding quad="left" lastquad="relative">
+<enumerat increm="1" enumid="subpara1ct">
+<savetext textid="para.txt" conrule="\Para.\,para0ct,\.\,subpara1ct"
+placemnt="before"></charlist>
+</e-i-c>
+<e-i-c gi="subpara2">
+<charlist charsubsetref="division">
+<indent firstln="0mm">
+<quadding quad="left" lastquad="lleft">
+<savetext textid="para.txt" conrule="\Para.\,para0ct,\.\,subpara1ct,\.1\"
+placemnt="before"></charlist>
+</e-i-c>
+<e-i-c gi="subpara3">
+<charlist charsubsetref="division">
+<indent firstln="0mm">
+<savetext textid="para.txt"
+conrule="\Para.\,para0ct,\.\,subpara1ct,\.1.1\" placemnt="before">
+</charlist>
+</e-i-c>
+<e-i-c gi="subpara4">
+<charlist charsubsetref="division">
+<indent firstln="0mm">
+<savetext textid="para.txt"
+conrule="\Para.\,para0ct,\.\,subpara1ct,\.1.1.1\" placemnt="before">
+</charlist>
+</e-i-c>
+<e-i-c gi="subpara5">
+<charlist charsubsetref="division">
+<indent firstln="0mm">
+<savetext textid="para.txt"
+conrule="\Para.\,para0ct,\.\,subpara1ct,\.1.1.1.1\" placemnt="before">
+</charlist>
+</e-i-c>
+<e-i-c gi="subscrpt">
+<charlist inherit="1">
+<font inherit="0" size="8pt" offset="-4pt"></charlist>
+</e-i-c>
+<e-i-c gi="subsect">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="supeqvc">
+<charlist inherit="1">
+<font inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\ - \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="safety">
+<charlist>
+<textbrk startln="1" endln="1">
+<usetext source="\Safety conditions\" placemnt="before">
+<subchars>
+<font size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="spare" context="sparesli">
+<charlist charsubsetref="inline">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="spares">
+<charlist charsubsetref="title2">
+<enumerat increm="1" enumid="table.ct">
+<usetext source="\Spares\" placemnt="before">
+<subchars>
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext source="\Table \,table.ct,\  Spares\" placemnt="before">
+<subchars>
+<font famname="Arial" size="10pt" posture="italic" weight="medium">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="supequip">
+<charlist>
+<textbrk startln="1" endln="1">
+<usetext source="\Support equipment\" placemnt="before">
+<subchars>
+<font size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="supplies">
+<charlist>
+<enumerat increm="1" enumid="table.ct">
+<usetext source="\Supplies\" placemnt="before">
+<subchars>
+<font size="12pt" weight="bold"></subchars>
+</usetext>
+<usetext source="\Table \,table.ct,\  Supplies\" placemnt="before">
+<subchars>
+<font famname="Arial" size="10pt" posture="italic" weight="medium">
+<quadding quad="center">
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="sparesli">
+<charlist>
+<textbrk startln="1">
+<usetext
+source="\_________________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<textbrk startln="1" endln="1"></subchars>
+</usetext>
+<usetext source="\Nomenclature\,5cm,\Identification No\,5cm,\Qty\"
+placemnt="before">
+<subchars>
+<postsp minimum="0" nominal="0" maximum="0"></subchars>
+</usetext>
+<usetext
+source="\_________________________________________________________________________________________\"
+placemnt="before">
+<subchars>
+<quadding quad="left">
+<textbrk endln="1"></subchars>
+</usetext>
+<usetext
+source="\_________________________________________________________________________________________\"
+placemnt="after">
+<subchars>
+<textbrk endln="1"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="supscrpt">
+<charlist inherit="1">
+<font inherit="0" size="8pt" offset="6pt"></charlist>
+</e-i-c>
+<e-i-c gi="symbol">
+<charlist charsubsetref="standalone space"></charlist>
+</e-i-c>
+<e-i-c gi="symbol" context="para">
+<charlist charsubsetref="inline"></charlist>
+</e-i-c>
+<e-i-c gi="table">
+<charlist></charlist>
+</e-i-c>
+<e-i-c gi="techname" context="* dmaddres">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0" size="12pt" weight="bold">
+<hyphen inherit="0">
+<highlt inherit="0">
+<textbrk startln="0" endln="0">
+<usetext source="@34mm" placemnt="before"></usetext>
+<usetext source="\ &mdash; \" placemnt="after">
+<subchars></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="techname"
+context="dmtitle * refdm * refdms * rdandrt * refs * content">
+<charlist>
+<font inherit="1" famname="Arial" size="11pt">
+<indent leftind="@12cm">
+<quadding quad="left">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="techname" context="dmtitle * refdm">
+<charlist>
+<font inherit="1" famname="Arial" size="10pt">
+<quadding quad="left">
+<textbrk startln="0" endln="0">
+<usetext source="\ \" placemnt="before"></usetext>
+<usetext source="\ - \" placemnt="after"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="techpub" context="reftp * para">
+<charlist>
+<highlt fontclr="blue">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="techpub" context="reftp">
+<charlist>
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="techpub">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0">
+<hyphen inherit="0">
+<highlt inherit="0"></charlist>
+</e-i-c>
+<e-i-c gi="techstd">
+<charlist charsubsetref="paragraph">
+<indent inherit="1">
+<usetext source="\Technical standard\" placemnt="before">
+<subchars>
+<font inherit="1" size="12pt" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="term">
+<charlist inherit="1" charsubsetref="inline">
+<font inherit="1" weight="bold">
+<hyphen inherit="1">
+<highlt inherit="1">
+<textbrk startln="1" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="seqlist">
+<charlist charsubsetref="title7"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="content">
+<charlist>
+<font famname="arial" size="14pt" weight="bold">
+<leading lead="12pt">
+<indent leftind="1.524mm" rightind="34.29mm" firstln="1.524mm">
+<quadding quad="center">
+<presp minimum="14.2pt" nominal="14.2pt" maximum="14.2pt">
+<postsp minimum="14.2pt" nominal="14.2pt" maximum="14.2pt">
+<keeps next="1"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="randlist">
+<charlist charsubsetref="title7"></charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara1">
+<charlist charsubsetref="title2">
+<indent firstln="0mm">
+<presp minimum="10mm" nominal="10mm" maximum="10mm">
+<postsp minimum="0" nominal="0" maximum="0">
+<usetext source="outline.lev1.ct,\.\,outline.lev2.ct,@20mm"
+placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara2">
+<charlist charsubsetref="title3">
+<indent firstln="0pt">
+<postsp minimum="0" nominal="0" maximum="0">
+<reset resetlist="outline.lev4.ct">
+<enumerat increm="1" enumid="outline.lev3.ct">
+<usetext
+source="outline.lev1.ct,\.\,outline.lev2.ct,\.\,outline.lev3.ct,@20mm"
+placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara3">
+<charlist charsubsetref="title4">
+<font weight="bold">
+<indent firstln="0mm">
+<presp minimum="10mm" nominal="10mm" maximum="10mm">
+<postsp minimum="0" nominal="0" maximum="0">
+<reset resetlist="outline.lev5.ct">
+<enumerat increm="1" enumid="outline.lev4.ct">
+<usetext
+source="outline.lev1.ct,\.\,outline.lev2.ct,\.\,outline.lev3.ct,\.\,outline.lev4.ct,@20mm"
+placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="title" context="subpara4">
+<charlist charsubsetref="title5">
+<indent firstln="0mm">
+<presp minimum="10mm" nominal="10mm" maximum="10mm">
+<postsp minimum="0" nominal="0" maximum="0">
+<enumerat increm="1" enumid="outline.lev5.ct">
+<usetext
+source="outline.lev1.ct,\.\,outline.lev2.ct,\.\,outline.lev3.ct,\.\,outline.lev4.ct,\.\,outline.lev5.ct,@20mm"
+placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="title" context="figure">
+<charlist>
+<quadding quad="center">
+<highlt fontclr="black" forpct="100">
+<textbrk startln="1">
+<suppress sup="1">
+<savetext textid="title" conrule="fignum,\ \,#CONTENT" placemnt="after">
+</charlist>
+</e-i-c>
+<e-i-c gi="title" context="table">
+<charlist>
+<font posture="italic">
+<indent leftind="0.7874in" firstln="0.7874in">
+<quadding quad="center">
+<presp minimum="10mm" nominal="10mm" maximum="10mm" priority="force">
+<textbrk startln="1" endln="1">
+<enumerat increm="1" enumid="step1ct">
+<usetext source="\Table \,step1ct,\  \" placemnt="before" userule="0">
+<subchars>
+<presp minimum="10mm" nominal="10mm" maximum="10mm" priority="force">
+</subchars>
+</usetext>
+<savetext textid="table.txt" conrule="\Table \,step1ct,\ \,#CONTENT"
+xrefidtag="table"></charlist>
+</e-i-c>
+<e-i-c gi="title">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0">
+<hyphen inherit="0">
+<highlt inherit="0"></charlist>
+</e-i-c>
+<e-i-c gi="tpbase">
+<charlist inherit="1" charsubsetref="paragraph">
+<font inherit="0">
+<hyphen inherit="0">
+<highlt inherit="0"></charlist>
+</e-i-c>
+<e-i-c gi="type">
+<charlist inherit="1" charsubsetref="applicability">
+<hyphen inherit="0">
+<indent inherit="0">
+<highlt inherit="0">
+<presp minimum="0" nominal="0" maximum="0">
+<usetext source="\Type\,@5.4cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="unverif">
+<charlist>
+<textbrk startln="1">
+<usetext source="2cm,\Unverified\" placemnt="after">
+<subchars>
+<highlt fontclr="black"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="version">
+<charlist charsubsetref="applicability">
+<indent leftind="@" firstln="^">
+<textbrk endln="1">
+<usetext source="\Version\,@5.4cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+<att>
+<fillval attname="version" attloc="version" fillcat="usetext"
+fillchar="source"></att>
+</e-i-c>
+<e-i-c gi="versrank" context="version">
+<charlist charsubsetref="applicability">
+<indent leftind="@" firstln="^">
+<usetext source="\Version rank\,@7.5cm" placemnt="before">
+<subchars>
+<font inherit="0" weight="bold"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="warning" context="specpara" occur="notfirst">
+<charlist>
+<textbrk startln="0" endln="1">
+<usetext></usetext>
+</charlist>
+<att>
+<specval attname="type" attloc="warning" attval="warnings">
+<charsubset>
+<font weight="bold">
+<quadding inherit="1" quad="left">
+<highlt fontclr="black" allcap="1">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="warning" context="specpara" occur="first">
+<charlist></charlist>
+<att logic="and">
+<specval attname="type" attloc="warning" attval="warnings">
+<fillval attname="type" attloc="warning" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<font weight="bold">
+<quadding inherit="0" quad="center">
+<highlt fontclr="black" allcap="1">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="warning" attval="warning">
+<fillval attname="type" attloc="warning" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<font weight="bold">
+<quadding inherit="0" quad="center">
+<highlt fontclr="black" allcap="1">
+<textbrk startln="1" endln="1"></charsubset>
+</att>
+<att>
+<specval attname="type" attloc="warning" attval="#NONE">
+<charsubset>
+<font weight="bold">
+<quadding quad="center">
+<highlt fontclr="black" allcap="1">
+<textbrk startln="1" endln="1">
+<usetext source="\Warning\"></usetext>
+</charsubset>
+</att>
+</e-i-c>
+<e-i-c gi="warning" occur="all">
+<charlist>
+<font size="11pt" weight="bold">
+<presp minimum="5mm" nominal="5mm" maximum="5mm" priority="force">
+<textbrk startln="1" endln="1">
+<usetext source="\WARNING\" placemnt="before">
+<subchars>
+<quadding quad="center"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="xref">
+<charlist>
+<font inherit="1">
+<leading inherit="1">
+<indent inherit="0">
+<quadding inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+<att>
+<fillval attname="pretext" attloc="xref" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<usetext placemnt="before"></usetext>
+</charsubset>
+</att>
+<att>
+<fillval attname="posttext" attloc="xref" fillcat="usetext"
+fillchar="source">
+<charsubset>
+<usetext placemnt="after"></usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="xidtype" attloc="xref" attval="figure">
+<charsubset>
+<usetext source="#XREF(xrefid,title)">
+<subchars>
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="xidtype" attloc="xref" attval="para">
+<charsubset>
+<usetext source="#XREF(xrefid,para.txt)">
+<subchars>
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="xidtype" attloc="xref" attval="graphic">
+<charsubset>
+<usetext source="#XREF(xrefid,sheet.txt)">
+<subchars>
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="xidtype" attloc="xref" attval="spares">
+<charsubset>
+<usetext source="#XREF(xrefid,nomen.txt)">
+<subchars>
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att><?Pub Caret -2>
+<att>
+<specval attname="xidtype" attloc="xref" attval="step">
+<charsubset>
+<usetext source="#XREF(xrefid,step.txt)">
+<subchars>
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="xidtype" attloc="xref" attval="supequip">
+<charsubset>
+<usetext source="#XREF(xrefid,supequip.txt)">
+<subchars>
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="xidtype" attloc="xref" attval="supply">
+<charsubset>
+<usetext source="#XREF(xrefid,supply.txt)">
+<subchars>
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+<att>
+<specval attname="xidtype" attloc="xref" attval="table">
+<charsubset>
+<usetext source="#XREF(xrefid,table.txt)">
+<subchars>
+<highlt fontclr="black"></subchars>
+</usetext>
+</charsubset>
+</att>
+</e-i-c>
+<?Fidmax 30>
+<!--The following e-i-c's are used to control the composed output of the "final" index.-->
+<e-i-c gi="ixfinal">
+<charlist inherit="1">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixalphagrp">
+<charlist inherit="1">
+<presp minimum="12pt" nominal="12pt" maximum="12pt">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixpregrp">
+<charlist inherit="1">
+<presp minimum="12pt" nominal="12pt" maximum="12pt">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixpostgrp">
+<charlist inherit="1">
+<presp minimum="12pt" nominal="12pt" maximum="12pt">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixrangegrp">
+<charlist inherit="1">
+<presp minimum="12pt" nominal="12pt" maximum="12pt">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixgrphd">
+<charlist inherit="1">
+<font weight="bold">
+<quadding quad="left">
+<highlt allcap="1">
+<postsp minimum="2pt" nominal="2pt" maximum="2pt">
+<keeps scope="col" next="1">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixentry">
+<charlist inherit="1">
+<indent leftind="1em" firstln="*-1em">
+<quadding quad="left" lastquad="relative">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixentry" context="ixentry">
+<charlist inherit="1">
+<indent inherit="1" leftind="@+1em" firstln="*-1em">
+<quadding quad="left" lastquad="relative">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixentry" context="ixentry * ixentry">
+<charlist inherit="1">
+<indent inherit="1" leftind="@+1em" firstln="*-1em">
+<quadding quad="left" lastquad="relative">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixentry" context="ixentry * ixentry * ixentry">
+<charlist inherit="1">
+<indent inherit="1" leftind="@+1em" firstln="*-1em">
+<quadding quad="left" lastquad="relative">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixhead">
+<charlist inherit="1">
+<textbrk startln="1" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixlocs">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixpgstr" context="* ixentry" occur="first">
+<charlist inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="1em" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ixpgstr" context="* ixentry" occur="notfirst">
+<charlist inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\, \" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="ixendpg">
+<charlist inherit="1">
+<textbrk startln="0" endln="0">
+<usetext source="\&ndash;\" placemnt="before"></usetext>
+</charlist>
+</e-i-c>
+<!--The following e-i-c's are used to control the screen display of the "preliminary index". In most cases the "preliminary index" is never seen.-->
+<e-i-c gi="ixprelim">
+<charlist inherit="1">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="ixpt">
+<charlist inherit="1">
+<textbrk startln="1" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixstart">
+<charlist inherit="1">
+<textbrk startln="1" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixend">
+<charlist inherit="1">
+<textbrk startln="1" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixsub1">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixsub2">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixsub3">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixkey ixkey1 ixkey2 ixkey3">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixpgstr" context="* ixprelim">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="ixpgkey">
+<charlist inherit="1">
+<textbrk startln="0" endln="0"></charlist>
+</e-i-c>
+<e-i-c gi="question">
+<charlist>
+<indent inherit="1" leftind="@5mm" firstln="@5mm">
+<textbrk startln="1" endln="1"></charlist>
+</e-i-c>
+<e-i-c gi="yes">
+<charlist>
+<textbrk startln="1" endln="1">
+<usetext source="\Yes: go to \,#XREF(refid,isostep.txt)"
+placemnt="before">
+<subchars>
+<indent inherit="1" leftind="@5mm" firstln="@5mm"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+<e-i-c gi="no">
+<charlist>
+<textbrk startln="1" endln="1">
+<usetext source="\Yes: go to \,#XREF(refid,isostep.txt)"
+placemnt="before">
+<subchars>
+<indent inherit="1" leftind="@5mm" firstln="@5mm"></subchars>
+</usetext>
+</charlist>
+</e-i-c>
+</styldesc>
+</outspec>
+<?Pub *0000102156>

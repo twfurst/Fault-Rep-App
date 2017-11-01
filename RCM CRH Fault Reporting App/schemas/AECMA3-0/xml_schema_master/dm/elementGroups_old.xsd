@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="complexElements.xsd"/>
+	<xs:group name="ACSTCON">
+		<xs:sequence>
+			<xs:group ref="HEADING1"/>
+			<xs:group ref="WC"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="NPFFT" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element ref="crew" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="procd"/>
+				</xs:sequence>
+				<xs:element ref="challrsp"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ALLDMC">
+		<xs:choice>
+			<xs:element ref="age"/>
+			<xs:element ref="avee"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="APPLIC">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element ref="displaytext"/>
+				<xs:choice minOccurs="0">
+					<xs:element ref="assert"/>
+					<xs:element ref="evaluate"/>
+					<xs:element ref="expression"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:choice>
+				<xs:element ref="assert"/>
+				<xs:element ref="evaluate"/>
+				<xs:element ref="expression"/>
+			</xs:choice>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="CM.EQUIPMENT">
+		<xs:sequence>
+			<xs:element ref="rfd"/>
+			<xs:element ref="contactinfo" minOccurs="0"/>
+			<xs:element ref="screens" minOccurs="0"/>
+			<xs:element ref="twists" minOccurs="0"/>
+			<xs:element ref="wireins" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="CM.PREFIN">
+		<xs:sequence>
+			<xs:element ref="val" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DIALOG">
+		<xs:choice>
+			<xs:element ref="dialog"/>
+			<xs:element ref="dialog-alt"/>
+			<xs:element ref="message"/>
+			<xs:element ref="message-alt"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="DRLINTRO">
+		<xs:sequence>
+			<xs:group ref="HEADING1"/>
+			<xs:element ref="tabtitle" minOccurs="0"/>
+			<xs:group ref="spcpara"/>
+			<xs:element ref="crew" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="para"/>
+				<xs:group ref="FFT"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="DSCDECL">
+		<xs:sequence>
+			<xs:element ref="fldname"/>
+			<xs:element ref="dscr" minOccurs="0"/>
+			<xs:element ref="refs" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="FFT">
+		<xs:choice>
+			<xs:element ref="figure"/>
+			<xs:element ref="multimedia"/>
+			<xs:element ref="foldout"/>
+			<xs:element ref="table"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="FFTC">
+		<xs:choice>
+			<xs:group ref="FFT"/>
+			<xs:element ref="caption"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="HEADING">
+		<xs:sequence>
+			<xs:group ref="HEADING1"/>
+			<xs:element ref="capgrp" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="HEADING1">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ISOSTPA">
+		<xs:choice>
+			<xs:element ref="note"/>
+			<xs:element ref="action"/>
+			<xs:group ref="FFT"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="ISOSTPH">
+		<xs:sequence>
+			<xs:group ref="HEADING1"/>
+			<xs:group ref="WC"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="list">
+		<xs:choice>
+			<xs:element ref="seqlist"/>
+			<xs:element ref="randlist"/>
+			<xs:element ref="deflist"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="NP">
+		<xs:choice>
+			<xs:element ref="note"/>
+			<xs:element ref="cblst"/>
+			<xs:element ref="para"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="NPAR">
+		<xs:sequence>
+			<xs:group ref="WC"/>
+			<xs:group ref="NPFFT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="drill" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="nparcon">
+		<xs:sequence>
+			<xs:group ref="HEADING" minOccurs="0"/>
+			<xs:group ref="NPAR" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="NPFFT">
+		<xs:choice>
+	
+	<xs:group name="PUBREF">
+		<xs:sequence>
+			<xs:element ref="pubcode"/>
+			<xs:element ref="pubtitle" minOccurs="0"/>
+			<xs:element ref="pubdate" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="SPARCON">
+		<xs:choice>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="spcpara">
+		<xs:sequence>
+			<xs:group ref="WC"/>
+			<xs:element ref="note" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="STATUS">
+		<xs:sequence>
+			<xs:element ref="srcdmaddres" minOccurs="0"/>
+			<xs:element ref="security"/>
+			<xs:element ref="datarest" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dmsize" minOccurs="0"/>
+			<xs:element ref="rpc"/>
+
+		</xs:choice>
+	</xs:group>
+	<xs:group name="STEP2">
+		<xs:choice>
+			<xs:element ref="step2"/>
+			<xs:element ref="step2-alt"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="STEP3">
+		<xs:choice>
+			<xs:element ref="step3"/>
+			<xs:element ref="step3-alt"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="STEP4">
+		<xs:choice>
+			<xs:element ref="step4"/>
+			<xs:element ref="step4-alt"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="STEP5">
+		<xs:choice>
+			<xs:element ref="step5"/>
+			<xs:element ref="step5-alt"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="STEP6">
+		<xs:choice>
+
+			<xs:element ref="quantity"/>
+			<xs:element ref="zone"/>
+			<xs:element ref="accpnl"/>
+
+			<xs:element ref="acronym"/>
+			<xs:element ref="acroterm"/>
+			<xs:element ref="capgrp"/>
+			<xs:element ref="caption"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="titles">
+		<xs:sequence>
+			<xs:element ref="applic" minOccurs="0"/>
+			<xs:element ref="title"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="WC">
+		<xs:sequence>
+			<xs:element ref="warning" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="caution" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+</xs:schema>

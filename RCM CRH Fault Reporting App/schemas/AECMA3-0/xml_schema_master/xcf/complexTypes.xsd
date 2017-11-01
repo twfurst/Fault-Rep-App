@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/>
+	<xs:include schemaLocation="complexElements.xsd"/>
+	<xs:include schemaLocation="attributes.xsd"/>
+	<xs:include schemaLocation="attributeGroups.xsd"/>
+	<xs:complexType name="bindByIdType">
+		<xs:sequence>
+			<xs:element ref="linkuri" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="apsid" use="required"/>
+		<xs:attribute ref="screentip"/>
+		<xs:attribute ref="region"/>
+		<xs:attribute ref="viewcontext"/>
+		<xs:attribute ref="visibility"/>
+		<xs:attribute ref="interactivity"/>
+		<xs:attributeGroup ref="stylePropertiesAttGroup"/>
+	</xs:complexType>
+	<xs:complexType name="bindByNameType">
+		<xs:sequence>
+			<xs:element ref="linkuri" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="apstargetname" use="required"/>
+		<xs:attribute ref="screentip"/>
+		<xs:attribute ref="region"/>
+		<xs:attribute ref="viewcontext"/>
+		<xs:attribute ref="visibility"/>
+		<xs:attribute ref="interactivity"/>
+		<xs:attributeGroup ref="stylePropertiesAttGroup"/>
+	</xs:complexType>
+	<xs:complexType name="grobjectType">
+		<xs:sequence>
+			<xs:element ref="linkuri" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="apsid" use="required"/>
+		<xs:attribute ref="screentip"/>
+		<xs:attribute ref="region"/>
+		<xs:attribute ref="viewcontext"/>
+		<xs:attribute ref="visibility"/>
+		<xs:attribute ref="interactivity"/>
+		<xs:attributeGroup ref="stylePropertiesAttGroup"/>
+	</xs:complexType>
+	<xs:complexType name="linkuriType">
+		<xs:attribute ref="uri" use="required"/>
+		<xs:attribute ref="behavior"/>
+		<xs:attribute ref="desc"/>
+	</xs:complexType>
+	<xs:complexType name="webcgmType">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="grobject"/>
+			<xs:element ref="bindById"/>
+			<xs:element ref="bindByName"/>
+		</xs:choice>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="version"/>
+		<xs:attribute ref="filename"/>
+		<xs:attribute ref="background-color"/>
+		<xs:attribute ref="pictureVisibility"/>
+		<xs:attributeGroup ref="stylePropertiesAttGroup"/>
+	</xs:complexType>
+</xs:schema>

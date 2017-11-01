@@ -1,0 +1,246 @@
+<!ENTITY % ISOENTS PUBLIC "-//S1000D//ENTITIES ISO Entity Definitions 20030531//EN">
+%ISOENTS;
+
+<!ENTITY % NOTATIONS PUBLIC "-//S1000D//ENTITIES NOTATION Definitions 20070228//EN">
+%NOTATIONS;
+
+
+<!ELEMENT dml - - (dmlc, issno, issdate, security, datarest?, dmlref*, dmentry+, remarks?)>
+<!ATTLIST dml
+	id	ID	#IMPLIED
+	direction	(send | reply)	#IMPLIED
+>
+
+<!ELEMENT dmlc - - (modelic, sendid, dmltype, diyear, seqnum)>
+
+<!ELEMENT modelic - - (#PCDATA)>
+
+<!ELEMENT sendid - - (#PCDATA)>
+
+<!ELEMENT dmltype - O EMPTY>
+<!ATTLIST dmltype
+	type	(c | p | s)	#REQUIRED
+>
+
+<!ELEMENT diyear - - (#PCDATA)>
+
+<!ELEMENT seqnum - - (#PCDATA)>
+
+<!ELEMENT issno - O EMPTY>
+<!ATTLIST issno
+	issno	NUMBER	#REQUIRED
+	inwork	NUMBER	#IMPLIED
+	type	(new | changed | deleted | revised | status | rinstate-changed | rinstate-revised | rinstate-status)	"new"
+>
+
+<!ELEMENT issdate - O EMPTY>
+<!ATTLIST issdate
+	year	NUMBER	#REQUIRED
+	month	NUMBER	#REQUIRED
+	day	NUMBER	#REQUIRED
+>
+
+<!ELEMENT security - O EMPTY>
+<!ATTLIST security
+	class	(01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69 | 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 | 78 | 79 | 80 | 81 | 82 | 83 | 84 | 85 | 86 | 87 | 88 | 89 | 90 | 91 | 92 | 93 | 94 | 95 | 96 | 97 | 98 | 99)	#REQUIRED
+	commcls	(cc01 | cc02 | cc03 | cc04 | cc05 | cc06 | cc07 | cc08 | cc09 | cc10 | cc11 | cc12 | cc13 | cc14 | cc15 | cc16 | cc17 | cc18 | cc19 | cc20 | cc21 | cc22 | cc23 | cc24 | cc25 | cc26 | cc27 | cc28 | cc29 | cc30 | cc31 | cc32 | cc33 | cc34 | cc35 | cc36 | cc37 | cc38 | cc39 | cc40 | cc41 | cc42 | cc43 | cc44 | cc45 | cc46 | cc47 | cc48 | cc49 | cc50 | cc51 | cc52 | cc53 | cc54 | cc55 | cc56 | cc57 | cc58 | cc59 | cc60 | cc61 | cc62 | cc63 | cc64 | cc65 | cc66 | cc67 | cc68 | cc69 | cc70 | cc71 | cc72 | cc73 | cc74 | cc75 | cc76 | cc77 | cc78 | cc79 | cc80 | cc81 | cc82 | cc83 | cc84 | cc85 | cc86 | cc87 | cc88 | cc89 | cc90 | cc91 | cc92 | cc93 | cc94 | cc95 | cc96 | cc97 | cc98 | cc99)	#IMPLIED
+	caveat	(cv01 | cv02 | cv03 | cv04 | cv05 | cv06 | cv07 | cv08 | cv09 | cv10 | cv11 | cv12 | cv13 | cv14 | cv15 | cv16 | cv17 | cv18 | cv19 | cv20 | cv21 | cv22 | cv23 | cv24 | cv25 | cv26 | cv27 | cv28 | cv29 | cv30 | cv31 | cv32 | cv33 | cv34 | cv35 | cv36 | cv37 | cv38 | cv39 | cv40 | cv41 | cv42 | cv43 | cv44 | cv45 | cv46 | cv47 | cv48 | cv49 | cv50 | cv51 | cv52 | cv53 | cv54 | cv55 | cv56 | cv57 | cv58 | cv59 | cv60 | cv61 | cv62 | cv63 | cv64 | cv65 | cv66 | cv67 | cv68 | cv69 | cv70 | cv71 | cv72 | cv73 | cv74 | cv75 | cv76 | cv77 | cv78 | cv79 | cv80 | cv81 | cv82 | cv83 | cv84 | cv85 | cv86 | cv87 | cv88 | cv89 | cv90 | cv91 | cv92 | cv93 | cv94 | cv95 | cv96 | cv97 | cv98 | cv99)	#IMPLIED
+>
+
+<!ELEMENT datarest - - (instruct, inform?)>
+<!ATTLIST datarest
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT instruct - - (distrib, expcont?, handling?, destruct?, disclose?)>
+<!ATTLIST instruct
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT distrib - - (#PCDATA)>
+<!ATTLIST distrib
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT expcont - - (expstatement+, expregcode*)>
+<!ATTLIST expcont
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+	expregtype	CDATA	#IMPLIED
+	expgovauth	CDATA	#IMPLIED
+>
+
+<!ELEMENT expstatement - - (p+)>
+<!ATTLIST expstatement
+	exprole	(partial | full)	#IMPLIED
+>
+
+<!ELEMENT p - - ((#PCDATA | (subscrpt | supscrpt))*)>
+<!ATTLIST p
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT subscrpt - - (#PCDATA)>
+
+<!ELEMENT supscrpt - - (#PCDATA)>
+
+<!ELEMENT expregcode - - (#PCDATA)>
+<!ATTLIST expregcode
+	expregcodetype	CDATA	#IMPLIED
+>
+
+<!ELEMENT handling - - (#PCDATA)>
+<!ATTLIST handling
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT destruct - - (#PCDATA)>
+<!ATTLIST destruct
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT disclose - - (#PCDATA)>
+<!ATTLIST disclose
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT inform - - (copyright, polref?, datacond?)>
+<!ATTLIST inform
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT copyright - - (p*)>
+<!ATTLIST copyright
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT polref - - (#PCDATA)>
+<!ATTLIST polref
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT datacond - - (#PCDATA)>
+<!ATTLIST datacond
+	id	ID	#IMPLIED
+	level	NUMBER	#IMPLIED
+	mark	NUMBER	#IMPLIED
+	change	(add | delete | modify)	#IMPLIED
+	rfc	CDATA	#IMPLIED
+>
+
+<!ELEMENT dmlref - - ((dmlc, issno?))>
+
+<!ELEMENT dmentry - - (addresdm, security?, rpc, answer?, remarks?)>
+<!ATTLIST dmentry
+	type	(c | d | n)	#IMPLIED
+>
+
+<!ELEMENT addresdm - - ((dmcextension?, dmc, dmtitle?, issno?, issdate?, language?))>
+
+<!ELEMENT dmcextension - - (dmeproducer, dmecode)>
+
+<!ELEMENT dmeproducer - - (#PCDATA)>
+
+<!ELEMENT dmecode - - (#PCDATA)>
+
+<!ELEMENT dmc - - (age | avee)>
+
+<!ELEMENT age - - (modelic, supeqvc, ecscs, eidc, cidc, discode, discodev, incode, incodev, itemloc)>
+
+<!ELEMENT supeqvc - - (#PCDATA)>
+
+<!ELEMENT ecscs - - (#PCDATA)>
+
+<!ELEMENT eidc - - (#PCDATA)>
+
+<!ELEMENT cidc - - (#PCDATA)>
+
+<!ELEMENT discode - - (#PCDATA)>
+
+<!ELEMENT discodev - - (#PCDATA)>
+
+<!ELEMENT incode - - (#PCDATA)>
+
+<!ELEMENT incodev - - (#PCDATA)>
+
+<!ELEMENT itemloc - - (#PCDATA)>
+
+<!ELEMENT avee - - (modelic, sdc, chapnum, section, subsect, subject, discode, discodev, incode, incodev, itemloc)>
+
+<!ELEMENT sdc - - (#PCDATA)>
+
+<!ELEMENT chapnum - - (#PCDATA)>
+
+<!ELEMENT section - - (#PCDATA)>
+
+<!ELEMENT subsect - - (#PCDATA)>
+
+<!ELEMENT subject - - (#PCDATA)>
+
+<!ELEMENT dmtitle - - (techname, infoname?)>
+
+<!ELEMENT techname - - (#PCDATA)>
+
+<!ELEMENT infoname - - (#PCDATA)>
+
+<!ELEMENT language - O EMPTY>
+<!ATTLIST language
+	language	CDATA	#REQUIRED
+	country	CDATA	#IMPLIED
+>
+
+<!ELEMENT rpc - - (#PCDATA)>
+<!ATTLIST rpc
+	rpcname	CDATA	#IMPLIED
+	id	ID	#IMPLIED
+>
+
+<!ELEMENT answer - - (remarks?)>
+<!ATTLIST answer
+	answer	(y | n)	"y"
+>
+
+<!ELEMENT remarks - - ((#PCDATA | p)*)>

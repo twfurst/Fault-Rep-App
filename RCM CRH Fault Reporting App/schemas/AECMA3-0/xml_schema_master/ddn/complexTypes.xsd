@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
+	<xs:include schemaLocation="attributeGroups.xsd"/>
+	<xs:include schemaLocation="simpleElements.xsd"/>
+	<xs:include schemaLocation="complexElements.xsd"/>
+	<xs:include schemaLocation="elementGroups.xsd"/>
+	<xs:complexType name="addressType">
+		<xs:sequence>
+			<xs:element ref="dept" minOccurs="0"/>
+			<xs:element ref="street" minOccurs="0"/>
+			<xs:element ref="pobox" minOccurs="0"/>
+			<xs:element ref="zip" minOccurs="0"/>
+			<xs:element ref="city"/>
+			<xs:element ref="postcode" minOccurs="0"/>
+			<xs:element ref="country"/>
+			<xs:element ref="state" minOccurs="0"/>
+			<xs:element ref="province" minOccurs="0"/>
+			<xs:element ref="building" minOccurs="0"/>
+			<xs:element ref="room" minOccurs="0"/>
+			<xs:element ref="phone" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="fax" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="email" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="internet" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="copyrightType">
+		<xs:sequence>
+			<xs:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="datacondType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="datarestType">
+		<xs:sequence>
+			<xs:element ref="instruct"/>
+			<xs:element ref="inform" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="ddncType">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="sendid"/>
+			<xs:element ref="recvid"/>
+			<xs:element ref="diyear"/>
+			<xs:element ref="seqnum"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ddnType">
+		<xs:sequence>
+			<xs:element ref="rdf:Description" minOccurs="0"/>
+			<xs:element ref="ddnc"/>
+			<xs:element ref="issdate"/>
+			<xs:element ref="security"/>
+			<xs:element ref="datarest" minOccurs="0"/>
+			<xs:element ref="dispto"/>
+			<xs:element ref="dispfrom"/>
+			<xs:element ref="authrtn"/>
+			<xs:element ref="mediaid" minOccurs="0"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+			<xs:element ref="delivlst" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="delivlstType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element ref="ddnfilen"/>
+			<xs:element ref="dmcoricn" minOccurs="0"/>
+			<xs:element ref="issno" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="destructType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="discloseType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="dispaddrType">
+		<xs:sequence>
+			<xs:element ref="enterprise"/>
+			<xs:element ref="person" minOccurs="0"/>
+			<xs:element ref="address"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dispfromType">
+		<xs:sequence>
+			<xs:element ref="dispaddr"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="disptoType">
+		<xs:sequence>
+			<xs:element ref="dispaddr"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="distribType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="enterpriseType">
+		<xs:sequence>
+			<xs:element ref="ent-name"/>
+			<xs:element ref="division" minOccurs="0"/>
+			<xs:element ref="ent-unit" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<!--
+	<xs:complexType name="expcontType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	-->
+	<xs:complexType name="expcontType">
+		<xs:sequence>
+			<xs:element ref="expstatement" maxOccurs="unbounded"/>
+			<xs:element ref="expregcode" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attribute ref="expregtype"/>
+		<xs:attribute ref="expgovauth"/>
+	</xs:complexType>
+	<xs:complexType name="expregcodeType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="expregcodetype"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="expstatementType">
+		<xs:sequence>
+			<xs:element ref="p" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="exprole"/>
+	</xs:complexType>
+	<xs:complexType name="informType">
+		<xs:sequence>
+			<xs:element ref="copyright"/>
+			<xs:element ref="polref" minOccurs="0"/>
+			<xs:element ref="datacond" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="instructType">
+		<xs:sequence>
+			<xs:element ref="distrib"/>
+			<xs:element ref="expcont" minOccurs="0"/>
+			<xs:element ref="handling" minOccurs="0"/>
+			<xs:element ref="destruct" minOccurs="0"/>
+			<xs:element ref="disclose" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="issdateType">
+		<xs:attributeGroup ref="DATE"/>
+	</xs:complexType>
+	<xs:complexType name="issnoType">
+		<xs:attribute ref="issno" use="required"/>
+		<xs:attribute ref="inwork"/>
+		<xs:attribute name="type" type="issnotypeType" default="new"/>
+	</xs:complexType>
+	<xs:complexType name="handlingType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="mediaidType">
+		<xs:attribute name="label" type="xs:NMTOKEN" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="personType">
+		<xs:sequence>
+			<xs:element ref="lastname"/>
+			<xs:element ref="firstname" minOccurs="0"/>
+			<xs:element ref="jobtitle" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="prefix" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="polrefType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="pType" mixed="true">
+		<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="remarksType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="securityType">
+		<xs:attributeGroup ref="SECURIT"/>
+	</xs:complexType>
+</xs:schema>

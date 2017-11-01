@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/>
+	<xs:include schemaLocation="attributeGroups.xsd"/>
+	<xs:include schemaLocation="simpleElements.xsd"/>
+	<xs:include schemaLocation="complexElements.xsd"/>
+	<xs:include schemaLocation="elementGroups.xsd"/>
+	<xs:complexType name="addresdmType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element ref="dmcextension" minOccurs="0"/>
+				<xs:element ref="dmc"/>
+				<xs:element ref="dmtitle" minOccurs="0"/>
+				<xs:element ref="issno" minOccurs="0"/>
+				<xs:element ref="issdate" minOccurs="0"/>
+				<xs:element ref="language" minOccurs="0"/>
+			</xs:sequence>
+			<xs:group ref="xlink:XLINKEXT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+		<xs:attributeGroup ref="xlink:XLINKATT4"/>
+	</xs:complexType>
+	<xs:complexType name="ageType">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="supeqvc"/>
+			<xs:element ref="ecscs"/>
+			<xs:element ref="eidc"/>
+			<xs:element ref="cidc"/>
+			<xs:element ref="discode"/>
+			<xs:element ref="discodev"/>
+			<xs:element ref="incode"/>
+			<xs:element ref="incodev"/>
+			<xs:element ref="itemloc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="answerType">
+		<xs:sequence>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="answer"/>
+	</xs:complexType>
+	<xs:complexType name="aveeType">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="sdc"/>
+			<xs:element ref="chapnum"/>
+			<xs:element ref="section"/>
+			<xs:element ref="subsect"/>
+			<xs:element ref="subject"/>
+			<xs:element ref="discode"/>
+			<xs:element ref="discodev"/>
+			<xs:element ref="incode"/>
+			<xs:element ref="incodev"/>
+			<xs:element ref="itemloc"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="copyrightType">
+		<xs:sequence>
+			<xs:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="datacondType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="datarestType">
+		<xs:sequence>
+			<xs:element ref="instruct"/>
+			<xs:element ref="inform" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="destructType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="discloseType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="distribType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="dmcextensionType">
+		<xs:sequence>
+			<xs:element ref="dmeproducer"/>
+			<xs:element ref="dmecode"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dmcType">
+		<xs:group ref="ALLDMC"/>
+	</xs:complexType>
+	<xs:complexType name="dmentryType">
+		<xs:sequence>
+			<xs:element ref="addresdm"/>
+			<xs:element ref="security" minOccurs="0"/>
+			<xs:element ref="rpc"/>
+			<xs:element ref="answer" minOccurs="0"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="type" type="dmentrytypeAttType"/>
+	</xs:complexType>
+	<xs:complexType name="dmlcType">
+		<xs:sequence>
+			<xs:element ref="modelic"/>
+			<xs:element ref="sendid"/>
+			<xs:element ref="dmltype"/>
+			<xs:element ref="diyear"/>
+			<xs:element ref="seqnum"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dmlrefType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element ref="dmlc"/>
+				<xs:element ref="issno" minOccurs="0"/>
+			</xs:sequence>
+			<xs:group ref="xlink:XLINKEXT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+		<xs:attributeGroup ref="xlink:XLINKATT"/>
+	</xs:complexType>
+	<xs:complexType name="dmlType">
+		<xs:sequence>
+			<xs:element ref="rdf:Description" minOccurs="0"/>
+			<xs:element ref="dmlc"/>
+			<xs:element ref="issno"/>
+			<xs:element ref="issdate"/>
+			<xs:element ref="security"/>
+			<xs:element ref="datarest" minOccurs="0"/>
+			<xs:element ref="dmlref" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dmentry" maxOccurs="unbounded"/>
+			<xs:element ref="remarks" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="direction"/>
+	</xs:complexType>
+	<xs:complexType name="dmltypeType">
+		<xs:attribute name="type" type="dmltypeAttType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="dmtitleType">
+		<xs:sequence>
+			<xs:element ref="techname"/>
+			<xs:element ref="infoname" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!--
+	<xs:complexType name="expcontType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	-->
+	<xs:complexType name="expcontType">
+		<xs:sequence>
+			<xs:element ref="expstatement" maxOccurs="unbounded"/>
+			<xs:element ref="expregcode" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+		<xs:attribute ref="expregtype"/>
+		<xs:attribute ref="expgovauth"/>
+	</xs:complexType>
+	<xs:complexType name="expregcodeType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="expregcodetype"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="expstatementType">
+		<xs:sequence>
+			<xs:element ref="p" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute ref="exprole"/>
+	</xs:complexType>
+	<xs:complexType name="handlingType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="informType">
+		<xs:sequence>
+			<xs:element ref="copyright"/>
+			<xs:element ref="polref" minOccurs="0"/>
+			<xs:element ref="datacond" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="instructType">
+		<xs:sequence>
+			<xs:element ref="distrib"/>
+			<xs:element ref="expcont" minOccurs="0"/>
+			<xs:element ref="handling" minOccurs="0"/>
+			<xs:element ref="destruct" minOccurs="0"/>
+			<xs:element ref="disclose" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="issdateType">
+		<xs:attributeGroup ref="DATE"/>
+	</xs:complexType>
+	<xs:complexType name="issnoType">
+		<xs:attribute ref="issno" use="required"/>
+		<xs:attribute ref="inwork"/>
+		<xs:attribute name="type" type="issnotypeType" default="new"/>
+	</xs:complexType>
+	<xs:complexType name="languageType">
+		<xs:attribute ref="language" use="required"/>
+		<xs:attribute ref="country"/>
+	</xs:complexType>
+	<xs:complexType name="polrefType" mixed="true">
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="pType" mixed="true">
+		<xs:group ref="SPARCON" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:attributeGroup ref="bodyatt"/>
+	</xs:complexType>
+	<xs:complexType name="remarksType" mixed="true">
+		<xs:sequence>
+			<xs:element ref="p" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rpcType" mixed="true">
+		<xs:attribute ref="rpcname"/>
+		<xs:attribute ref="id"/>
+	</xs:complexType>
+	<xs:complexType name="securityType">
+		<xs:attributeGroup ref="SECURIT"/>
+	</xs:complexType>
+</xs:schema>

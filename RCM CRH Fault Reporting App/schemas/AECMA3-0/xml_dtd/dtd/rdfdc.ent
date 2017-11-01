@@ -1,0 +1,96 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.3                            *
+    *                       Date: 2007-02-28                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *                                                                    *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTRDFDC PUBLIC                                         *
+    *   "-//S1000D//ENTITIES RDF and DC Definitions 20070228//EN//XML"   *
+    *   "rdfdc.ent">                                                     *
+    * %EXTRDFDC;                                                         *
+    ********************************************************************** -->
+
+
+<!--**********************************************************************
+    * Resource Description Framework (RDF) and                           *
+    * Dublin Core (DC) definitions.                                      *
+    ********************************************************************** -->
+   
+<!--**********************************************************************
+    * Define Entity %DCMES; (Dublin Core Metadata Element Set)           *
+    * containing:                                                        *
+    *  dc:title       - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:creator     - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:subject     - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:publisher   - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:contributor - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:date        - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:type        - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:format      - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:identifier  - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:language    - Mandatory Single, contains Parsed Character Data.*
+    * or                                                                 *
+    *  dc:rights      - Mandatory Single, contains Parsed Character Data.*
+    ********************************************************************** -->
+<!ENTITY % DCMES "dc:title | dc:creator | dc:subject | dc:publisher | 
+                  dc:contributor | dc:date | dc:type | dc:format | 
+                  dc:identifier | dc:language | dc:rights">
+                  
+                  
+<!--**********************************************************************
+    * Define Entity %RDFDCATT; (RDF, DC and XLINK Namespace Attributes)  *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xmlns:rdf   - CDATA    - FIXED    - RDF namespace definition.     *
+    *  xmlns:dc    - CDATA    - FIXED    - DC namespace definition.      *
+    *  xmlns:xlink - CDATA    - FIXED    - XLINK namespace definition.   *
+    ********************************************************************** -->
+<!ENTITY % RDFDCATT
+         "xmlns:rdf	CDATA	#FIXED	'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+	  xmlns:dc	CDATA	#FIXED	'http://www.purl.org/dc/elements/1.1/'
+	  xmlns:xlink   CDATA	#FIXED	'http://www.w3.org/1999/xlink'" >
+
+
+<!--**********************************************************************
+    * Define Element rdf:Description (RDF container for DC element set)  *
+    * containing:-                                                       *
+    *  Definition stored in Entity %DCMES;.                              *
+    ********************************************************************** -->
+<!ELEMENT rdf:Description (%DCMES;)* >
+
+
+<!--**********************************************************************
+    * Define the DC metadata elements used in S1000D,                    *
+    * all containing:-                                                   *
+    *  Parsed character Data.                                            *
+    ********************************************************************** -->
+<!ELEMENT dc:title       (#PCDATA)>
+<!ELEMENT dc:creator     (#PCDATA)>
+<!ELEMENT dc:subject     (#PCDATA)>
+<!ELEMENT dc:publisher   (#PCDATA)>
+<!ELEMENT dc:contributor (#PCDATA)>
+<!ELEMENT dc:date        (#PCDATA)>
+<!ELEMENT dc:type        (#PCDATA)>
+<!ELEMENT dc:format      (#PCDATA)>
+<!ELEMENT dc:identifier  (#PCDATA)>
+<!ELEMENT dc:language    (#PCDATA)>
+<!ELEMENT dc:rights      (#PCDATA)>
+
+
+<!--** End of XML RDFDC Entity **-->

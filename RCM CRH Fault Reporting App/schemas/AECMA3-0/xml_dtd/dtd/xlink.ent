@@ -1,0 +1,290 @@
+<!--**********************************************************************
+    *                                                                    *
+    *                        S1000D Issue 2                              *
+    *                 XML Document Type Definition                       *
+    *                                                                    *
+    *                     Release Version 2.0                            *
+    *                       Date: 2003-05-31                             *
+    *                                                                    *
+    * Amendment:-                                                        *
+    *                                                                    *
+    *====================================================================*
+    * Typical invocation:-                                               *
+    * <!ENTITY % EXTXLINK PUBLIC                                         *
+    *   "-//S1000D//ELEMENTS XLINK Definitions 20030531//EN//XML"        *
+    *   "xlink.ent">                                                     *
+    * %EXTXLINK;                                                         *
+    ********************************************************************** -->
+
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKEXT; (XLINK Extended Link Elements)            *
+    * containing:-                                                       *
+    *====================================================================*
+    *  Optional Repeatable Group.                                        *
+    *====================================================================*
+    *    resource - Mandatory   Single   contains No Other Tags.         *
+    *   or                                                               *
+    *    locator  - Mandatory    Single   contains No Other Tags.        *
+    *   or                                                               *
+    *    arc      - Mandatory    Single   contains No Other Tags.        *
+    *====================================================================*
+    ********************************************************************** -->
+<!ENTITY % XLINKEXT "resource | locator | arc" >
+
+<!--**********************************************************************
+    * Define Entity %TYPEFIXD; (fixed XMLNS and XLINK type Attributes)   *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xmlns:xlink   - CDATA    - FIXED       - XLINK namespace definitn.*
+    *  xlink:type    - Declared - FIXED       - XLINK type: "simple".    *
+    ********************************************************************** -->
+<!ENTITY % TYPEFIXD
+       "xmlns:xlink 	CDATA 	#FIXED 'http://www.w3.org/1999/xlink'
+	xlink:type	(simple | extended) #FIXED 'simple'" >
+
+
+<!--**********************************************************************
+    * Define Entity %HREFTITL; (optional XLINK href and title Attributes)*
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xlink:href    - CDATA    - IMPLIED     - XLINK target URN.        *
+    *  xlink:title   - CDATA    - IMPLIED     - XLINK title.             *
+    ********************************************************************** -->
+<!ENTITY % HREFTITL
+       "xlink:href	CDATA	#IMPLIED
+	xlink:title	CDATA	#IMPLIED" >
+    
+    
+    
+<!--**********************************************************************
+    * Define Entity %XLINKBEH; (XLINK Behavior Attributes)               *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xlink:show    - Declared - "replace"   - XLINK window behavior:-  *
+    *                                           "replace" or "new" or    *
+    *                                           "embed" or "other" or    *
+    *                                           "none".                  *
+    *  xlink:actuate - Declared - "onRequest" - XLINK event behavior:-   *
+    *                                           "onLoad" or "onRequest". *
+    ********************************************************************** -->
+<!ENTITY % XLINKBEH
+       "xlink:show	(replace|new|embed|other|none) 'replace'
+	xlink:actuate   (onLoad|onRequest)             'onRequest'" >
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKBEH0; (XLINK Behavior Attributes Variant 0,    *
+    *                            no default values at all)               *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Atteibute(s):-                                                     *
+    *  xlink:show    - Declared - IMPLIED     - XLINK window behavior:-  *
+    *                                           "replace" or "new" or    *
+    *                                           "embed" or "other" or    *
+    *                                           "none".                  *
+    *  xlink:actuate - Declared - IMPLIED     - XLINK event behavior:-   *
+    *                                           "onLoad" or "onRequest". *
+    ********************************************************************** -->
+<!ENTITY % XLINKBEH0
+       "xlink:show	(replace|new|embed|other|none) #IMPLIED
+	xlink:actuate   (onLoad|onRequest)             #IMPLIED" >
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKBEH1; (XLINK Behavior Attributes Variant 1)    *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xlink:show    - Declared - FIXED       - XLINK window behavior:-  *
+    *                                           "embed".                 *
+    *  xlink:actuate - Declared - FIXED       - XLINK event behavior:-   *
+    *                                           "onLoad".                *
+    ********************************************************************** -->
+<!ENTITY % XLINKBEH1
+       "xlink:show	(replace|new|embed|other|none) #FIXED 'embed'
+	xlink:actuate   (onLoad|onRequest)             #FIXED 'onLoad'" >
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKBEH2; (XLINK Behavior Attributes Variant 2)    *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xlink:show    - Declared - "new"       - XLINK window behavior:-  *
+    *                                           "replace" or "new" or    *
+    *                                           "embed" or "other" or    *
+    *                                           "none".                  *
+    *  xlink:actuate - Declared - "onRequest" - XLINK event behavior:-   *
+    *                                           "onLoad" or "onRequest". *
+    ********************************************************************** -->
+<!ENTITY % XLINKBEH2
+       "xlink:show	(replace|new|embed|other|none) 'new'
+	xlink:actuate   (onLoad|onRequest)             'onRequest'" >
+
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKATT; (XLINK Attributes)                        *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xmlns:xlink   - CDATA    - FIXED       - XLINK namespace definitn.*
+    *  xlink:type    - Declared - "simple"    - XLINK type: "simple" or  *
+    *                                                       "extended".  *
+    *  Attribute Definition List stored in entity %HREFTITL;.            *
+    *  Attribute Definition List stored in entity %XLINKBEH;.            *
+    ********************************************************************** -->
+<!ENTITY % XLINKATT
+       "xmlns:xlink 	CDATA 	#FIXED 'http://www.w3.org/1999/xlink'
+	xlink:type	(simple | extended) 'simple'
+	%HREFTITL;
+	%XLINKBEH;" > 
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKATT0; (XLINK Attributes Variant 0, fixed       *
+    *                            "simple" XLink, no defaults on behavior)*
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %TYPEFIXD;.            *
+    *  Attribute Definition List stored in entity %HREFTITL;.            *
+    *  Attribute Definition List stored in entity %XLINKBEH0;.           *
+    ********************************************************************** -->
+<!ENTITY % XLINKATT0
+       "%TYPEFIXD;
+	%HREFTITL;
+	%XLINKBEH;" > 
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKATT1; (XLINK Attributes Variant 1, fixed       *
+    *                            "simple" XLink, Behavior Variant 1)     *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %TYPEFIXD;.            *
+    *  Attribute Definition List stored in entity %HREFTITL;.            *
+    *  Attribute Definition List stored in entity %XLINKBEH1;.           *
+    ********************************************************************** -->
+<!ENTITY % XLINKATT1
+       "%TYPEFIXD;
+	%HREFTITL;
+	%XLINKBEH1;" > 
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKATT2; (XLINK Attributes Variant 2, fixed       *
+    *                            "simple" XLink, Behavior Variant 2)     *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %TYPEFIXD;.            *
+    *  Attribute Definition List stored in entity %HREFTITL;.            *
+    *  Attribute Definition List stored in entity %XLINKBEH2;.           *
+    ********************************************************************** -->
+<!ENTITY % XLINKATT2
+       "%TYPEFIXD;
+	%HREFTITL;
+	%XLINKBEH2;" > 
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKATT3; (XLINK Attributes Variant 3, fixed       *
+    *                            "simple" XLink, Behavior basic Variant) *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  Attribute Definition List stored in entity %TYPEFIXD;.            *
+    *  Attribute Definition List stored in entity %HREFTITL;.            *
+    *  Attribute Definition List stored in entity %XLINKBEH;.            *
+    ********************************************************************** -->
+<!ENTITY % XLINKATT3
+       "%TYPEFIXD;
+	%HREFTITL;
+	%XLINKBEH;" > 
+
+
+<!--**********************************************************************
+    * Define Entity %XLINKATT4; (XLINK Attributes Variant 4, default     *
+    *                            "simple" XLink, Behavior Variant 2)     *
+    * containing:-                                                       *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xmlns:xlink   - CDATA    - FIXED       - XLINK namespace definitn.*
+    *  xlink:type    - Declared - "simple"    - XLINK type: "simple" or  *
+    *                                                       "extended".  *
+    *  Attribute Definition List stored in entity %HREFTITL;.            *
+    *  Attribute Definition List stored in entity %XLINKBEH2;.           *
+    ********************************************************************** -->
+<!ENTITY % XLINKATT4
+       "xmlns:xlink 	CDATA 	#FIXED 'http://www.w3.org/1999/xlink'
+	xlink:type	(simple | extended) 'simple'
+	%HREFTITL;
+	%XLINKBEH2;" > 
+
+	
+
+<!--**********************************************************************
+    * Define Element resource (XLINK Resource) containing:-              *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xmlns:xlink - CDATA    - FIXED    - XLINK namespace definition.   *
+    *  xlink:type  - Declared - FIXED    - XLINK type: "resource".       *
+    *  xlink:title - CDATA    - IMPLIED  - XLINK resource title.         *
+    *  xlink:label - NMTOKEN  - REQUIRED - XLINK resource label.         *
+    ********************************************************************** -->
+<!ELEMENT resource	EMPTY >
+<!ATTLIST resource
+	xmlns:xlink	CDATA	   #FIXED "http://www.w3.org/1999/xlink"
+	xlink:type	(resource) #FIXED "resource"
+	xlink:title	CDATA	   #IMPLIED 
+	xlink:label	NMTOKEN	   #REQUIRED >
+
+
+<!--**********************************************************************
+    * Define Element locator (XLINK Locator) containing:-                *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xmlns:xlink - CDATA    - FIXED    - XLINK namespace definition.   *
+    *  xlink:type  - Declared - FIXED    - XLINK type: "locator".        *
+    *  Attribute Definition List stored in entity %HREFTITL;.            *
+    *  xlink:label - NMTOKEN  - REQUIRED - XLINK locator label.          *
+    ********************************************************************** -->
+<!ELEMENT locator	EMPTY >
+<!ATTLIST locator
+	 xmlns:xlink	CDATA	  #FIXED "http://www.w3.org/1999/xlink"
+	 xlink:type	(locator) #FIXED "locator"
+	 %HREFTITL;
+	 xlink:label	NMTOKEN	  #REQUIRED >
+
+
+<!--**********************************************************************
+    * Define Element arc (XLINK Arc) containing:-                        *
+    *  No Other Tags.                                                    *
+    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*
+    * Attribute(s):-                                                     *
+    *  xmlns:xlink   - CDATA    - FIXED   - XLINK namespace definition.  *
+    *  xlink:type    - Declared - FIXED   - XLINK type: "arc".           *
+    *  xlink:from    - NMTOKEN  - IMPLIED - XLINK starting resource.     *
+    *  xlink:to      - NMTOKEN  - IMPLIED - XLINK ending resource.       *
+    *  Attribute Definition List stored in entity %XLINKBEH;.            *
+    ********************************************************************** -->
+<!ELEMENT arc	EMPTY >
+<!ATTLIST arc
+	xmlns:xlink	CDATA	    #FIXED "http://www.w3.org/1999/xlink"
+	xlink:type	(arc)	    #FIXED "arc"
+	xlink:from	NMTOKEN	    #IMPLIED
+	xlink:to	NMTOKEN	    #IMPLIED
+	%XLINKBEH; >
+	
+
+
+<!--** End of XML EXTXLINK Entity **-->

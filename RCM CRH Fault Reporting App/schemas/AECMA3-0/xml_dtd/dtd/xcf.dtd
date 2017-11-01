@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!ELEMENT webcgm ((grobject | bindById | bindByName)*)>
+<!ATTLIST webcgm
+	id	ID	#IMPLIED
+	version	CDATA	#FIXED	'2.0'
+	filename	CDATA	#IMPLIED
+	background-color	CDATA	#IMPLIED
+	pictureVisibility	(off | on)	#IMPLIED
+	text-size	CDATA	#IMPLIED
+	fill-color	CDATA	#IMPLIED
+	intensity	CDATA	#IMPLIED
+	stroke-color	CDATA	#IMPLIED
+	stroke-weight	CDATA	#IMPLIED
+	text-color	CDATA	#IMPLIED
+	text-font	CDATA	#IMPLIED
+	raster-intensity	CDATA	#IMPLIED
+>
+
+<!ELEMENT grobject (linkuri*)>
+<!ATTLIST grobject
+	apsid	ID	#REQUIRED
+	screentip	CDATA	#IMPLIED
+	region	CDATA	#IMPLIED
+	viewcontext	CDATA	#IMPLIED
+	visibility	(off | inherit | on)	#IMPLIED
+	interactivity	(off | inherit | on)	#IMPLIED
+	text-size	CDATA	#IMPLIED
+	fill-color	CDATA	#IMPLIED
+	intensity	CDATA	#IMPLIED
+	stroke-color	CDATA	#IMPLIED
+	stroke-weight	CDATA	#IMPLIED
+	text-color	CDATA	#IMPLIED
+	text-font	CDATA	#IMPLIED
+	raster-intensity	CDATA	#IMPLIED
+>
+
+<!ELEMENT linkuri EMPTY>
+<!ATTLIST linkuri
+	uri	CDATA	#REQUIRED
+	behavior	CDATA	#IMPLIED
+	desc	CDATA	#IMPLIED
+>
+
+<!ELEMENT bindById (linkuri*)>
+<!ATTLIST bindById
+	apsid	ID	#REQUIRED
+	screentip	CDATA	#IMPLIED
+	region	CDATA	#IMPLIED
+	viewcontext	CDATA	#IMPLIED
+	visibility	(off | inherit | on)	#IMPLIED
+	interactivity	(off | inherit | on)	#IMPLIED
+	text-size	CDATA	#IMPLIED
+	fill-color	CDATA	#IMPLIED
+	intensity	CDATA	#IMPLIED
+	stroke-color	CDATA	#IMPLIED
+	stroke-weight	CDATA	#IMPLIED
+	text-color	CDATA	#IMPLIED
+	text-font	CDATA	#IMPLIED
+	raster-intensity	CDATA	#IMPLIED
+>
+
+<!ELEMENT bindByName (linkuri*)>
+<!ATTLIST bindByName
+	apstargetname	CDATA	#REQUIRED
+	screentip	CDATA	#IMPLIED
+	region	CDATA	#IMPLIED
+	viewcontext	CDATA	#IMPLIED
+	visibility	(off | inherit | on)	#IMPLIED
+	interactivity	(off | inherit | on)	#IMPLIED
+	text-size	CDATA	#IMPLIED
+	fill-color	CDATA	#IMPLIED
+	intensity	CDATA	#IMPLIED
+	stroke-color	CDATA	#IMPLIED
+	stroke-weight	CDATA	#IMPLIED
+	text-color	CDATA	#IMPLIED
+	text-font	CDATA	#IMPLIED
+	raster-intensity	CDATA	#IMPLIED
+>

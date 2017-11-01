@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Admin (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="complexElements.xsd"/>
+	<xs:group name="ALLDMC">
+		<xs:choice>
+			<xs:element ref="age"/>
+			<xs:element ref="avee"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="SPARCON">
+		<xs:choice>
+			<xs:element ref="subscrpt"/>
+			<xs:element ref="supscrpt"/>
+		</xs:choice>
+	</xs:group>
+</xs:schema>

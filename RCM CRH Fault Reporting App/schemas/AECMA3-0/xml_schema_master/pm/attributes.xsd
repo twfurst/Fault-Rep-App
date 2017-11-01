@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:include schemaLocation="simpleTypes.xsd"/>
+	<xs:attribute name="actidref" type="xs:NCName"/>
+	<xs:attribute name="actreftype" type="actreftypeType"/>
+	<xs:attribute name="actvalues" type="actValuesType"/>
+	<xs:attribute name="applicconf" type="applicconfType"/>
+	<xs:attribute name="caveat" type="CAVEATS"/>
+	<xs:attribute name="change" type="changeAttType"/>
+	<xs:attribute name="class" type="CLASSES"/>
+	<xs:attribute name="code" type="xs:string"/>
+	<xs:attribute name="commcls" type="COMMCLSS"/>
+	<xs:attribute name="country" type="countryType"/>
+	<xs:attribute name="day" type="DAY"/>
+	<xs:attribute name="displayclass" type="xs:string"/>
+	<xs:attribute name="expgovauth" type="xs:string"/>
+	<xs:attribute name="expregcodetype" type="xs:string"/>
+	<xs:attribute name="expregtype" type="xs:string"/>
+	<xs:attribute name="exprole" type="exproleType"/>
+	<xs:attribute name="id" type="xs:ID"/>
+	<xs:attribute name="inwork" type="NONNEGI2"/>
+	<xs:attribute name="issno" type="issnoAttType"/>
+	<xs:attribute name="language" type="languageAttType"/>
+	<xs:attribute name="level" type="xs:nonNegativeInteger"/>
+	<xs:attribute name="location" type="xs:string"/>
+	<xs:attribute name="mark" type="xs:nonNegativeInteger"/>
+	<xs:attribute name="month" type="MONTH"/>
+	<xs:attribute name="operator" type="operType"/>
+	<xs:attribute name="origname" type="ORGNAME"/>
+	<xs:attribute name="pubcodsy" type="xs:string"/>
+	<xs:attribute name="rfc" type="xs:string"/>
+	<xs:attribute name="rpcname" type="xs:string"/>
+	<xs:attribute name="type" type="issnotypeAttType"/>
+	<xs:attribute name="volume" type="xs:string"/>
+	<xs:attribute name="year" type="yearType"/>
+</xs:schema>
