@@ -7,10 +7,18 @@ package com.furst.faultrep;
 
 import com.furst.faultrep.menus.AppMenu;
 import java.awt.Dimension;
+import java.util.Arrays;
+import java.util.List;
+import org.pushingpixels.flamingo.api.common.JCommandButton;
 import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
 import org.pushingpixels.flamingo.api.common.icon.ResizableIcon;
+import org.pushingpixels.flamingo.api.ribbon.JRibbonBand;
 import org.pushingpixels.flamingo.api.ribbon.JRibbonFrame;
 import org.pushingpixels.flamingo.api.ribbon.RibbonApplicationMenu;
+import org.pushingpixels.flamingo.api.ribbon.RibbonElementPriority;
+import org.pushingpixels.flamingo.api.ribbon.RibbonTask;
+import org.pushingpixels.flamingo.api.ribbon.resize.CoreRibbonResizePolicies;
+import org.pushingpixels.flamingo.api.ribbon.resize.IconRibbonBandResizePolicy;
 
 /**
  *
@@ -24,6 +32,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     public CRHFaultRepFrame() {
         initComponents();
         this.setApplicationIcon(getIcon("rcmLogoNoBg32x32.png"));
+        setRibbon();
     }
 
     private ResizableIcon getIcon(String res)
@@ -42,17 +51,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setMinimumSize(new java.awt.Dimension(100, 75));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -94,8 +93,24 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
     private void setRibbon()
     {
+        JRibbonBand band1 = new JRibbonBand("Data Modules", null);
+        JRibbonBand band2 = new JRibbonBand("Publishing", null);
+        JRibbonBand band22 = new JRibbonBand("Data Modules", null);
+        JCommandButton b1 = new JCommandButton("Create DM", getIcon("createDm.png"));
+        JCommandButton b1a = new JCommandButton("Edit DM Ident", getIcon("editDoc.png"));
+        JCommandButton b2 = new JCommandButton("Create PM", getIcon("createDm.png"));
+        band1.addCommandButton(b1, RibbonElementPriority.TOP);
+        band1.addCommandButton(b1a, RibbonElementPriority.MEDIUM);
+        band2.addCommandButton(b2, RibbonElementPriority.TOP);
+        band1.setResizePolicies((List) Arrays.asList(new CoreRibbonResizePolicies.None(band1.getControlPanel()), new IconRibbonBandResizePolicy(band1.getControlPanel())));
+        band2.setResizePolicies((List) Arrays.asList(new CoreRibbonResizePolicies.None(band2.getControlPanel()), new IconRibbonBandResizePolicy(band2.getControlPanel())));
+        band22.setResizePolicies((List) Arrays.asList(new IconRibbonBandResizePolicy(band22.getControlPanel())));
+        RibbonTask task1 = new RibbonTask("Admin", band1, band2);
+        RibbonTask task2 = new RibbonTask("Writer", band22);
         RibbonApplicationMenu menu = new AppMenu();
         this.getRibbon().setApplicationMenu(menu);
+        this.getRibbon().addTask(task1);
+        this.getRibbon().addTask(task2);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
