@@ -5,10 +5,12 @@
  */
 package com.furst.faultrep;
 
+import com.furst.faultrep.menus.AppMenu;
 import java.awt.Dimension;
 import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
 import org.pushingpixels.flamingo.api.common.icon.ResizableIcon;
 import org.pushingpixels.flamingo.api.ribbon.JRibbonFrame;
+import org.pushingpixels.flamingo.api.ribbon.RibbonApplicationMenu;
 
 /**
  *
@@ -90,6 +92,11 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         });
     }
 
+    private void setRibbon()
+    {
+        RibbonApplicationMenu menu = new AppMenu();
+        this.getRibbon().setApplicationMenu(menu);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

@@ -21,55 +21,9 @@ import org.pushingpixels.flamingo.api.ribbon.RibbonApplicationMenuEntryPrimary.P
  */
 public class AppMenu extends RibbonApplicationMenu{
     private boolean testBool = false;
-    private AppMenuPrimaryEntry ChgCsdbEntry;
-    private AppMenuPrimaryEntry CreateCsdbEntry;
-    private AppMenuPrimaryEntry ChgUserEntry;
-    private AppMenuPrimaryEntry loginEntry;
     private AppMenuPrimaryEntry exitEntry;
     public AppMenu()
     {
-        /*
-            create the change CSDB menu entry
-        */
-        ChgCsdbEntry = new AppMenuPrimaryEntry(getIcon("database-3.png"),"Change CSDB",new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0); //To change body of generated methods, choose Tools | Templates.
-            }
-        },CommandButtonKind.ACTION_AND_POPUP_MAIN_ACTION);
-        ChgCsdbEntry.setEnabled(testBool);
-        
-        CreateCsdbEntry = new AppMenuPrimaryEntry(getIcon("database.png"),"Create CSDB",new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0); //To change body of generated methods, choose Tools | Templates.
-            }
-        },CommandButtonKind.ACTION_ONLY);
-        CreateCsdbEntry.setEnabled(testBool);
-        
-        /*
-            create the change user menu entry
-        */
-        ChgUserEntry = new AppMenuPrimaryEntry(getIcon("user-56.png"),"Change User",new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0); //To change body of generated methods, choose Tools | Templates.
-            }
-        },CommandButtonKind.ACTION_ONLY);
-        ChgUserEntry.setEnabled(testBool);
-        /*
-            create the login menu entry
-        */
-        loginEntry = new AppMenuPrimaryEntry(getIcon("login.png"),"Login",new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //System.exit(0); //To change body of generated methods, choose Tools | Templates.
-                testBool = true;
-                ChgCsdbEntry.setEnabled(testBool);
-                CreateCsdbEntry.setEnabled(testBool);
-                ChgUserEntry.setEnabled(testBool);
-            }
-        },CommandButtonKind.ACTION_ONLY);
         /*
             create the exit menu entry
         */
@@ -79,10 +33,7 @@ public class AppMenu extends RibbonApplicationMenu{
                  System.exit(0);//To change body of generated methods, choose Tools | Templates.
             }
         },CommandButtonKind.ACTION_ONLY);
-        this.addMenuEntry(loginEntry);
-        this.addMenuEntry(ChgCsdbEntry);
-        this.addMenuEntry(CreateCsdbEntry);
-        this.addMenuEntry(ChgUserEntry);
+
         this.addMenuEntry(exitEntry);
 //        this.addMenuEntry(new AppMenuPrimaryEntry(null,"Test",null,null));
 //        this.addMenuEntry(new AppMenuPrimaryEntry(null,"Test 1",null,null));
