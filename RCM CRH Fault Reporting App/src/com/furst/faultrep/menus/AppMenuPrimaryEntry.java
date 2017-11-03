@@ -5,10 +5,8 @@
  */
 package com.furst.faultrep.menus;
 
-import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import org.pushingpixels.flamingo.api.common.JCommandButton.CommandButtonKind;
-import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
 import org.pushingpixels.flamingo.api.common.icon.ResizableIcon;
 import org.pushingpixels.flamingo.api.ribbon.RibbonApplicationMenuEntryPrimary;
 

@@ -5,10 +5,20 @@
  */
 package com.furst.faultrep;
 
-import com.furst.faultrep.menus.AppMenu;
+import com.furst.faultrep.db.Database;
+import com.furst.faultrep.menus.AppMenuPrimaryEntry;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.pushingpixels.flamingo.api.common.JCommandButton;
 import org.pushingpixels.flamingo.api.common.RichTooltip;
 import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
@@ -16,6 +26,8 @@ import org.pushingpixels.flamingo.api.common.icon.ResizableIcon;
 import org.pushingpixels.flamingo.api.ribbon.JRibbonBand;
 import org.pushingpixels.flamingo.api.ribbon.JRibbonFrame;
 import org.pushingpixels.flamingo.api.ribbon.RibbonApplicationMenu;
+import org.pushingpixels.flamingo.api.ribbon.RibbonApplicationMenuEntryPrimary.PrimaryRolloverCallback;
+import org.pushingpixels.flamingo.api.ribbon.RibbonApplicationMenuEntrySecondary;
 import org.pushingpixels.flamingo.api.ribbon.RibbonElementPriority;
 import org.pushingpixels.flamingo.api.ribbon.RibbonTask;
 import org.pushingpixels.flamingo.api.ribbon.resize.CoreRibbonResizePolicies;
@@ -30,10 +42,23 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     /**
      * Creates new form CRHFaultRepFrame
      */
+    private String URL  = "jdbc:sqlite:db/";
+    private String cur_db  = "None";
+    private boolean dbSelected = false;
+    
     public CRHFaultRepFrame() {
         initComponents();
         this.setApplicationIcon(getIcon("rcmLogoNoBg32x32.png"));
         setRibbon();
+    }
+    
+    public void setDb(String dbName)
+    {
+        cur_db = dbName;
+        dbSelected = true;
+        dbLabel.setText("Currently selected DB: " + cur_db);
+        b1.setEnabled(dbSelected);
+        b1a.setEnabled(dbSelected);
     }
 
     private ResizableIcon getIcon(String res)
@@ -51,10 +76,29 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFileChooser1 = new javax.swing.JFileChooser();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jPanel14 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        dbLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel6 = new javax.swing.JPanel();
@@ -71,51 +115,177 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jPanel7 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        jPanel13 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jPanel15 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CRH Fault Reporting DB Tool");
         setMinimumSize(new java.awt.Dimension(100, 75));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Maintenance ID Search"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Maintenance Data Item Search"));
+
+        jLabel1.setText("Search by ID: ");
+
+        jTextField1.setText("jTextField1");
+
+        jLabel2.setText("Search by Description:");
+
+        jTextField2.setText("jTextField2");
+
+        jLabel6.setText("Search by Report Date:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Maintenance ID Properties"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Maintenance Data Item Properties"));
+
+        jLabel3.setText("Description: ");
+
+        jTextField3.setText("jTextField3");
+
+        jLabel4.setText("Generated Date:");
+
+        jTextField4.setText("jTextField4");
+
+        jLabel5.setText("Data Module: ");
+
+        jTextField5.setEditable(false);
+        jTextField5.setText("jTextField5");
+
+        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder("Notes"));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane5.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jButton1.setText("Add/Update DMC");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField3))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField5))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        dbLabel.setText("Currently selected DB: " + cur_db);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dbLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 59, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dbLabel)
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
         );
 
-        jPanel6.setPreferredSize(new java.awt.Dimension(400, 579));
+        jPanel6.setPreferredSize(new java.awt.Dimension(500, 579));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -179,14 +349,16 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jSplitPane1.setLeftComponent(jPanel6);
 
-        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Faults"));
+        jPanel11.setPreferredSize(new java.awt.Dimension(695, 769));
+
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Failure List"));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -205,11 +377,11 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
+            .addComponent(jScrollPane2)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
         );
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Procedure Output List")));
@@ -227,15 +399,65 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         ));
         jScrollPane3.setViewportView(jTable3);
 
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder("Alias List"));
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 731, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 123, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel13Layout.createSequentialGroup()
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder("IBIT List"));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 212, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -243,14 +465,20 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(jPanel11);
@@ -259,12 +487,12 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jSplitPane1)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -295,6 +523,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -331,9 +560,65 @@ public class CRHFaultRepFrame extends JRibbonFrame {
             }
         });
     }
+    
+    private void createNewDb()
+    {
+        String dbName = JOptionPane.showInputDialog(this, "Name for new database:", "Provide databse name", JOptionPane.INFORMATION_MESSAGE);
+        //System.out.println("The name = " + dbName + " .");
+        URL = URL + dbName + ".db";
+        
+        try(Connection con = Database.getConnection(URL))
+        {
+            if(con != null)
+            {
+                createTables(con);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    private void createTables(Connection con) throws SQLException
+    {
+        /*
+            Strings for database table dropping and creation
+        */
+        String dropAliases = "DROP TABLE IF EXISTS aliases";
+        String createAliases = "CREATE TABLE \"aliases\" (\"al_id\" INTEGER PRIMARY KEY  NOT NULL  DEFAULT (null) ,\"al_name\" VARCHAR,\"al_source\" VARCHAR,\"det_sys\" VARCHAR DEFAULT (null) ,\"evidence\" VARCHAR,\"name\" VARCHAR,\"po_ref_id\" VARCHAR);";
+        String dropComps = "DROP TABLE IF EXISTS components";
+        String createComps = "CREATE TABLE \"components\" (\"comp_id\" VARCHAR PRIMARY KEY  NOT NULL , \"comp_name\" VARCHAR)";
+        String dropFailures = "DROP TABLE IF EXISTS failures";
+        String createFailures = "CREATE TABLE \"failures\" (\"f_id\" VARCHAR PRIMARY KEY  NOT NULL ,\"f_name\" VARCHAR,\"f_ratio\" DOUBLE,\"system\" VARCHAR,\"comp_id\" VARCHAR,\"comp_fail_rate\" DOUBLE,\"maint_task_id\" VARCHAR DEFAULT (null) , \"maint_data_id\" VARCHAR)";
+        String dropMaintTasks = "DROP TABLE IF EXISTS maintTasks";
+        String createMaintTasks = "CREATE TABLE \"maintTasks\" (\"maint_task_id\" VARCHAR PRIMARY KEY  NOT NULL , \"maint_task_name\" VARCHAR)";
+        String dropMaintData = "DROP TABLE IF EXISTS maintenanceData";
+        String createMaintData = "CREATE TABLE \"maintenanceData\" (\"md_id\" VARCHAR PRIMARY KEY  NOT NULL ,\"descr\" VARCHAR DEFAULT (null) ,\"gen_date\" VARCHAR DEFAULT (null) ,\"fr_dmc\" VARCHAR,\"notes\" VARCHAR DEFAULT (null) ,\"rep_date_ref\" VARCHAR)";
+        String dropProOutputs = "DROP TABLE IF EXISTS procedureOutputs";
+        String createProOutputs = "CREATE TABLE \"procedureOutputs\" (\"po_id\" VARCHAR PRIMARY KEY  NOT NULL , \"po_name\" VARCHAR, \"maint_data_id\" VARCHAR)";
+        String dropReports = "DROP TABLE IF EXISTS reports";
+        String createReports = "CREATE TABLE \"reports\" (\"rep_type\" VARCHAR,\"rep_date\" VARCHAR PRIMARY KEY  NOT NULL  DEFAULT (null) )";
+        
+        String[] statements = new String[]{dropAliases, createAliases, dropComps, createComps, dropFailures,createFailures,dropMaintTasks,createMaintTasks,dropMaintData,createMaintData,dropProOutputs,createProOutputs,dropReports,createReports};
+        
+        /*
+            Statement for connection to execute the the drop and create strings
+        */
+        Statement stm = con.createStatement();
+        /*
+            Execution of statements
+        */
+        for(String statement : statements)
+        {
+            stm.execute(statement);
+        }
+    }
 
     private void setRibbon()
     {
+        /*
+            Declare all of these items as global vars
+        */
 //        RichTooltip rtp = new RichTooltip();
 //        rtp.addDescriptionSection("Creates a new DB in MySQL Server. Root password is requried.");
         RibbonTask task1;//Database actions tab
@@ -344,8 +629,26 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         JRibbonBand band22 = new JRibbonBand("Data Module Relationship", null);
         JRibbonBand band23 = new JRibbonBand("System / Ambiguity Relationship", null);
         JCommandButton b1b = new JCommandButton("Create new DB", getIcon("database.png"));
-        JCommandButton b1 = new JCommandButton("Fresh update", getIcon("database-15.png"));
-        JCommandButton b1a = new JCommandButton("Update and maintain DMs", getIcon("database-16.png"));
+        b1b.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 createNewDb();
+            }
+        });
+        b1 = new JCommandButton("Fresh update", getIcon("database-15.png"));
+        b1.setDisabledIcon(getIcon("database-15.png"));
+        b1a = new JCommandButton("Update and maintain DMs", getIcon("database-16.png"));
+        b1a.setDisabledIcon(getIcon("database-16.png"));
+        if(cur_db.equals("None"))
+        {
+            b1.setEnabled(false);
+            b1a.setEnabled(false);
+        }
+        else
+        {
+            b1.setEnabled(true);
+            b1a.setEnabled(true);
+        }
         JCommandButton b2 = new JCommandButton("Compare DM content to DB", getIcon("view.png"));
         JCommandButton b3 = new JCommandButton("Create Data Module(s) from DB", getIcon("file-4.png"));
         band1a.addCommandButton(b1b, RibbonElementPriority.TOP);
@@ -361,15 +664,30 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         task1 = new RibbonTask("Database Actions",band1a, band1, band2);
         task2 = new RibbonTask("Report Actions", band22, band23);
         RibbonApplicationMenu menu = new AppMenu();
+//        PrimaryRolloverCallback pcb = PrimaryRolloverCallback.class.newInstance();
+//        pcb.
         this.getRibbon().setApplicationMenu(menu);
         this.getRibbon().addTask(task1);
         this.getRibbon().addTask(task2);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel dbLabel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JFileChooser jFileChooser1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -378,13 +696,77 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+    private JCommandButton b1;
+    private JCommandButton b1a;
+class AppMenu extends RibbonApplicationMenu{
+    private boolean testBool = false;
+    private AppMenuPrimaryEntry chooseDbEntry;
+    private AppMenuPrimaryEntry exitEntry;
+    public AppMenu()
+    {
+        /*
+            create the choose DB entry
+        */
+        chooseDbEntry = new AppMenuPrimaryEntry(getIcon("database-3.png"),"Choose Databse",null,JCommandButton.CommandButtonKind.ACTION_ONLY);
+        /*
+            create the available data base secondary entries
+        */
+        int c = 0;
+        File[] dbs = new File("db/").listFiles();
+        RibbonApplicationMenuEntrySecondary[] secEntries = new RibbonApplicationMenuEntrySecondary[dbs.length];
+        for(File db : dbs)
+        {
+            String dbName = db.getName().substring(0, db.getName().indexOf("."));
+            RibbonApplicationMenuEntrySecondary dbEntry = new RibbonApplicationMenuEntrySecondary(getIcon("database-1.png"),dbName,new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 setDb(dbName);
+            }
+        },JCommandButton.CommandButtonKind.ACTION_ONLY);
+            secEntries[c] = dbEntry;
+            c++;
+        }
+        chooseDbEntry.addSecondaryMenuGroup("Available Databases", secEntries);
+        /*
+            create the exit menu entry
+        */
+        exitEntry = new AppMenuPrimaryEntry(getIcon("exit.png"),"Exit",new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 System.exit(0);//To change body of generated methods, choose Tools | Templates.
+            }
+        },JCommandButton.CommandButtonKind.ACTION_ONLY);
+
+        this.addMenuEntry(chooseDbEntry);
+        this.addMenuEntry(exitEntry);
+//        this.addMenuEntry(new AppMenuPrimaryEntry(null,"Test",null,null));
+//        this.addMenuEntry(new AppMenuPrimaryEntry(null,"Test 1",null,null));
+//        this.addMenuEntry(new AppMenuPrimaryEntry(null,"Test 2",null,null));
+    }
+    
+//    private ResizableIcon getIcon(String res)
+//    {
+//        String resource = "com/furst/faultrep/icons/" + res;
+//        return ImageWrapperResizableIcon.getIcon(AppMenu.class.getClassLoader().getResource(resource), new Dimension(32,32));
+//    }
+}
 }
