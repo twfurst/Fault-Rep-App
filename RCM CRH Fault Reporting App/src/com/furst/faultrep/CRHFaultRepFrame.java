@@ -11,14 +11,33 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
+import javax.xml.XMLConstants;
+import javax.xml.namespace.NamespaceContext;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import static org.apache.xerces.jaxp.JAXPConstants.JAXP_SCHEMA_LANGUAGE;
+import static org.apache.xerces.jaxp.JAXPConstants.W3C_XML_SCHEMA;
+import org.apache.xerces.util.XMLCatalogResolver;
+import org.apache.xml.resolver.tools.CatalogResolver;
 import org.pushingpixels.flamingo.api.common.JCommandButton;
 import org.pushingpixels.flamingo.api.common.RichTooltip;
 import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
@@ -32,6 +51,11 @@ import org.pushingpixels.flamingo.api.ribbon.RibbonElementPriority;
 import org.pushingpixels.flamingo.api.ribbon.RibbonTask;
 import org.pushingpixels.flamingo.api.ribbon.resize.CoreRibbonResizePolicies;
 import org.pushingpixels.flamingo.api.ribbon.resize.IconRibbonBandResizePolicy;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
 
 /**
  *
@@ -48,8 +72,10 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     
     public CRHFaultRepFrame() {
         initComponents();
+        initDb();
+        initXpath();
         this.setApplicationIcon(getIcon("rcmLogoNoBg32x32.png"));
-        setRibbon();
+        setRibbon(); 
     }
     
     public void setDb(String dbName)
@@ -572,6 +598,11 @@ public class CRHFaultRepFrame extends JRibbonFrame {
             if(con != null)
             {
                 createTables(con);
+                int res = JOptionPane.showConfirmDialog(this, "Make the new DB the curent in use DB?", "Make a choice", JOptionPane.YES_NO_OPTION);
+                if(res == JOptionPane.YES_OPTION)
+                {
+                    setDb(dbName);
+                }
             }
         } catch (SQLException ex) {
             Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -613,6 +644,207 @@ public class CRHFaultRepFrame extends JRibbonFrame {
             stm.execute(statement);
         }
     }
+    
+    private void initDb()
+    {
+        try 
+        {
+            resolver = new CatalogResolver();
+            eHandler = new DocumentErrorHandler();
+            XMLCatalogResolver xres = createXMLCatalogResolver(resolver);
+            DBF = DocumentBuilderFactory.newInstance();
+            DBF.setAttribute(JAXP_SCHEMA_LANGUAGE, W3C_XML_SCHEMA);
+            DBF.setNamespaceAware(true);
+            DB = DBF.newDocumentBuilder();
+            DB.setEntityResolver(xres);
+            DB.setErrorHandler(eHandler);
+        } 
+        catch (ParserConfigurationException ex) 
+        {
+            Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private XMLCatalogResolver createXMLCatalogResolver(CatalogResolver resolver)
+    {
+        int i = 0;
+        
+        Vector files = resolver.getCatalog().getCatalogManager().getCatalogFiles();
+        String[] catalogs = new String[files.size()];
+        XMLCatalogResolver xcr = new XMLCatalogResolver();
+        
+        for(Object file : files)
+        {
+            catalogs[i] = new File(file.toString()).getAbsolutePath();
+        }
+        
+        xcr.setCatalogList(catalogs);
+        return xcr;
+    }
+    
+    private void initXpath()
+    {
+        XPF = XPathFactory.newInstance();
+        XP = XPF.newXPath();
+        
+        XP.setNamespaceContext(new NamespaceContext(){
+            @Override
+            public String getNamespaceURI(String prefix) {
+                if(prefix == null)
+                {
+                    throw new NullPointerException("Null prefix");
+                }
+                else if("xsi".equals(prefix))
+                {
+                    return "http://www.w3.org/2001/XMLSchema-instance";
+                }
+                else if("xml".equals(prefix))
+                {
+                    return XMLConstants.XML_NS_URI;
+                }
+                else
+                {
+                    return XMLConstants.NULL_NS_URI;
+                }
+            }
+
+            @Override
+            public String getPrefix(String namespaceURI) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public Iterator getPrefixes(String namespaceURI) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        
+        });
+    }
+    
+    private void freshUpdate()
+    {
+        String path = null;
+        int res = jFileChooser1.showOpenDialog(this);
+        if(res == JFileChooser.APPROVE_OPTION)
+        {
+            path = jFileChooser1.getSelectedFile().getAbsolutePath();
+        }
+        final File XML = new File(path);
+        final String repDateXp = "//report/reportDate";
+        final String repTypeXp = "//report/reportType";
+        final String maintDataXp = "//maintenanceData";
+        final String failureXp = "//failure";
+        final String proOutXp = "//procedureOutput";
+        final String aliasXp = "//alias";
+        
+        SwingWorker<Boolean, Integer> worker = new SwingWorker<Boolean, Integer>(){
+            
+            @Override
+            protected Boolean doInBackground() 
+            {
+                jProgressBar1.setIndeterminate(true);
+                try 
+                {
+                    Document doc = DB.parse(XML);
+                    Node repDateNode = (Node)XP.compile(repDateXp).evaluate(doc, XPathConstants.NODE);
+                    Node repTypeNode = (Node)XP.compile(repTypeXp).evaluate(doc, XPathConstants.NODE);
+                    NodeList maintDataNodes = (NodeList)XP.compile(maintDataXp).evaluate(doc, XPathConstants.NODESET);
+                    NodeList failureNodes = (NodeList)XP.compile(failureXp).evaluate(doc, XPathConstants.NODESET);
+                    NodeList proOutNodes = (NodeList)XP.compile(proOutXp).evaluate(doc, XPathConstants.NODESET);
+                    NodeList aliasNodes = (NodeList)XP.compile(aliasXp).evaluate(doc, XPathConstants.NODESET);
+                    
+                    String repDate = repDateNode.getTextContent();
+                    String repType = repTypeNode.getTextContent();
+                    
+                    try(Connection con = Database.getConnection(URL + cur_db + ".db"))
+                    {
+                        String repInsert = "INSERT INTO reports (rep_type,rep_date) VALUES (?,?)";
+                        PreparedStatement stm = con.prepareStatement(repInsert);
+                        stm.setString(1, repType);
+                        stm.setString(2, repDate);
+                        stm.execute();
+                        
+                        for(int i = 0; i < maintDataNodes.getLength(); i++)
+                        {
+                            Node maintData = maintDataNodes.item(i);
+                            Node idNode = (Node)XP.compile("id").evaluate(maintData, XPathConstants.NODE);
+                            Node genDateNode = (Node)XP.compile("generatedOn").evaluate(maintData, XPathConstants.NODE);
+                            Node descNode = (Node)XP.compile("description").evaluate(maintData, XPathConstants.NODE);
+                            Node notesNode = (Node)XP.compile("notes").evaluate(maintData, XPathConstants.NODE);
+                            
+                            String mdInsert = "INSERT INTO maintenanceData (md_id, gen_date, descr, notes, rep_date_ref) VALUES (?,?,?,?,?)";
+                            PreparedStatement mdStm = con.prepareStatement(mdInsert);
+                            mdStm.setString(1, idNode.getTextContent());
+                            mdStm.setString(2, genDateNode.getTextContent());
+                            mdStm.setString(3, descNode.getTextContent());
+                            if(notesNode.getTextContent() != null)
+                            {
+                                mdStm.setString(4, notesNode.getTextContent());
+                            }
+                            else
+                            {
+                                mdStm.setString(4, "");
+                            }
+                            mdStm.setString(5, repDate);
+                            mdStm.execute();
+                        }
+                        
+                        for(int i = 0; i < failureNodes.getLength(); i++)
+                        {
+                            Node failureNode = failureNodes.item(i);
+                            Node idNode = (Node)XP.compile("failureId").evaluate(failureNode,XPathConstants.NODE);
+                            Node nameNode = (Node)XP.compile("failureName").evaluate(failureNode, XPathConstants.NODE);
+                            Node ratioNode = (Node)XP.compile("failRatio").evaluate(failureNode, XPathConstants.NODE);
+                            Node sysNode = (Node)XP.compile("subsystemName").evaluate(failureNode, XPathConstants.NODE);
+                            Node compIdNode = (Node)XP.compile("hwComponentId").evaluate(failureNode, XPathConstants.NODE);
+                            Node compFailRate = (Node)XP.compile("hwComponentFailRate").evaluate(failureNode, XPathConstants.NODE);
+                            Node mtId = (Node)XP.compile("maintenanceTaskId").evaluate(failureNode, XPathConstants.NODE);
+                            
+                            Node md = failureNode.getParentNode().getParentNode();
+                            Node md_id = (Node)XP.compile("id").evaluate(md, XPathConstants.NODE);
+                            
+                            String failInsert = "INSERT INTO failures (f_id, f_name, f_ratio, system, comp_id, comp_fail_rate, maint_task_id, maint_data_id) "
+                                    + "VALUES (?,?,?,?,?,?,?,?)";
+                            
+                            String rat = ratioNode.getTextContent();
+                            double ratio = Double.parseDouble(rat);
+                            
+                            double compF_rate = Double.parseDouble(compFailRate.getTextContent());
+                            
+                            PreparedStatement f_stm = con.prepareStatement(failInsert);
+                            f_stm.setString(1, idNode.getTextContent());
+                            f_stm.setString(2, nameNode.getTextContent());
+                            f_stm.setDouble(3, ratio);
+                            f_stm.setString(4, sysNode.getTextContent());
+                            f_stm.setString(5, compIdNode.getTextContent());
+                            f_stm.setDouble(6, compF_rate);
+                            f_stm.setString(7, mtId.getTextContent());
+                            f_stm.setString(8, md_id.getTextContent());
+                            
+                            f_stm.execute();
+                        }
+                    } 
+                    catch (SQLException ex) {
+                        Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } 
+                catch (SAXException | IOException ex) {
+                    Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (XPathExpressionException ex) {
+                    Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return true;
+            }
+            
+            @Override
+            protected void done()
+            {
+                jProgressBar1.setIndeterminate(false);
+            }
+            
+        };
+        worker.execute();
+    }
 
     private void setRibbon()
     {
@@ -621,14 +853,12 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         */
 //        RichTooltip rtp = new RichTooltip();
 //        rtp.addDescriptionSection("Creates a new DB in MySQL Server. Root password is requried.");
-        RibbonTask task1;//Database actions tab
-        RibbonTask task2;//Report actions tab
-        JRibbonBand band1a = new JRibbonBand("Create", null);
-        JRibbonBand band1 = new JRibbonBand("Updates", null);
-        JRibbonBand band2 = new JRibbonBand("Data modules", null);
-        JRibbonBand band22 = new JRibbonBand("Data Module Relationship", null);
-        JRibbonBand band23 = new JRibbonBand("System / Ambiguity Relationship", null);
-        JCommandButton b1b = new JCommandButton("Create new DB", getIcon("database.png"));
+        band1a = new JRibbonBand("Create", null);
+        band1 = new JRibbonBand("Updates", null);
+        band2 = new JRibbonBand("Data modules", null);
+        band22 = new JRibbonBand("Data Module Relationship", null);
+        band23 = new JRibbonBand("System / Ambiguity Relationship", null);
+        b1b = new JCommandButton("Create new DB", getIcon("database.png"));
         b1b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -637,6 +867,13 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         });
         b1 = new JCommandButton("Fresh update", getIcon("database-15.png"));
         b1.setDisabledIcon(getIcon("database-15.png"));
+        b1.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                freshUpdate();
+            }
+        });
         b1a = new JCommandButton("Update and maintain DMs", getIcon("database-16.png"));
         b1a.setDisabledIcon(getIcon("database-16.png"));
         if(cur_db.equals("None"))
@@ -649,8 +886,8 @@ public class CRHFaultRepFrame extends JRibbonFrame {
             b1.setEnabled(true);
             b1a.setEnabled(true);
         }
-        JCommandButton b2 = new JCommandButton("Compare DM content to DB", getIcon("view.png"));
-        JCommandButton b3 = new JCommandButton("Create Data Module(s) from DB", getIcon("file-4.png"));
+        b2 = new JCommandButton("Compare DM content to DB", getIcon("view.png"));
+        b3 = new JCommandButton("Create Data Module(s) from DB", getIcon("file-4.png"));
         band1a.addCommandButton(b1b, RibbonElementPriority.TOP);
         band1.addCommandButton(b1, RibbonElementPriority.TOP);
         band1.addCommandButton(b1a, RibbonElementPriority.MEDIUM);
@@ -663,7 +900,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         band23.setResizePolicies((List) Arrays.asList(new IconRibbonBandResizePolicy(band23.getControlPanel())));
         task1 = new RibbonTask("Database Actions",band1a, band1, band2);
         task2 = new RibbonTask("Report Actions", band22, band23);
-        RibbonApplicationMenu menu = new AppMenu();
+        menu = new AppMenu();
 //        PrimaryRolloverCallback pcb = PrimaryRolloverCallback.class.newInstance();
 //        pcb.
         this.getRibbon().setApplicationMenu(menu);
@@ -715,8 +952,28 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+    
+    private DocumentBuilderFactory DBF;
+    private DocumentBuilder DB;
+    private XPathFactory XPF;
+    private XPath XP;
+    private CatalogResolver resolver;
+    private ErrorHandler eHandler;
+    
     private JCommandButton b1;
     private JCommandButton b1a;
+    private RibbonTask task1; //Database actions tab
+    private RibbonTask task2; //Report actions tab
+    private JRibbonBand band1a;
+    private JRibbonBand band1;
+    private JRibbonBand band2;
+    private JRibbonBand band22;
+    private JRibbonBand band23;
+    private JCommandButton b1b;
+    private JCommandButton b2;
+    private JCommandButton b3;
+    private RibbonApplicationMenu menu;
+    
 class AppMenu extends RibbonApplicationMenu{
     private boolean testBool = false;
     private AppMenuPrimaryEntry chooseDbEntry;
