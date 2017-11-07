@@ -5,6 +5,7 @@
  */
 package com.furst.faultrep.tables;
 
+import com.furst.faultrep.Failure;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -12,12 +13,12 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author tfurst
  */
-public class MaintIdSearchTableModel extends AbstractTableModel{
+public class MaintDataItemSearchTableModel extends AbstractTableModel{
 
-    private String[] colNames = {"Maintenance ID"};
-    private List<String> ids;
+    private String[] colNames = {"Maintenance ID", "Description"};
+    private List<String[]> ids;
     
-    public MaintIdSearchTableModel(List<String> maintIds)
+    public MaintDataItemSearchTableModel(List<String[]> maintIds)
     {
         this.ids = maintIds;
     }
@@ -40,9 +41,19 @@ public class MaintIdSearchTableModel extends AbstractTableModel{
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Object value;
-        String id = ids.get(rowIndex);
-        value = id;
+        Object value = "??";
+        
+        switch(columnIndex)
+        {
+            case 0:
+                value = ids.get(rowIndex)[0];
+                break;
+            case 1:
+                value = ids.get(rowIndex)[1];
+                break;
+
+        }
+        
         return value;
     }
     
