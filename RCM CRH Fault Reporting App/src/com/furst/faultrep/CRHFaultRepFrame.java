@@ -15,15 +15,23 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
+
+
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+
 import java.util.HashMap;
+
+
 import java.util.Iterator;
 import java.util.List;
+
 import java.util.Map;
+
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -1078,8 +1086,8 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                 jProgressBar1.setString("");
                 jProgressBar1.setStringPainted(false);
                 jProgressBar1.setIndeterminate(false);
+                jProgressBar1.setVisible(false);
             }
-            
         };
         worker.execute();
     }
@@ -1194,7 +1202,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     // End of variables declaration//GEN-END:variables
     
     private MaintDataItemSearchTableModel mdModel;
-    
+
     private DocumentBuilderFactory DBF;
     private DocumentBuilder DB;
     private XPathFactory XPF;
