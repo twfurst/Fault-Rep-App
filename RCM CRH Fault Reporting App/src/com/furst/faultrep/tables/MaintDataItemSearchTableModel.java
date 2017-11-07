@@ -5,7 +5,6 @@
  */
 package com.furst.faultrep.tables;
 
-import com.furst.faultrep.Failure;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
