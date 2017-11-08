@@ -154,6 +154,10 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
+        List<Failure> dummyFailList = new ArrayList();
+        Failure dummyFail = new Failure("","","","","","",0.0,0.0);
+        dummyFailList.add(dummyFail);
+        ftModel = new FailureTableModel(dummyFailList);
         jTable2 = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -410,17 +414,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Failure List"));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+        jTable2.setModel(ftModel);
         jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -714,7 +708,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         String dropMaintTasks = "DROP TABLE IF EXISTS maintTasks";
         String createMaintTasks = "CREATE TABLE \"maintTasks\" (\"maint_task_id\" VARCHAR PRIMARY KEY  NOT NULL , \"maint_task_name\" VARCHAR)";
         String dropMaintData = "DROP TABLE IF EXISTS maintenanceData";
-        String createMaintData = "CREATE TABLE \"maintenanceData\" (\"md_id\" VARCHAR PRIMARY KEY  NOT NULL ,\"descr\" VARCHAR DEFAULT (null) ,\"gen_date\" VARCHAR DEFAULT (null) ,\"fr_dmc\" VARCHAR,\"notes\" VARCHAR DEFAULT (null) ,\"rep_date_ref\" VARCHAR)";
+        String createMaintData = "CREATE TABLE \"maintenanceData\" (\"md_id\" VARCHAR PRIMARY KEY  NOT NULL ,\"descr\" VARCHAR DEFAULT (null) ,\"gen_date\" VARCHAR DEFAULT (null) ,\"fr_dmc\" VARCHAR,\"notes\" VARCHAR DEFAULT (null) ,\"rep_date_ref\" VARCHAR, \"fr_dmc_eid\" VARCHAR)";
         String dropProOutputs = "DROP TABLE IF EXISTS procedureOutputs";
         String createProOutputs = "CREATE TABLE \"procedureOutputs\" (\"po_id\" VARCHAR PRIMARY KEY  NOT NULL , \"po_name\" VARCHAR, \"maint_data_id\" VARCHAR)";
         String dropReports = "DROP TABLE IF EXISTS reports";
@@ -896,7 +890,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
                             PreparedStatement f_stm = con.prepareStatement(failInsert);
                             f_stm.setString(1, idNode.getTextContent());
-                            f_stm.setString(2, nameNode.getTextContent());
+                            f_stm.setString(2, nameNode.getTextContent().replaceAll("\\s+"," "));
                             f_stm.setDouble(3, ratio);
                             f_stm.setString(4, sysNode.getTextContent());
                             f_stm.setString(5, compIdNode.getTextContent());
@@ -1038,6 +1032,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     }
 
     private String getComponentName(String id) {
+        String ret_name = "";
         try (Connection con = Database.getConnection(URL + cur_db + ".db")) {
             String query = "SELECT comp_name FROM components WHERE comp_id = ?";
             PreparedStatement ps = con.prepareStatement(query);
@@ -1046,14 +1041,16 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
             while (rs.next()) {
                 String name = rs.getString("comp_name");
-                return name;
+                ret_name = name;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(FaultAppUI.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return ret_name;
     }
 
     private String getMaintActionName(String id) {
+        String ret_name = "";
         try (Connection con = Database.getConnection(URL + cur_db + ".db")) {
             String query = "SELECT maint_task_name FROM maintTasks WHERE maint_task_id = ?";
             PreparedStatement ps = con.prepareStatement(query);
@@ -1062,11 +1059,12 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
             while (rs.next()) {
                 String name = rs.getString("maint_task_name");
-                return name;
+                ret_name = name;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(FaultAppUI.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return ret_name;
     }
 
     private void fillMaintIdInfo(String maint) {
@@ -1074,7 +1072,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
         List<Failure> associatedFaults = new ArrayList();
         String query = "SELECT * FROM failures WHERE maint_data_id = ? ORDER BY f_id;";
-        String dmcQuery = "SELECT fr_dmc FROM maintenanceData WHERE md_id = ?;";
+        String dmcQuery = "SELECT * FROM maintenanceData WHERE md_id = ?;";
         String dmc = "";
         try (Connection con = Database.getConnection(URL + cur_db + ".db")) {
             PreparedStatement ps = con.prepareStatement(query);
@@ -1100,14 +1098,17 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
             while (rs1.next()) {
                 String d = rs1.getString("fr_dmc");
+                String gd = rs1.getString("gen_date");
+                String eid = rs1.getString("fr_dmc_eid");
+                String desc = rs1.getString("descr");
                 dmc = d;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(FaultAppUI.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         FailureTableModel ftm = new FailureTableModel(associatedFaults);
-        jTable1.setModel(ftm);
+        jTable2.setModel(ftm);
         //jTextField1.setText(Integer.toString(associatedFaults.size()));
         //jTextField2.setText(dmc);
     }
@@ -1224,6 +1225,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     // End of variables declaration//GEN-END:variables
 
     private MaintDataItemSearchTableModel mdModel;
+    private FailureTableModel ftModel;
 
     private DocumentBuilderFactory DBF;
     private DocumentBuilder DB;

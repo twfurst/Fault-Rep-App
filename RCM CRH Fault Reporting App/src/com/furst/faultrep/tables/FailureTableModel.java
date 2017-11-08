@@ -29,7 +29,7 @@ public class FailureTableModel extends AbstractTableModel{
         </failure>
     
     */
-    private String[] colNames = {"Name","System","Failure Ratio", "Component Name", "","Maintenance Task"};
+    private String[] colNames = {"Name","System","Failure Ratio", "Component Name", "Component Fail Ratio","Maintenance Task", "Failure ID"};
     private List<Failure> failures;
     
     public FailureTableModel(List<Failure> failures)
@@ -56,24 +56,30 @@ public class FailureTableModel extends AbstractTableModel{
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Object value = "??";
-        Failure fault = failures.get(rowIndex);
+        Failure failure = failures.get(rowIndex);
         
         switch(columnIndex)
         {
             case 0:
-                value = fault.getName();
+                value = failure.getName();
                 break;
             case 1:
-                value = fault.getSystem();
+                value = failure.getSystem();
                 break;
             case 2:
-                value = fault.getComponent_name();
+                value = failure.getFailRatio();
                 break;
             case 3:
-                value = fault.getFailRatio();
+                value = failure.getComponent_name();
                 break;
             case 4:
-                value = fault.getMaintTaskName();//this needs to be a method call to query db to get name
+                value = failure.getC_failRatio();
+                break;
+            case 5:
+                value = failure.getMaintTaskName();
+                break;
+            case 6:
+                value = failure.getId();
                 break;
         }
         
