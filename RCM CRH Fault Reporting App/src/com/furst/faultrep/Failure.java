@@ -14,23 +14,31 @@ public class Failure {
     private String id;
     private String name;
     private double failRatio;
+    private double c_failRatio;
     private String system;
     private String component_name;
-    private String comp_id;
-    private String action;
-    private String maintTaskID;
+    private String maintTaskName;
     private String maintDataID;
-
-    public Failure(String id, String sys, String comp_name, String comp_id, String name, String act, String maintTaskID, String maintDataID, double failRate) {
+    /*
+    
+        String f_id = rs.getString("f_id");
+        String sys = rs.getString("system");
+        String comp_id = rs.getString("comp_id");
+        String fail = rs.getString("f_name");
+        String action_id = rs.getString("maint_task_id");
+        double f_ratio = rs.getDouble("f_ratio");
+        double c_f_ratio = res.getDouble("comp_fail_rate");
+    
+    */
+    public Failure(String id, String sys, String comp_name, String name, String maintTaskName, String maintDataID, double failRate, double c_rat) {
         this.id = id;
         this.system = sys;
         this.component_name = comp_name;
-        this.comp_id = comp_id;
         this.name = name;
-        this.action = act;
-        this.maintTaskID = maintTaskID;
+        this.maintTaskName = maintTaskName;
         this.maintDataID = maintDataID;
         this.failRatio = failRate;
+        this.c_failRatio = c_rat;
     }
 
     /**
@@ -45,13 +53,6 @@ public class Failure {
      */
     public String getSystem() {
         return system;
-    }
-
-    /**
-     * @return the action
-     */
-    public String getAction() {
-        return action;
     }
 
     /**
@@ -76,24 +77,24 @@ public class Failure {
     }
 
     /**
-     * @return the comp_id
-     */
-    public String getComp_id() {
-        return comp_id;
-    }
-
-    /**
-     * @return the maintTaskID
-     */
-    public String getMaintTaskID() {
-        return maintTaskID;
-    }
-
-    /**
      * @return the maintDataID
      */
     public String getMaintDataID() {
         return maintDataID;
+    }
+
+    /**
+     * @return the c_failRatio
+     */
+    public double getC_failRatio() {
+        return c_failRatio;
+    }
+
+    /**
+     * @return the maintTaskName
+     */
+    public String getMaintTaskName() {
+        return maintTaskName;
     }
 
     /**

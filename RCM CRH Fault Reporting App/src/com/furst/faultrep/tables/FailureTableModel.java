@@ -29,7 +29,7 @@ public class FailureTableModel extends AbstractTableModel{
         </failure>
     
     */
-    private String[] colNames = {"Name","System","Component Name","Fail Ratio", "Maintenance Task"};
+    private String[] colNames = {"Name","System","Failure Ratio", "Component Name", "","Maintenance Task"};
     private List<Failure> failures;
     
     public FailureTableModel(List<Failure> failures)
@@ -73,7 +73,7 @@ public class FailureTableModel extends AbstractTableModel{
                 value = fault.getFailRatio();
                 break;
             case 4:
-                value = fault.getMaintTaskID();//this needs to be a method call to query db to get name
+                value = fault.getMaintTaskName();//this needs to be a method call to query db to get name
                 break;
         }
         
