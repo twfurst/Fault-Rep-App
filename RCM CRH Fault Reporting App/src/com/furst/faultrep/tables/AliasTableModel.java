@@ -5,6 +5,8 @@
  */
 package com.furst.faultrep.tables;
 
+import com.furst.faultrep.Alias;
+import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -12,20 +14,58 @@ import javax.swing.table.AbstractTableModel;
  * @author tfurst
  */
 public class AliasTableModel extends AbstractTableModel{
-
+    private String[] colNames = {"Name","Source","Detecting System","Evidence"};
+    private List<Alias> aliases;
+    
+    public AliasTableModel(List<Alias> aliasList)
+    {
+        this.aliases = aliasList;
+    }
+    
     @Override
     public int getRowCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return aliases.size();
     }
 
     @Override
     public int getColumnCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return colNames.length;
+    }
+    
+    @Override
+    public String getColumnName(int col)
+    {
+        return colNames[col];
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object value = "??";
+        Alias alias = aliases.get(rowIndex);
+        
+        switch(columnIndex)
+        {
+            case 0:
+                value = alias.getAlias_name();
+                break;
+            case 1:
+                value = alias.getSource();
+                break;
+            case 2:
+                value = alias.getSystem();
+                break;
+            case 3:
+                value = alias.getEvidence();
+                break;
+        }
+        
+        return value;
+    }
+    
+    public void removeRow(int row)
+    {
+        fireTableRowsDeleted(row,row);
+        aliases.remove(row);
     }
     
 }

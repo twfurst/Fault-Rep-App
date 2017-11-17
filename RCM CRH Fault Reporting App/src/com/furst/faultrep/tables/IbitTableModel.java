@@ -5,6 +5,7 @@
  */
 package com.furst.faultrep.tables;
 
+import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -12,20 +13,42 @@ import javax.swing.table.AbstractTableModel;
  * @author tfurst
  */
 public class IbitTableModel extends AbstractTableModel{
-
+    private String[] colNames = new String[]{"Component Name"};
+    private List<String[]> ibits;
+    
+    public IbitTableModel(List<String[]> comps)
+    {
+        this.ibits = comps;
+    }
     @Override
     public int getRowCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ibits.size();
     }
 
     @Override
     public int getColumnCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return colNames.length;
+    }
+    
+    @Override
+    public String getColumnName(int col)
+    {
+        return colNames[col];
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object value = "??";
+        
+        switch(columnIndex)
+        {
+            case 0:
+                value = ibits.get(rowIndex)[0];
+                break;
+
+        }
+        
+        return value;
     }
     
 }

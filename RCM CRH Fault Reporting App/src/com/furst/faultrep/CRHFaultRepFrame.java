@@ -6,9 +6,13 @@
 package com.furst.faultrep;
 
 import com.furst.faultrep.db.Database;
+import com.furst.faultrep.dialogs.DatamoduleDataDialog;
 import com.furst.faultrep.menus.AppMenuPrimaryEntry;
+import com.furst.faultrep.tables.AliasTableModel;
 import com.furst.faultrep.tables.FailureTableModel;
+import com.furst.faultrep.tables.IbitTableModel;
 import com.furst.faultrep.tables.MaintDataItemSearchTableModel;
+import com.furst.faultrep.tables.ProcedureOutputTableModel;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -124,17 +128,17 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        mdItemDescrField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        mdItemGenDateField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        dmcField = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        mdItemNotesArea = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        dmcElementIdField = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jProgressBar1 = new javax.swing.JProgressBar();
         dbLabel = new javax.swing.JLabel();
@@ -146,7 +150,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         String[] dummyArr = new String[]{"",""};
         dummy.add(dummyArr);
         mdModel = new MaintDataItemSearchTableModel(dummy);
-        jTable1 = new javax.swing.JTable();
+        mainSrchTable = new javax.swing.JTable();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -158,14 +162,28 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         Failure dummyFail = new Failure("","","","","","",0.0,0.0);
         dummyFailList.add(dummyFail);
         ftModel = new FailureTableModel(dummyFailList);
-        jTable2 = new javax.swing.JTable();
+        failureTable = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        List<ProcedureOutput> dummyPoList = new ArrayList();
+        ProcedureOutput dummyPo = new ProcedureOutput("","","");
+        dummyPoList.add(dummyPo);
+        poModel = new ProcedureOutputTableModel(dummyPoList);
+        procedureOutputTable = new javax.swing.JTable();
         jPanel13 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        List<Alias> dummyAliasList = new ArrayList();
+        Alias dummyAlias = new Alias("","","","","","");
+        dummyAliasList.add(dummyAlias);
+        alModel = new AliasTableModel(dummyAliasList);
+        aliasTable = new javax.swing.JTable();
         jPanel15 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        List<String[]> dummyIbitList = new ArrayList();
+        String[] dummyIbitArray = new String[]{""};
+        dummyIbitList.add(dummyIbitArray);
+        ibModel = new IbitTableModel(dummyIbitList);
+        ibitTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CRH Fault Reporting DB Tool");
@@ -240,15 +258,15 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
         jLabel5.setText("Data Module: ");
 
-        jTextField5.setEditable(false);
+        dmcField.setEditable(false);
 
         jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder("Notes"));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane5.setViewportView(jTextArea1);
+        mdItemNotesArea.setColumns(20);
+        mdItemNotesArea.setLineWrap(true);
+        mdItemNotesArea.setRows(5);
+        mdItemNotesArea.setWrapStyleWord(true);
+        jScrollPane5.setViewportView(mdItemNotesArea);
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -264,10 +282,15 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         );
 
         jButton1.setText("Add/Update DMC");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Element ID:");
 
-        jTextField6.setEditable(false);
+        dmcElementIdField.setEditable(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -279,19 +302,19 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3))
+                        .addComponent(mdItemDescrField))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE))
+                        .addComponent(mdItemGenDateField, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField5)
+                        .addComponent(dmcField)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dmcElementIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -303,17 +326,17 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mdItemDescrField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mdItemGenDateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dmcField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dmcElementIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -349,10 +372,10 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
         jPanel6.setPreferredSize(new java.awt.Dimension(500, 579));
 
-        jTable1.setSelectionMode(SINGLE_INTERVAL_SELECTION);
-        jTable1.getSelectionModel().addListSelectionListener(new SrchRowListener(jTable1));
-        jTable1.setModel(mdModel);
-        jScrollPane1.setViewportView(jTable1);
+        mainSrchTable.setSelectionMode(SINGLE_INTERVAL_SELECTION);
+        mainSrchTable.getSelectionModel().addListSelectionListener(new SrchRowListener(mainSrchTable));
+        mainSrchTable.setModel(mdModel);
+        jScrollPane1.setViewportView(mainSrchTable);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -403,7 +426,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -414,8 +437,8 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Failure List"));
 
-        jTable2.setModel(ftModel);
-        jScrollPane2.setViewportView(jTable2);
+        failureTable.setModel(ftModel);
+        jScrollPane2.setViewportView(failureTable);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -430,33 +453,20 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Procedure Output List")));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        procedureOutputTable.setSelectionMode(SINGLE_INTERVAL_SELECTION);
+        procedureOutputTable.getSelectionModel().addListSelectionListener(new PoRowListener(procedureOutputTable));
+        procedureOutputTable.setModel(poModel);
+        procedureOutputTable.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                procedureOutputTableFocusLost(evt);
             }
-        ));
-        jScrollPane3.setViewportView(jTable3);
+        });
+        jScrollPane3.setViewportView(procedureOutputTable);
 
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder("Alias List"));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane4.setViewportView(jTable4);
+        aliasTable.setModel(alModel);
+        jScrollPane4.setViewportView(aliasTable);
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -493,15 +503,22 @@ public class CRHFaultRepFrame extends JRibbonFrame {
 
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder("IBIT List"));
 
+        ibitTable.setModel(ibModel);
+        jScrollPane6.setViewportView(ibitTable);
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 758, Short.MAX_VALUE)
+            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
+            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -533,7 +550,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -558,7 +575,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -576,6 +593,19 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         // TODO add your handling code here:
         searchDB();
     }//GEN-LAST:event_jTextField2KeyReleased
+
+    private void procedureOutputTableFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_procedureOutputTableFocusLost
+        // TODO add your handling code here:
+        procedureOutputTable.clearSelection();
+        clearAliasTable();
+    }//GEN-LAST:event_procedureOutputTableFocusLost
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        //public DatamoduleDataDialog(java.awt.Frame parent, boolean modal, String url, String mid)
+        DatamoduleDataDialog dg = new DatamoduleDataDialog(this, true, URL, "");
+        dg.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void searchDB() {
         String searchBoth = "SELECT md_id, descr FROM maintenanceData WHERE md_id LIKE ? AND descr LIKE ?";
@@ -599,7 +629,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                 srchTable.setModel(mod);
                  */
                 MaintDataItemSearchTableModel model = new MaintDataItemSearchTableModel(retVals);
-                jTable1.setModel(model);
+                mainSrchTable.setModel(model);
             } else if (!jTextField1.getText().equals("") && jTextField2.getText().equals("")) {
                 PreparedStatement descrStm = con.prepareStatement(searchId);
                 descrStm.setString(1, jTextField1.getText().trim() + "%");
@@ -616,7 +646,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                 srchTable.setModel(mod);
                  */
                 MaintDataItemSearchTableModel model = new MaintDataItemSearchTableModel(retVals);
-                jTable1.setModel(model);
+                mainSrchTable.setModel(model);
             } else {
                 PreparedStatement descrStm = con.prepareStatement(searchBoth);
                 descrStm.setString(1, jTextField1.getText().trim() + "%");
@@ -634,7 +664,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                 srchTable.setModel(mod);
                  */
                 MaintDataItemSearchTableModel model = new MaintDataItemSearchTableModel(retVals);
-                jTable1.setModel(model);
+                mainSrchTable.setModel(model);
             }
         } catch (SQLException ex) {
             Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -710,7 +740,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         String dropMaintData = "DROP TABLE IF EXISTS maintenanceData";
         String createMaintData = "CREATE TABLE \"maintenanceData\" (\"md_id\" VARCHAR PRIMARY KEY  NOT NULL ,\"descr\" VARCHAR DEFAULT (null) ,\"gen_date\" VARCHAR DEFAULT (null) ,\"fr_dmc\" VARCHAR,\"notes\" VARCHAR DEFAULT (null) ,\"rep_date_ref\" VARCHAR, \"fr_dmc_eid\" VARCHAR)";
         String dropProOutputs = "DROP TABLE IF EXISTS procedureOutputs";
-        String createProOutputs = "CREATE TABLE \"procedureOutputs\" (\"po_id\" VARCHAR PRIMARY KEY  NOT NULL , \"po_name\" VARCHAR, \"maint_data_id\" VARCHAR)";
+        String createProOutputs = "CREATE TABLE \"procedureOutputs\" (\"po_id\" VARCHAR, \"po_name\" VARCHAR, \"maint_data_id\" VARCHAR, \"unique_id\" VARCHAR PRIMARY KEY  NOT NULL )";
         String dropReports = "DROP TABLE IF EXISTS reports";
         String createReports = "CREATE TABLE \"reports\" (\"rep_type\" VARCHAR,\"rep_date\" VARCHAR PRIMARY KEY  NOT NULL  DEFAULT (null) )";
         String dropIbits = "DROP TABLE IF EXISTS ibits";
@@ -856,7 +886,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                             PreparedStatement mdStm = con.prepareStatement(mdInsert);
                             mdStm.setString(1, idNode.getTextContent());
                             mdStm.setString(2, genDateNode.getTextContent());
-                            mdStm.setString(3, descNode.getTextContent());
+                            mdStm.setString(3, descNode.getTextContent().replaceAll("\\s+", " "));
                             if (notesNode.getTextContent() != null) {
                                 mdStm.setString(4, notesNode.getTextContent());
                             } else {
@@ -913,18 +943,18 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                             Node md = proOut.getParentNode().getParentNode();
                             Node md_id = (Node) XP.compile("id").evaluate(md, XPathConstants.NODE);
 
-                            proOutMap.put(po_id.getTextContent(), new String[]{pon, md_id.getTextContent()});
+                            proOutMap.put(po_id.getTextContent() + md_id.getTextContent(), new String[]{po_id.getTextContent(), pon, md_id.getTextContent()});
                         }
 
                         for (String s : proOutMap.keySet()) {
                             jProgressBar1.setString("Inserting data into procedure outputs table...");
-                            String proOutInsert = "INSERT INTO procedureOutputs (po_id, po_name, maint_data_id) VALUES (?,?,?)";
+                            String proOutInsert = "INSERT INTO procedureOutputs (po_id, po_name, maint_data_id, unique_id) VALUES (?,?,?,?)";
 
                             PreparedStatement poStm = con.prepareStatement(proOutInsert);
-                            poStm.setString(1, s);
-                            poStm.setString(2, proOutMap.get(s)[0]);
-                            poStm.setString(3, proOutMap.get(s)[1]);
-
+                            poStm.setString(1, proOutMap.get(s)[0]);
+                            poStm.setString(2, proOutMap.get(s)[1]);
+                            poStm.setString(3, proOutMap.get(s)[2]);
+                            poStm.setString(4, s);
                             poStm.execute();
                         }
 
@@ -1066,22 +1096,51 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         }
         return ret_name;
     }
+    
+    private void clearProOutTable()
+    {
+        while(procedureOutputTable.getRowCount() > 0)
+        {
+            ((ProcedureOutputTableModel)procedureOutputTable.getModel()).removeRow(0);
+        }
+    }
+    
+    private void clearAliasTable()
+    {
+        while(aliasTable.getRowCount() > 0)
+        {
+            ((AliasTableModel)aliasTable.getModel()).removeRow(0);
+        }
+    }
 
     private void fillMaintIdInfo(String maint) {
         String mid = maint;
 
         List<Failure> associatedFaults = new ArrayList();
+        List<ProcedureOutput> pos = new ArrayList();
+        List<String[]> ibitList = new ArrayList();
         String query = "SELECT * FROM failures WHERE maint_data_id = ? ORDER BY f_id;";
+        String poQuery = "SELECT * FROM procedureOutputs WHERE maint_data_id = ? ORDER BY po_id;";
+        String ibitQuery = "SELECT DISTINCT ibit_comp_id FROM ibits WHERE md_id = ? ORDER BY ibit_comp_id;";
         String dmcQuery = "SELECT * FROM maintenanceData WHERE md_id = ?;";
         String dmc = "";
-        try (Connection con = Database.getConnection(URL + cur_db + ".db")) {
+        try (Connection con = Database.getConnection(URL + cur_db + ".db")) 
+        {
             PreparedStatement ps = con.prepareStatement(query);
             PreparedStatement ps1 = con.prepareStatement(dmcQuery);
+            PreparedStatement ps2 = con.prepareStatement(poQuery);
+            PreparedStatement ps3 = con.prepareStatement(ibitQuery);
+            
             ps.setString(1, mid);
             ps1.setString(1, mid);
+            ps2.setString(1, mid);
+            ps3.setString(1, mid);
 
             ResultSet rs = ps.executeQuery();
             ResultSet rs1 = ps1.executeQuery();
+            ResultSet rs2 = ps2.executeQuery();
+            ResultSet rs3 = ps3.executeQuery();
+            
             while (rs.next()) {
                 String f_id = rs.getString("f_id");
                 String sys = rs.getString("system");
@@ -1101,23 +1160,101 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                 String gd = rs1.getString("gen_date");
                 String eid = rs1.getString("fr_dmc_eid");
                 String desc = rs1.getString("descr");
+                String notes = rs1.getString("notes");
                 dmc = d;
+                
+                dmcField.setText(d);
+                mdItemDescrField.setText(desc);
+                mdItemGenDateField.setText(gd);
+                dmcElementIdField.setText(eid);
+                mdItemNotesArea.setText(notes);
+            }
+            
+            while(rs2.next())
+            {
+                String id = rs2.getString("po_id");
+                String name = rs2.getString("po_name");
+                String po_mid = rs2.getString("maint_data_id");
+                
+                ProcedureOutput po = new ProcedureOutput(id, name, po_mid);
+                pos.add(po);
+            }
+            
+            while(rs3.next())
+            {
+                String comp_Id = rs3.getString("ibit_comp_id");
+                
+                String compQuery = "SELECT comp_name FROM components WHERE comp_id = ? ORDER by comp_name;";
+                PreparedStatement compStm = con.prepareStatement(compQuery);
+                compStm.setString(1, comp_Id);
+                
+                ResultSet rs4 = compStm.executeQuery();
+                while(rs4.next())
+                {
+                    String c = rs4.getString("comp_name");
+                    String[] row = new String[]{c};
+                    ibitList.add(row);
+                }
             }
         } catch (SQLException ex) {
             Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         FailureTableModel ftm = new FailureTableModel(associatedFaults);
-        jTable2.setModel(ftm);
+        failureTable.setModel(ftm);
+        
+        ProcedureOutputTableModel ptm = new ProcedureOutputTableModel(pos);
+        procedureOutputTable.setModel(ptm);
+        IbitTableModel itm = new IbitTableModel(ibitList);
+        ibitTable.setModel(itm);
         //jTextField1.setText(Integer.toString(associatedFaults.size()));
         //jTextField2.setText(dmc);
     }
 
     private void fillMaintIdInfo(int row) {
-        MaintDataItemSearchTableModel tm = (MaintDataItemSearchTableModel) jTable1.getModel();
+        MaintDataItemSearchTableModel tm = (MaintDataItemSearchTableModel) mainSrchTable.getModel();
         String mid = tm.getValueAt(row, 0).toString().trim();
         //System.out.println(mid);
         fillMaintIdInfo(mid);
+    }
+    
+    private void fillAliasTable(int row)
+    {
+        ProcedureOutputTableModel potm = (ProcedureOutputTableModel)procedureOutputTable.getModel();
+        String pid = potm.getPo(row).getId();
+        
+        List<Alias> aliases = new ArrayList();
+        
+        String query = "SELECT * FROM aliases WHERE po_ref_id = ? ORDER BY al_name;";
+        
+        try (Connection con = Database.getConnection(URL + cur_db + ".db")) 
+        {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, pid);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next())
+            {
+                //public Alias(String a_name, String src, String sys, String evid, String name, String po)
+                String al_name = rs.getString("al_name");
+                String src = rs.getString("al_source");
+                String sys = rs.getString("det_sys");
+                String evidence = rs.getString("evidence");
+                String name = rs.getString("name");
+                String poref = rs.getString("po_ref_id");
+                
+                Alias alias = new Alias(al_name, src, sys, evidence, name, poref);
+                aliases.add(alias);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CRHFaultRepFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        FailureTableModel ftm = new FailureTableModel(associatedFaults);
+//        jTable2.setModel(ftm);
+        AliasTableModel atm = new AliasTableModel(aliases);
+        aliasTable.setModel(atm);
+        
     }
 
     private void setRibbon() {
@@ -1177,7 +1314,12 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         this.getRibbon().addTask(task2);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable aliasTable;
     private javax.swing.JLabel dbLabel;
+    private javax.swing.JTextField dmcElementIdField;
+    private javax.swing.JTextField dmcField;
+    private javax.swing.JTable failureTable;
+    private javax.swing.JTable ibitTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JFileChooser jFileChooser1;
@@ -1209,23 +1351,23 @@ public class CRHFaultRepFrame extends JRibbonFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTable mainSrchTable;
+    private javax.swing.JTextField mdItemDescrField;
+    private javax.swing.JTextField mdItemGenDateField;
+    private javax.swing.JTextArea mdItemNotesArea;
+    private javax.swing.JTable procedureOutputTable;
     // End of variables declaration//GEN-END:variables
 
     private MaintDataItemSearchTableModel mdModel;
     private FailureTableModel ftModel;
+    private ProcedureOutputTableModel poModel;
+    private AliasTableModel alModel;
+    private IbitTableModel ibModel;
 
     private DocumentBuilderFactory DBF;
     private DocumentBuilder DB;
@@ -1316,8 +1458,32 @@ public class CRHFaultRepFrame extends JRibbonFrame {
             }
             int[] rows = jt.getSelectedRows();
             //get maint ID from row, query for faults with that MID, fill fault table, total up the ambig, apply DMC if given
+            clearProOutTable();
+            clearAliasTable();
             fillMaintIdInfo(rows[0]);
         }
 
+    }
+    
+    class PoRowListener implements ListSelectionListener
+    {
+        private final javax.swing.JTable jt;
+        
+        PoRowListener(javax.swing.JTable tab)
+        {
+            this.jt = tab;
+        }
+        
+        @Override
+        public void valueChanged(ListSelectionEvent e)
+        {
+            if(e.getValueIsAdjusting())
+            {
+                return;
+            }
+            int[] rows = jt.getSelectedRows();
+            //do something wiht rows[0]
+            fillAliasTable(rows[0]);
+        }
     }
 }
