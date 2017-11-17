@@ -5,6 +5,23 @@
  */
 package com.furst.faultrep.dialogs;
 
+import com.furst.faultrep.CRHFaultRepFrame;
+import com.furst.faultrep.Datamodule;
+import com.furst.faultrep.db.Database;
+import java.awt.Dimension;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
+import org.pushingpixels.flamingo.api.common.icon.ResizableIcon;
+
 /**
  *
  * @author tfurst
@@ -16,11 +33,15 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
      */
     private final String URL;
     private final String MAINT_ID;
+    private final java.awt.Frame frame;
+    private String dmc;
+    private String eid;
     //mid has no DMC
     public DatamoduleDataDialog(java.awt.Frame parent, boolean modal, String url, String mid) {
         super(parent, modal);
         this.URL = url;
         this.MAINT_ID = mid;
+        this.frame = parent;
         initComponents();
     }
     //update dialog
@@ -28,6 +49,9 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
         super(parent, modal);
         this.URL = url;
         this.MAINT_ID = mid;
+        this.dmc = dmc;
+        this.eid = eid;
+        this.frame = parent;
         initComponents();
     }
 
@@ -41,9 +65,17 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
+        List<Datamodule> dummyList = new ArrayList();
+        //String mod, String sysd, String sys, String sub, String subsub, String assy, String dis, String disv, String inf, String infv, String item, String tn, String inm
+        Datamodule dummy = new Datamodule("","","","","","","","","","","","","");
+        dummyList.add(dummy);
+        listModel = new DatamoduleListModel(dummyList);
         jList1 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Data module selection");
@@ -51,16 +83,24 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
         setIconImages(null);
         setResizable(false);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        jList1.setModel(listModel);
         jScrollPane1.setViewportView(jList1);
+        listModel.removeElementAt(0);
 
         jLabel1.setText("Choose a data module:");
 
-        jButton1.setText("Add new data module to DB");
+        jButton1.setText("Add new datamodule to list");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Element ID:");
+
+        jTextField1.setText("jTextField1");
+
+        jButton2.setText("Finish");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,11 +109,17 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -85,18 +131,94 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        CreateDataModuleDialog cdd = new CreateDataModuleDialog(frame,true);
+        cdd.setVisible(true);
+        Datamodule d = cdd.getDm();
+        //JOptionPane.showMessageDialog(this, d.toString());
+        //add the module to the DB
+        try(Connection con = Database.getConnection(URL))
+        {
+            String query = "INSERT INTO datamodules (dmc, modelic, sysdiff, system, subsys, subsubsys, assy, disassy,"
+                    + "disassyv, infocode, infocodev, itemloc, techname, infoname) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+            
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1,d.toString());
+            ps.setString(2,d.getModel());
+            ps.setString(3,d.getSysDiff());
+            ps.setString(4,d.getSystem());
+            ps.setString(5,d.getSubsystem());
+            ps.setString(6,d.getSubsubsystem());
+            ps.setString(7,d.getAssy());
+            ps.setString(8,d.getDisassy());
+            ps.setString(9,d.getDisassyv());
+            ps.setString(10,d.getInfo());
+            ps.setString(11,d.getInfov());
+            ps.setString(12,d.getItemloc());
+            ps.setString(13,d.getTname());
+            ps.setString(14,d.getIname());
+            
+            ps.execute();
+        } 
+        catch (SQLException ex) {
+            Logger.getLogger(DatamoduleDataDialog.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        //need to update the list of dms
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void popDmList()
+    {
+        List<Datamodule> dms = new ArrayList();
+        
+        try(Connection con = Database.getConnection(URL))
+        {
+            String query = "SELECT * FROM datamodules";
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(query);
+            
+            while(rs.next())
+            {
+                
+            }
+        } 
+        catch (SQLException ex) {
+            Logger.getLogger(DatamoduleDataDialog.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private ResizableIcon getIcon(String res) {
+        String resource = "com/furst/faultrep/icons/" + res;
+        return ImageWrapperResizableIcon.getIcon(CRHFaultRepFrame.class.getClassLoader().getResource(resource), new Dimension(32, 32));
+    }
+    
+    private ResizableIcon getIcon(String res, Dimension dim) {
+        String resource = "com/furst/faultrep/icons/" + res;
+        return ImageWrapperResizableIcon.getIcon(CRHFaultRepFrame.class.getClassLoader().getResource(resource), dim);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+    private DatamoduleListModel listModel;
 }

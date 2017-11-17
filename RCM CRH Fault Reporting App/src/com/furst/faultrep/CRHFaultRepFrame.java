@@ -107,6 +107,11 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         String resource = "com/furst/faultrep/icons/" + res;
         return ImageWrapperResizableIcon.getIcon(CRHFaultRepFrame.class.getClassLoader().getResource(resource), new Dimension(32, 32));
     }
+    
+    private ResizableIcon getIcon(String res, Dimension dim) {
+        String resource = "com/furst/faultrep/icons/" + res;
+        return ImageWrapperResizableIcon.getIcon(CRHFaultRepFrame.class.getClassLoader().getResource(resource), dim);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -136,7 +141,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         jPanel14 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         mdItemNotesArea = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        addUpdateDmcButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         dmcElementIdField = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
@@ -281,10 +286,10 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Add/Update DMC");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addUpdateDmcButton.setText("Add/Update DMC");
+        addUpdateDmcButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addUpdateDmcButtonActionPerformed(evt);
             }
         });
 
@@ -315,7 +320,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
                         .addComponent(dmcElementIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE))
+                    .addComponent(addUpdateDmcButton, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -338,7 +343,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
                     .addComponent(jLabel7)
                     .addComponent(dmcElementIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(addUpdateDmcButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -600,12 +605,24 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         clearAliasTable();
     }//GEN-LAST:event_procedureOutputTableFocusLost
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addUpdateDmcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUpdateDmcButtonActionPerformed
         // TODO add your handling code here:
+        DatamoduleDataDialog dg;
         //public DatamoduleDataDialog(java.awt.Frame parent, boolean modal, String url, String mid)
-        DatamoduleDataDialog dg = new DatamoduleDataDialog(this, true, URL, "");
+        //public DatamoduleDataDialog(java.awt.Frame parent, boolean modal, String url, String mid, String dmc, String eid)
+        int row = mainSrchTable.getSelectedRow();
+        MaintDataItemSearchTableModel m = (MaintDataItemSearchTableModel)mainSrchTable.getModel();
+        String mid = m.getValueAt(row, 0).toString();
+        if(!dmcField.getText().equals("") || !dmcElementIdField.getText().equals(""))
+        {
+            dg = new DatamoduleDataDialog(this, true, URL, mid, dmcField.getText(), dmcElementIdField.getText());
+        }
+        else
+        {
+            dg = new DatamoduleDataDialog(this, true, URL, mid);
+        }
         dg.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addUpdateDmcButtonActionPerformed
 
     private void searchDB() {
         String searchBoth = "SELECT md_id, descr FROM maintenanceData WHERE md_id LIKE ? AND descr LIKE ?";
@@ -745,8 +762,10 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         String createReports = "CREATE TABLE \"reports\" (\"rep_type\" VARCHAR,\"rep_date\" VARCHAR PRIMARY KEY  NOT NULL  DEFAULT (null) )";
         String dropIbits = "DROP TABLE IF EXISTS ibits";
         String createIbits = "CREATE TABLE \"ibits\" (\"ibit_id\" INTEGER PRIMARY KEY  NOT NULL , \"ibit_comp_id\" VARCHAR, \"md_id\" VARCHAR)";
+        String dropDataModules = "DROP TABLE IF EXISTS ibits";
+        String createDataModules = "CREATE TABLE \"datamodules\" (\"dmc\" VARCHAR PRIMARY KEY  NOT NULL , \"tech_name\" , \"info_name\" , \"modelic\" , \"sysdiff\" , \"system\" , \"subsys\" , \"subsubsys\" , \"assy\" , \"disassy\" , \"disassyv\" , \"infocode\" , \"infocodev\" , \"itemloc\" )";
 
-        String[] statements = new String[]{dropAliases, createAliases, dropComps, createComps, dropFailures, createFailures, dropMaintTasks, createMaintTasks, dropMaintData, createMaintData, dropProOutputs, createProOutputs, dropReports, createReports, dropIbits, createIbits};
+        String[] statements = new String[]{dropAliases, createAliases, dropComps, createComps, dropFailures, createFailures, dropMaintTasks, createMaintTasks, dropMaintData, createMaintData, dropProOutputs, createProOutputs, dropReports, createReports, dropIbits, createIbits, dropDataModules, createDataModules};
 
         /*
             Statement for connection to execute the the drop and create strings
@@ -1314,13 +1333,13 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         this.getRibbon().addTask(task2);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addUpdateDmcButton;
     private javax.swing.JTable aliasTable;
     private javax.swing.JLabel dbLabel;
     private javax.swing.JTextField dmcElementIdField;
     private javax.swing.JTextField dmcField;
     private javax.swing.JTable failureTable;
     private javax.swing.JTable ibitTable;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
