@@ -615,11 +615,11 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         String mid = m.getValueAt(row, 0).toString();
         if(!dmcField.getText().equals("") || !dmcElementIdField.getText().equals(""))
         {
-            dg = new DatamoduleDataDialog(this, true, URL, mid, dmcField.getText(), dmcElementIdField.getText());
+            dg = new DatamoduleDataDialog(this, true, URL + cur_db + ".db", mid, dmcField.getText(), dmcElementIdField.getText());
         }
         else
         {
-            dg = new DatamoduleDataDialog(this, true, URL, mid);
+            dg = new DatamoduleDataDialog(this, true, URL + cur_db + ".db", mid);
         }
         dg.setVisible(true);
     }//GEN-LAST:event_addUpdateDmcButtonActionPerformed
@@ -753,7 +753,7 @@ public class CRHFaultRepFrame extends JRibbonFrame {
         String dropFailures = "DROP TABLE IF EXISTS failures";
         String createFailures = "CREATE TABLE \"failures\" (\"f_id\" VARCHAR PRIMARY KEY  NOT NULL ,\"f_name\" VARCHAR,\"f_ratio\" DOUBLE,\"system\" VARCHAR,\"comp_id\" VARCHAR,\"comp_fail_rate\" DOUBLE,\"maint_task_id\" VARCHAR DEFAULT (null) , \"maint_data_id\" VARCHAR)";
         String dropMaintTasks = "DROP TABLE IF EXISTS maintTasks";
-        String createMaintTasks = "CREATE TABLE \"maintTasks\" (\"maint_task_id\" VARCHAR PRIMARY KEY  NOT NULL , \"maint_task_name\" VARCHAR)";
+        String createMaintTasks = "CREATE TABLE \"maintTasks\" (\"maint_task_id\" VARCHAR PRIMARY KEY  NOT NULL , \"maint_task_name\" VARCHAR, \"maint_dmc\" VARCHAR)";
         String dropMaintData = "DROP TABLE IF EXISTS maintenanceData";
         String createMaintData = "CREATE TABLE \"maintenanceData\" (\"md_id\" VARCHAR PRIMARY KEY  NOT NULL ,\"descr\" VARCHAR DEFAULT (null) ,\"gen_date\" VARCHAR DEFAULT (null) ,\"fr_dmc\" VARCHAR,\"notes\" VARCHAR DEFAULT (null) ,\"rep_date_ref\" VARCHAR, \"fr_dmc_eid\" VARCHAR)";
         String dropProOutputs = "DROP TABLE IF EXISTS procedureOutputs";

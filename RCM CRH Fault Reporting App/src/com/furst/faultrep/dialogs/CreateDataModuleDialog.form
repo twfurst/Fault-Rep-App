@@ -63,6 +63,9 @@
             </Property>
             <Property name="editingColumn" type="int" value="1"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jTable1.setCellEditor(new UpperCaseCellEditor());"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

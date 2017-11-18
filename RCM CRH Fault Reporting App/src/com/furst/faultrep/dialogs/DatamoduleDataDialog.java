@@ -19,6 +19,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
 import org.pushingpixels.flamingo.api.common.icon.ResizableIcon;
 
@@ -43,6 +46,7 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
         this.MAINT_ID = mid;
         this.frame = parent;
         initComponents();
+        popDmList();
     }
     //update dialog
     public DatamoduleDataDialog(java.awt.Frame parent, boolean modal, String url, String mid, String dmc, String eid) {
@@ -53,6 +57,7 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
         this.eid = eid;
         this.frame = parent;
         initComponents();
+        popDmList();
     }
 
     /**
@@ -81,9 +86,10 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
         setTitle("Data module selection");
         setIconImage(null);
         setIconImages(null);
-        setResizable(false);
 
         jList1.setModel(listModel);
+        jList1.setSelectionMode(SINGLE_INTERVAL_SELECTION);
+        jList1.getSelectionModel().addListSelectionListener(new DatamoduleListSelectionListener(jList1));
         jScrollPane1.setViewportView(jList1);
         listModel.removeElementAt(0);
 
@@ -128,10 +134,10 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,7 +159,7 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
         try(Connection con = Database.getConnection(URL))
         {
             String query = "INSERT INTO datamodules (dmc, modelic, sysdiff, system, subsys, subsubsys, assy, disassy,"
-                    + "disassyv, infocode, infocodev, itemloc, techname, infoname) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+                    + "disassyv, infocode, infocodev, itemloc, tech_name, info_name) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
             
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1,d.toString());
@@ -178,6 +184,7 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
         }
         
         //need to update the list of dms
+        popDmList();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void popDmList()
@@ -186,18 +193,41 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
         
         try(Connection con = Database.getConnection(URL))
         {
-            String query = "SELECT * FROM datamodules";
+            String query = "SELECT * FROM datamodules ORDER BY dmc;";
             Statement stm = con.createStatement();
             ResultSet rs = stm.executeQuery(query);
             
-            while(rs.next())
+            if(rs.isBeforeFirst())
             {
-                
+                while(rs.next())
+                {
+                    String d_code = rs.getString("dmc");
+                    String modelic = rs.getString("modelic");
+                    String sysdiff = rs.getString("sysdiff");
+                    String system = rs.getString("system");
+                    String subsys = rs.getString("subsys");
+                    String subsubsys = rs.getString("subsubsys");
+                    String assy = rs.getString("assy");
+                    String disassy = rs.getString("disassy");
+                    String disassyv = rs.getString("disassyv");
+                    String infocode = rs.getString("infocode");
+                    String infocodev = rs.getString("infocodev");
+                    String itemloc = rs.getString("itemloc");
+                    String tname = rs.getString("tech_name");
+                    String iname = rs.getString("info_name");
+                    //String mod, String sysd, String sys, String sub, String subsub, String assy, String dis, String disv, String inf, String infv, String item, String tn, String inm
+                    Datamodule d = new Datamodule(modelic,sysdiff,system,subsys,subsubsys,assy,disassy,disassyv,infocode,infocodev,itemloc,tname,iname);
+                    dms.add(d);
+                }
             }
+            
         } 
         catch (SQLException ex) {
             Logger.getLogger(DatamoduleDataDialog.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        DatamoduleListModel dml = new DatamoduleListModel(dms);
+        jList1.setModel(dml);
     }
     
     private ResizableIcon getIcon(String res) {
@@ -210,6 +240,53 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
         return ImageWrapperResizableIcon.getIcon(CRHFaultRepFrame.class.getClassLoader().getResource(resource), dim);
     }
     
+    private void updateEid(Datamodule mod)
+    {
+        JOptionPane.showMessageDialog(this, mod.toString());
+        //query the DB for all mids that have this DMC, get all the EIDs, sort, create next
+        String query = "SELECT fr_dmc_eid FROM maintenanceData WHERE fr_dmc = ? ORDER BY fr_dmc_eid;";
+        try(Connection con = Database.getConnection(URL))
+        {
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(query);
+            
+            if(rs.isBeforeFirst())
+            {
+                ArrayList<String> eids = new ArrayList();
+                while(rs.next())
+                {
+                    String eid = rs.getString("fr_dmc_eid");
+                    eids.add(eid);
+                }
+                String lastEid = eids.get(eids.size());
+                int thisEid = Integer.parseInt(lastEid.substring(1));
+                int nextEid = thisEid + 1;
+                
+                if(mod.getInfo().equals("411"))
+                {
+                    jTextField1.setText("IF" + nextEid);
+                }
+                else
+                {
+                    jTextField1.setText("OF" + nextEid);
+                }
+            }
+            else
+            {
+                if(mod.getInfo().equals("411"))
+                {
+                    jTextField1.setText("IF0001");
+                }
+                else
+                {
+                    jTextField1.setText("OF0001");
+                }
+            }
+        } 
+        catch (SQLException ex) {
+            Logger.getLogger(DatamoduleDataDialog.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -221,4 +298,31 @@ public class DatamoduleDataDialog extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
     private DatamoduleListModel listModel;
+    
+    class DatamoduleListSelectionListener implements ListSelectionListener{
+
+        private final javax.swing.JList jl;
+        
+        public DatamoduleListSelectionListener(javax.swing.JList list)
+        {
+            this.jl = list;
+        }
+        
+        @Override
+        public void valueChanged(ListSelectionEvent e) {
+            if(e.getValueIsAdjusting())
+            {
+                return;
+            }
+            else
+            {
+                int index = jl.getSelectedIndex();
+                DatamoduleListModel dml = (DatamoduleListModel)jl.getModel();
+                Datamodule d = (Datamodule)dml.getElementAt(index);
+                
+                updateEid(d);
+            }
+        }
+        
+    } 
 }

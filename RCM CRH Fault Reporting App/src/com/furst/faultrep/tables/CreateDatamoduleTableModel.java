@@ -16,8 +16,8 @@ public class CreateDatamoduleTableModel extends AbstractTableModel{
     private String[] colNames = new String[]{"Property", "Value"};
     private Object[][] data = 
     {
-        {"Model Identification Code",""  },
-        {"System Difference Code",""},
+        {"Model Identification Code","HH60W"},
+        {"System Difference Code","A"},
         {"System Code",""},
         {"Sub-System Code",""},
         {"Sub-Sub-System Code",""},

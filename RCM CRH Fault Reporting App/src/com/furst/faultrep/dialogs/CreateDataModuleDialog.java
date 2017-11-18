@@ -7,6 +7,11 @@ package com.furst.faultrep.dialogs;
 
 import com.furst.faultrep.Datamodule;
 import com.furst.faultrep.tables.CreateDatamoduleTableModel;
+import java.awt.Component;
+import javax.swing.JComponent;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.TableCellEditor;
 
 /**
  *
@@ -42,6 +47,7 @@ public class CreateDataModuleDialog extends javax.swing.JDialog {
         setTitle("Create data module");
         setResizable(false);
 
+        jTable1.setCellEditor(new UpperCaseCellEditor());
         jTable1.setModel(new CreateDatamoduleTableModel());
         jTable1.setEditingColumn(1);
         jScrollPane1.setViewportView(jTable1);
@@ -114,17 +120,17 @@ public class CreateDataModuleDialog extends javax.swing.JDialog {
             {"Information Name",""}
         
         */
-        String modelic = m.getValueAt(0,1).toString();
-        String sysDiff = m.getValueAt(1,1).toString();
-        String sys = m.getValueAt(2,1).toString();
-        String subsys = m.getValueAt(3,1).toString();
-        String subsubsys = m.getValueAt(4,1).toString();
-        String assy = m.getValueAt(5,1).toString();
-        String disassy = m.getValueAt(6,1).toString();
-        String disassyv = m.getValueAt(7,1).toString();
-        String infocode = m.getValueAt(8,1).toString();
-        String infocodev = m.getValueAt(9,1).toString();
-        String itemloc = m.getValueAt(10,1).toString();
+        String modelic = m.getValueAt(0,1).toString().toUpperCase();
+        String sysDiff = m.getValueAt(1,1).toString().toUpperCase();
+        String sys = m.getValueAt(2,1).toString().toUpperCase();
+        String subsys = m.getValueAt(3,1).toString().toUpperCase();
+        String subsubsys = m.getValueAt(4,1).toString().toUpperCase();
+        String assy = m.getValueAt(5,1).toString().toUpperCase();
+        String disassy = m.getValueAt(6,1).toString().toUpperCase();
+        String disassyv = m.getValueAt(7,1).toString().toUpperCase();
+        String infocode = m.getValueAt(8,1).toString().toUpperCase();
+        String infocodev = m.getValueAt(9,1).toString().toUpperCase();
+        String itemloc = m.getValueAt(10,1).toString().toUpperCase();
         String tname = m.getValueAt(11,1).toString();
         String iname = m.getValueAt(12,1).toString();
         //String mod, String sysd, String sys, String sub, String subsub, String assy, String dis, String disv, String inf, String infv, String item, String tn, String inm
@@ -145,5 +151,30 @@ public class CreateDataModuleDialog extends javax.swing.JDialog {
      */
     public Datamodule getDm() {
         return dm;
+    }
+    
+    class UpperCaseCellEditor extends javax.swing.AbstractCellEditor implements TableCellEditor{
+        
+        JComponent comp = new javax.swing.JTextField();
+        
+        public UpperCaseCellEditor()
+        {
+            super();
+        }
+        
+        public Component getTableCellEditorComponent(JTable jt, Object val, boolean isSelected, int row, int col)
+        {
+            if(col == 1)
+            {
+                ((JTextField)comp).setText(((String)val).toUpperCase());
+            }
+            return comp;
+        }
+        
+        @Override
+        public Object getCellEditorValue() {
+            return ((JTextField)comp).getText().toUpperCase();
+        }
+        
     }
 }
